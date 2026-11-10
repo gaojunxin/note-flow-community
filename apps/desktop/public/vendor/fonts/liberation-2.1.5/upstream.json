@@ -1,0 +1,36 @@
+{
+  "version": "2.1.5",
+  "commit": "4b0192046158094654e865245832c66d2104219e",
+  "files": [
+    {
+      "path": "source/src/LiberationSans-Regular.sfd",
+      "url": "https://raw.githubusercontent.com/liberationfonts/liberation-fonts/4b0192046158094654e865245832c66d2104219e/src/LiberationSans-Regular.sfd",
+      "sha256": "8689f7b50551ad2f6522b250b87bda7abb701668d86720089bcdc8b722487b16"
+    },
+    {
+      "path": "source/scripts/sfd2ttf.pe",
+      "url": "https://raw.githubusercontent.com/liberationfonts/liberation-fonts/4b0192046158094654e865245832c66d2104219e/scripts/sfd2ttf.pe",
+      "sha256": "cad5e8e6ef87a3a80271ede667f07d901aa23cc760ea30a8b8dc46712aac9aaf"
+    },
+    {
+      "path": "source/LICENSE",
+      "url": "https://raw.githubusercontent.com/liberationfonts/liberation-fonts/4b0192046158094654e865245832c66d2104219e/LICENSE",
+      "sha256": "93fed46019c38bbe566b479d22148e2e8a1e85ada614accb0211c37b2c61c19b"
+    },
+    {
+      "path": "source/AUTHORS",
+      "url": "https://raw.githubusercontent.com/liberationfonts/liberation-fonts/4b0192046158094654e865245832c66d2104219e/AUTHORS",
+      "sha256": "b627404917ef824675cb24c32e2facd0b57650627955f3fc3d8a8863c5d0adfc"
+    },
+    {
+      "path": "source/README.md",
+      "url": "https://raw.githubusercontent.com/liberationfonts/liberation-fonts/4b0192046158094654e865245832c66d2104219e/README.md",
+      "sha256": "625a61d7e161cde3b1e9dd1ff8b7a86c251be536c34266bf1f1a9bd1c15c19e8"
+    },
+    {
+      "path": "source/Makefile",
+      "url": "https://raw.githubusercontent.com/liberationfonts/liberation-fonts/4b0192046158094654e865245832c66d2104219e/Makefile",
+      "sha256": "09fc1d8ea4557004c148c6aaa2e9077b97e3d8287463148885755cd78968875a"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "schema": "note-flow-entity-fields/1",
+  "common": {
+    "uid": "uid",
+    "version": "version",
+    "deleted": "boolean"
+  },
+  "entities": {
+    "note": {
+      "folderUid": "nullable_uid",
+      "areaUid": "nullable_uid",
+      "projectUid": "nullable_uid",
+      "journalSeriesUid": "nullable_uid",
+      "attachmentUid": "nullable_uid",
+      "pinned": "boolean",
+      "organizedAt": "nullable_date_text",
+      "periodStart": "nullable_date_text",
+      "periodEnd": "nullable_date_text",
+      "reportGeneratedAt": "nullable_date_text"
+    },
+    "task": {
+      "taskListUid": "nullable_uid",
+      "areaUid": "nullable_uid",
+      "projectUid": "nullable_uid",
+      "parentTaskUid": "nullable_uid",
+      "recurrenceSourceUid": "nullable_uid",
+      "completed": "boolean",
+      "allDay": "boolean",
+      "startAt": "nullable_date_text",
+      "dueAt": "nullable_date_text",
+      "completedAt": "nullable_date_text",
+      "abandonedAt": "nullable_date_text"
+    },
+    "task_list": {
+      "areaUid": "nullable_uid",
+      "projectUid": "nullable_uid"
+    },
+    "task_tag": {
+      "taskUid": "nullable_uid",
+      "tagUid": "nullable_uid"
+    },
+    "folder": {
+      "parentUid": "nullable_uid",
+      "areaUid": "nullable_uid",
+      "projectUid": "nullable_uid"
+    },
+    "tag": {},
+    "note_tag": {
+      "noteUid": "nullable_uid",
+      "tagUid": "nullable_uid"
+    },
+    "note_link": {
+      "sourceNoteUid": "nullable_uid",
+      "targetNoteUid": "nullable_uid"
+    },
+    "task_note": {
+      "taskUid": "nullable_uid",
+      "noteUid": "nullable_uid"
+    },
+    "focus_session": {
+      "taskUid": "nullable_uid",
+      "areaUid": "nullable_uid",
+      "projectUid": "nullable_uid"
+    },
+    "journal_source": {
+      "journalNoteUid": "nullable_uid",
+      "sourceUid": "nullable_uid"
+    },
+    "area": {
+      "archived": "boolean"
+    },
+    "project": {
+      "areaUid": "nullable_uid"
+    },
+    "journal_series": {
+      "areaUid": "nullable_uid",
+      "projectUid": "nullable_uid",
+      "enabled": "boolean"
+    },
+    "project_log": {
+      "areaUid": "nullable_uid",
+      "projectUid": "nullable_uid",
+      "occurredAt": "nullable_date_text"
+    },
+    "knowledge": {
+      "topicUid": "nullable_uid",
+      "areaUid": "nullable_uid",
+      "projectUid": "nullable_uid"
+    },
+    "canvas": {
+      "areaUid": "nullable_uid",
+      "projectUid": "nullable_uid"
+    },
+    "note_body_update": {},
+    "knowledge_card": {
+      "areaUid": "nullable_uid",
+      "primaryTopicUid": "nullable_uid",
+      "sourceKnowledgeUid": "nullable_uid",
+      "expectedContentVersion": "version",
+      "directoryUid": "nullable_uid"
+    },
+    "card_schedule": {
+      "contentVersion": "version",
+      "learningGeneration": "version",
+      "lastEventUid": "nullable_uid",
+      "lastCommandUid": "nullable_uid",
+      "dueAt": "nullable_date_text"
+    },
+    "card_review_event": {
+      "cardUid": "uid",
+      "sessionUid": "uid",
+      "entryUid": "uid",
+      "contentVersion": "version",
+      "learningGeneration": "version",
+      "baseScheduleVersion": "version",
+      "predecessorEventUid": "nullable_uid",
+      "predecessorRetractionUid": "nullable_uid",
+      "reviewedAt": "date_text"
+    },
+    "card_review_retraction": {
+      "targetEventUid": "uid",
+      "sessionUid": "uid",
+      "baseScheduleVersion": "version",
+      "predecessorEventUid": "nullable_uid",
+      "predecessorRetractionUid": "nullable_uid"
+    },
+    "card_review_session": {
+      "parentSessionUid": "nullable_uid",
+      "learningDate": "date_text"
+    },
+    "card_review_preferences": {
+      "newLimit": "version",
+      "dueLimit": "version"
+    },
+    "card_import_source": {
+      "cardUid": "uid"
+    },
+    "card_attachment_reference": {
+      "cardUid": "uid",
+      "attachmentUid": "uid"
+    },
+    "card_directory": {
+      "parentUid": "nullable_uid"
+    }
+  }
+}

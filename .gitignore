@@ -1,0 +1,6 @@
+node_modules/
+artifacts/
+dist-community/
+coverage/
+target/
+apps/desktop/src-tauri/gen/

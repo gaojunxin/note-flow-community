@@ -1,0 +1,1 @@
+{"identifier":"community-main","windows":["main"],"permissions":["core:default","core:window:allow-set-fullscreen"],"description":"Local community window; no HTTP, SQL, shell or filesystem plugin permissions"}

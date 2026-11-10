@@ -1,0 +1,7 @@
+import type {AreaEntity,ProjectEntity,JournalSeriesEntity,ProjectLogEntity,WorkspaceSyncEntityType} from '@note-flow/core'
+export interface WorkspaceConflict {conflictId:string;operationId:string;entityUid:string;entityType:WorkspaceSyncEntityType;localEntity?: (AreaEntity|ProjectEntity|JournalSeriesEntity|ProjectLogEntity)&{name?:string;content?:string};serverEntity?: (AreaEntity|ProjectEntity|JournalSeriesEntity|ProjectLogEntity)&{name?:string;content?:string};serverVersion?:number;createdAt:string}
+export type ProjectMoveImpact={projectUid:string;projectName:string;sourceAreaUid:string;targetAreaUid:string;targetAreaName:string;noteCount:number;taskCount:number;logCount:number;seriesCount:number;folderCount?:number;taskListCount?:number;refreshWarning?:string;project?:ProjectEntity}
+export type ProjectArchiveImpact={projectUid:string;projectName:string;status:ProjectEntity['status'];unfinishedTaskCount:number;noteCount:number;logCount:number;enabledSeriesCount:number;project?:ProjectEntity;taskAction?:'keep'|'complete'|'detach';seriesDisabled?:boolean;summaryNote?:{uid:string;title:string}}
+export type ProjectArchiveRequest={taskAction:'keep'|'complete'|'detach';disableSeries:boolean;summary?:string;summaryTitle?:string}
+export type ReportSourceReference={uid:string;journalNoteUid:string;sourceType:'task'|'note'|'focus_session'|'project_log';sourceUid:string;sourceLabel?:string;version:number}
+export type ReportGenerationInfo={noteUid:string;seriesUid:string;seriesName:string;generatedAt?:string|null;sources:ReportSourceReference[]}

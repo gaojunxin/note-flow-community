@@ -1,0 +1,6 @@
+/* Native GTK widgets only; no WebView or document dependency. */
+#native-startup-card { background: #f8fbf9; color: #173e32; }
+#native-startup-title { font-size: 27px; font-weight: 600; color: #173e32; }
+#native-startup-message { font-size: 14px; color: #687b73; }
+#native-startup-progress trough { min-height: 4px; border: 0; border-radius: 2px; background: #e2ebe6; }
+#native-startup-progress progress { min-height: 4px; border: 0; border-radius: 2px; background: #167454; }

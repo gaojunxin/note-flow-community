@@ -1,0 +1,21 @@
+<script setup lang="ts">
+import {computed,ref,watch} from 'vue'
+const props=defineProps<{tags:{uid:string;name:string}[];selected:string[];mode:'any'|'all'}>()
+const emit=defineEmits<{'update:selected':[value:string[]];'update:mode':[value:'any'|'all']}>()
+const query=ref(''),limit=ref(30),showAllSelected=ref(false)
+const matches=computed(()=>props.tags.filter(tag=>tag.name.toLocaleLowerCase().includes(query.value.trim().toLocaleLowerCase())).sort((a,b)=>a.name.localeCompare(b.name,'zh-CN')))
+const names=computed(()=>new Map(props.tags.map(tag=>[tag.uid,tag.name])))
+const shownSelected=computed(()=>showAllSelected.value?props.selected:props.selected.slice(0,3))
+watch(query,()=>limit.value=30)
+function toggle(uid:string){emit('update:selected',props.selected.includes(uid)?props.selected.filter(value=>value!==uid):[...props.selected,uid])}
+</script>
+<template>
+ <div class="compact-tag-filter">
+  <div v-if="selected.length" class="selected-tags"><button v-for="uid in shownSelected" :key="uid" type="button" :aria-label="`移除筛选标签 ${names.get(uid)||'未同步标签'}`" @click="toggle(uid)"><span># {{names.get(uid)||'未同步标签'}}</span> ×</button><button v-if="selected.length>3" type="button" @click="showAllSelected=!showAllSelected">{{showAllSelected?'收起':`另 ${selected.length-3} 个`}}</button></div>
+  <details class="tag-filter-picker"><summary>{{selected.length?'调整标签':'选择标签'}}<small v-if="selected.length">已选 {{selected.length}}</small></summary><div class="tag-filter-panel"><input v-model="query" type="search" placeholder="搜索标签" aria-label="筛选标签搜索"/><div class="tag-filter-results" role="group" aria-label="可选筛选标签"><button v-for="tag in matches.slice(0,limit)" :key="tag.uid" type="button" role="checkbox" :aria-checked="selected.includes(tag.uid)" @click="toggle(tag.uid)"><span aria-hidden="true">{{selected.includes(tag.uid)?'✓':'＋'}}</span><span>{{tag.name}}</span></button><p v-if="!matches.length">没有匹配的标签</p><button v-if="matches.length>limit" type="button" class="load-tags" @click="limit+=30">显示更多（还有 {{matches.length-limit}} 个）</button></div></div></details>
+  <div v-if="selected.length>1" class="tag-match-mode"><span>匹配</span><button type="button" :aria-pressed="mode==='any'" @click="emit('update:mode','any')">任一标签</button><button type="button" :aria-pressed="mode==='all'" @click="emit('update:mode','all')">全部标签</button></div>
+ </div>
+</template>
+<style scoped>
+.compact-tag-filter{display:grid;gap:8px;min-width:0}.tag-filter-picker{border:1px solid var(--pc-border,#e1e8e4);border-radius:6px}.tag-filter-picker summary{padding:8px 10px;cursor:pointer;font-size:12px;color:var(--pc-text);line-height:1.5}.tag-filter-picker summary small{float:right;font-weight:400;color:var(--pc-muted)}.tag-filter-panel{padding:0 8px 8px}.tag-filter-panel input{width:100%;box-sizing:border-box;border:1px solid var(--pc-border,#e1e8e4);border-radius:5px;padding:7px;font-size:12px;background:var(--pc-panel,#fff);color:var(--pc-text)}.tag-filter-results{display:grid;gap:2px;max-height:150px;overflow:auto;margin-top:6px;overscroll-behavior:contain}.tag-filter-results button{display:flex;gap:8px;align-items:center;border:0;background:transparent;text-align:left;padding:6px;font-size:12px;min-width:0;color:var(--pc-text);cursor:pointer}.tag-filter-results button span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tag-filter-results button[aria-checked=true]{background:var(--pc-primary-soft,#edf5ef);color:var(--pc-primary)}.tag-filter-results p{font-size:12px;color:var(--pc-muted);padding:8px}.selected-tags{display:flex;flex-wrap:wrap;gap:5px;max-height:90px;overflow:auto}.selected-tags button{display:flex;gap:4px;min-width:0;max-width:100%;padding:4px 6px;border:0;border-radius:4px;font-size:11px;background:var(--pc-primary-soft,#edf5ef);color:var(--pc-primary);cursor:pointer}.selected-tags button span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tag-match-mode{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--pc-muted)}.tag-match-mode button{font-size:11px;padding:4px 6px;border:0;border-radius:4px;background:transparent;color:inherit;cursor:pointer}.tag-match-mode button[aria-pressed=true]{background:var(--pc-primary-soft,#edf5ef);color:var(--pc-primary)}
+</style>

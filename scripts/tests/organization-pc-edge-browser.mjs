@@ -1,0 +1,47 @@
+// Fault injection and metadata fixtures are restricted to fresh local community browser contexts.
+import assert from 'node:assert/strict'
+import {createRequire} from 'node:module'
+import {mkdir,writeFile} from 'node:fs/promises'
+const require=createRequire(import.meta.url),{chromium}=require(process.env.NOTEFLOW_PLAYWRIGHT_MODULE||'playwright-core')
+const origin=process.env.NOTEFLOW_UI_ORIGIN||'http://127.0.0.1:5186';if(!['localhost','127.0.0.1'].includes(new URL(origin).hostname))throw Error('Local community required')
+const output='artifacts/.build/organize-pc-edges';await mkdir(output,{recursive:true});const checks=[]
+const browser=await chromium.launch({executablePath:process.env.NOTEFLOW_CHROMIUM_PATH,args:['--no-sandbox']})
+try{
+ const page=await browser.newPage({viewport:{width:1600,height:1000}});page.setDefaultTimeout(10000);await page.goto(`${origin}/#/notes`);await page.locator('.notes-workspace').waitFor()
+ await page.evaluate(async()=>{window.s=document.querySelector('.notes-workspace').__vueParentComponent.setupState;const module=await import('/src/community/adapters/folders.ts');window.folders=module.foldersService;window.target=await window.folders.create('UI专用目标 '+ '长路径内容'.repeat(15),null);window.s.folders=await window.folders.list();window.archived=await window.s.notesStore.service().create({title:'UI专用归档笔记',content:'正文与引用 ![专用](attachment:ui-private-fixture)',type:'note',status:'archived'});window.s.notesStore.archived=[window.archived];window.s.selectFolder('archived');window.s.notesStore.select(window.archived.uid);window.originalUpdate=window.s.notesStore.updateEntity;window.calls=0})
+ const open=async()=>{await page.locator('.note-list-panel article').filter({hasText:'UI专用归档笔记'}).click();await page.getByTitle('移动到…（Ctrl+Shift+.）',{exact:true}).click();await page.getByRole('dialog',{name:'移动到…',exact:true}).waitFor()}
+ const dialog=page.getByRole('dialog',{name:'移动到…',exact:true})
+ await open();await dialog.locator('.targets button').filter({hasText:'UI专用目标'}).click();await dialog.getByRole('button',{name:'确认移动',exact:true}).click();await dialog.waitFor({state:'hidden'})
+ assert.equal(await page.evaluate(()=>window.s.notesStore.archived[0].folderUid===window.target.uid&&window.s.notesStore.archived[0].status==='archived'&&window.s.notesStore.archived[0].content===window.archived.content),true)
+ await page.getByRole('button',{name:'撤销上次操作',exact:true}).click();await page.getByRole('button',{name:'撤销上次操作',exact:true}).waitFor({state:'hidden'})
+ await page.evaluate(()=>window.s.notesStore.updateEntity=async(note,changes)=>{window.calls++;return window.originalUpdate(note,changes)})
+ await open();await dialog.getByRole('button',{name:'确认移动',exact:true}).click();await dialog.waitFor({state:'hidden'});assert.equal(await page.evaluate(()=>window.calls),0)
+ checks.push('Archived single-note move and undo preserve archived status, body/reference; unchanged target performs zero writes')
+ await page.evaluate(()=>window.s.notesStore.updateEntity=async(note,changes)=>{window.calls++;await new Promise(resolve=>window.releaseMove=resolve);return window.originalUpdate(note,changes)})
+ await open();await dialog.locator('.targets button').filter({hasText:'UI专用目标'}).click();await dialog.getByRole('button',{name:'确认移动',exact:true}).click()
+ await page.keyboard.press('Escape');assert.equal(await dialog.isVisible(),true);assert.equal(await dialog.getByRole('button',{name:'处理中…',exact:true}).isDisabled(),true);assert.equal(await dialog.getByRole('textbox',{name:'搜索目标目录',exact:true}).isDisabled(),true);assert.equal(await page.evaluate(()=>window.calls),1)
+ await page.evaluate(()=>window.releaseMove());await dialog.waitFor({state:'hidden'})
+ await page.evaluate(()=>window.s.notesStore.updateEntity=async()=>{throw Error('模拟撤销失败')})
+ await page.getByRole('button',{name:'撤销上次操作',exact:true}).click();await page.getByRole('alert').filter({hasText:'模拟撤销失败'}).waitFor()
+ await page.evaluate(()=>window.s.notesStore.updateEntity=window.originalUpdate)
+ await page.getByRole('button',{name:'重试撤销失败项',exact:true}).click();await page.getByRole('button',{name:'重试撤销失败项',exact:true}).waitFor({state:'hidden'})
+ await page.waitForFunction(()=>!window.s.notesStore.archived[0]?.folderUid)
+ checks.push('Busy move disables edits and duplicate submit/Escape; undo failure is visible and retry restores original folder')
+ await open();await page.setViewportSize({width:800,height:320});await dialog.getByRole('button',{name:'确认移动',exact:true}).scrollIntoViewIfNeeded()
+ const rect=await dialog.boundingBox();assert.ok(rect.y>=0&&rect.y+rect.height<=320);assert.equal(await dialog.evaluate(e=>e.scrollWidth<=e.clientWidth),true)
+ await dialog.getByRole('button',{name:'确认移动',exact:true}).focus();await page.keyboard.press('Tab');assert.equal(await dialog.getByRole('button',{name:'关闭移动窗口',exact:true}).evaluate(e=>e===document.activeElement),true)
+ await page.evaluate(()=>document.activeElement.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',isComposing:true,bubbles:true})));assert.equal(await dialog.isVisible(),true)
+ await page.screenshot({path:`${output}/short-window-after.png`});await page.keyboard.press('Escape');await dialog.waitFor({state:'hidden'})
+ checks.push('800x320 long target dialog fits, scrolls to actions, traps Tab and ignores Escape during IME composition')
+ await page.setViewportSize({width:1600,height:1000})
+ await page.evaluate(async()=>{window.file=await window.s.notesStore.service().create({title:'UI独立文件.pdf',fileName:'UI独立文件.pdf',contentFormat:'file',attachmentUid:'ui-metadata-only-asset',content:'',type:'file',status:'active'});await window.s.notesStore.acceptServer(window.file);window.s.selectFolder('all')})
+ await page.locator('.note-list-panel article').filter({hasText:'UI独立文件.pdf'}).click({button:'right'});await page.locator('.pc-context-menu button').filter({hasText:'移动到…'}).click();await dialog.waitFor();await dialog.locator('.targets button').filter({hasText:'UI专用目标'}).click();await dialog.getByRole('button',{name:'确认移动',exact:true}).click();await dialog.waitFor({state:'hidden'})
+ assert.equal(await page.evaluate(()=>{const saved=window.s.notesStore.notes.find(n=>n.uid===window.file.uid);return saved.type==='file'&&saved.attachmentUid===window.file.attachmentUid&&saved.fileName===window.file.fileName&&saved.folderUid===window.target.uid}),true)
+ checks.push('Independent file metadata move preserves UID, content type, filename and attachment reference (binary opening excluded)')
+ await page.evaluate(()=>{window.s.treeVisible=true;window.s.foldersExpanded=true})
+ const payload=await page.evaluateHandle(()=>{const data=new DataTransfer();data.items.add(new File(['fixture'],'external-file.txt',{type:'text/plain'}));return data})
+ await page.locator('.folder-node').filter({hasText:'UI专用目标'}).dispatchEvent('drop',{dataTransfer:payload});assert.equal(await dialog.count(),0)
+ await page.locator('.note-list-context').evaluate(e=>{e.tabIndex=0;e.focus();e.dispatchEvent(new KeyboardEvent('keydown',{key:'.',ctrlKey:true,shiftKey:true,isComposing:true,bubbles:true}))});assert.equal(await dialog.count(),0)
+ checks.push('External file drop and composing move shortcut never start organization')
+ await writeFile(`${output}/after.json`,JSON.stringify({checks},null,2)+'\n');console.log(JSON.stringify({passed:checks.length,checks}))
+}finally{await browser.close()}

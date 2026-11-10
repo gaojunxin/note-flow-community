@@ -1,0 +1,246 @@
+.vault-page.vault-prototype {
+  padding: 14px 18px 18px;
+  background: #f7faf9;
+  --el-color-primary: #137354;
+  --el-color-primary-light-3: #599d87;
+  --el-color-primary-light-5: #89b9a9;
+  --el-color-primary-light-7: #b8d5ca;
+  --el-color-primary-light-9: #edf6f2;
+  --el-color-primary-dark-2: #0f5c43;
+  --el-border-color: #dfe7e3;
+  --el-border-color-light: #e6ede9;
+  --el-border-radius-base: 7px;
+}
+.vault-prototype .vault-header { margin-bottom: 10px; }
+.vault-prototype .vault-workspace {
+  grid-template-columns: minmax(240px, 300px) minmax(360px, 1fr) minmax(230px, 280px);
+  gap: 16px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.vault-prototype .vault-workspace.vault-edit-layout { grid-template-columns: minmax(240px, 300px) minmax(360px, 1fr) minmax(230px, 280px); }
+.vault-type-description { margin-left: 12px; color: #809087; font-size: 11px; }
+.vault-prototype .vault-list,
+.vault-prototype .vault-detail {
+  min-height: 0;
+  border: 1px solid #e3ece7;
+  border-radius: 10px;
+  background: #fff;
+}
+.vault-prototype .vault-list { padding: 16px 12px; }
+.vault-prototype .vault-list-actions { position: static; padding: 0; margin-bottom: 12px; border: 0; background: transparent; }
+.vault-prototype .vault-filters { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 0 14px; }
+.vault-prototype .vault-filters .el-button { margin: 0; font-size: 12px; }
+.vault-prototype .vault-filters .el-select { width: 120px; }
+.vault-prototype .vault-list>button {
+  grid-template-columns: 34px minmax(0, 1fr) 64px;
+  flex: 0 0 auto;
+  min-height: 70px;
+  padding: 12px 6px;
+  border-bottom: 1px solid #edf2ef;
+  border-radius: 7px;
+}
+.vault-prototype .vault-list>button.active { background: #edf7f2; }
+.vault-prototype .vault-list>button>span:first-child { font-size: 23px; background: transparent; }
+.vault-prototype .vault-list>button b { font-size: 13px; }
+.vault-prototype .vault-list>button small { margin-top: 5px; font-size: 11px; }
+.vault-prototype .vault-list>button>.vault-list-meta { display: flex; flex-direction: column; gap: 6px; align-items: end; width: auto; height: auto; background: transparent; color: var(--pc-muted); font-size: 10px; }
+.vault-favorite { color: #eda62c; }
+.vault-prototype .vault-detail { padding: 18px; scrollbar-gutter: auto; }
+.vault-prototype .vault-detail article { max-width: none; gap: 16px; }
+.vault-prototype .vault-record>header { flex-wrap: wrap; margin: 0 0 3px; }
+.vault-prototype .vault-record>header>div:not(.el-dropdown) { flex: 1; min-width: 150px; }
+.vault-prototype .vault-record>header h2 { font-size: 21px; margin: 5px 0 0; }
+.vault-prototype .vault-record>header>span { width: 48px; height: 48px; font-size: 26px; }
+.vault-prototype .el-card { border-color: #e3ece7; border-radius: 10px; }
+.vault-prototype .el-card__header { padding: 15px 17px; border-bottom: 1px solid #f0f4f2; }
+.vault-prototype .el-card__body { padding: 16px 17px; }
+.vault-card-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.vault-card-heading h3 { display: flex; align-items: center; gap: 9px; margin: 0; font-size: 15px; }
+.vault-card-heading .el-icon { color: #137354; font-size: 19px; }
+.vault-prototype .vault-record-card dl { display: grid; grid-template-columns: 1fr; gap: 0; }
+.vault-prototype .vault-record-card dl>div { grid-template-columns: 95px minmax(0, 1fr); padding: 10px 0; border: 0; }
+.vault-prototype .vault-record-card dt { font-size: 13px; }
+.vault-prototype .vault-record-card dd { gap: 7px; font-size: 13px; }
+.vault-prototype .vault-record-card dd .el-button { opacity: 1; margin-left: 0; padding: 4px 7px; background: transparent; font-size: 12px; }
+.vault-prototype .vault-record-card dd code { flex: 1; }
+.vault-prototype .vault-record-card a { color: #137354; }
+.vault-record-note { margin: 0; padding: 14px; border-radius: 7px; background: #f6f8f7; color: #56685f; line-height: 1.8; white-space: pre-wrap; overflow-wrap: anywhere; }
+.vault-prototype .vault-record-card .el-collapse { border: 0; }
+.vault-prototype .vault-record-card .el-collapse-item__header { font-size: 14px; font-weight: 600; border: 0; }
+.vault-side-panel { display: grid; align-content: start; gap: 16px; min-height: 0; overflow-y: auto; }
+.vault-side-panel strong { font-size: 14px; }
+.vault-safe-actions { display: grid; gap: 11px; }
+.vault-safe-actions .el-button { margin: 0; justify-content: flex-start; height: 39px; }
+.vault-side-facts { display: grid; gap: 15px; margin: 0; }
+.vault-side-facts>div { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.vault-side-facts dt { color: #74857c; font-size: 12px; flex-shrink: 0; }
+.vault-side-facts dd { margin: 0; text-align: right; overflow-wrap: anywhere; font-size: 12px; }
+.vault-tag-list { display: flex; flex-wrap: wrap; gap: 7px; margin: 16px 0 10px; }
+.vault-edit-title { display: flex; align-items: center; gap: 14px; }
+.vault-prototype .vault-edit-title h2 { font-size: 20px; margin: 0; }
+.vault-prototype .vault-editor-context { margin: 12px 0 20px; padding-bottom: 18px; border-bottom: 1px solid #eaf0ec; line-height: 1.5; }
+.vault-prototype form.vault-element-editor { max-width: none; }
+.vault-form-section { display: flex; align-items: center; gap: 9px; margin: 5px 0 20px; font-size: 15px; }
+.vault-form-section .el-icon { color: #137354; font-size: 20px; }
+.vault-prototype .vault-element-editor .el-form-item { margin-bottom: 23px; }
+.vault-prototype .vault-element-editor .vault-basic-grid { gap: 0 18px; }
+.vault-prototype .vault-form-actions { position: sticky; bottom: -18px; z-index: 3; padding: 15px 0; background: #fff; }
+.vault-prototype .vault-form-actions>.el-checkbox { margin-right: auto; }
+.vault-generator .el-checkbox { display: flex; margin: 0; }
+.vault-generator-length { display: flex; align-items: center; gap: 14px; margin: 18px 0; font-size: 12px; }
+.vault-generator-length .el-slider { flex: 1; min-width: 0; }
+.vault-generator-length .el-input-number { width: 54px; }
+.vault-generator-use { width: 100%; margin-top: 14px; }
+.vault-helper { color: #7d8d84; font-size: 12px; }
+.vault-prototype .vault-safety-card { background: #f0f7ff; }
+.vault-safety-card ul { margin: 0; padding-left: 18px; color: #637b90; font-size: 12px; line-height: 1.9; }
+@media(max-width:1280px) {
+  .vault-prototype .vault-workspace,.vault-prototype .vault-workspace.vault-edit-layout { grid-template-columns: 210px minmax(350px,1fr); overflow-y: auto; align-items: start; }
+  .vault-prototype .vault-list { grid-row: 1 / span 2; height: 100%; max-height: calc(100vh - 220px); position: sticky; top: 0; }
+  .vault-prototype .vault-detail { overflow: visible; }
+  .vault-prototype .vault-side-panel { grid-column: 2; overflow: visible; }
+}
+.vault-toolbar-actions { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 8px; margin-left: auto; }
+.vault-toolbar-actions>.el-button { margin-left: 0; }
+.vault-page.vault-prototype .el-button,
+.vault-page.vault-prototype .vault-record-card .el-button,
+.vault-page.vault-prototype .vault-filters .el-button,
+.vault-page.vault-prototype .vault-bulk-bar button { font-size: 13px; }
+.vault-page.vault-prototype .vault-list-actions>.el-button { flex: 0 0 auto; }
+.vault-action-menu .el-dropdown-menu__item { font-size: 13px; }
+
+/* 编辑态只有表单正文滚动，操作栏始终保留在编辑区内。 */
+.vault-page.vault-prototype .vault-workspace.vault-edit-layout{grid-template-columns:210px minmax(0,1fr);align-items:stretch;overflow:hidden}
+.vault-page.vault-prototype .vault-edit-layout .vault-list{position:static;grid-row:auto;max-height:none;height:auto}
+.vault-page.vault-prototype .vault-detail.is-editing{display:flex;flex-direction:column;overflow:hidden;padding:0;min-height:0}
+.vault-page.vault-prototype .vault-edit-title{flex:none;padding:16px 18px;border-bottom:1px solid var(--el-border-color-light)}
+.vault-page.vault-prototype .vault-edit-title h2{font-size:17px}
+.vault-page.vault-prototype form.vault-element-editor{display:flex;flex:1;flex-direction:column;gap:0;min-height:0;overflow:hidden}
+.vault-form-body{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding:18px 22px 10px;scrollbar-gutter:stable}
+.vault-page.vault-prototype .vault-element-editor .el-form-item{margin-bottom:18px}
+.vault-page.vault-prototype .vault-element-editor .vault-form-section{font-size:13px;margin:6px 0 14px}
+.vault-page.vault-prototype .vault-element-editor .vault-form-actions{position:static;flex:none;bottom:auto;z-index:auto;margin:0;padding:12px 22px;background:#fff;border-top:1px solid var(--el-border-color-light);flex-wrap:wrap}
+.vault-page.vault-prototype .vault-inline-generator{margin:0 0 20px;flex:none}
+.vault-page.vault-prototype .vault-filters{gap:6px;padding-bottom:12px}
+.vault-page.vault-prototype .vault-filters>.el-select{width:100%}
+.vault-page.vault-prototype .vault-backup-reminder{gap:10px}
+.vault-page.vault-prototype .vault-backup-reminder>span{flex:1}
+@media(max-width:700px){
+ .vault-page.vault-prototype .vault-workspace.vault-edit-layout{grid-template-columns:minmax(0,1fr)}
+ .vault-page.vault-prototype .vault-edit-layout .vault-list{display:none}
+ .vault-form-body{padding:14px}
+ .vault-page.vault-prototype .vault-element-editor .vault-form-actions{padding:10px 14px}
+}
+.vault-page.vault-prototype .vault-inline-generator .el-card__body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px}
+.vault-inline-generator .el-card__body>.el-input,.vault-inline-generator .vault-helper,.vault-inline-generator .vault-generator-length,.vault-inline-generator .vault-generator-use,.vault-inline-generator .vault-error{grid-column:1/-1}
+.vault-inline-generator .vault-generator-length{margin:6px 0}
+.vault-inline-generator .vault-helper{margin:4px 0}
+.vault-inline-generator .vault-generator-use{margin-top:6px}
+@media(max-width:450px){.vault-page.vault-prototype .vault-inline-generator .el-card__body{grid-template-columns:minmax(0,1fr)}}
+.vault-page.vault-prototype{width:100%;min-width:0}
+.vault-page.vault-prototype .vault-generator-length>span{flex:none;white-space:nowrap}
+.vault-page.vault-prototype .vault-generator-length>.el-input-number{flex:0 0 64px;width:64px}
+.vault-page.vault-prototype .vault-generator-length>.el-slider{flex:1;min-width:60px;margin:0 10px}
+.vault-page.vault-prototype .vault-form-actions>.vault-continue{display:inline-flex;align-items:center;gap:8px;margin-right:auto;font-size:12px;color:var(--pc-muted);white-space:nowrap}
+.vault-page.vault-prototype .vault-continue input[type=checkbox]{flex:none;width:15px;height:15px;padding:0;margin:0;accent-color:var(--el-color-primary)}
+
+/* Passive copy feedback must not cover editing controls in short windows. */
+.vault-page.vault-prototype .vault-copy-toast{pointer-events:none}
+
+/* Use the available workspace width, including when embedded in a project. */
+@supports (container-type:inline-size){
+.vault-page.vault-prototype{container-name:vault;container-type:inline-size}
+.vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout){grid-template-columns:240px minmax(0,1fr) 240px;align-items:stretch;overflow:hidden}
+.vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout) .vault-list{position:static;grid-row:auto;height:auto;max-height:none}
+.vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout) .vault-detail{overflow-y:auto}
+.vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout) .vault-side-panel{grid-column:auto;min-width:0;overflow-y:auto}
+.vault-page.vault-prototype .vault-record>header>div:not(.el-dropdown){min-width:0}
+.vault-page.vault-prototype .vault-record>header .el-button{margin-left:0;flex-shrink:0}
+.vault-page.vault-prototype .vault-record-card dd>span,
+.vault-page.vault-prototype .vault-record-card dd>a{min-width:0;overflow-wrap:anywhere}
+.vault-page.vault-prototype .vault-detail>.vault-attachments{max-width:none}
+@container vault (max-width:1200px){
+ .vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout){grid-template-columns:210px minmax(0,1fr);gap:12px;grid-auto-rows:max-content;overflow-y:auto;align-items:start;overscroll-behavior:contain}
+ .vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout) .vault-list{position:sticky;top:0;grid-row:1 / span 2;height:100%;max-height:calc(100vh - 240px)}
+ .vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout) .vault-detail{overflow:visible;padding:14px}
+ .vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout) .vault-side-panel{grid-column:2;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;overflow:visible}
+ .vault-page.vault-prototype .vault-side-panel>.el-card:first-child{grid-column:1 / -1}
+ .vault-page.vault-prototype .vault-safe-actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .vault-page.vault-prototype .vault-record{gap:12px}
+ .vault-page.vault-prototype .vault-record>header>span{flex-basis:38px;width:38px;height:38px;font-size:22px}
+ .vault-page.vault-prototype .vault-record>header h2{font-size:18px}
+ .vault-page.vault-prototype .el-card__header{padding:10px 12px}
+ .vault-page.vault-prototype .el-card__body{padding:10px 12px}
+ .vault-page.vault-prototype .vault-record-card dl>div{grid-template-columns:80px minmax(0,1fr);padding:8px 0}
+ .vault-page.vault-prototype .vault-card-heading h3{font-size:14px}
+ .vault-page.vault-prototype .vault-record-note{padding:10px}
+}
+@container vault (max-width:700px){
+ .vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout){grid-template-columns:minmax(0,1fr)}
+ .vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout) .vault-list{position:static;grid-row:auto;height:auto;max-height:200px;padding:10px}
+ .vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout) .vault-side-panel{grid-column:1}
+ .vault-page.vault-prototype .vault-list>button{min-height:54px;padding:8px 6px}
+ .vault-page.vault-prototype .vault-list-actions{margin-bottom:8px}
+ .vault-page.vault-prototype .vault-filters{padding-bottom:8px}
+ .vault-page.vault-prototype .vault-toolbar-actions{justify-content:flex-start;margin-left:0}
+ .vault-page.vault-prototype .vault-security-bar{flex-wrap:wrap;gap:10px;overflow:visible}
+ .vault-page.vault-prototype .vault-backup-reminder{flex-wrap:wrap}
+ .vault-page.vault-prototype .vault-backup-reminder>span{flex-basis:100%}
+ .vault-page.vault-prototype .vault-workspace.vault-edit-layout{grid-template-columns:minmax(0,1fr)}
+ .vault-page.vault-prototype .vault-edit-layout .vault-list{display:none}
+ .vault-page.vault-prototype .vault-basic-grid,.vault-page.vault-prototype .vault-secret-grid{grid-template-columns:minmax(0,1fr)}
+}
+@container vault (max-width:440px){
+ .vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout) .vault-side-panel{grid-template-columns:minmax(0,1fr)}
+ .vault-page.vault-prototype .vault-safe-actions{grid-template-columns:minmax(0,1fr)}
+ .vault-page.vault-prototype .vault-record-card dl>div{grid-template-columns:minmax(0,1fr);gap:5px}
+ .vault-page.vault-prototype .vault-record>header{gap:8px}
+ .vault-page.vault-prototype .vault-record>header>div:not(.el-dropdown){flex-basis:calc(100% - 48px)}
+}
+
+}
+/* Older desktop webviews retain a conservative two-column layout. */
+@supports not (container-type:inline-size){
+ @media(max-width:1440px){
+  .vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout){grid-template-columns:210px minmax(0,1fr);grid-auto-rows:max-content;overflow-y:auto;align-items:start}
+  .vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout) .vault-list{position:sticky;top:0;grid-row:1 / span 2;max-height:calc(100vh - 240px)}
+  .vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout) .vault-detail{overflow:visible}
+  .vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout) .vault-side-panel{grid-column:2;overflow:visible}
+ }
+}
+
+/* A shared resizable list width for standalone and project vaults. */
+.vault-page.vault-prototype .vault-workspace,.vault-page.vault-prototype .vault-workspace.vault-edit-layout,.vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout){position:relative;grid-template-columns:var(--vault-list-width,320px) minmax(0,1fr);gap:12px;grid-auto-rows:max-content;align-content:start;align-items:start;overflow-y:auto}
+.vault-page.vault-prototype .vault-workspace>.vault-bulk-bar{grid-column:1/-1;position:sticky;top:0;z-index:5;flex-wrap:wrap;padding:10px 12px;border:1px solid #dce8e0;border-radius:8px;gap:8px}
+.vault-page.vault-prototype .vault-bulk-bar b,.vault-page.vault-prototype .vault-bulk-bar button{flex-shrink:0;white-space:nowrap}.vault-page.vault-prototype .vault-bulk-bar .danger-text{margin-left:auto}
+.vault-page.vault-prototype .vault-workspace:is(.vault-edit-layout,:not(.vault-edit-layout)) .vault-list{grid-column:1;grid-row:auto / span 2;position:sticky;top:0;max-height:calc(100vh - 260px);height:auto;padding:12px;overflow:auto}
+.vault-page.vault-prototype .vault-workspace:has(>.vault-bulk-bar) .vault-list{top:60px;max-height:calc(100vh - 320px)}
+.vault-page.vault-prototype .vault-workspace:is(.vault-edit-layout,:not(.vault-edit-layout)) .vault-detail{grid-column:2;overflow:visible;padding:14px}
+.vault-page.vault-prototype .vault-workspace:is(.vault-edit-layout,:not(.vault-edit-layout)) .vault-side-panel{grid-column:2;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;overflow:visible}
+.vault-page.vault-prototype .vault-side-panel>.el-card:first-child{grid-column:1/-1}.vault-page.vault-prototype .vault-safe-actions{grid-template-columns:repeat(2,minmax(0,1fr))}
+.vault-page.vault-prototype .vault-list-resizer{position:absolute;left:calc(var(--vault-list-width,320px) + 2px);top:0;bottom:0;z-index:4;width:8px;padding:0;border:0;border-radius:4px;background:transparent;cursor:col-resize;touch-action:none}
+.vault-page.vault-prototype .vault-list-resizer:hover,.vault-page.vault-prototype .vault-list-resizer:focus-visible{background:#89b9a9}
+.vault-page.vault-prototype .vault-list>button{grid-template-columns:30px minmax(0,1fr) 64px;min-height:76px}
+.vault-page.vault-prototype .vault-list>button b{white-space:normal;overflow-wrap:anywhere}.vault-page.vault-prototype .vault-list>button small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400}
+.vault-page.vault-prototype .vault-list-meta time{font-weight:400;color:#7d8d84}.vault-page.vault-prototype .vault-filters>.el-select{width:calc(50% - 3px)}.vault-page.vault-prototype .vault-filters>.el-select:first-of-type{width:100%}
+.vault-list-tools,.vault-filter-tags{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:10px}.vault-list-tools small{margin-left:auto;color:var(--pc-muted)}.vault-page.vault-prototype .vault-list-tools .el-button{margin:0}
+.vault-page.vault-prototype .vault-detail article{gap:10px}.vault-page.vault-prototype .el-card__header,.vault-page.vault-prototype .el-card__body{padding:10px 12px}.vault-page.vault-prototype .vault-record-card dl>div{padding:7px 0}.vault-record-note.is-collapsed{max-height:140px;overflow:hidden}
+/* 编辑态使用有界网格行，不能继承浏览态的max-content行高；否则表单和保存栏会一起被外层裁切。 */
+.vault-page.vault-prototype .vault-workspace.vault-edit-layout{grid-template-rows:minmax(0,1fr);grid-auto-rows:minmax(0,1fr);align-content:stretch;align-items:stretch;overflow:hidden}
+.vault-page.vault-prototype .vault-workspace.vault-edit-layout:has(>.vault-bulk-bar){grid-template-rows:auto minmax(0,1fr)}
+.vault-page.vault-prototype .vault-workspace.vault-edit-layout .vault-list{grid-row:auto;position:static;max-height:none;min-height:0;overflow:auto}
+.vault-page.vault-prototype .vault-workspace:is(.vault-edit-layout,:not(.vault-edit-layout)) .vault-detail.is-editing{overflow:hidden;padding:0}
+.vault-organizer{width:min(640px,calc(100vw - 32px));max-height:85vh;overflow:auto;padding:20px;border-radius:12px;background:#fff;box-shadow:0 20px 60px #102c1d40}.vault-organizer header,.vault-organizer footer{display:flex;align-items:center;justify-content:space-between;gap:10px}.vault-organizer h2{margin:0;font-size:18px}.vault-organizer p{font-size:13px;color:var(--pc-muted);line-height:1.6}.vault-organizer>label{display:grid;gap:6px;margin:14px 0;font-size:13px}.vault-organizer>label.vault-organizer-check{display:flex;align-items:center}.vault-organizer-results{max-height:40vh;overflow:auto}.vault-organizer-results label{display:flex;align-items:center;gap:10px;padding:10px;border-bottom:1px solid #e3ece7}.vault-organizer-results span{display:grid;gap:4px}.vault-organizer-results small{color:var(--pc-muted)}.vault-organizer input[type=checkbox]{width:16px;height:16px;accent-color:#137354;flex:none}.vault-organizer footer{justify-content:flex-end;margin-top:16px}
+@container vault (min-width:1400px){.vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout){grid-template-columns:var(--vault-list-width,320px) minmax(0,1fr) 240px}.vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout) .vault-side-panel{grid-column:3;grid-template-columns:minmax(0,1fr)}}
+@container vault (max-width:760px){.vault-page.vault-prototype .vault-workspace,.vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout),.vault-page.vault-prototype .vault-workspace.vault-edit-layout{grid-template-columns:minmax(0,1fr)}.vault-page.vault-prototype .vault-workspace:is(.vault-edit-layout,:not(.vault-edit-layout)) .vault-list{position:static;grid-column:1;grid-row:auto;max-height:320px}.vault-page.vault-prototype .vault-workspace:is(.vault-edit-layout,:not(.vault-edit-layout)) .vault-detail,.vault-page.vault-prototype .vault-workspace:is(.vault-edit-layout,:not(.vault-edit-layout)) .vault-side-panel{grid-column:1}.vault-page.vault-prototype .vault-list-resizer{display:none}.vault-page.vault-prototype .vault-workspace.vault-edit-layout .vault-list{display:none}}
+.vault-list-title{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;white-space:normal;overflow-wrap:anywhere}
+.vault-page.vault-prototype .vault-filters{flex-wrap:wrap!important}
+
+/* Keep credential details in one column at every desktop width. */
+@container vault (min-width:1400px){.vault-page.vault-prototype .vault-workspace:not(.vault-edit-layout){grid-template-columns:var(--vault-list-width,320px) minmax(0,1fr)}}
+.vault-page.vault-prototype .vault-attribution{padding:12px 0;border-block:1px solid var(--pc-border)}.vault-attribution-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.vault-attribution-heading strong{font-size:13px}.vault-attribution-values{display:flex;align-items:center;flex-wrap:wrap;gap:8px 20px;margin-top:6px;color:var(--pc-muted);font-size:12px}.vault-attribution-values span{overflow-wrap:anywhere}.vault-attribution-values small{font-size:12px}.vault-page.vault-prototype .vault-add-note{justify-self:start;margin:0}.vault-page.vault-prototype .vault-attachments{max-width:none;margin:10px 0 0}.vault-page.vault-prototype .vault-attachments.empty-state{padding:8px 0;border:0;border-top:1px solid var(--pc-border);border-radius:0}.vault-page.vault-prototype .vault-attachments.empty-state small{display:none}
+
+.vault-page.vault-prototype .vault-list>button>.vault-selection-check{width:19px;height:19px;box-sizing:border-box;border:1px solid #adc0b4;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;background:#fff;font-size:14px;color:#fff}.vault-page.vault-prototype .vault-list>button>.vault-selection-check.checked{background:var(--pc-primary);border-color:var(--pc-primary)}.vault-organizer .el-select{width:100%}.vault-organizer label>small{color:var(--pc-muted);line-height:1.5}.vault-batch-summary{padding:10px 12px;border-radius:8px;background:var(--pc-primary-soft)}
+.vault-organizer.vault-organizer-dialog{box-sizing:border-box;width:100%;max-height:65vh;padding:0;box-shadow:none;border-radius:0}.vault-organizer-dialog>label{margin-top:16px}

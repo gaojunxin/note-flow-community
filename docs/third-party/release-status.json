@@ -1,0 +1,24 @@
+{
+  "projectLicense": "Apache-2.0",
+  "publicationReady": false,
+  "blockers": [
+    "native-distribution-notices"
+  ],
+  "evidence": {
+    "npmPackages": 449,
+    "npmWithLicenseTexts": 445,
+    "npmUnresolved": 4,
+    "cargoLinuxPackages": 489,
+    "cargoLinuxWithLicenseTexts": 489,
+    "cargoLinuxUnresolved": 0,
+    "libavoid": "removed-from-community-distribution",
+    "restrictedIconLibraries": "removed-from-community-distribution",
+    "mplCrateSources": 5,
+    "reviewedWebModulePackages": 184,
+    "reviewedWebModuleLicenseMaterialGaps": 0,
+    "remainingNpmInstallOnly": 4
+  },
+  "sourcePublicationReady": true,
+  "sourceBlockers": [],
+  "binaryPublicationReady": false
+}

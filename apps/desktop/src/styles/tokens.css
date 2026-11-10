@@ -1,0 +1,17 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  color: #17231e;
+  background: #f4f7f4;
+  --pc-primary: #0f3d2f;
+  --pc-primary-soft: #e8f3ed;
+  --pc-surface: #ffffff;
+  --pc-background: #f4f7f4;
+  --pc-border: #dce6df;
+  --pc-text: #1f2321;
+  --pc-muted: #718078;
+  --pc-radius: 14px;
+  --pc-sidebar-width: 218px;
+  --pc-standard-width: 1180px;
+  --pc-reading-width: 820px;
+}

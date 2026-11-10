@@ -1,0 +1,18 @@
+/* Shared column geometry keeps headings and document rows aligned. */
+.note-list-panel{container-type:inline-size}
+.note-list-panel .note-table-grid{display:grid!important;grid-template-columns:26px minmax(0,1fr) 112px 80px;gap:10px!important;align-items:center}
+.note-list-panel .note-table-header{min-height:32px;padding:0 14px;border-block:1px solid var(--pc-border);background:#f8faf9;color:var(--pc-muted);font-size:11px}
+.note-table-header .note-date-heading{display:flex;justify-content:flex-end;align-items:center;gap:3px;font:inherit;color:inherit;padding:0;border:0;background:transparent;cursor:pointer;white-space:nowrap}.note-date-heading:focus-visible{outline:2px solid var(--pc-primary);outline-offset:2px}
+.note-list-panel article.note-table-row{padding:7px 14px;border-bottom:1px solid #edf1ee;transition:background .12s}
+.note-list-panel article.note-table-row:hover{background:#f5f9f7}.note-list-panel article.note-table-row.active{background:#e9f3ee;box-shadow:inset 2px 0 var(--pc-primary)}.note-list-panel article.note-table-row:focus-visible{outline:2px solid var(--pc-primary);outline-offset:-2px}
+.note-list-panel.bulk-mode .note-table-header{padding-left:43px}
+@container (max-width:390px){
+ .note-list-panel .note-table-grid{grid-template-columns:20px minmax(0,1fr) 92px 72px;gap:6px!important}
+ .note-list-panel .note-table-header{padding-inline:10px}
+ .note-list-panel article.note-table-row{padding-inline:10px}
+ .note-list-panel .note-content-icon{width:20px;height:24px}
+ .note-list-panel .note-row-tag:nth-of-type(n+2),.note-list-panel .note-tag-more-wide{display:none}
+ .note-list-panel .note-tag-more-narrow{display:inline}
+ .note-list-panel .note-list-title>time{font-size:10px!important}
+ .note-list-panel.bulk-mode .note-table-header,.note-list-panel.bulk-mode article.note-table-row{padding-left:43px}
+}

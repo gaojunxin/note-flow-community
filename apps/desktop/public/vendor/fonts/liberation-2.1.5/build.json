@@ -1,0 +1,19 @@
+{
+  "fontforge": "20230101 (Ubuntu 1:20230101~dfsg-1.1build1)",
+  "fonttools": "4.66.1",
+  "brotli": "1.2.0",
+  "timestampPolicy": "head.modified=head.created from upstream source",
+  "runtimeOverride": "assets/excalidraw/fonts/Liberation/LiberationSans-Regular.woff2",
+  "outputs": [
+    {
+      "file": "LiberationSans-Regular.ttf",
+      "sha256": "a6d5cd58ad5426d4758c2af4db16869d75ca9d44ed4385d824b75baab4cf6170",
+      "bytes": 410820
+    },
+    {
+      "file": "LiberationSans-Regular.woff2",
+      "sha256": "27a2bb25af15d4656b2b008a26c6aea0e57a3f4361bffd300b821fc46d440f2d",
+      "bytes": 146712
+    }
+  ]
+}

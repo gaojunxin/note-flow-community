@@ -1,0 +1,4326 @@
+{
+  "scope": "社区独立源码公开及已受测Web构建；不代表原生安装包发行验收",
+  "lockSha256": "01899267bbd0b70103faf37fa29668bddbf59b9525f900cc2396baffb766ee56",
+  "bundledModulePackages": 184,
+  "bundledModuleLicenseMaterialGaps": [],
+  "nonRedistributedInstallDependencies": [
+    "@napi-rs/lzma-linux-x64-gnu@1.5.1",
+    "de-indent@1.0.2",
+    "lodash-unified@1.0.3",
+    "stackback@0.0.2"
+  ],
+  "reason": "这四组在安装锁图中声明MIT，但未纳入Rollup模块，且其实现或原生二进制不在白名单源码/静态资源中重分发；原始许可文本缺项保留，不伪造版权声明。",
+  "removedComponents": [
+    "libavoid",
+    "restricted-industry-icons-and-stencils"
+  ],
+  "mplSources": "sources/manifest.json",
+  "nativePackagesReady": false,
+  "reviewedSourceInputs": [
+    {
+      "file": "apps/desktop/community.html",
+      "sha256": "dcbfb5b1e1456f720ed1548a0c5e6ee1c89a1f651997f174fa7c9cc96c87282b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/LICENSE",
+      "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/favicon.ico",
+      "sha256": "bb0acd944840fecd4cad0d627c2ebeea39685394047375dace4a979df1231a72"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/1x1.png",
+      "sha256": "ebf4f635a17d10d6eb46ba680b70142419aa3220f228001a036d311a22ee9d2a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/2x2.png",
+      "sha256": "ebf4f635a17d10d6eb46ba680b70142419aa3220f228001a036d311a22ee9d2a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/3x3.png",
+      "sha256": "ebf4f635a17d10d6eb46ba680b70142419aa3220f228001a036d311a22ee9d2a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/ajax-loader.gif",
+      "sha256": "6bb94f3a69669fba548dbba9a87dee259698b2bf339f3ed430e35a8a8ab49811"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/android-chrome-512x512.png",
+      "sha256": "7203ccbb1f18ee176d683018701db254e099a23058cc3c5776b09430987d4b86"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/apple-touch-icon.png",
+      "sha256": "76bab6880cca0e10865f4a64f16b73d9b0408b644906519d55d0eed087d80949"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/aui-wait.gif",
+      "sha256": "915b0a69618643f067fc78a5ce219bbba1e519de0a9f8e384778b1da65b94294"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/broken.png",
+      "sha256": "931100cda32fa44ce2fc26d57429e7f9c01d5cfc4cfd25b2e5c43d7d3ec04648"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/browserconfig.xml",
+      "sha256": "1842fc01e482ea130bb3c70180281a81c1e22b8e7e202643cdfa7e3e661302b7"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/close.png",
+      "sha256": "c154cd23c1b7b22d08e54e52d36982330a78ddb569db9dcc32390e48477c36b0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/cloud-connector-atlas.png",
+      "sha256": "d1bdd134682f2c37b00219c8db9ce5c331fe5d63745f364c5bc84b1b9943a5b9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/collapsed.gif",
+      "sha256": "2924bb6177978ba3f464120852ad2b19be765c00d019211facf4b1626bb50352"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/delete.png",
+      "sha256": "5d0d7ffca9ba602163b9461957df35abc42d7b0aad1d03910a01ac2dc9bdccb1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/document-google-drive-icon-80.png",
+      "sha256": "bdcd18abd968a14cd181506ff296da3f34eb8d5ea3f5d604002eb940fb72108c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/draw-search.png",
+      "sha256": "b0365f63397fd5f6f7188a291ce9a9aa8f33963455d18a298bebb7fa0d121095"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/drawio.svg",
+      "sha256": "15407feb3b70be7216c54202a631b0a14b839ba764aae624b436531f4bf560a7"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/drawlogo-color.svg",
+      "sha256": "f26a85e508c159d630aba7c91c8ff12441423402dddbe98fafc9db04d021aded"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/drawlogo-gray.svg",
+      "sha256": "b9c34bd3d417e7033023b108c6704577457bbc83a1d7f0d5193aa5429d63f686"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/drawlogo-text-bottom.svg",
+      "sha256": "212f174b6b80510293059a7a6a0267b829fd1304d00301ece3a3b36b7fad51a6"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/drawlogo.svg",
+      "sha256": "61728f9060e9e971f75555d89cdca1baed5d5ff7dba9ca8ee314a08c67dd57ec"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/drawlogo128.png",
+      "sha256": "22b4c6719cb3b309b3ee493bf9dde0e9e7be54c043116882aeda6be173553ee3"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/drawlogo144.png",
+      "sha256": "8591c5dc8a9687a6cdf374a36ffeb6b43d048d5478de3b8e0f12313b500f1a75"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/drawlogo256.png",
+      "sha256": "9df31bdd5a06d9e253e899d458cf3f30e5d28659aa04dbfe6f24ae0b4a9a43c4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/drawlogo48-gray.png",
+      "sha256": "072b5b5b5baf424925455d9214c147f7dfc809e8ca7405ac3b0596d2edf04172"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/drawlogo48.png",
+      "sha256": "85cdc11268f9ef35fa6babb1e239963c1b984caec88fcadb973a54dee1a11900"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/drawlogo80.png",
+      "sha256": "b582ac39b114dd47a2f4af7ddfefb6431472053959363a5d51397eca7173da5d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/dropbox-logo-white.svg",
+      "sha256": "b7bfa76f43ea68cfaac218d7cc9140405b3cd2c9a5b0998f82feeee53965e4f8"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/dropbox-logo.svg",
+      "sha256": "fd5906576debab72d9c66366488eaed8d63622c83e635921552f384af511813e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/droptarget.png",
+      "sha256": "004fff831fc2b5aedca3f6cd1b3d4c106ef9656d4b51c1d5efa0f77541d15115"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/edit.gif",
+      "sha256": "b103868217178097a959f6340e9b76cb0a0a4049dfc01d3c4078425d8832a93c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/edit16.png",
+      "sha256": "d006615b1e18a28b18524223454c5ba6a385e87102aa601b6c0ba9fd469771d9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/edit32.png",
+      "sha256": "9daff393003a3901c0b8bf3e0564ef34b332d4767997bcb90f35c0720916d25c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/edit80.png",
+      "sha256": "8b73af222b5242413af086ea62b58c158c230f46242994868e80ccd53cf8dea9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/embed-icon.png",
+      "sha256": "c21d77ddc4cf5185d2edd03956b1ead528bdc8941c621e823d3411137086d345"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/expanded.gif",
+      "sha256": "ac50cda9ad4fd2dfe7624a5c9298c08fa20936cc6fcbf91b502fa14d84799596"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/facebook.png",
+      "sha256": "1d067be181e6331b31d8d84301324dec8053a803345c1d848605445d22695d6d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/favicon-16x16.png",
+      "sha256": "a502d493195e0485096b3f820c6060f503c2d879ec11e89b48f26befd4fa27f7"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/favicon-32x32.png",
+      "sha256": "63ae84223462892823032a8672f0a2cd943a8d324604da19a857d0d9afbb645b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/file.png",
+      "sha256": "610f0b63e5ce912fc8f16f50f3331955d4ff4fef2eccc55e7d7b7ea38b7093a0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/folder.png",
+      "sha256": "668bba88f29f218db7f4fe7a763b5e5d27a4e9c16d534f6177f24e061a871485"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/gadget-screenshot.png",
+      "sha256": "c780293babdf66acce404a299df99255ef518a6769e7fcaea9a8588d3c9582c1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/gadget-thumb.png",
+      "sha256": "b4bf6f4bd8987621c97198ece5b2e5f93891e5d3ebd902a669e382a2ec4ee20f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/github-logo-white.svg",
+      "sha256": "cc81522b317185e8fc3bfbbd36e36b1630be0c79bb54e86274dbcc12797c6a92"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/github-logo.svg",
+      "sha256": "b88f1122c7f5d3ccba71a64754493e764caecde79481b81449999847548d3d84"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/gitlab-logo-white.svg",
+      "sha256": "17432ecabe69deb65fca8d5d657beeba736995c57df90dd02973edba53980786"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/gitlab-logo.svg",
+      "sha256": "28a15b0e683b20e78ae7c1df283343c93d6000d07933ff05912e2d91b2fdd77d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/glyphicons_blogger.png",
+      "sha256": "cdcb67bcd861d790e218b4559f50869cc0d97c092a043faac4b3120affade09f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/glyphicons_facebook.png",
+      "sha256": "5caa6014ebeb82af4d8d9056a48863085ebde77f3f2a8b2abd19238cf484fc2b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/glyphicons_github.png",
+      "sha256": "f0485b0cf7f33220dc98b393baa92bf191e468afcef037f8bd31043f76992dae"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/glyphicons_google.png",
+      "sha256": "0bdce9d8bebaec89d1218265e80b3f660c8673a7125160dfd37f15dae81820bb"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/glyphicons_star.png",
+      "sha256": "81541a57f3d4d7ca323d3e95e12a9ff663e56a07738b27a18dcbd55e415b90df"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/glyphicons_twitter.png",
+      "sha256": "d67bf183d949d48a44dc5df9dbd71540fa70f42013817614b07614ab750d7029"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/glyphicons_youtube.png",
+      "sha256": "30967146caf7f2c7212eb5c7c9fea830725c50d92edbfa0fdeed2841bf4061b0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/google-drive-connector-atlas.png",
+      "sha256": "ed3d1efec631bec02e187ac4020deca386b61c5e36e0bbcc083804308bf4b3f8"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/google-drive-connector-atlas.svg",
+      "sha256": "c32cdac829ccaf3da920302d8c0b4274cc8b5f96758fa31332e925d122d18e0b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/google-drive-logo-white.svg",
+      "sha256": "b84a9c86c5ee2b06081137860502f400649c0ec7cc8cef44f6a99cc62243a93d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/google-drive-logo.svg",
+      "sha256": "ba5c52ac109138c1deca404c7c6a9df061bcfa06ff9c3d17a53a9998bf2c3037"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/google-share.png",
+      "sha256": "fcc0df7c3f3a7f1cec8ee9484e3b07974b6a86dbe90433a935e75085eb42dbc8"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/icon-192-maskable.png",
+      "sha256": "27b2fd95fc4bbbba434cd4ad4112aa5f19d5c15cae952b10fbf019124d107505"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/icon-192.png",
+      "sha256": "6e2677c5a54383303484609f6c44201778323b85097dcc5bc6e0580c6a985690"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/icon-512-maskable.png",
+      "sha256": "f270313e51ff3993a8cb9426055dc3dcfa8a8fdc98e2d8e634134b63fa354172"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/icon-512.png",
+      "sha256": "a49c867dbed969852f2364c671cd444ef7d5fa74817b4093abb65831c9cb68f3"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/icon-search.svg",
+      "sha256": "b6ad04791de5d5f232f420ec0b396d0136f5fe5aaa5274c1e4c547f7636b1b65"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/img-hi-res.png",
+      "sha256": "cff0ba10b09024ff41b703363783ea56e0ab576077cb6850dc4af192d4969b3b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/img-lo-res.png",
+      "sha256": "b9f655aa8b88c04cfea4443abf84c1372065602e4bb198d6a4ca6bfeaf9d58c6"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/list.svg",
+      "sha256": "fc5e7d8c984184755fdf636371354bfcc70a02e5b7105caabb5090367610a11c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/locked.png",
+      "sha256": "931536dfb96307c624d6bbf16d20ef4c5e0524258c10f64a76219ee2c78fe4ed"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/log.png",
+      "sha256": "ebf4f635a17d10d6eb46ba680b70142419aa3220f228001a036d311a22ee9d2a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/logo-confluence.png",
+      "sha256": "c334cbe0334b3b136e0fa502fdfd672c636ff9cec006a36632275c7edc2bc725"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/logo-flat-small.png",
+      "sha256": "7c52ac676a911326b5877a0b71761c16fe5ce3eabb7c6356be85fd51fcd64ba1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/logo-flat.png",
+      "sha256": "1f5244567c23f740a63345020facccb101974fd370047126778f039bed2a52fe"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/logo-jira.png",
+      "sha256": "8b8678267b1ca0768486067d0e7a0fed3d7e980bb78dff0708c350fbb2887da0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/logo-small.gif",
+      "sha256": "c75984b94e306ebbeda01734abf0ad1129d18a10f2b8c2e4c806d18cf8aee43d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/logo-white.png",
+      "sha256": "3ae1578468420b0c588123e5ad5354f448d0017034f4b6feb8de1d0391ba0923"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/logo.png",
+      "sha256": "737863c22eca2edcabff2943e4dd40dd6b19c6e9ad886f942e79496e1a1769ec"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/manifest.json",
+      "sha256": "4f78c8701e9e3b026df79d7baf14dbc1e98bb915ebe03358d76dcc4ce247198c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/move.png",
+      "sha256": "52ebf83cdeb48cca7276e75b66a9c8db69b14a42f3abffe46d5646d21bf3cf60"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/notion-logo-white.svg",
+      "sha256": "331fccd4ecd76901a640fcc6c12c3f65134be2d3c5d6696cc6e55724c16e0197"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/notion-logo.svg",
+      "sha256": "a144f215aabaabde0762194c39ef922e481736784742a9eb735237041e1c477f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/onedrive-connector-atlas.png",
+      "sha256": "d1bdd134682f2c37b00219c8db9ce5c331fe5d63745f364c5bc84b1b9943a5b9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/onedrive-connector-atlas.svg",
+      "sha256": "3d6d1e42642c24e9e847f331f5778c9e600f692ca995fdb6eed2f20741fb6b2e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/onedrive-logo-white.svg",
+      "sha256": "88a6b85c8290a9e9ab209b0c36c7c9ec4aaa49d2eb5ea0ecc0bbc04ed20d19f9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/onedrive-logo.svg",
+      "sha256": "9609345dac2ee2df3ca00d9b8f372b0b6e857ca1d391fde081eaf1e46795d704"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/osa_database.png",
+      "sha256": "e4272b22390bbd76f489e3c292d64a65509a0c08bde8b13cd8d720702bb9d291"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/osa_drive-harddisk.png",
+      "sha256": "d2847c0d975279256b28c8d7b2d8f513f980bf0f0cfb13e615e647bdab2959c0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/plant-uml-atlas.png",
+      "sha256": "e7ce26596fd84c09cf970fd05b3d9b5c06591a6107287fcab944edb1b6f2333b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/samepage-icon-color.svg",
+      "sha256": "c012fc60a53087da23842e31e95a1748154410ff461c0adc2957a3ab4c537da4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/save.png",
+      "sha256": "542cd1b000043cd2a7e054b10d4ef2c79f2ada8bb959ca596513850c6ce7ff6c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-active_directory.png",
+      "sha256": "0d9d9275842b97675246be74ca98fca0f446afcfdc56dcdb770b2de0cec9dbf6"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-alibaba_cloud.png",
+      "sha256": "5f4fca821c4f4bb248dc419f9c573159258d1f858946495a1a56293b8b4ba2bf"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-allied_telesis.png",
+      "sha256": "f991206c235fd3e02be36906eb9786707ab416a2177e175a47eeb0c1a72ac7b9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-android.png",
+      "sha256": "5441904f43ef10f6a10d91c222a883a43dfbb57a26910cd0533dbffcbf15434f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-archimate.png",
+      "sha256": "c1511ed97789dbe6d9eedc9f2c8e4831decd5fde76a026c131aaee43346ff0d0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-archimate3.png",
+      "sha256": "f6368430e8193e82774fa06c719e191b745963ac8ca2370d41336f002a4ba15c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-archimate4.png",
+      "sha256": "4fe62b2caf9db6132298a764dfd6ecfb19436c86128640c558db8f4a9cf74c98"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-arrows.png",
+      "sha256": "fef32d3875a4be94e08ec5e6c356ef14b3f51393b6db174eef6168d49bb2611b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-arrows2.png",
+      "sha256": "6ec50df8fd06751c9b6dcb4688c1cefce8411c5eb6912df04ecb73d5fda91e51"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-atlassian.png",
+      "sha256": "c60c66a13bf86e30238849bb3bc2e55fc657c996866f26a3cbdaa57a30901561"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-atlassian2.png",
+      "sha256": "b9589b75c19264c3d41ec47c21e7ac4a69760de4accd9920fe4a884d61dd0bc8"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-aws.png",
+      "sha256": "eeafd7b03d1212d7fb58f8c4ac334477bcdc0aba8098e774ad5c04254cb46d16"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-aws3.png",
+      "sha256": "47c0c3ff8bbe17ee87f21f0a6f43c1fa0f48f7ade84a3dcf79fb5abe8b0bda73"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-aws3d.png",
+      "sha256": "97256ea59edd96c2bed47bfd36ef18d95c2473f8128c744327486a3020ee40b1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-aws4.png",
+      "sha256": "b3f6d85f001cc878ec9ee540b1411eab41915e01b34536da8b279383c26e4a05"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-aws4b.png",
+      "sha256": "445265bfe84dfaebcf6863c5a35492151ed33f984633d3ce8131a75da8eda720"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-aws4r.png",
+      "sha256": "d151104ab0f394a27c9d97c1fdf2d05851b06f7d1599c5b4fe25b5e8fc84aa7d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-azure.png",
+      "sha256": "e3f85910c8057f40b82a81829a227012ab1f84e11b30122c1572ae034760366d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-basic.png",
+      "sha256": "dd4c7d020200c0b68f1edce453cbcaa609cbb02c038881184bcb08cf0c092634"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-bootstrap.png",
+      "sha256": "f1e132ef29fe1941174f626afc6f3d9da29dda874b58a583dc9f93f3ff902a88"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-bpmn.png",
+      "sha256": "ad2086764e86431dc1a84483b26b0ad8d68b8bf1de153af32dbfc29c73ee8cfe"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-c4.png",
+      "sha256": "663a90add10e399e7b9248d674787f307cc70dccd86aa2b004201e91e3d4ed2f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-cabinets.png",
+      "sha256": "6a4ef55809a999f6e27cfa58610ed79443f93817385b19415b8d2ed0a1990bf9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-cisco.png",
+      "sha256": "6a36e368daebe1d84cc0480d641e312c49822e92e533739dc859dcf5debd64fb"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-cisco19.png",
+      "sha256": "c0f473541d2f857b56e4dd545767b688e679c93d5ac4394bff768b247f2db7f5"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-cisco_safe.png",
+      "sha256": "ebe54ea1f204534eb34d6f8a8302f1d93ccd898b2103bf5f535bf3a26a82d613"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-citrix.png",
+      "sha256": "cac35ec72932835f8955eea575fc1f9b45117bb292198a5a1a80968d61973414"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-citrix2.png",
+      "sha256": "2246d7f33ace1e3b80d9af6c43014b541afb35d76a866528781264792a6fea3b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-clipart.png",
+      "sha256": "e8680c9e547fe3ee1922caf0346d9364f93e4c4291e46163634647cca5510e64"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-cumulus.png",
+      "sha256": "8d4449e7e1fe3628903296cb5560a9e508c57ef34e4d1ec27ce64827225e3e87"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-dfd.png",
+      "sha256": "c687e58de9b3b9870ff43ce03ccad4642ef26d64bd0104cbb445de1ce50aa6c8"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-dynamics365.png",
+      "sha256": "e8c62851c41e808f8e9a6391c6698742739cd2078406b3139a6ad801f2c6fa23"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-eip.png",
+      "sha256": "8eb19f0f9b7c05ebe18ed3a8fa89b31e4dcc82ae9ff4e3f8aadbbb31127419e0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-electrical.png",
+      "sha256": "f97d87261ede2e7c50a08156cacb4fdfc010a5c46d4b3b2b322bb588b70aabcf"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-er.png",
+      "sha256": "f3c420e84d0f985be25c533e981204b6617317de43db9698e81205d32d96ce3b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-floorplans.png",
+      "sha256": "cd6504e33810c2998705c702c460dd65ab191197dc82852cf84a38b6d46259e9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-flowchart.png",
+      "sha256": "216cec7a36bfb09a8574a9ae32e4a8a9323e045ffa0a155c2599eadf18f5fcbd"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-fluid_power.png",
+      "sha256": "964d94f0bc850909718ee0544c07f3590237d59a32bb7cc4c60e385d605103c7"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-gcp.png",
+      "sha256": "ff0f18569a9a6a536e0ea8ddee44e7d842dc4e31faf199ae16e5bb4cf3083b4e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-gcp19.png",
+      "sha256": "e038e27d65c504af04f53a0e1656e34ee04460ab74c49ca47d1ea695341e14fb"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-gcp2.png",
+      "sha256": "c47166aa692f9a91ecd34e2909b71026713b051476d7da000c35edeb8641c6b0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-gcp3.png",
+      "sha256": "065d1ba7c56afc9bdd0253c951084be3e5f2dd7873bd82e1c1ce87e0cd7e436e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-gcpicons.png",
+      "sha256": "14a3b0208c6c803d8a85a9cbf947dcdb1dd4b0680618ad0d7f49914b47593a41"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-general.png",
+      "sha256": "7e0b748333d42b701dc247f6d8ed2b38c24b732da93465c51e61eb48d4c3d3e5"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-gmdl.png",
+      "sha256": "b6ae1e657afe31ab91ec29fdeeb735b80e6b08ecc82fd9975381a68eff3d7871"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-ibm.png",
+      "sha256": "0bddd4e969342b15752eac1f9dedbf45c4a0a126262542fca2e4016f0dec34e7"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-ibmcloud.png",
+      "sha256": "4b81c19cf5e1c9ed6b962590bedae999d19162d30ddb5dc8b0214af2a6039de3"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-infographic.png",
+      "sha256": "3252530592ad7bbc1616fa9a3e01d2fe21908bf78a712dcf6058834da74eaaa9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-ios.png",
+      "sha256": "212109fb040a18deccd9a0089388c792190f7f3e1dc3e7eb0498caad8f0aa8ec"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-kubernetes.png",
+      "sha256": "f4036e5006bc9b1b80b0c7531342c6ba5a982433cbe5b78e8d723166d9b7ad50"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-leanmapping.png",
+      "sha256": "ef35dc09d569a14d5bf1043da3318304cba61d2337a4e701cc83a14aa62497ef"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-mockups.png",
+      "sha256": "678f23a63fa2213a77117df558db143b3ced19c66d2f6fc871650ea77aecb844"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-mscae.png",
+      "sha256": "36943230fc59160edb54eb037d5de6cf0d7ddbfaf01a67c2b3e2a62ad9b3bfd0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-network.png",
+      "sha256": "d248cc69b7ac04e336c2d75e436c6bc958914940ca294a1b135898bf9a1002ca"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-network2.png",
+      "sha256": "fc65f9d765ef4500d4d54d0c9304d0add83e14054a30fcae076b2c868c4d3890"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-office.png",
+      "sha256": "c51a41ca224a405e6148d79b7b5e0911a380c92ffe473c2cf857f4e97c16e7eb"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-openstack.png",
+      "sha256": "677f65aefae7b85fba4c9ef70025895934f83fa5fcb2171c87d30be1652098b1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-pid.png",
+      "sha256": "a6a5d0926a2b01c8d66575da96bc17f4f48d911a4155ff65dbb91928be281598"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-rack.png",
+      "sha256": "ba9aed4fd560980549e8a79f8444e0621af666e6af9d6ef81fd6e58ea92d7979"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-salesforce.png",
+      "sha256": "113bd89a4fece0a9dde91efb58d96c3103661c0bf5f8d25ce6468fdd65fcf785"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-sap.png",
+      "sha256": "639bdb23d28c55a76f3bb16f58e3d649e27a9073da976335a9d70a812e99f1b6"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-signs.png",
+      "sha256": "746ac72db2db7776626292dff6116ab6f4abbda2b3f829d15fb335d36b520ca2"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-sitemap.png",
+      "sha256": "96543eb89585bd22ced566974c8de72612204e3824a182818d231094e7273099"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-sysml.png",
+      "sha256": "06f8d12da1d6c964f9063d165b7b2270b4920e690223651c5148f6ddc95eeb2b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-threatmodeling.png",
+      "sha256": "b4d750aa41a5cc8b0d3242bbd2e0edbea933dd45620bb604a07f18eb4adf392c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-uml.png",
+      "sha256": "57ea72fd6b8823f1c74809230c36c036e512ab404b26c7d846bae7f061a93b1b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-uml25.png",
+      "sha256": "d56de84885c847732858eb060cb0a875d096d9c8e1ef8308669c334f01d3cb69"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-veeam.png",
+      "sha256": "3e2904172d1c8e77050800fe15fe1ec943e57819726ccab704e7c74ab0c2c3b5"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-vvd.png",
+      "sha256": "0346986774d3fb4ab6da8f4e1555f9ad82de9e7bb75e34e877c1e9038c9d8ffd"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sidebar-webIcons.png",
+      "sha256": "3b96eeb10ad4a6740dae5ec353884ad0415564571c693df9722b966c1e1e924d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sketch-logo128.png",
+      "sha256": "540637944ff556128a2e8b6876d0fca0e0a92f2790548ae4eeed43b3eca7bc08"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/spin.gif",
+      "sha256": "b0b95550a1165553d821f6d82a4e8d07b90858f297c3df53aa52819ef659a685"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/sprites.png",
+      "sha256": "41006f225c400df67bf28f97e6c8782f890d0e756fca95252577ffa5f632510d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/stop-flat-icon-80.png",
+      "sha256": "c3eebd7c0a6c365bb4f7ab60265c120290b18e01665e823aa5c178fad2877717"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/submenu.gif",
+      "sha256": "27fd8c0977c2a820f76cdb93258b1cc5a5f6e7c375df83092ec29eae7a89d23f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/touch-submenu.png",
+      "sha256": "ef2d693a2095705a1d7ac76e36e0ba76d4800dbd8064d7736b7599b6f02a6f1b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/transparent.gif",
+      "sha256": "3317f2023f9198ebaa1247c09643f0fa5b16db15461e70066e6a27abdae24931"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/trello-logo-white-orange.svg",
+      "sha256": "198de15a5d29905addb6e5df1ba6c7218d9cf1e7c4b0fd160a972dac1f984d1e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/trello-logo-white.svg",
+      "sha256": "660279ff0c38ffae6c2550c1993785685ccad43f17380da2a47742357a8d11af"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/trello-logo.svg",
+      "sha256": "b75d4764a0a2b6fd85e666421e254c38f4f9b25997a9687b7c39fd54adecb44c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/tweet.png",
+      "sha256": "08cdc441e0dd38dc6fa5f9c1cb2ab5a78aacae32f9648e2d050164e471f2c1f4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/update16.png",
+      "sha256": "c90d23d4a837166d2391c175af60c25e23f2107ebe193e7007e01328da68a6b0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/update32.png",
+      "sha256": "f51945a36efb55ce0667b60c31ffa342a2a99b4693b950b3559e4717a7632f2d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/update80.png",
+      "sha256": "6354ee9ab83b0f0284c969a7e87e993192abfeefbb276274d566de28c9589a33"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/images/youtube.png",
+      "sha256": "ad7a550639af2109daa7293e57cbf7e9772b051bb678ce166e8f6baceb51acfa"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/index.html",
+      "sha256": "6a922945a4c3a60cda31af53fda8bc4bca2324ddc84e306fc435fa658e6c7563"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/PostConfig.js",
+      "sha256": "f742368e43865e92106f373e829b089b88a076dd04f47307080519f2c38e9a0a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/PreConfig.js",
+      "sha256": "b8655ef28c207ec5e8d3ac207a26d5311499e0be8b97ee08aae9154d69199a07"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/app.min.js",
+      "sha256": "4c926b6baa1bf43fb764a7f43008b554f144a47eeed7ce822cfa102cae9eadca"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/bootstrap.js",
+      "sha256": "e0ebe88fe83bdce09d5836306285891f2d6f259bf76677056a071bbba7cc0c9d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/clear.js",
+      "sha256": "3adee78be6e1fc262377af3b406e9d6af0b18e2d44417358695c3f1df028d70f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/cryptojs/README.md",
+      "sha256": "364e417e4ee190c519377d7ba2dafd49c57293e4044603b493e903315b7846bf"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/cryptojs/aes.min.js",
+      "sha256": "b617e063cfc9c9a31c5b5ae1808285dc616ee47bb0cc1e85b6d63683a155ed19"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/deflate/README.md",
+      "sha256": "cf55dad08dfa533ba7dfaa4015cb6b92c540d3468ce5cd5cad8898a1a13c9f17"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/deflate/base64.js",
+      "sha256": "6e1c49e00933e42b54062ccccd46a61d5f66ee0d729eb5fa6260dfc32e0bcf1d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/deflate/pako.min.js",
+      "sha256": "7420457ec218cafec3515b75adf7dcbc8c3e46b020fa81c3c7c9f0a89973e370"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/App.js",
+      "sha256": "c9dd6a89ae68bfc9ef34ecda9ebea602a87d842a78a16857fb24b4c6a8deb67d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/CLAUDE.md",
+      "sha256": "0cf4cbebb6bb475ea03500cb56c029d5cdaa4529592e801ab006885d61f45b56"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/ConfigEditor.js",
+      "sha256": "d01914d2e9f4bb7763096c2222341e3390f0b933fe2edc56c9a7d3f3f3283970"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DesktopLibrary.js",
+      "sha256": "917e8797dcae80f98bd8e81e6d8575d962857ba2897c315e9b4e6edfd75e0ab0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DevTools.js",
+      "sha256": "cec497e4dfd28e208d1afc63af126b893e3c8cbd1b84cdf1d50e5f4159d16118"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/Devel.js",
+      "sha256": "d45377115c8c4e17c796ba7b0371d6ddce39f633ac7009979e9721d00ac580ff"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/Dialogs.js",
+      "sha256": "ce3d518c8eae7f44595513d21b26798b086f54b5118c4119f1d45e59f6912439"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DiffSync.js",
+      "sha256": "06e396cd7d49d078454577a00a40d421959f1d61ab03132e85a4d551ce1ef7b1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DrawioClient.js",
+      "sha256": "58edf85361bc32b81e5f2b2684fdd509fdca8ed446e84867ee8f16e935a5ff3c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DrawioComment.js",
+      "sha256": "126cdc0e0f2b868a6193f412a09e83ac9c6dc7677194e9500508f61b9eb4ef1f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DrawioFile.js",
+      "sha256": "a9cc239669c8ef012fedccdb0429954ad42a8d5530e68a62b7f49b870421ab6d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DrawioFilePolling.js",
+      "sha256": "2ef6a357c5fae1ca7758fc22fa6643b62c902ea5216c5ac06da4e86bdaab17d9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DrawioFileSync.js",
+      "sha256": "0b5011035f482131290e1acac00299919b4d5e29debce7e8a4a2a006c191f62e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DrawioUser.js",
+      "sha256": "e28d08332260394169bff16e2d3f1d1aa99ded84391bb19da17c8ad899367684"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DriveClient.js",
+      "sha256": "63948501ff9ece71b989c910e4611d7496e10843b6c2f41f6e64983e5c558159"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DriveComment.js",
+      "sha256": "6003484fcf36cc6b7d1a06d63a8e1d11339f8854c218fcc9156a9b7eef1fc0a2"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DriveFile.js",
+      "sha256": "9b7a5a0a3cbfe10a9a14c27f421c74f356bf2ceb704337140140a665633c16d9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DriveLibrary.js",
+      "sha256": "5fe70eb84da2dd828fe7a96b8e3c4e1bb0524d88999f6b8748d57e961f6a443c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DropboxClient.js",
+      "sha256": "a0b8babb082825cd10758e591ea502840fe27f4ed4bbbecfbda1c67c23f07e21"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DropboxFile.js",
+      "sha256": "9cfaea33ee027641b690201be89a58e9e6d455f99832204f3e519952ae1099a7"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/DropboxLibrary.js",
+      "sha256": "127163ea9214c07febc39cc300b807944f86c477140b6dd36ba1460c048b952c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/Editor.js",
+      "sha256": "4485cca36f2aee0b2a0505b979a9662799a1d2bae8d12d362cf03b4613c5ecaf"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/EditorUi.js",
+      "sha256": "273d67886cc8e8974c6827ab0bcc0d310a73f6ec7a4246c0562473b7e1e4036a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/ElectronApp.js",
+      "sha256": "4a538401e6c1fe04e4c82e84769755cede8e18fd780edb9a34711d61185ab05a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/ElkLayout.js",
+      "sha256": "2b83eb8e18905a352fe83db0d6959981baf7a1ec4d18e8fa8f2c2657050ab600"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/Embed.js",
+      "sha256": "525614e90040cd7d98bb1f9e1cb0303c2059546c7c8af2c03f4f06004d80dc15"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/EmbedFile.js",
+      "sha256": "50379080a9086aad8b8a6b94913fbb82aff4d57b493b18505bc5c3caeb65b5ba"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/Extensions.js",
+      "sha256": "9d22f35cfe06f394af6ac3cfc1e692421d6184de978d278ea62a9eb5bdceff8f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/GitHubClient.js",
+      "sha256": "c6a2c5d49a97c8c6653509f85e0c56ada2214c7740cd36941df84e33596314dc"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/GitHubFile.js",
+      "sha256": "63a36414ae6010abf217e84fe9640d6e5b756b70fee8ea904ccb3e137f98de82"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/GitHubLibrary.js",
+      "sha256": "846ea5b0e5abd2ac58bff381d60a18422157df53759ab885c79897d29b4cea30"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/GitLabClient.js",
+      "sha256": "9dc71caadbfb03ea4018114685281c0bf77eb36e62d5f66eeeeff071753bbeb4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/GitLabFile.js",
+      "sha256": "4606152c65f3e81c0f2995153681092c80cc45314c6b6cb1555546408562db76"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/GitLabLibrary.js",
+      "sha256": "65743e6f07c45ae263897be9c8a555794acf3a92acbe2510302c05a36c14c86c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/GraphViewer.js",
+      "sha256": "2659c10fb526c51c6220ad55276081d776bb580b750173070600edbb19e6fc37"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/Init.js",
+      "sha256": "887f97862b758a01546c04104a71972497b5e36454e7903376f362e16ecb3c2e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/LocalFile.js",
+      "sha256": "6e77f476e173474088bdbc31b60356dda3a517b36078b2718e3b259667d4cc3c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/LocalLibrary.js",
+      "sha256": "26683bc48ef2e9f7a04dea735ce7836008e28ccfad43275040e99a55fe8606f8"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/Menus.js",
+      "sha256": "0a2f0d802979484e5b564113607db41751ed0d8b8176516b707ee7a85930771b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/Minimal.js",
+      "sha256": "bf3530ee5f87090c38c8b743dfef10673e4d4ee1c0e6b70ca43df6094029c9ff"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/OneDriveClient.js",
+      "sha256": "2e34c185bedf707f8cafdcb14950277ff79bb618a28ee387771cf7363c8d5561"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/OneDriveFile.js",
+      "sha256": "fe4558ab8e33f5327dfca9c026f058fc4951e57933c6e1c77549e2ca5b677924"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/OneDriveLibrary.js",
+      "sha256": "7b5cfc5239bcb88c6e6a0d73a9532803eef6610ca3327590e933486da2a228ad"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/P2PCollab.js",
+      "sha256": "7f6b9c7c3e6b5a1d606e7bf247ec2269bfb1a34d4e7d3f048eb28f919e454109"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/Pages.js",
+      "sha256": "5ab7addbf35e8da29f36b5ec2626cd473d946605f4f4f812e0c3b605f406a0df"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/RemoteFile.js",
+      "sha256": "923a19fa8c3dccaa6e764c48bb943d3168d4dbe100c1f0358437f92b4478a73b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/RemoteLibrary.js",
+      "sha256": "d97b8602d63159dd11db95c202cc810847ec8bc1fa8b94fe076c4e0fe867708d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/Settings.js",
+      "sha256": "c92a19150d03bbdfafec1f513ab0149f243e3d6d9faac22edf680f9fedda31a7"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/Simple.js",
+      "sha256": "a8f9810adc3a7998e601fdfb6c4152ba02c39cf7f1abdae079fde104bf052c7c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/StorageFile.js",
+      "sha256": "b911d9c1c4e19d89f915f8f9e47bd3c1e74136459922efcaf23d1ed8a011f639"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/StorageLibrary.js",
+      "sha256": "32ef9e5dda1fb646acba05ae57ca31b8597bcbe91f3ef3302efefe2cc4b59915"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/Trees.js",
+      "sha256": "1fa2f8ea07ce0075b12e82ff615b646b302210265a83242ba2fe4c1444a62c1c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/TrelloClient.js",
+      "sha256": "b79854071e5a186ca8c6e01364c0345ccde77872f4724b16a2e37eec68e7bb0c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/TrelloFile.js",
+      "sha256": "a212e886137fb226200db6a2bc2cf86861b000d81444f1db020816a04dc4b3f0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/TrelloLibrary.js",
+      "sha256": "222275cbedb107c19d8b98e7cb8549101e6e08ea9dd7af21bd65a438d57731c9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/UrlLibrary.js",
+      "sha256": "5843ddd5f7b958a424216b7b7cbfee6224c47b6e150ff0938bc7fd1690b5a7ec"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/emf/emf-svg.js",
+      "sha256": "645339b0bf2e4997ab2c15a92ee0de6b37f3bf441bc3fcb565aff5a8042780bc"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/gif/AnimatedExport.js",
+      "sha256": "d38d1f792691b3a9209be52405151633e538db3b1b1fa20db76f5cf96be3d178"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/gif/GifEncoder.js",
+      "sha256": "dfa6df910c12164a63515d4c51b3b60bb616ff9befbf780ecd905d2aeee8a167"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/graphml/mxGraphMlCodec.js",
+      "sha256": "a63b887b3af40dff005b9720bd798e5ef2ca943462092dbd030a29844117abde"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/miro/MiroImporter.js",
+      "sha256": "bd0ae3749256d50ef29fafe83091bf4ae37c5342a4f80d338a129b9df82e0f2b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/mxFreehand.js",
+      "sha256": "74c48e105fc25f76d7f1d2a6a59806e1bcaf3f9d14e29b05c64f5e925a4ec3ee"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/mxRuler.js",
+      "sha256": "e0cba57f4ff461fe630efafe2af85587ede706ff8888ceaa77148c46b32ff4eb"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/sidebar/CLAUDE.md",
+      "sha256": "72639b88440c68febe678555aa5de608a50b2ca81b47a51b86fcd332cee9d453"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/sidebar/Sidebar.js",
+      "sha256": "d8a5bed3301e806ddd612ee7e57ec0040ca2f6892cc40241f0f366750d2300e8"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/util/mxAsyncCanvas.js",
+      "sha256": "99a9fe09e93f50677ec8d1dbb9e3bd88db2fe745b95232957c24027be636d0d7"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/util/mxJsCanvas.js",
+      "sha256": "061584c774999c25015b2fb0a7c2dad0bca2e7c5228ce1034c576705e70c3ca5"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/vsdx/CLAUDE.md",
+      "sha256": "03e4a029c2dba8855dbf1d013584052d8ef65c6d86377de425fcaa95cbe0198b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/vsdx/bmpDecoder.js",
+      "sha256": "a64eb6c2ccce0d517c04ba1f5dbf0c56e83cc924dd795d476d5964052f49c85c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/diagramly/vsdx/importer.js",
+      "sha256": "a24b54ddfdabe694bfab98cdf32f52fa41ca16169966e077195ecb4551cb3ce8"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/elk/drawio-elk.min.js",
+      "sha256": "120966103a75f9091642246661f812fc5f9fde0e3ead21cd69ca440f153076f0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/embed.dev.js",
+      "sha256": "8d4d59603ed33410769679e1ccd0e1ca6e1f898e41bc5f9adafb92c927b19b51"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/export-init.js",
+      "sha256": "cf9b6518b7f34c62ff0cc3f1f049fae340d2e7f8b486b3261ee5bff211a73d58"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/export.js",
+      "sha256": "1e6f6ed5213626234622b6a67fd0fb85bf91e0194fc8f7de0c7bc88b987a23a9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/extensions.min.js",
+      "sha256": "f3900252f82a718d158e627f49f1fd7cd2c85fae51b17336bf67238da6d9c6fc"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/freehand/README.md",
+      "sha256": "0b54f3f1dfd5cb500063c1f342222a6b33f742605ac4e52c51bf98dda255d7c8"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/freehand/perfect-freehand.js",
+      "sha256": "987dac64dceeba68467916022418d35b903b9718890eadbe23422fcfcfce6732"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/gliffy/drawio-gliffy.min.js",
+      "sha256": "52da8c53b83045f17afd6206dba06f64dd72f14d911e997a069f042869403a8f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/grapheditor/Actions.js",
+      "sha256": "71cc5371e50c16c16bfd6a06eabc5b85db2b71e788eda0b89f0fb58a708e3f34"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/grapheditor/CLAUDE.md",
+      "sha256": "ea3dcf4d467e7a9fafc9f2951eb453ef51827f574a48ecf4c3fa86116c683fe4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/grapheditor/Dialogs.js",
+      "sha256": "f3d8f0e5c2e6b8838ec4652933bcc48411ee86feefe66f984fe42d1b6fd7a1b9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/grapheditor/Editor.js",
+      "sha256": "2ffd4df12d224663a0ebdc8e14ffc94241f4390cc9c1afddd36e2f9ca2c3729b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/grapheditor/EditorUi.js",
+      "sha256": "b7bcb845821eb02cb893000e22421be2da53485085391f6f6ebd95187dffef80"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/grapheditor/Format.js",
+      "sha256": "da46559081aede0b5ef4d01d113f0673364e854743e4e4c74c5ba1c4853fe08d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/grapheditor/Graph.js",
+      "sha256": "aaf438b145c1ff29f5c94344a8c4383c2b6a50d63fa8ce6c41d61b08fd9a7ade"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/grapheditor/Init.js",
+      "sha256": "18330179bb5316d4361ae3e0cb152fd86f02145f16022d6f175c04af00b496d1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/grapheditor/InlineToolbar.js",
+      "sha256": "c3ebe73541a0307617dd8a2fae1bab60df6b591ba12b5f8245478f1fa9f61fba"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/grapheditor/Menus.js",
+      "sha256": "ea9c273fc83e08a60aaba45a163eac6a0afef9d40fda21e3ee4117db5c3ffd5e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/grapheditor/Shapes.js",
+      "sha256": "6034d7b132772e6ab98821739a43eb48c8493d1237d168d394b204a7a07e2e80"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/grapheditor/Sidebar.js",
+      "sha256": "d391d21ce7f4f02cd69749a6230f4313247cc456671e3facb7d8c04dc2cb2726"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/grapheditor/Toolbar.js",
+      "sha256": "df4946602b5c4eb1c15cc8f9f9eb6bf47baf5ab951b48684e9bf9e69102585ca"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/jquery/jquery-3.6.0.min.js",
+      "sha256": "ff1523fb7389539c84c65aba19260648793bb4f5e29329d2ee8804bc37a3fe6e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/jszip/jszip.min.js",
+      "sha256": "449129fe5458a0ff04ecc969c1ad061b8882ac34e60926bc8f13ba36b614ace4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/main.js",
+      "sha256": "f2967ad73f4d8d20d8a910208a9ae8998d8c0dbaba90f5be049105b8496aa01d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/math-print.js",
+      "sha256": "a21ff426724ed38e72de19a9bfdd8499b78f4fb02924676326a7221792d2828c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/mermaid/drawio-mermaid.min.js",
+      "sha256": "fc5e3067ea0469e5cd55f50465d7fdaa0d30f0ff4416e3d5edf8fbe5bef9f784"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/open.js",
+      "sha256": "b31790e3a1e3b6ca4f24886f0584d98db1945017fa89b711b8d255be939f0e8f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/orgchart/OrgChart.Layout.min.js",
+      "sha256": "74aca070a8332631675011b55949195896d9badb7ce2f2f318207c5a89ac2a54"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/orgchart/bridge.collections.min.js",
+      "sha256": "5988d0038ae7f39ecc7d7cc939b6d42b5b28b3f17c045faaab112e6662093e23"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/orgchart/bridge.min.js",
+      "sha256": "479694cdb31c5c0f3c19926439a677361fe401a9cc366b4a04aa542daacd301c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/orgchart/mxOrgChartLayout.js",
+      "sha256": "2ea396e6f24a1f0393791013b56b14319fe0119105da1e0e8acc10e557927e2a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/orgchart.min.js",
+      "sha256": "a731393b645a51c70776032565494c391fb8aabf607c24c2d05b95213ac46e2f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/plantuml/drawio-plantuml.min.js",
+      "sha256": "27597711cfc3cf9659fb248c074e78ab35c1083e7487875aa1c465e1c37d58bf"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/rough/README.md",
+      "sha256": "a25fe69c9ade636d53298dd25d2ea317178ca59fed850afcb723b8e2381d366c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/rough/rough.min.js",
+      "sha256": "2ea1ec2378ed9a64a0cd053edef6d9f3d1545b6e568938bc1bde2f990608310a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/sanitizer/purify.min.js",
+      "sha256": "f263b05369e050fa175d4ecb9c9358eb4253602d510297adfb31df48b2f1c4d5"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/shapes-14-6-5.min.js",
+      "sha256": "15c84012f00aa83ab808390f3d0edec040224b60fc8518edcab9475e1a881edc"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/spin/spin.min.js",
+      "sha256": "1c43ca73e4517a4cf15a24adeeb063722409714b8baa1eb213640ea6838cee45"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/stencils.min.js",
+      "sha256": "09b35e0ddb10b5fa1a59c6c5e8633193186ebea416dd3341365ebfe1c9dfa2df"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/viewer-static.min.js",
+      "sha256": "e49a0d5d1eac05351c3d21a22d5278fcab5d20066bdbdf074edc0b9989c611cd"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/viewer.min.js",
+      "sha256": "2d0fef32815c79f1bb51f225effddfc57e111461bccf8386eed29c7cce3ab088"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/js/vsdxImporter.js",
+      "sha256": "c2bc294ad51554ec413ac7641587ad2bf4045a163f1483a11ba1d90fb9c8d4d3"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/core.js",
+      "sha256": "1a3cb32a18199355c67b8f78f57598dec8c253f7455ae42ac3f974b548d43a1b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bbm-font-extension/chtml/woff2/mjx-mb-bb.woff2",
+      "sha256": "e89ff9a0bc201208bdf207dee21c8b6e2d73225b64e4ed2aef873103723c01da"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bbm-font-extension/chtml/woff2/mjx-mb-bm.woff2",
+      "sha256": "deda86f48d408321def7300943be96bca362b978f4fb6124a29675c6349776f2"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bbm-font-extension/chtml/woff2/mjx-mb-bn.woff2",
+      "sha256": "03e0dfb065d3b053a9088e0236d4de6926ecb6d69c8844d6e2baf1c44c084d76"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bbm-font-extension/chtml/woff2/mjx-mb-bss.woff2",
+      "sha256": "b404332e0dbd76ef31b18a9fd561ee9a763036296445ebd99413f6ad38a9de5b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bbm-font-extension/chtml/woff2/mjx-mb-bssb.woff2",
+      "sha256": "76dd9408e6dc239c4b9043ab0c16fe0682c7e9cf6290aa7ae28da975e5f0f456"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bbm-font-extension/chtml.js",
+      "sha256": "d5e9073fb52f7b5d4f8c990e3e6f4d29761902213052ceb8490b0d0393298b74"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bbm-font-extension/svg.js",
+      "sha256": "dcd83c7439be878000fbe01e0e1177546b8c2e42f2959409113f11622b7db5ee"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bboldx-font-extension/chtml/woff2/mjx-mb-bb.woff2",
+      "sha256": "f86d290e2e25979f818fe15692ac7d835919cab3ced810b71affb8822b12a604"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bboldx-font-extension/chtml/woff2/mjx-mb-bbb.woff2",
+      "sha256": "60ec658d62f7eea1fde6928cb231e39353317fadf21e202872041eb817c40e65"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bboldx-font-extension/chtml/woff2/mjx-mb-blb.woff2",
+      "sha256": "44d8ac4b74307178297cbc0bec4fd69e5dba7456ad025360a54113b212c5b574"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bboldx-font-extension/chtml.js",
+      "sha256": "7d40dbaaac593d43e27db3aebe660605d6dcfd67e8cca77cf936e0141f6f09ba"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bboldx-font-extension/svg.js",
+      "sha256": "90664e46bd253083e4deb2cf4501d6d61c5d72d3c56639435c8996ce0c43a6e9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-dsfont-font-extension/chtml/woff2/mjx-md-dr.woff2",
+      "sha256": "8cb9cbb1372de14c6f54d6c1a007b89ff5ad823aeee1589a072229e3d86d5df1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-dsfont-font-extension/chtml/woff2/mjx-md-ds.woff2",
+      "sha256": "e79fe826b4613196f88e61401036981b0dc28d564a404406b55c3b23344ceeb4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-dsfont-font-extension/chtml.js",
+      "sha256": "7deaf170e8d1af1aa4482552da2946c1ee244fa9d9066ab847114c11965471a6"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-dsfont-font-extension/svg.js",
+      "sha256": "72bfb298b4167d7048dd564a1c625775e87efb4d415140500de362639756ad32"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-mhchem-font-extension/chtml/woff2/mjx-mhc-m.woff2",
+      "sha256": "2ea308c69f139e9ee7bc452e12a449c13e3b9ce4c08aebc4e86e15df232a26e0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-mhchem-font-extension/chtml.js",
+      "sha256": "09dec3f1b8299aa81b5d4e45fa8ef4675f6a1907056f030a357fb9916bad8703"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-mhchem-font-extension/svg.js",
+      "sha256": "59cbf08305ddd6bac14dbf2e2a6b3c2f3f6870107ad16d381870fdb0486eea73"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-b.woff2",
+      "sha256": "69e45ca329dd2fcc3671dc20884f2baf29348a43833104266be098eba544fda2"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-bi.woff2",
+      "sha256": "d0c95edf7b3223c8e66fcb4b6faaf74fc3376eea59c20f23677f4d54905a356e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-brk.woff2",
+      "sha256": "4f03a0d86ff005f12cbb0ffd162bae0766415e48e07ed3fa5970e685594de15d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-c.woff2",
+      "sha256": "1faef92bbe440c459bcea0b7530044827749507e39bf49248c2203f9eb422bce"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-cb.woff2",
+      "sha256": "03de6a3467f88e79425df3505a936e6b336efbc5c0421f40905d1d52fddbe4ed"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-f.woff2",
+      "sha256": "6cb008e934883d1f4652562276469dfc1ade06ee4ceebd6979e79b1c98472b47"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-fb.woff2",
+      "sha256": "303b28cdca9c064d93dc1672b843933ab20e28f777adb08b9eafa6f442f074d7"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-i.woff2",
+      "sha256": "82c82a2e0c8bc89421ce9cbb4ecea806c8ceec4b4fd0269726b9439ca853b365"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-lo.woff2",
+      "sha256": "98b20475232f47749126ae098177b5c71d3b6512e068efedb3a912c2c8f6ed0f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-m.woff2",
+      "sha256": "82e8abfaecf005f639e18b1e7dece8700c56df76eac8ea94e4b5915bedee7567"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-mi.woff2",
+      "sha256": "4bd1e8cefc7cf1b9aa2f2c6beb01ecef7ebf5d1f81d82f954a9688360a399fc3"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-n.woff2",
+      "sha256": "fad3b88ec7aac4959e3de19044931682bd4d1500c72a85d2d113b73b694c4133"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-ob.woff2",
+      "sha256": "62f1a8f7ced532d6ab1f6af3a5b3363eb6c774fe40d29092bbea27ac95a9f89e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-os.woff2",
+      "sha256": "01bc6e82013dca9c1cbb132c353a0f63add97325bb979bba5e619591525c2a6e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-s3.woff2",
+      "sha256": "07165a0e10ae4b6b24db34b28d0a8c46bd4ac53b4d1682098ee7a3e88d2f1c83"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-s4.woff2",
+      "sha256": "b20a0e1b03043ae1a540857bdf1b220297ff0e78b110b1e15554addf91ad0937"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-so.woff2",
+      "sha256": "0e9f0e5baa090d44c728e2ddaa39b4c465ff15d349e3547488503eb318628a45"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-ss.woff2",
+      "sha256": "e0d564a939fce2e4d0c09a86f0dc936c2a9cdb42e44eb264dbc5ef01d71e179c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-ssb.woff2",
+      "sha256": "4a2e4827bad85a9ae5fe906f179ccfce154bfc29e19115ceb8d7f1f6e8ce31cd"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-ssi.woff2",
+      "sha256": "b6dfb310dd7b5c059e9b748b4766fcdd6fa0005c17d9229f3bb1bd095acfae1a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-v.woff2",
+      "sha256": "bd9d7db0883dc1adca7ed1c20042609e4e3d1f07f106b6bc8eeeab49d560393b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-zero.woff2",
+      "sha256": "2c146f72c9a345aa282398a752d03af71d83a011f3d067297b533a31f0c5f5cb"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml.js",
+      "sha256": "1ff6fa2f22384fa16c0575f09b98ee4d900a61d185f6fcee4e960c0d2190d0c9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/svg.js",
+      "sha256": "ed5c78819c63883579fb8a4bcec97a2a2fe32e8a0a7f504273aeece0ca396a33"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/asciimath.js",
+      "sha256": "ba4f20f2f1b2e7ebfb45afc3b9e195d84a749e5492555812be805f6a11ad7066"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/action.js",
+      "sha256": "7c46fc1ef8118723bf2f386d704ab289e5dd683471e0ad4e1e717244959b565b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/amscd.js",
+      "sha256": "81d6115aa4358a98da5e6d477ac4198cbc11c2c2752745b3529a8b6e2761202f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/bbm.js",
+      "sha256": "fb780f6e8ca565439b3c6dc78f3e42b525905fd43c5e15471994a2a1da914ca8"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/bboldx.js",
+      "sha256": "772503b34ac5b7c56e56c7698403bad6ff3ea3fd1882c22b4e1ef518e6ef86c5"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/bbox.js",
+      "sha256": "9d9ff6d1c592d2a4fe728412d2d5ec29379f4721bfa3b8356ad2045eb939b848"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/begingroup.js",
+      "sha256": "0f606d5a71301992e92d8697ccbf8318736110691d8a94303f3f254cd589421a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/boldsymbol.js",
+      "sha256": "baaabd9fb430fe4fdbfa9db74aa60b118dd650a68239280368abfd1bc30a0e10"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/braket.js",
+      "sha256": "d401832d91ca89fc8f76cf1ea67ce25b21c4a2b1d9da0db605204f262c8d69ee"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/bussproofs.js",
+      "sha256": "87451074cc17e2c8064d630b91cc56171182cc5a46c1313006014f56c498d8d4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/cancel.js",
+      "sha256": "9ff91ff84d9776606cdb66da62ffe9bb39cfdfabcf070f214d35e553689ffece"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/cases.js",
+      "sha256": "6805d481aaee3f78d82bb9f0b6b9ac47b0804c30f10253394724459d95d41a8c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/centernot.js",
+      "sha256": "e3c08e96d11f020027a9b325e7b8661f08940babba218b786ac29d50d822dfba"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/color.js",
+      "sha256": "f569ebbf53726afeb3f7a7803500ac2088aada400a2000394879d0b503311b17"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/colortbl.js",
+      "sha256": "dff289abcff30d0e109eb51a6f6be2d09e46b7e1db5bc881719f9f1bf483ab8f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/dsfont.js",
+      "sha256": "74a9961b43c43644c28c582fc14031b7f42bac0b771140a5d80af383415ea978"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/empheq.js",
+      "sha256": "028e775eca9919375d3397a947d6086383ec99a501a5080b2833ffda5d578a14"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/enclose.js",
+      "sha256": "5301d91e2e7d6f86a29c13c1b9726b7476b9de9b1745011886c914372fab4cf3"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/extpfeil.js",
+      "sha256": "2d1f82bf22acefe6c358e3a3dca293cc2fda338f2db4fd147befc75122c41841"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/gensymb.js",
+      "sha256": "cd5cb8a68719acc0c215f4377e4d37eb35d4f49bab26c7e46efff5e4dbc7f6d3"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/html.js",
+      "sha256": "a647d13d009d5ecee4239cfe681ef831f2bd0f2a91033b922ae6bf3481d156e0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/mathtools.js",
+      "sha256": "0a403d24ff0fbb698cb0efd1cfe8569bfb47e492165204170481e7e6619a1dcc"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/mhchem.js",
+      "sha256": "7447710d9804aea68b4491e8fde752d69a905e0d27a8a39705c535f64cfa7fdc"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/physics.js",
+      "sha256": "3a1d1b0ab203b446a2c04d9f5a0bf59e6225c83a27aea0b2403f28293aadb79a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/textcomp.js",
+      "sha256": "d085215c2d77df0c8dbf460b991c59efa9e69cbd7e1f6e94bf5cbb363aa1c69c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/unicode.js",
+      "sha256": "bf1ddc9fe506f782c0e9271c0c52c4b258f9e4eac3d2905274d0c5d239e2a2b3"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/units.js",
+      "sha256": "25278814cbc050fcd4e8849c014c238cf6801e00405e0acaf5d98924fd1e26a7"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/upgreek.js",
+      "sha256": "0f4c96104699aeada37446dfb3d50438efec4e11c58982abaa2ff781d42d3667"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/verb.js",
+      "sha256": "b2290ff1be4d33c57dd476d87d1753d4cde0a5991612b4a24db881a15c85a250"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex.js",
+      "sha256": "0375844c0c9698b3c26bde0c78b5bc62dbfbe15e3794433dcf7e0b4b3ea2b69a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/output/chtml.js",
+      "sha256": "9037308c64af4028845b36cde08019e311618cba40605483a4f0606a22f4ac69"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/output/svg.js",
+      "sha256": "6151d21b8205858c103642484f1ca272e3c9cbbde37d53235ac0572966ce613d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/startup.js",
+      "sha256": "13a303eae8790c5c79eddb2afdd3d22338be6fe59e0b526ebc92d00b88d98a1d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/ui/safe.js",
+      "sha256": "ddd5b5eb3076bdf71c9b0508c58fae095b441a22b7bf2ff2e1ad5ace389f49b2"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/css/common.css",
+      "sha256": "080278000f2a3bdba6d29f426f24654b5041539d3c4868a9434028e141db92a7"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/css/explorer.css",
+      "sha256": "4699a378dc64e9d4b1d4b67bd1e300642dc8e58606057c544bc11af35b438c6d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/button.gif",
+      "sha256": "5ec83478ae7776cc7dc43e8f429252cc0ac856a00003df2b7fc001e1f06da79f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/close.gif",
+      "sha256": "e0efce89bcb1d2a9c596adab5abb82439a42da44dec60ad58c4b4b82e3539fcc"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/collapsed.gif",
+      "sha256": "1eb6f69b7a2c661d65dd70dde163069d7fb832cfe33fd7e247b6439a9f48ca38"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/error.gif",
+      "sha256": "b8a1baae52e64a19e9512a02c962a3b668a0564f9d6fe646d27a48945873a7a4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/expanded.gif",
+      "sha256": "632e813c7f2f83ac913ab3bc3ed637808e326111a857f1c446525a742cbd5a10"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/maximize.gif",
+      "sha256": "0821326fc8f746438d67ec9bb39f5db0cd6cb21c303a80dd32087ed1812f8cc0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/minimize.gif",
+      "sha256": "facda5c66c8f5224852915d3996287485396cbf13b3d804344e76a6f4c83c27f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/normalize.gif",
+      "sha256": "cce3a408453eec8adcf2dd3f2cfdcab15648349d02ee40c1ccf384cb17b0a890"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/point.gif",
+      "sha256": "faaff7abe7e720f1b32b2a50f58cbaaaf28f983f29c73b962410a546d69e03b4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/resize.gif",
+      "sha256": "01af732c18b45f2cc8d9994d4c840b60eddd1a1c30c870c9d5bfe966b044c46b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/separator.gif",
+      "sha256": "ebe40f798d9177a8b927173537b847e59c36d639f6a44021d40f25193aba61eb"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/transparent.gif",
+      "sha256": "3317f2023f9198ebaa1247c09643f0fa5b16db15461e70066e6a27abdae24931"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/warning.gif",
+      "sha256": "8d59783b049993e4290d219bdc5cb5b5c3e603805a55920ab1f66ac05b8e4ceb"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/warning.png",
+      "sha256": "b46f3b67f66186f7f97928010cd136947697fadbf19ba7726b024d14ea95de50"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/window-title.gif",
+      "sha256": "aa9f5716c61821f64adb03df4ab02a8263eecdeaf773664b68fdc9a3b16b23fb"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/images/window.gif",
+      "sha256": "9e8c81494012d84ac2c34fb860d924943b3364034636e4892deb193e43232445"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/mxClient.js",
+      "sha256": "ff277f7a81fec510af87434141cf7bb2e124120683025dc5735ce6aef4197070"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxCellHighlight.js",
+      "sha256": "fb833998380db65c72102dd872c440099fc70a8b23ae83cdecdcc2e7e8ec5ef4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxCellMarker.js",
+      "sha256": "b15259dd87c05caf7b3aab5dbef53e23eab1dfe14dcd01c1c738ecbbd2eafd58"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxCellTracker.js",
+      "sha256": "32ca4b08d6dee81b6900afea7c8ee60a73264ea95e2868b2ae340d1cfcdc0bac"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxConnectionHandler.js",
+      "sha256": "cc04d14f9e4cbf8b094bd3a7bd5e9c3d504065ace942779b38efdbf17fe95eb9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxConstraintHandler.js",
+      "sha256": "1869e86e2519e6fc8c3189065a90a4c7faf333143e377068342ba4afe5f64dbe"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxEdgeHandler.js",
+      "sha256": "75e5a73786156f3d4e28d3f3cec120a6d2a683cd14f718377a3da774ae3be848"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxEdgeSegmentHandler.js",
+      "sha256": "a98b20dc8b9cf84c533b9d03881ce570d13c44d9863443fb0c40fc9e63a0670a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxElbowEdgeHandler.js",
+      "sha256": "061df734afc7ec93c36849f30c085c73d088e36657d5ba4a31e4f9cde5e4010b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxGraphHandler.js",
+      "sha256": "a82918fbdf170b9bd1aef4881a1edef8c599c6bb4f2a3a8f33d1e3f8eeeffa03"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxHandle.js",
+      "sha256": "36ad36076fd5faa7fd7b40af1e95d49c0004997c1345278e7db5a33f6e995eda"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxKeyHandler.js",
+      "sha256": "107d86a9872a2e56b13ac90197ab358e13dc52298d7fb515435aa510b37b1ab6"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxPanningHandler.js",
+      "sha256": "c8543bdb75ef7e73fa7674328c429b23df354a9e7157acb4d0258b5ea631d025"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxPopupMenuHandler.js",
+      "sha256": "d7de1db61686aece161523f1b6a92df5bab87b02bc56cf74c224b6377f7f6657"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxRubberband.js",
+      "sha256": "59b5e483416009ba41a0e12f932d4118028fb920af30796572cd3b6d655b25ce"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxSelectionCellsHandler.js",
+      "sha256": "993fab72a07d039fed09f2c4c2d350b8392f0a4e90f81518e691c270d87cc3e5"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxTooltipHandler.js",
+      "sha256": "c305d99ffbdf13ff5532a7c0c94564a4e7dab3d0bf83a86190e96dc0f4e61a69"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/handler/mxVertexHandler.js",
+      "sha256": "256e52abeb18e6b4793ceac9f6cc4b3fea15e1d175b756ff7d339f98a225dee0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/index.txt",
+      "sha256": "2d4da51489c87d8e56bbcb2398ef748a0f467f3246c3b38d7f62ae6ed8c546f2"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/io/mxCellCodec.js",
+      "sha256": "2328049c7a7418cb776f7b4320a9458ca89a52352c722bda138fd7cd7129b4e7"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/io/mxChildChangeCodec.js",
+      "sha256": "27912e085884d918341049dabc92f1cf0d7d090c77dc79603a9f16ee79c96a6c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/io/mxCodec.js",
+      "sha256": "7722d82f04588760285750fee1ddf11e964c5e89a9c868f5caffff2f6603dcb9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/io/mxCodecRegistry.js",
+      "sha256": "8efb0215d8c34c525039bfbc0e1b6afe82ed45b2aa52fa4663b67f7dcc732f33"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/io/mxGenericChangeCodec.js",
+      "sha256": "8d9e3dc66cec92bbe29460532cbd8762cfe87e3000d0d40fcaa3998c82dda3f6"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/io/mxGraphCodec.js",
+      "sha256": "dc41e292fe54bfeb2152ac42536086fcd7acab5a911f5c85bcd55987096835a6"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/io/mxGraphViewCodec.js",
+      "sha256": "5b1ef1247ed970e10d2baa7b5769875a30c16855a1e01ea36e30bdb66234e10e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/io/mxModelCodec.js",
+      "sha256": "b43ffa17ee2a723b6eff207b0d2c901712e4be3602794b16ac98cc80c89faf7c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/io/mxObjectCodec.js",
+      "sha256": "cd34bc0bd9dade2a409e6a49ff7a6537d5e4d2c6690146099d721dd1ae1f78dd"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/io/mxRootChangeCodec.js",
+      "sha256": "b77e69002574881d428ae1fe5d2f952773fee9be486183e9c288ffe4e400daf4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/io/mxStylesheetCodec.js",
+      "sha256": "00e5837f3a817130bf6cf4e947c216cc9efd24d32672b92bb8eaa09f688055af"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/io/mxTerminalChangeCodec.js",
+      "sha256": "c44b3b870ad0af15434007d1a62c83058bb9ba750e878cf37183752970c043bc"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/hierarchical/model/mxGraphAbstractHierarchyCell.js",
+      "sha256": "91db4cf4349e4951231133ea78f4d3021906063d5769bb1fd420bb58af534de1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/hierarchical/model/mxGraphHierarchyEdge.js",
+      "sha256": "f63693cadfd32631c18314eef7d6f16191a7e002ed73c6bdf0f67bdc1dcf1921"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/hierarchical/model/mxGraphHierarchyModel.js",
+      "sha256": "00090314730541a5e492a74138e5f34bf4949eda33c7927393653a9ad8ca1450"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/hierarchical/model/mxGraphHierarchyNode.js",
+      "sha256": "c3df807dd3f2ff24ea31b83e6c65fd23fa2ddbfb6977815d8c412737ed084e1d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/hierarchical/model/mxSwimlaneModel.js",
+      "sha256": "75874a8991bf60e5b91d914598671b513448b06ba6921e35a3a206568961b133"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/hierarchical/mxHierarchicalLayout.js",
+      "sha256": "a31aaab3ca29e7a09a9555234219cf5d8894e0e17d53c074171ba8948d8d1104"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/hierarchical/mxSwimlaneLayout.js",
+      "sha256": "fbc7805c90b6bfcc81a818baccd4dfa3e33019931aa7e43a8d0aa6ab99565bb1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/hierarchical/stage/mxCoordinateAssignment.js",
+      "sha256": "cd7f53f451d8b59384029d20c6e3197e69bb0e7014397a7dfd1bc0ca7d2016c3"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/hierarchical/stage/mxHierarchicalLayoutStage.js",
+      "sha256": "365fbedda99c6140939da0af455d8b96bf55c8b52369e2524a4ff05b03ea5531"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/hierarchical/stage/mxMedianHybridCrossingReduction.js",
+      "sha256": "356fcce5bf54c094295da2a753832f7b21ae338c52dc171985ae70ad24e13d13"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/hierarchical/stage/mxMinimumCycleRemover.js",
+      "sha256": "27f2f8ccac2a6aff62077718ee59981b1f36cd51f964b34f856e254c5473f298"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/hierarchical/stage/mxSwimlaneOrdering.js",
+      "sha256": "5011ea1a7e21da83671bd2114bc9beef336de9594f0e401fb95ff03829884f64"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/mxCircleLayout.js",
+      "sha256": "97773ffe51b6b9b72f343dd8cec2d2acf493df2831aec371f671c032591dfa7b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/mxCompactTreeLayout.js",
+      "sha256": "79dad80322487035c4821de65c369ef689aa451dd865b08d860a4a528171f7ed"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/mxCompositeLayout.js",
+      "sha256": "d78fccc9ac0b2ed70c8415e6bd5cdfee322b0721e5fd6ead2df87b9bc400960c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/mxEdgeLabelLayout.js",
+      "sha256": "8cf8cd91b21f2b569b36d0be2da5e2b9c9994866deccae4b7438f0a6e0129388"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/mxFastOrganicLayout.js",
+      "sha256": "1475f7bd71e068ff30f16aa0ec12fddd2241dd8242e0a791c6eac9f200fb434b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/mxGraphLayout.js",
+      "sha256": "431089fcb895554a025baae6fe031d54b44bb623f1a17cbf270df4915932fbd4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/mxParallelEdgeLayout.js",
+      "sha256": "38ab0bee86fbddebf7a13f927f910c4497869651c81384efe4c29159299daaea"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/mxPartitionLayout.js",
+      "sha256": "0b4ef3143da671d81a95d186130be9295f894e06f652791496b2272a68a79f06"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/mxRadialTreeLayout.js",
+      "sha256": "c43d55fe6319f3cb51d8f3b901fe1e6cecb34b7a3ec54b2a8d4f8f6380ad69d6"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/layout/mxStackLayout.js",
+      "sha256": "a8f563822939fac690ab36c02f8ad042308a2726cc76583e3f458f921196483f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/model/mxCell.js",
+      "sha256": "857f96c2cef264421032171630f8a7f30e6af16e92bc0ad92da676d0ab4d5f03"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/model/mxCellPath.js",
+      "sha256": "ec86bd53653bff01e903c29be42d90e5938f7f563627ce09a026b7a570959818"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/model/mxGeometry.js",
+      "sha256": "a0b99a4a7e1d5abf3317b365720441ff6eb20e4e296ad5b1acbfb8480e927598"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/model/mxGraphModel.js",
+      "sha256": "634f6f334326e4f9f66635ff7ce5f2a98b3dd0129b90516efefc09791ecb6c34"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/mxClient.js",
+      "sha256": "04cd816916e71a175ef7e6cd9ab49b7ea27e642e846ec56331dc1979a801acdf"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxActor.js",
+      "sha256": "eef5cfedad096bcad491202de3f41847e1da7df41e278e7ed7c961d5a46825dc"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxArrow.js",
+      "sha256": "350e5ee3bcd5b5367ee84284d991d3295f5faf1e3577a1a73ee3beeb91c98bf0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxArrowConnector.js",
+      "sha256": "04c1d0775a422e5cf7c07f5adc304236ac04333c9d952b68f8774ee9462b410b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxCloud.js",
+      "sha256": "cd2f26f835b5bc56f78b9c361f2a14c6258d8bb7fd3137de69efc526d0ac0e3c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxConnector.js",
+      "sha256": "5bd653f1983a75db976ac69ae86d42cad92243863f439a0d026d3f3c05380921"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxCylinder.js",
+      "sha256": "dab778d2f80d1bd144cd55756df37bd7b8fa96fe4a4b2da364d672cc17c3d0da"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxDoubleEllipse.js",
+      "sha256": "e4aa2084434ba51f6be1caa939cec2ff30cb75f151981eba6456da450fdc263a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxEllipse.js",
+      "sha256": "0393e3371a46a4ae8ee39116241db00426cd8de40f31a57a6b241c84369e348e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxHexagon.js",
+      "sha256": "5de14965b03d202907b3320ceedc00895adec09c808f76b541cb90af3dbc7449"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxImageShape.js",
+      "sha256": "81fb33c9f10adfab7757410a006a5d727fd874ddd0f26c21b264a4a0e38514bb"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxLabel.js",
+      "sha256": "34c747f0689df9dd0629bf2f874b155c3ddcdbfc7fb3e667d323c4da8dfa3576"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxLine.js",
+      "sha256": "75c1f2a7542db1c55d5ed804d3426a0b445255af9c9fcf6c9c34e79c91a0a28e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxMarker.js",
+      "sha256": "09757e7e14a1992cadb392610e705628f3adaab38fee32717c470402dbd3b235"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxPolyline.js",
+      "sha256": "322ebbd0461f571f7fb8def483fd882ac1561ea94f6c94ce651a48f90d04e1ef"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxRectangleShape.js",
+      "sha256": "01430b3fd9c1863d83a95c2f73cb07fb0a4790e47fc3da16888a31bf1e9a0349"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxRhombus.js",
+      "sha256": "e6ea0e73f692812e9d60afc28da31ad54ce45174cae54c4003d3c2e11fa6cea6"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxShape.js",
+      "sha256": "83dee26661a77e2031a9d657f10d6ff5c95943a38adacd319167076c196e7622"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxStencil.js",
+      "sha256": "3368ad870bf699c739e28b645b9dd960836934e66274cfd17f6363dac73a5eff"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxStencilRegistry.js",
+      "sha256": "6ee61ad0ae758ec95b0800621f6548e6b72036d4dce708c0eb572bbcb7782842"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxSwimlane.js",
+      "sha256": "cfe2dc9b2de79ccf7666ba89e17e1de8edbec398a2c135a08bfd49f48d3b38eb"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxText.js",
+      "sha256": "a6c0f2c748403a74b11405c864a8278bfcdad216f80ea5b290c1e917d13f9772"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/shape/mxTriangle.js",
+      "sha256": "69d1b744c7956240fc860b89358a9412ec82322d298875b3af14275becf7998e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxAbstractCanvas2D.js",
+      "sha256": "a07870f37a6f16fc501e628a1580524460c2f2531ffc4289cc88cc04945dd5c0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxAnimation.js",
+      "sha256": "a307cf0227aaf077e07339a6e2e3dc331c06aa0fb43d2018c6ac10cb6fc2213d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxAutoSaveManager.js",
+      "sha256": "b5b251094ca900d51790ee8ca144c99ed3dee58e0323b87809796936f44c0952"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxClipboard.js",
+      "sha256": "86fc0a6498862d70a434a33c0fb9bb5621f7245c02d5bbf083a7a69cccdaf9a1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxConstants.js",
+      "sha256": "4b160da28eb639cf24023301e73a6e99ad48a4febddca6a62d5f7d78280b1ab8"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxDictionary.js",
+      "sha256": "b3bcf5864f1b1c694f6b3eb143508ae29a70b06f44fdfe4365fbf54f226588b1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxDivResizer.js",
+      "sha256": "69c498dc47e2b38bfd0cd861b43154bd9e71316d3fea7d75b13ef121542ae296"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxDragSource.js",
+      "sha256": "151141efc055437e11c4c59bb484b0a91c5ad627b4fa86245707f5e392201e8e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxEffects.js",
+      "sha256": "abb19d77519cc231d44a31eb894d1d65ff6e16282fadf554206d282d77530d01"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxEvent.js",
+      "sha256": "1d548e8820246dbf4c065e9ea091052aac2c0d6981cc448a930127cfc7b74b7d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxEventObject.js",
+      "sha256": "ffcdff4f93173be45213eaf8d22d43ab8eebc3db5ade3a1d5710ffa98d4aadba"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxEventSource.js",
+      "sha256": "7e9e8284be167e6c332ee4cb63618ec405e37b7ecffa51f5a7d916fca689c2db"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxForm.js",
+      "sha256": "956bcfbe0916337e6c46d6a34d4b95e90c5c8ab831ba781f045bc312bb9ce50f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxGuide.js",
+      "sha256": "0bf4792a5dab05ae1dbe0cf0f40f79f3ff11c499ec955ef4b5c3c5d5d4703e3e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxImage.js",
+      "sha256": "f7d50548d62a87be03370a8f5bf5038a19b4412061ad68b68b702e6822db565a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxImageBundle.js",
+      "sha256": "453720098da3e1096ad80e3dacd162ef76b36d1b050831008b8a91ebc460d1c6"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxImageExport.js",
+      "sha256": "6657ed69749d49c00907d022445cd8e7603dccce30f98c446ab4ac9330b56924"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxLog.js",
+      "sha256": "36bcc7cf66338da4886f5d0525390d901f7f80e52c5ce3f9f884323beaa4b996"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxMorphing.js",
+      "sha256": "88cc7a790b1ddc14c077d2a104883bb803eb325c13670d98c2187e4664694d24"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxMouseEvent.js",
+      "sha256": "4e9ae4159eba4b434f9ba2437c30c52d1b320106995b588ac1e797e8353a6ba1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxObjectIdentity.js",
+      "sha256": "7e2c38a7639ecb2f5e27ad50460ff0e228efeb9eba5d74cb728249fe0f6af1bd"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxPanningManager.js",
+      "sha256": "a147771466d25cc49e05c041839c8bda6cca807dbde04fc06428226f08ebb4aa"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxPoint.js",
+      "sha256": "68724f1d5442f81980aa90681de33d6fb2c9600f39ae957c8e9a01c8e103a56e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxPopupMenu.js",
+      "sha256": "61369e31bcf12e52114a61bb61ca5acc1b4446176b75219d860870f870c63f8c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxRectangle.js",
+      "sha256": "abe50cbe6485d31048bb8a06bd8992d1bb8bacfa1ae562b608af453501ed6f4a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxResources.js",
+      "sha256": "5f696315f13faeeea4fab69454708540089e484dbc3e5db4ff614ddb1046be36"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxSvgCanvas2D.js",
+      "sha256": "0daef9812e3b8c530bc9556791ffaea53fe9a57091a86534bd909ca31e4485b3"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxToolbar.js",
+      "sha256": "75e99d18397e81586bfd62cc4901c36a95ae43daf04d07079cda44a287fa99b1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxUndoManager.js",
+      "sha256": "de24e8e5a1f2e3491e5fd32da92c9ecf98659365507a5a1201b2b4d1c90514d4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxUndoableEdit.js",
+      "sha256": "fd22a7a8f3e9c11fcaa44d08c9ab2b0584da4d922d18f37fcba3a68f8ada6d87"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxUrlConverter.js",
+      "sha256": "475460a17a00bf40e7294ca7d023bfeb743176d2a67df1cd3d9052a231b3eca4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxUtils.js",
+      "sha256": "0cd56c92e8a7caa374792b18fa6d097bfb8f865b3b380fcb84e28de7428c7186"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxWindow.js",
+      "sha256": "9ee25b48e099cbd9141af6a04dde168682d1700627f4aa55ac3826cf0b1cbef7"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxXmlCanvas2D.js",
+      "sha256": "5b53f49ca178be64a716786e8fc81e07a8a86ef1d86cba4b16a3cca814099921"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/util/mxXmlRequest.js",
+      "sha256": "087962a390088af7dbec020b149734ffafe8a0a6c24884497d194b09379196f5"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxCellEditor.js",
+      "sha256": "f3bec0aa996948bd1bf1a660350da90fc9424762aa0de516dc11d5980ff3eead"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxCellOverlay.js",
+      "sha256": "562261a5ea6eead9e2612680acdcbf33cef1e9d04a43526a2e6639d1bc9853f9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxCellRenderer.js",
+      "sha256": "4bb0356d026c62510002b56b3da26c963a10e69ea664fc99402173549ae1db95"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxCellState.js",
+      "sha256": "6a382a910343b672b130a222e245af3f1d910aa1306c099cee74831e3fbc5fe0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxCellStatePreview.js",
+      "sha256": "6a655dfffeaf4170444678fcc9a963bdd9bd8bb3aa7952948d22dd9920316b0d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxConnectionConstraint.js",
+      "sha256": "8dd4822c66a7ac9db88bf4f5e2a0ae8df445e4b43bbe72218736353a3f64b14b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxEdgeStyle.js",
+      "sha256": "8608f4d1771db2307ce5a665a4ce9301da3ea4f759d932d381f057654c1e326d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxGraph.js",
+      "sha256": "e438a5afe6c227223da160aa024a1e491d107786f2fdaebcd192a92b8ab7ced3"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxGraphSelectionModel.js",
+      "sha256": "87908c9cabb3d65cd8ac3aa96b38303fcb87433f589cb52b1b064c4607f6fb35"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxGraphView.js",
+      "sha256": "b963180483ff9b01ffd1b5301225dbae6c36c8d02b00d6edfd67c7649d1b1ad2"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxLayoutManager.js",
+      "sha256": "a41cdd05578fd0d168f6ac317507901928aa066d16bb0a5696a5b95927e7ad29"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxMultiplicity.js",
+      "sha256": "cf8f8ed9961be73e53419a4c3d0c117ef7acf883179a018a3ce5e0b9076a55a5"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxOutline.js",
+      "sha256": "4bd60c44ff977ebadb331e972d0f0e6a5377c931b1e3567195e802e10f00cbc5"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxPerimeter.js",
+      "sha256": "1298716ca3e30f891aa73cccdff00b14fe33483dbfc26ae82a520f785d45bab1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxPrintPreview.js",
+      "sha256": "52f06f6acb210222fcf45e87a7eaad7f2157ee6a2837bb3bf784f6b1d2fd07cb"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxStyleRegistry.js",
+      "sha256": "dbba92b127c76a2bbd82fbed3307606ee0e23e498d6172be586e1cf535d58212"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxStylesheet.js",
+      "sha256": "43d87978ca4b481ae12f373e065b95d753aaf94c6bfcccd32951fb2e65ca4eec"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxSwimlaneManager.js",
+      "sha256": "1b23d618b4a86364e4132a19324c20af895ae52e35eecbe208285ff800f65fed"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/mxgraph/src/view/mxTemporaryCellStates.js",
+      "sha256": "c573cfa3555c478bccd5b6f3d228cad706a7acf01c664b0e2f26e56e92aed695"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/noteflow-bridge.html",
+      "sha256": "c3734249b79eb97d05fb28fc39e7ee9a73dba833f63fd6ab56727c590765769b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/noteflow-bridge.js",
+      "sha256": "9eeeae3145d72c199cebb08c235949ec06080ec5ccc467488bf4575a11b83009"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/noteflow-sbom.json",
+      "sha256": "75840d5d3267d32e6587081ea293fe0f56d9fd8ddb7d4f5e32be8eb1e41eaf4e"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/CONTRIBUTING.md",
+      "sha256": "f1ec9a7517df30ed16ffef89b44ce4895d80ac3d0ac7b53beda3a843d0497d71"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/README.md",
+      "sha256": "0032e7780346d6b54ab8d74b6033ad1216ea86d1a961378262fc336b10b4326c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia.txt",
+      "sha256": "cbbc96967a687a78a18eedf723925de0f3b51a9a9a6b05d4147839df6076772f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_am.txt",
+      "sha256": "6eec4a25a8f4900453c34bb2954ef0b38ebaf04cf706d64becb1200d49cbb462"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_ar.txt",
+      "sha256": "948126e5891b567cc8eefdc28d7c656534356efbea5ee7fc206dab3862ddffac"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_bg.txt",
+      "sha256": "a4749e67ad2066fb643ca7974c58bd5c914381da45479caa23fad89129d363c0"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_bn.txt",
+      "sha256": "ce7fdb86ef56c9caf8a87ea6191c35af4fcb7b1358a55a5477d480ad5549ebef"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_bs.txt",
+      "sha256": "6ab92d3da8b9cd72d0f696b696cef3bc6ea73cba71d9a4bb17767c087c2ded05"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_ca.txt",
+      "sha256": "23cc7eed17f21f7cb402462edf9142310fbe533eb8356dd223e42c8269d11ab3"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_cs.txt",
+      "sha256": "ab7e52e51cbe47b39a31383750fa3c2643db2d66dee2374b16422242a81e2edf"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_da.txt",
+      "sha256": "56e8e679f1c5c1d3a7255f9d8d485e461850080e7634cac3237e1e4f1fb8fab4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_de.txt",
+      "sha256": "19e2714f3d4259ae892186427ad4709a16078557208b67da495ae8ee30424522"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_el.txt",
+      "sha256": "2b44dace74c15c348c4c300085cc7576d5bdbfdd27760a1cddb9f1f4b5e12015"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_eo.txt",
+      "sha256": "764d02d862b485613278a8955c5e9da4e39027ba82a0b9be62877467cda156c8"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_es.txt",
+      "sha256": "5ffd862d61a7cccc0af02d3ce4148f89a70a1043d52df20b857f13cdcefabb8d"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_et.txt",
+      "sha256": "8e4b225517b3cab17e5bf63c773e8998e55b269c9d4b1c517ba34e8f6cbb57b2"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_eu.txt",
+      "sha256": "e169aa8ca244f0cd430ddad78d0e60174ed0e449cd28d7aaff9215a6dec7de27"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_fa.txt",
+      "sha256": "499ba932cc590996d43030f528efbad19ef979819abdeb3ba63a6d67ac27bc92"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_fi.txt",
+      "sha256": "661f53e9ea960aef07b563e152fc0556d6233bce39743508adfc440131e504a6"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_fil.txt",
+      "sha256": "7a7747c1e1d11a16138c00901278a8cada897ec5c85eebd4a442decd0f531454"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_fr.txt",
+      "sha256": "8a7a8f9c4d2f6270a6f340e31485e9cf46f6b40e8ee1f778e4af1d74cbc3f114"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_gl.txt",
+      "sha256": "a605b887a53d683d21f993637e02c2e64224ee21b91df7e5d4ff6d0b0ce53da8"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_gu.txt",
+      "sha256": "9bacaf812b72b652a4cc027a85af13b9c514ea819a0282cbfa247523a54291b2"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_he.txt",
+      "sha256": "485d9e34e6891694e14acdfcb4afa330268a5d71cbd8b56182461da0b5775fc5"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_hi.txt",
+      "sha256": "1ae62eef6b81d4cc3a2784ec0962ca1ea4cdae4239304f5bf443f8786406a84c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_hr.txt",
+      "sha256": "e078d1fdb23737ec28779750c3ca6c817da96f0937c324c17e6b91e4696bf29c"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_hu.txt",
+      "sha256": "63b4e744b9e5852002f21f7e7d3c4bfe0c79cad80f93825988689fc69d727688"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_i18n.txt",
+      "sha256": "a6d09cea7cc8e00588824ceb5f661970adb3ffe619a7e13cb61e7a236df7fb42"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_id.txt",
+      "sha256": "b8c043c4eb7b908e6295d241f52d3607cdb2c9e57459380181ed2b000d30b94b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_it.txt",
+      "sha256": "92cc760fdab9b2dbb5635754b7646e5d7785e310376f53319c34642641f6f189"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_ja.txt",
+      "sha256": "c7c3e9e7ba4c684468cc4c65ef0ed3ae2bb118a47220ed084bd0411f46c6416f"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_kl.txt",
+      "sha256": "e5e7a84c6c39ab05775ac8594f93272998805753d491c8fed49fa563f07cdcee"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_kn.txt",
+      "sha256": "3497041ad11f86c72d1873ed634e69c5d369915aaef797f180bc19d2934c4537"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_ko.txt",
+      "sha256": "180a9bae8c4e3c4884bdb224d62ccb5e8f04c17a064f2f5ed919d205ffce8a23"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_lt.txt",
+      "sha256": "35f921849160699cbe9d4d846c9c30f7e2e656e9cae1ce355e511a68dc58cd22"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_lv.txt",
+      "sha256": "d3e30925e95a2e2d80256c77772198b569a74a2b6435cf12221422a2efa3b5f9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_ml.txt",
+      "sha256": "2c7a4b8a321b1f41cc567378ca1f4fcff865822cae56ed6debca72bbd1da2df4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_mr.txt",
+      "sha256": "ce884afc3e52345c12229a788d142dbd4f51d7811614c6f1d0cb46ef78237c44"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_ms.txt",
+      "sha256": "1e63c2df21a5480a56aace9c1e61974c449c19cbdc4ecb21053675ff953893a4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_my.txt",
+      "sha256": "8d421ed7e03a2b85d427ed7fb6dfacdaae53e1e316a0dc75b69a16bd7876fee2"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_nl.txt",
+      "sha256": "c7d0161746fa015fc8ed09f37ede03309a3cc5de6f0fbba15478758a860c0021"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_no.txt",
+      "sha256": "0a3f639c76b71c58b26296f0bfa0b69b489223eb70ba4dcef1ec9ebd57c98eab"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_pl.txt",
+      "sha256": "41c84b3b0a04da3926aff8d6b618bc38feaa96f564bc006bf55bdf8ef5790460"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_pt-br.txt",
+      "sha256": "f53588c40a53a2e4d4f31cbc5fc7f9c39f64a828fdd066a4714ca9d4eaf17e31"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_pt.txt",
+      "sha256": "2d231d6b481067bf873ee238259e34d24d9f9a8e347d5901e368ec084ceb4466"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_ro.txt",
+      "sha256": "d5daa089b4dc8d05b037f9e461cbf7b853412e77009c9b921d7fd0b5b9685845"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_ru.txt",
+      "sha256": "abc10e54d7e666d8d0e31dd7935a5c1f9b91f3283937cdfff15a6602861903b4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_si.txt",
+      "sha256": "c5dd924b2e258b52d4949108e57ed18b072f4c057dd0fcd158230a227474a496"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_sk.txt",
+      "sha256": "8891c1c5f07c1c7c4168047c5b82f73c95b929ae430fe7317778f1556d6447b9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_sl.txt",
+      "sha256": "91ca34c8cc0e8affd2acbe0b5e82749f402333e312d3737a83204c5398a55bfd"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_sr.txt",
+      "sha256": "f7ef65a60a03fc7655a5de9bb4e2b20beb9be728021d30fe31c0735fb1252857"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_sv.txt",
+      "sha256": "02b63be851ad8c87b7a78211f22c00870e3e253550897adbfe79ae897d2898a4"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_sw.txt",
+      "sha256": "057850c80c2a18f78cb4ae7146d16411fabc501f89ce8539a83e40ca5b5412e1"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_ta.txt",
+      "sha256": "e77a5673b883dc8121df43da2673fe6bef63cc2b8de6aa53657b2442a9d5a2d8"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_te.txt",
+      "sha256": "54d8d39b424a745b7173bf6f85005e5dba27a30097147b9c3895d30a9cb87f05"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_th.txt",
+      "sha256": "d20c2d4e9fad8bba802ccfb85ff9017a845a7161532016f3399b29e4b577f052"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_tr.txt",
+      "sha256": "bb412f036ba318cb9c1f69bc58acf8544f67cf40f6f096eaed84291585859b74"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_uk.txt",
+      "sha256": "5b3a90d1838f6baef16e190dd3c990cd98dfb0f785becd4e58902c1eb31b513a"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_vi.txt",
+      "sha256": "4219469b966cb1d0659947b20efd3e9dc122c3dd865a17d31df3c937f1d9a3ea"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_zh-tw.txt",
+      "sha256": "1e5eec2c0998bb3a24d0115e1a7f121a970b741597492c63c2dfb95272393474"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/resources/dia_zh.txt",
+      "sha256": "183ea1fb925e9762da01451152389b1648ae40da9931553159265cae9e087269"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/styles/dark-default.xml",
+      "sha256": "05814cdea012a9c42ccd34bbf5ccde06eb6a90c14430f3ab0715a328423958c8"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/styles/default-old.xml",
+      "sha256": "8c7ede2ab23bb4730b0f03c2d5c610c003675002af613c20026953ef89294e6b"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/styles/default.xml",
+      "sha256": "e5767817bbbd86639f6db53d753fc9793f5993f892f738bedc35b896b2688ea6"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/styles/fonts/ArchitectsDaughter-Regular.ttf",
+      "sha256": "8116fb167643f707c4a99f544e9bcdb9cb7ba00c0a72c9bbc9e0b20966ed9810"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/styles/grapheditor.css",
+      "sha256": "b832d55c5732f4b00f610204eba40373f338d482523503efc81b85cec9e211b2"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/styles/high-contrast.css",
+      "sha256": "06173c9ab9d1715004f6040beb3d75b7fcec4a3029e3304b0c32c0baeb1732b5"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/styles/thumb_horz.png",
+      "sha256": "375ec4a4de1fcb9bbca1d37fc6e984bb7cc07024686e677bd722e65e9e254e92"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/styles/thumb_vertical.png",
+      "sha256": "81c093bb9865e9116ee5507c908290906f141170bd6b79e734820ddbe01a01b3"
+    },
+    {
+      "file": "apps/desktop/src/App.vue",
+      "sha256": "f300cd1188f117eb52cb273398935b849a0d3cf828cb479819cf8622ce9b7971"
+    },
+    {
+      "file": "apps/desktop/src/canvas/diagrams/protocol.ts",
+      "sha256": "6f3a81cf5f10c5797590c0b876c4896a5875ecd71d574291f37b692e4ec64cfd"
+    },
+    {
+      "file": "apps/desktop/src/canvas/diagrams/vendor-lock.json",
+      "sha256": "33593bce7a9fb4441891e8146224d626c1420d6c782f7892e3c1d4ea7be482b7"
+    },
+    {
+      "file": "apps/desktop/src/canvas/diagrams/vendor-manifest.json",
+      "sha256": "50373329eb35638534a2b609730a6453747d07bd2323715468280c6dadaf122c"
+    },
+    {
+      "file": "apps/desktop/src/canvas/diagrams/vendor.ts",
+      "sha256": "1a4cb250861bccceaf307652642be06f455e1e3652863d10ad5062bc1853f9ea"
+    },
+    {
+      "file": "apps/desktop/src/canvas/excalidrawPresets.ts",
+      "sha256": "3ad52c49a2207b0e1681ec38de2d7056bf5b313c29c362e797d8802d48deb639"
+    },
+    {
+      "file": "apps/desktop/src/canvas/knowledgeGraphTypes.ts",
+      "sha256": "8156074e93c5dc69f6651c2c1b406b5043f9fd4de859d28d714011dba0109600"
+    },
+    {
+      "file": "apps/desktop/src/canvas/mermaidEditor.ts",
+      "sha256": "36e35162ccdfc9871f82f0265686a095563537e6aff279167c106a6257e6b1de"
+    },
+    {
+      "file": "apps/desktop/src/canvas/mindmapEditor.ts",
+      "sha256": "881fb73b72f89248062a74ba06a7ae1f380ec5d1f2d3a1149e782d90f1c4f2ee"
+    },
+    {
+      "file": "apps/desktop/src/canvas/registry.ts",
+      "sha256": "729c5027d12536621fe3a350994b3dae3ada84d72c1b35c89a11f8b206ab0173"
+    },
+    {
+      "file": "apps/desktop/src/community/CommunityEditionTransferPanel.vue",
+      "sha256": "5195fc260811f92152eff2d61e5519bea8ef28b7e255f41b8f052efd6727d161"
+    },
+    {
+      "file": "apps/desktop/src/community/CommunityVault.vue",
+      "sha256": "da70d5e6ae5550cc6c7a76185e369df2d29150b8366bc558949cd98e07c9a5b2"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/accountDataReset.ts",
+      "sha256": "2bc2459d23d621748d30515b95a784265c9922c5b8fac82243d134c7e6db7770"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/accountStorage.ts",
+      "sha256": "1f335888e6ab76a0828aaab7fcce49b9dcbecfb540dbb311715469d66821c290"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/aiLearning.ts",
+      "sha256": "f330c87eb219be71d861feecbf50385651da85bc578a2e836faabfb57f6e3e97"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/api.ts",
+      "sha256": "4f8937d0c59efabcadea46551020c6f27a9b8a27471d48752d933d9203f2e8a7"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/appInfo.ts",
+      "sha256": "46f562303da06d5fb5e72814865d876dc9d2cbc84103dc3c14f9e678139b4239"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/attachments.ts",
+      "sha256": "76503fd8ea4387aec45c9289b1d00a408751786b904e2341aba09a433e4354b3"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/auth.ts",
+      "sha256": "e0cab5e1b5cf571095461e784d80d813c19879bda87ee24c24c35238be75e5be"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/browserPersonalBackup.ts",
+      "sha256": "c28c380029ff63c3540d61b065ff096b1d123657518acf4ee67f0cab6b8b3933"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/browserRestoreJournal.ts",
+      "sha256": "b5af55166f59886876065708f1fbe6960ea69f59163ce57b834eea30e707f435"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/canvases.ts",
+      "sha256": "aa0ca89e7ae35e021cf5ea0fc9693e2dab943c826edbe0783974755ddbca58f6"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/failedSyncOperations.ts",
+      "sha256": "fd83b6d70a7380944cf5e5b646286c70a7d2acc0311abee50cddf6515ba4f511"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/folderSync.ts",
+      "sha256": "7a8e8c59f4f923e1bf0592fdef2e678752d3a36cb85a868ab2c7244dbae60f29"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/folders.ts",
+      "sha256": "35056db11c93736b047d2dd0783508eeb3d934d46d402654a597ac8c69a0d801"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/governance.ts",
+      "sha256": "64adaabb37d00516ed3d1913dd2ce3effdb88d68fb9efcdd2694df69ab1064de"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/knowledge.ts",
+      "sha256": "0d6a925656f1e8d0b36e6572be49a4d7c465e7fa5cfd0df4d42e6909391c2025"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/knowledgeCanvasAdapters.ts",
+      "sha256": "6ce8c8833e07f272cec213172be330239423427ca78b92fde5e6bbb0fef3f168"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/knowledgeCards.ts",
+      "sha256": "6bf2e9702a7d99b43444e6d282d43e577c61d587573d77c22903184a230766dd"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/knowledgeDownload.ts",
+      "sha256": "9e2dda08bed9f63379beef0565f8950318421262483ec5cb55cb7c9e388f33d2"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/knowledgeRoutes.ts",
+      "sha256": "9d42432ec88a8ca6d144e18a8a8e31e850a05cf52d6d569254c8e56e081ca803"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/knowledgeStartup.ts",
+      "sha256": "6eaa17a6d12441ec321e6c719ceee6a9765921f4b8ea3c507e8d8d71c22150af"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/localBackup.ts",
+      "sha256": "d1f5828736607d2dc44cc8db21fea93eef8b8c43427a17877ccda448a305bed8"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/localPersonal.ts",
+      "sha256": "86df1f76aa33998c68455fe2cf444e33c53c2b5d2acc9cfeed75c65801203c26"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/localRestoreJournal.ts",
+      "sha256": "d60d2a9994e29a6f6a99bc5b9158b57b3a0cdc45535e613e66325a0bc0c4d771"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/noteLinks.ts",
+      "sha256": "1eb271bb30a0c00757669a57318ee493a7e695d9ede1dddef9281da43765f1d9"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/noteOrganization.ts",
+      "sha256": "712b689630dba45ef1c720f28e9438fd6cbe8d19747c4f6ae0a979d0e330c30c"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/notes.ts",
+      "sha256": "6f17089fad6885d5025805b31f8159b2ca9fb11357b4e7befed05bba4da44ede"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/obsidianImport.ts",
+      "sha256": "ba2a6477b45aa8fd5477e99b10dc3aadd0bab094691f864c8fb12c4ce23ed554"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/pendingNoteAttachmentSync.ts",
+      "sha256": "161ee16cd67994ac6cca40afc9f91f9155bbd43a047cb5f3415fe7bec30efdaf"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/profiles.ts",
+      "sha256": "451d34d282bc27d4075485638d7a20375acc3e838530a964d58884d9303b608f"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/recordings.ts",
+      "sha256": "93dbfdae6101dc2e5d01915cde59689873d6336adffddea0e6980cfa596d2986"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/remoteNoteHistory.ts",
+      "sha256": "0c42b8e2b98801fd54d5fcdcbe82e0c8848d4422d134e6569ad78996985da3df"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/remoteNoteSnapshot.ts",
+      "sha256": "9bb1f3b9ea977e806c026293b2d41362c12db39e15d68d153a77365424cd599c"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/search.ts",
+      "sha256": "b5eafa1e692c85e26255d123452bb7dd1fd99e263a97a1415d6eeb342e6f1506"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/serverConfig.ts",
+      "sha256": "62f7bfb1b4b6b7c337fafac145a6f062c3e773fbf4c9e932ea139ceeed15a4a1"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/serverMigration.ts",
+      "sha256": "1b882466ab69cdeff5e75bc77f0c3300d410931c7ee022dffc6cfd01f8cc1960"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/sync.ts",
+      "sha256": "4b57f17a4fe5739e983454cd2828cf1e67cf5db70e01a314ff3dd9404b5d214b"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/syncEpoch.ts",
+      "sha256": "e1f4f15d04aee8f0b5dfdf98df2e4492cdd45c7f70c1686c7537bab9b939ceae"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/syncQueueInspection.ts",
+      "sha256": "2809b75bccc9d01eebd602da868a075402b098264fba39d9d4361b44428ba402"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/tags.ts",
+      "sha256": "c6b5feaefa053c3ba0f04ba66f44c0996c5630ab9d981c21c7648675ee7f8df6"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/taskReminders.ts",
+      "sha256": "f7372713c05ecb2a4059eae9ab5bc49dffedf65de78ba343895484f7b162cd7f"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/tasks.ts",
+      "sha256": "3a91718c69df50eb5705e3acc4140b7915b919154301b95bf0682ec832dadbc7"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/tickTickScopeRepair.ts",
+      "sha256": "9b0ea2e7c2d1d7c401b80b53973e551e8cd9450fdad6bc9578f7e9f467390d6c"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/vault.ts",
+      "sha256": "53473bfad126c13c862a8a838ae4147da441b669c841fb7d002dfecb178d5586"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/vaultSync.ts",
+      "sha256": "5a2b63da6dd72a175c4ec093c00502ce6e6d7faafce0bb92f43b891591bb5cb2"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/workspace.ts",
+      "sha256": "3f1924419096c91e3239fbd00de4e95dc5d937d933a081ed78f3f9be219203e0"
+    },
+    {
+      "file": "apps/desktop/src/community/backNavigation.ts",
+      "sha256": "0a285af33688173a34acd4eb56dcae951ef4e8ce7f90d9548c6d07405a2522f1"
+    },
+    {
+      "file": "apps/desktop/src/community/backupFingerprint.ts",
+      "sha256": "a233af89ebfc97c05a8d32d6e1b2472bef2892efc1d9c00b27eb2ea2ff68421d"
+    },
+    {
+      "file": "apps/desktop/src/community/canvasService.ts",
+      "sha256": "346dba1d2436c3bba925212670aa70f6d69cdba9f62d50916dd8a840b18598d4"
+    },
+    {
+      "file": "apps/desktop/src/community/desktopLifecycle.ts",
+      "sha256": "1346510e2804a4c495e906de41179f9329cba8f244cf43b8fcef54fd3d909ef9"
+    },
+    {
+      "file": "apps/desktop/src/community/fileExport.ts",
+      "sha256": "70eedecf681103bf4dc752b4ff533fef52958d2e3b1a7d8ec70070999a80b61e"
+    },
+    {
+      "file": "apps/desktop/src/community/host-map.json",
+      "sha256": "f07b6840e55b35f9a0ff75b27577b2de74de2c99ad662d0d9d034acd447f4a78"
+    },
+    {
+      "file": "apps/desktop/src/community/learningBackup.ts",
+      "sha256": "bab3ddfb8ae7f500e0d39d9594b49764442de5000d56a46d47558219326fb8a0"
+    },
+    {
+      "file": "apps/desktop/src/community/legacyKnowledgeBackup.ts",
+      "sha256": "ccd8651e6fa68a37baba1887412d851abc16f162df98464398db10b597ff754a"
+    },
+    {
+      "file": "apps/desktop/src/community/main.ts",
+      "sha256": "f1e82d381895ddf03fbf3cc8b35feafbbe7e69ec57aedce1a1976b9e358bba6d"
+    },
+    {
+      "file": "apps/desktop/src/community/platformReminders.ts",
+      "sha256": "eb5401b4fd2eafac6d07c524eadeaeac7dd56540b96234ef70d6377754e09c6c"
+    },
+    {
+      "file": "apps/desktop/src/community/platformStorage.ts",
+      "sha256": "a1e64d63609bbc4fdce6a714cfa3eb808fae88d94d0454ebb8ba8562dbc92202"
+    },
+    {
+      "file": "apps/desktop/src/community/reminderService.ts",
+      "sha256": "50e40fde30b9224f27ec7ecc9fa3c36905483eb5c2c763d2ee377e71a13df6f3"
+    },
+    {
+      "file": "apps/desktop/src/community/reviewBackup.ts",
+      "sha256": "f95c8a355479f0c4e60db615a9e22fc8391163f97bca0b4e646436673cc12777"
+    },
+    {
+      "file": "apps/desktop/src/community/runtime.ts",
+      "sha256": "1405cc79d9442febf58a14192f2dd0037330d421821eb5dbf362873f93f01569"
+    },
+    {
+      "file": "apps/desktop/src/community/vaultService.ts",
+      "sha256": "6569a50bc49283d3d70aa7ca5fcfc1581507e01cbc5aa98f83492c770bd41737"
+    },
+    {
+      "file": "apps/desktop/src/community/workspace.ts",
+      "sha256": "ead45a4b5ebac2be273a368629d302796bcd82091c11b53f808a48cbf3e40c2a"
+    },
+    {
+      "file": "apps/desktop/src/components/AboutProduct.vue",
+      "sha256": "7e3c01a0080cb4df561ba42ea5769cc3dcb59a43645e3a1192c4df5ae5c165a5"
+    },
+    {
+      "file": "apps/desktop/src/components/AccountAvatar.vue",
+      "sha256": "eacbee0b087c185325d741599e7d068625629b2da9a5ecb0246bc2b7a414e44a"
+    },
+    {
+      "file": "apps/desktop/src/components/AccountPasswordInput.vue",
+      "sha256": "b92148d7dea6d05f631c644cabe98b5392b9e1242830efdb792f897040cd3e03"
+    },
+    {
+      "file": "apps/desktop/src/components/AccountSettings.vue",
+      "sha256": "e52f6a8d914835e66c32fdb6a1b0dd351ec80ad462531062d4ea4843a76f3cf9"
+    },
+    {
+      "file": "apps/desktop/src/components/AiChannelSettings.vue",
+      "sha256": "b710a79d988c3a102f2c03b31f6ddbc3bce5a195e9e7d7aa9c3d6f416a99b5ef"
+    },
+    {
+      "file": "apps/desktop/src/components/AiLearningPanel.vue",
+      "sha256": "e6725e0fcc74869c6c9b57b66acb50ff5b7a83ece54e597a50fdd3ec356aeb2f"
+    },
+    {
+      "file": "apps/desktop/src/components/AiNoteSeriesDialog.vue",
+      "sha256": "9df6b791263b6079f1bb6599d45d99ceb4191160986cec21d6f4d85eff65c03d"
+    },
+    {
+      "file": "apps/desktop/src/components/AppLockGuard.vue",
+      "sha256": "3f1613a44c13a88d2b266724576263821c6cfa23a143d89bb398d445afe67361"
+    },
+    {
+      "file": "apps/desktop/src/components/AppLockSettings.vue",
+      "sha256": "8077e7521f1f4bc4012d250c4b25494e66ed5226b97177ad1f04ad41e40fa842"
+    },
+    {
+      "file": "apps/desktop/src/components/AreaManager.vue",
+      "sha256": "f125b5d0b33a4c48857129c5a3e7ec0769c73c073d0c66dc846f31aa27823156"
+    },
+    {
+      "file": "apps/desktop/src/components/AttachmentCacheStatus.vue",
+      "sha256": "7c58ebf781907eebd9dc0d50703e1189803fdf58c9e44192b135b74a374c988f"
+    },
+    {
+      "file": "apps/desktop/src/components/AttachmentDiagnosticDialog.vue",
+      "sha256": "1c17d37e203bee740802a4879be6ab4ca2a853dc8d058f8d16dce69ea52d1e56"
+    },
+    {
+      "file": "apps/desktop/src/components/AttachmentIndexProtection.vue",
+      "sha256": "a892eb9fa6d10dde7e1d1296faedd18c394edab8147e3642e4482b2773209349"
+    },
+    {
+      "file": "apps/desktop/src/components/AttachmentPreviewDialog.vue",
+      "sha256": "d04bc02333893fde084631f81111f499b71be7c79cb5e22efda5777b1f7cb5bf"
+    },
+    {
+      "file": "apps/desktop/src/components/AttachmentSearchResults.vue",
+      "sha256": "504541a896fd48c4debef1116333a7c98e52ed1000d88b0c6c414b63c4d74db9"
+    },
+    {
+      "file": "apps/desktop/src/components/AttachmentThumbnail.vue",
+      "sha256": "74e392c486d567050c392dfc70e2926d12265f2b9a126468195f54ae2be9234f"
+    },
+    {
+      "file": "apps/desktop/src/components/BodyRecoveryDialog.vue",
+      "sha256": "ef259796f16370c8bdf0fd0eee11e043f13c11d7d60aad4728d1fd8851362e43"
+    },
+    {
+      "file": "apps/desktop/src/components/ConflictBatchPanel.vue",
+      "sha256": "feb3cfc4977627d5138a167ea4ee3298e46178b468fc0d5b80d05a041e61b615"
+    },
+    {
+      "file": "apps/desktop/src/components/ConsolidationRecoveryPanel.vue",
+      "sha256": "4b116ccdee4f0ec9373c5edf6b0573db4f6ac6e0e798755a027f2f36145ad089"
+    },
+    {
+      "file": "apps/desktop/src/components/ContextMenuHost.vue",
+      "sha256": "42453b649f3ce5e64bb6ea6546fb78c7809200b097d6d86c88c918cdafb41220"
+    },
+    {
+      "file": "apps/desktop/src/components/DuplicateNotesDialog.vue",
+      "sha256": "adc90c5bf64c08d69f483d9a1272efd1f62a02f12994f716760278f502d9bac7"
+    },
+    {
+      "file": "apps/desktop/src/components/EditionTransferPanel.vue",
+      "sha256": "f01882b31fb2b8b9fdb795c0c58cb8c963aef02e2014d83627c59a7646076d36"
+    },
+    {
+      "file": "apps/desktop/src/components/ExcalidrawHost.vue",
+      "sha256": "c95bbc0c59d3fc1a4f6254a475e7d7967f1af931761d072f3da680277b3e3272"
+    },
+    {
+      "file": "apps/desktop/src/components/FileContentPreview.vue",
+      "sha256": "17abf8cdb968d6a9e3931cf88122989f1a91b4e48f724fa6695d1c542b1b32c0"
+    },
+    {
+      "file": "apps/desktop/src/components/FolderConsolidationDialog.vue",
+      "sha256": "5a8885fa2e06116c7a7c2050a6beedbfe83a72864e8a1ae177c0bc5c66810d7b"
+    },
+    {
+      "file": "apps/desktop/src/components/FolderDeleteProgressDialog.vue",
+      "sha256": "72077c1fc39527c1ab2ea317315c119a3a3cd38d8ecde5c2b2360d518757d7a3"
+    },
+    {
+      "file": "apps/desktop/src/components/FolderImportProgress.vue",
+      "sha256": "af58ba4805f12887f2eb1a8ce94c8c3c8de4f18d8cd77e7243ec4b411c79506d"
+    },
+    {
+      "file": "apps/desktop/src/components/FolderImportResult.vue",
+      "sha256": "904155237313844bced2057b1e8965b436a3d14c5f31541214395007dc0e630d"
+    },
+    {
+      "file": "apps/desktop/src/components/FolderOrganizationDialog.vue",
+      "sha256": "de6200d554b56ae21313bec04fb93703d9f5027118f083f01b0b0856afd99158"
+    },
+    {
+      "file": "apps/desktop/src/components/FolderTreeSelect.vue",
+      "sha256": "fe8bf537bf2954f837b25c8babf74b058b95660ab349eadb91cd46ae3a575fb3"
+    },
+    {
+      "file": "apps/desktop/src/components/LearningActionDialog.vue",
+      "sha256": "1fd446670fc748764ea4e0e89ef5c94ee3e292f8f05c398a9d036c3ba5433955"
+    },
+    {
+      "file": "apps/desktop/src/components/LearningMessageContent.vue",
+      "sha256": "2c5e368c7901b0ecf862c044387e1d7b03cdd3dc5b9cf6a1660a5c4b35bbe734"
+    },
+    {
+      "file": "apps/desktop/src/components/LearningReferencePicker.vue",
+      "sha256": "b3e9607dc0ffb76785bdd10e4ee0090b1471149668ee9e29777a478f11ad6327"
+    },
+    {
+      "file": "apps/desktop/src/components/LearningSkillCard.vue",
+      "sha256": "87fb4c722072c1e3aa8f926a4fedf27bd74dc308671fa7425c0cbab9fb9269e4"
+    },
+    {
+      "file": "apps/desktop/src/components/LearningWorkspacePlan.vue",
+      "sha256": "e087351a8731d597b850c235a4cf63aa205be0a4ec766bc3de3a252649352fbf"
+    },
+    {
+      "file": "apps/desktop/src/components/LocalRestoreNotice.vue",
+      "sha256": "9a86f9a1d5aa3f0c1f8b4451630725bcc5bdbd595647a637d2bd53f62b8fc695"
+    },
+    {
+      "file": "apps/desktop/src/components/LogMarkdownDialog.vue",
+      "sha256": "c0949b0eff3762bd999a731ec0e58bbfebde2626fee457d54a0baa291720e4e9"
+    },
+    {
+      "file": "apps/desktop/src/components/LogMarkdownToolbar.vue",
+      "sha256": "3a1dfe5b91c96b702b19863da73010a1f70abf1558a81f54e9b8a1ac07fb24a0"
+    },
+    {
+      "file": "apps/desktop/src/components/MarkdownDocumentBody.vue",
+      "sha256": "9fbaa04436a8054d435ba932c13dcced16c62dc19e87429af2b661887353e63b"
+    },
+    {
+      "file": "apps/desktop/src/components/MarkdownEditor.vue",
+      "sha256": "38b3a8d790f849b844971f9f3f5f6a55fc014a5617e67adff6f7dd85f5861982"
+    },
+    {
+      "file": "apps/desktop/src/components/MarkdownPreview.vue",
+      "sha256": "43f1080d27cd2b93f0b5614fed6565456d47b3c0b2a5efd0e81a89b3a918e961"
+    },
+    {
+      "file": "apps/desktop/src/components/MonthCalendar.vue",
+      "sha256": "4c7198cd9eaf28fdf4f01b81bf046c9066684dafeea32266b587bc75870a57e1"
+    },
+    {
+      "file": "apps/desktop/src/components/MoreIcon.vue",
+      "sha256": "66f85c66b651345e96754ad2d4c2b9fbc58eebd13314148724510e9baf983e08"
+    },
+    {
+      "file": "apps/desktop/src/components/NoteCanvasDialog.vue",
+      "sha256": "64bca8dab58a72d345fa5f367a187da3b09a745c6556197da6d38cde2e0a1d1e"
+    },
+    {
+      "file": "apps/desktop/src/components/NoteCanvasPicker.vue",
+      "sha256": "c5585c425ba8efdf550faeec78466b2ca131d1a66f051ee492266885275c53c4"
+    },
+    {
+      "file": "apps/desktop/src/components/NoteConsolidationDialog.vue",
+      "sha256": "c62b897627720c049ee08308b676b16f0df3ffbd1787adb4578cfb2dd6107c3a"
+    },
+    {
+      "file": "apps/desktop/src/components/NoteFolderTree.vue",
+      "sha256": "ae523159813acae9b6a195c0ca4532ae1c8a765afb057c5872ab8c779cef312e"
+    },
+    {
+      "file": "apps/desktop/src/components/NoteHistoryDialog.vue",
+      "sha256": "aca12d084caa9f047045a4a763bc5f25c8a22b3a58e4c49b98e5c7271692ab43"
+    },
+    {
+      "file": "apps/desktop/src/components/NoteListRowContent.vue",
+      "sha256": "e6095c0c1d6dee0475cbaac9a3090acc7bb76f51c2b51b59005b432147ad15ba"
+    },
+    {
+      "file": "apps/desktop/src/components/NoteTitleInput.vue",
+      "sha256": "823b288f15ff30c4b7e294c26337f0feec45d7b8eb46960fe55363bb4c961abb"
+    },
+    {
+      "file": "apps/desktop/src/components/NotificationPanel.vue",
+      "sha256": "b630b74b7fbbde9889ce1b072b36d49d35d6bc58552af9d01314373f38ab003d"
+    },
+    {
+      "file": "apps/desktop/src/components/OrganizationDestinationDialog.vue",
+      "sha256": "abb5f4cf93c5c038cc195f254716459fbb58c5ff67068328ddc67cb47fdfd95c"
+    },
+    {
+      "file": "apps/desktop/src/components/PcDatePicker.vue",
+      "sha256": "18e606ce23597b3f1e49718b6f1271ce637bf3962c246a9bad23fef95eee10a2"
+    },
+    {
+      "file": "apps/desktop/src/components/PdfDocumentPreview.vue",
+      "sha256": "bc777f90012e78e5d3d3f3c8c200ac7218348f470104b82bf9d91ed23955e36b"
+    },
+    {
+      "file": "apps/desktop/src/components/PdfPageCanvas.vue",
+      "sha256": "87e6a0c6bd6a4040bdbb7b86d8b654e63b3bce552fb9507216809790f2d84315"
+    },
+    {
+      "file": "apps/desktop/src/components/ProductDialog.vue",
+      "sha256": "a12d27b42a54fbee9be2bcde2b1910d7b042b74c7a6638260349c3ade285de3f"
+    },
+    {
+      "file": "apps/desktop/src/components/ProjectContextHeader.vue",
+      "sha256": "f69ddb6d0fef7f539c7c0eabc251537a2f9e4d938352f820f67ae72e987f7350"
+    },
+    {
+      "file": "apps/desktop/src/components/ProjectListPanel.vue",
+      "sha256": "6c79d1398b64d5572446cb09a1884867f4b233f11138fc3761a96657187f8466"
+    },
+    {
+      "file": "apps/desktop/src/components/ProjectLogBody.vue",
+      "sha256": "3c6cba513d398e4b7fe130b1a5426e8e453ee7121f7b9d9922cef80199e034c3"
+    },
+    {
+      "file": "apps/desktop/src/components/ProjectNavigationShell.vue",
+      "sha256": "f4fc208bc6970f65f44d06fbeed99f3fe7e519d825578853a979de7721fa1da5"
+    },
+    {
+      "file": "apps/desktop/src/components/ReaderFindBar.vue",
+      "sha256": "faca96147c390bc5a17bf3decf6315c6af3f1fa946599c9481bbfd49419d6ac4"
+    },
+    {
+      "file": "apps/desktop/src/components/ReviewMaterialBrowser.vue",
+      "sha256": "fe97dfaa382c0dbe39168154c6ac61685c0a32f1e6e8331580cf59fe77e7afd0"
+    },
+    {
+      "file": "apps/desktop/src/components/ReviewPeriodSummary.vue",
+      "sha256": "95c876844d1b9348a7a1079940bee8e9fb4e28ee8aa51b72496cff5865b7f0c1"
+    },
+    {
+      "file": "apps/desktop/src/components/SyncIssueCard.vue",
+      "sha256": "86173a72d667deffccf292fc61f064e316329d2be143f05d7f19a360fa476d59"
+    },
+    {
+      "file": "apps/desktop/src/components/SyncOverviewCard.vue",
+      "sha256": "9daa48c0dc82305f817c67c5f73bbb42033d7a9f1f128420d3b24a2cc6ec61b4"
+    },
+    {
+      "file": "apps/desktop/src/components/SyncProgressPanel.vue",
+      "sha256": "c5230bc6ccd2c67440a3dfc7e28613ccfe290912a04be1c3bf2e61ae15fc9344"
+    },
+    {
+      "file": "apps/desktop/src/components/SyncReadinessPanel.vue",
+      "sha256": "27465a1d25b7e5bd1c0c14105aa3d8acf438ac50edc293127503a712802034c6"
+    },
+    {
+      "file": "apps/desktop/src/components/TagFilterPicker.vue",
+      "sha256": "6fdfd9a59b5448fdee0169ba8776c33baa3ce0bdd8cfa3a8fdd7720114cc05b7"
+    },
+    {
+      "file": "apps/desktop/src/components/TaskDetailContent.vue",
+      "sha256": "e97ba97a98d79dbcfd2ce8f5b22475446fe62ed1f12de446ef280a361f9e9318"
+    },
+    {
+      "file": "apps/desktop/src/components/TaskPropertyIcon.vue",
+      "sha256": "98c901d2e9aad2b244f06d313b626560d05f99f2c44599938cfc7d5474978543"
+    },
+    {
+      "file": "apps/desktop/src/components/TaskRepeatEditor.vue",
+      "sha256": "41223b2141b6f5508715252fc85b643d2cede7d05baed0087d26752eb15c5a66"
+    },
+    {
+      "file": "apps/desktop/src/components/TrashClearProgressDialog.vue",
+      "sha256": "9bf6037061f871a7f0724c93138af35a8b83754258061b4466f7005f3452fde3"
+    },
+    {
+      "file": "apps/desktop/src/components/VaultAttachments.vue",
+      "sha256": "a5021a12630cc9ac6925628fdcd6dbe318742b3107e413850809699b658f9e1f"
+    },
+    {
+      "file": "apps/desktop/src/components/VaultBulkEditor.vue",
+      "sha256": "e3e4bfdc65fad9503530e958a06798e458f0b3fd400732bd539e1422e4d79aee"
+    },
+    {
+      "file": "apps/desktop/src/components/VaultDynamicSecrets.vue",
+      "sha256": "e7831581561f3dc40c7c1c023b8af6e3f81bfd0bd351132d0eadd549548025b8"
+    },
+    {
+      "file": "apps/desktop/src/components/VaultMarkdownImport.vue",
+      "sha256": "5f154cd211b7d8fbf5666e4dc76b89ca045435d3e4ad5f6a6ac3380de334f569"
+    },
+    {
+      "file": "apps/desktop/src/components/VaultPasswordGenerator.vue",
+      "sha256": "e6610576d532272fd285a6aedc38a45c50dec3fe508e3b6da9ad984e8d36a190"
+    },
+    {
+      "file": "apps/desktop/src/components/WorkspaceTree.vue",
+      "sha256": "e204328e6608e36542d6dcc584b224edda5e943f41575f486b99f83029de837a"
+    },
+    {
+      "file": "apps/desktop/src/components/canvas/DiagramsCanvasEditor.vue",
+      "sha256": "ef0e41cd8d2bcd374fa758f83722b5bd06fe5435f37017057f6417baab40f07a"
+    },
+    {
+      "file": "apps/desktop/src/components/canvas/ExcalidrawCanvasEditor.vue",
+      "sha256": "9ef03eb865a861a0bda14219791076a73efe933ad98dd219fce39cc0138f1ba8"
+    },
+    {
+      "file": "apps/desktop/src/components/canvas/MermaidCanvasEditor.vue",
+      "sha256": "42a595b2d893782eef280856dd812276a53e66aae97009cbaad97b654e9cda47"
+    },
+    {
+      "file": "apps/desktop/src/components/canvas/MindmapCanvasEditor.vue",
+      "sha256": "f5d780e08f42ee1cc31f710a6872150b2b07c59fc2e696e3583a8ca0c598401f"
+    },
+    {
+      "file": "apps/desktop/src/components/canvas/UnavailableCanvasEditor.vue",
+      "sha256": "cc0d05e49fb7d33dbe6c77f27daa11c84ad7c71dab1c8f61b57a0d605a28e83d"
+    },
+    {
+      "file": "apps/desktop/src/composables/useAccountEditor.ts",
+      "sha256": "507be52691c4eeb74ad988ed65fc46727acb146b164d8b30066b9765f5e6a261"
+    },
+    {
+      "file": "apps/desktop/src/content/productIdentity.ts",
+      "sha256": "f3ea4e285f2bc90e8ec043ea1ccab603710b1ff087951b6324e9174fe683dad7"
+    },
+    {
+      "file": "apps/desktop/src/content/thirdPartyNotices.json",
+      "sha256": "367fff14aa6b143420cf242945c4f47832cb5c8e6600fea397c5a638bab004fb"
+    },
+    {
+      "file": "apps/desktop/src/reviews/reviewContent.ts",
+      "sha256": "4968f55c883a94d29107438f8ce1e592a1ff448d0a84ffa63fc0710c12d427fe"
+    },
+    {
+      "file": "apps/desktop/src/reviews/reviewLayout.ts",
+      "sha256": "fda2e9bbd4a6a9c8ffff166feceae56ba51f90926e29699d4b9af12f8cb5be49"
+    },
+    {
+      "file": "apps/desktop/src/reviews/reviewReport.ts",
+      "sha256": "9da246ed9e87c93f5daac0fdba45c4bdb0485f672120805b6f110faa27d15a15"
+    },
+    {
+      "file": "apps/desktop/src/reviews/reviewWorkbench.ts",
+      "sha256": "05c6bdd00f14ee02ec09dd1e03da38e5fdeba6a880a5201ece97c3288a6afdc2"
+    },
+    {
+      "file": "apps/desktop/src/router.ts",
+      "sha256": "fe3649973199ebd81d6cc8b6cf2a15e2260c2bdbd45106a12e913b2503dbb99f"
+    },
+    {
+      "file": "apps/desktop/src/services/accountDataReset.ts",
+      "sha256": "eb3d9622aeb985bb90ad4c17775cd9e2481a077f6d66e9a807128c0ae2779563"
+    },
+    {
+      "file": "apps/desktop/src/services/accountStorage.ts",
+      "sha256": "2cfe24598112c56902a6c238e28212ad199b7b0199d53e6304c66cefe01b75cd"
+    },
+    {
+      "file": "apps/desktop/src/services/aiClientConfig.ts",
+      "sha256": "f15c3ab523cf96bec6089ddb7fa350b2a3d8b503c423842d911f2bce3f8674c8"
+    },
+    {
+      "file": "apps/desktop/src/services/aiDataScope.ts",
+      "sha256": "080beb0eb187b0bdde0e128b5c2bef14ededcf7e5fe00a93a9ecf04e21bcd129"
+    },
+    {
+      "file": "apps/desktop/src/services/aiDownloadArchive.ts",
+      "sha256": "b8ac92ca3264176d6ca722afbd40973790b5c4cfd4e84a53212d054405ae8628"
+    },
+    {
+      "file": "apps/desktop/src/services/aiExperience.ts",
+      "sha256": "02707da5f42a72cb2bfe94b04ec5d429876d761de121c0ca3413344b1a919c19"
+    },
+    {
+      "file": "apps/desktop/src/services/aiLearning.ts",
+      "sha256": "1ad44e2250f2832bd8d7504e69bb93c7a045afd23b2114a68421b41f52cd8656"
+    },
+    {
+      "file": "apps/desktop/src/services/aiNoteSeries.ts",
+      "sha256": "cf46ec8747147c42c62ae4ac5a2a63d1cd62cf1e49b8af8d957fc4d618c2dc99"
+    },
+    {
+      "file": "apps/desktop/src/services/aiNoteSeriesDraft.ts",
+      "sha256": "92aa86d2d586683b4d2aea231ec8393b656a4bf551b346734edace3e205ded00"
+    },
+    {
+      "file": "apps/desktop/src/services/aiPolicy.ts",
+      "sha256": "6bcefbfe153cee693da38dd16d976d4556762374077a40f0b3dff0fa5b1210d3"
+    },
+    {
+      "file": "apps/desktop/src/services/aiProvider.ts",
+      "sha256": "9c1f5f48bcecab2985591a9855d1420fc04dc64cbf866a52abcaa4ed34746aa1"
+    },
+    {
+      "file": "apps/desktop/src/services/aiStream.ts",
+      "sha256": "6203fffabcffb93880641125f9cea7bb9c6ec4cb5ff79f79396e48f7d7c57b1c"
+    },
+    {
+      "file": "apps/desktop/src/services/api.ts",
+      "sha256": "6a77de53ecf9cbd7ae6dd141072709b4c8ca6f9768ea4aa3a9e9bcc0f2b118b3"
+    },
+    {
+      "file": "apps/desktop/src/services/appInfo.ts",
+      "sha256": "a34f4ce313249c4dcf2c0f6cbbd23a2ed1bec274b9c370fc06b9ded965b8e0c3"
+    },
+    {
+      "file": "apps/desktop/src/services/appLock.ts",
+      "sha256": "85174e8945f50bbc1820199baae3edcb05f30b75d92e513c72c3f6592779712d"
+    },
+    {
+      "file": "apps/desktop/src/services/appLockLifecycle.ts",
+      "sha256": "a17c65180f8d37986f628b235a730a12741e44eb5081728696075eedb44a5ef0"
+    },
+    {
+      "file": "apps/desktop/src/services/areaManagement.ts",
+      "sha256": "1bacd89708a4c2b3dae0307df2b343aab34b0d4f45d7e84364d63537b6526089"
+    },
+    {
+      "file": "apps/desktop/src/services/assistantNoteConsolidation.ts",
+      "sha256": "f4272891da96befb8f5524e8c65de7aa58083aa8b8e0e1458f62bb8f0b83777c"
+    },
+    {
+      "file": "apps/desktop/src/services/attachmentAvailability.ts",
+      "sha256": "47e8150f36c21153a06afb6b869fe834c41a91176dde31e34bd87fc7fa56fc82"
+    },
+    {
+      "file": "apps/desktop/src/services/attachmentChanges.ts",
+      "sha256": "2c246c286a5fe9d91f814a53b8af73816c1323df00c1ac6433cd7ddecc7af0ad"
+    },
+    {
+      "file": "apps/desktop/src/services/attachmentContentSearch.ts",
+      "sha256": "423cd1427bee7ed22270f5f874daea55e702f9ed9ff99578b6e8cf9a62bb33c6"
+    },
+    {
+      "file": "apps/desktop/src/services/attachmentDiagnostics.ts",
+      "sha256": "53ad83cdf0adea7d0d135fd1786dbd5feb994c4375bff080697831519b3474fe"
+    },
+    {
+      "file": "apps/desktop/src/services/attachmentImages.ts",
+      "sha256": "7fc4f5529145a3afe558022ba2bec1f9debab9110572a903c4042377acd07146"
+    },
+    {
+      "file": "apps/desktop/src/services/attachmentIndexProtection.ts",
+      "sha256": "b10f507cc254abd3d92bceed3a5de316c2a337d7c9a9bf349baff4ade9cf46b0"
+    },
+    {
+      "file": "apps/desktop/src/services/attachmentReferenceMaintenance.ts",
+      "sha256": "13d3e8190c8c0aee01d22f2925316da431111d994a77779cfab15bbc3ae4ee1e"
+    },
+    {
+      "file": "apps/desktop/src/services/attachmentReferences.ts",
+      "sha256": "90c35aa56a655e0fbe27e17f49f9a080c75c748b74c7038cb1c9735a7ef9bb23"
+    },
+    {
+      "file": "apps/desktop/src/services/attachments.ts",
+      "sha256": "91250ea83f9363d8a9494feb13532a24c9e66b9e7e7ff06fc2b52eb889fcea31"
+    },
+    {
+      "file": "apps/desktop/src/services/backgroundRefresh.ts",
+      "sha256": "67b3be85e7ee500bb00f9518be2d921e0762bfa3af2a0d29b3ceb1fb36310b59"
+    },
+    {
+      "file": "apps/desktop/src/services/base64Assist.ts",
+      "sha256": "b995b805c30880453e9ba7f4748f4fd7d587bb3de1977888b1e9bf5f8f474a56"
+    },
+    {
+      "file": "apps/desktop/src/services/blobDigest.ts",
+      "sha256": "abccc0847354384b0076bca7af5120035a19aeb4c7d4d09ee8ccd32948974a9d"
+    },
+    {
+      "file": "apps/desktop/src/services/boundedBuffer.ts",
+      "sha256": "7e741e78d0caabb9143d5eaf62079eb15d88441f4c7d8644698f86a06273654f"
+    },
+    {
+      "file": "apps/desktop/src/services/browserPersonalBackup.ts",
+      "sha256": "e01068fd2beca7a71d252977ba79086e80f03bcbdaa2bd6c922207d38f1e1339"
+    },
+    {
+      "file": "apps/desktop/src/services/browserRestoreJournal.ts",
+      "sha256": "1c5b76e49de5916be952a41982b31186b571afc1f41766879e092e03f1d8ecca"
+    },
+    {
+      "file": "apps/desktop/src/services/browserRestoreScope.ts",
+      "sha256": "1c5b76e49de5916be952a41982b31186b571afc1f41766879e092e03f1d8ecca"
+    },
+    {
+      "file": "apps/desktop/src/services/bulkOperations.ts",
+      "sha256": "d86ef2b95fa4e1893819446be2cd73053424f0196abd26abf3b034a2dfb11f64"
+    },
+    {
+      "file": "apps/desktop/src/services/calendarMonth.ts",
+      "sha256": "78a1e834bd1f40fb98177a8ee3cb7a921a080776bd704861af2e6ababa257b85"
+    },
+    {
+      "file": "apps/desktop/src/services/canvasDocument.ts",
+      "sha256": "804e1d3278ef1c33d99c7ba32fb46fdee9fbc6f969df5f1bf8164f3d32a7c94e"
+    },
+    {
+      "file": "apps/desktop/src/services/canvasPreview.ts",
+      "sha256": "93e68a0b609aeb7ac1feb32fe8edf15e76b86371a4977959f2b93069fa828bbb"
+    },
+    {
+      "file": "apps/desktop/src/services/canvases.ts",
+      "sha256": "7c694df79bbf1e28cd2f4cded8ba26fdde1e6d449a18db0556e2d7e627f0b44b"
+    },
+    {
+      "file": "apps/desktop/src/services/chinaHolidays.ts",
+      "sha256": "888d75a7d945ac3f6fc76ec80e5cb40ca0934909acc354a0e33201d7dcfa4475"
+    },
+    {
+      "file": "apps/desktop/src/services/clientCapabilities.ts",
+      "sha256": "a4fd973fe838370d16d6a8aee33f3221095d727b5d56735f4981210ff6942705"
+    },
+    {
+      "file": "apps/desktop/src/services/clientContext.ts",
+      "sha256": "9c2a0c8f535fb5edb4e71c12a9888d6e5f1fc314cfa43b99cc63d3e399039bb4"
+    },
+    {
+      "file": "apps/desktop/src/services/confirmRestoreRepair.ts",
+      "sha256": "05cfd62826758292b60cd2c7269854a6673f05b7554487477ba6ef1fdebf6f22"
+    },
+    {
+      "file": "apps/desktop/src/services/consolidationCapability.ts",
+      "sha256": "df3ea39e06e4f1471ed4ce0fa4e401bfec39434c98b7f7dcee5ed911f69a6402"
+    },
+    {
+      "file": "apps/desktop/src/services/consolidationDraft.ts",
+      "sha256": "40de1c6035b91b76e9ab87aee56ba61b78824422d235369dd69c1291bf77bbdc"
+    },
+    {
+      "file": "apps/desktop/src/services/consolidationReview.ts",
+      "sha256": "7e73c66405441e33f09b42b77200931d6d538c59b2a8a8978c3d68d6b7950a76"
+    },
+    {
+      "file": "apps/desktop/src/services/contextMenu.ts",
+      "sha256": "ee50ebcc0d433457b71be1113d705d5e94582503369620afe827ae99c39ede57"
+    },
+    {
+      "file": "apps/desktop/src/services/contracts/canvases.ts",
+      "sha256": "1f5b449a96111ed6d454f7af84ee04e590fe2a3003640c5a9990ef7da6ba2e72"
+    },
+    {
+      "file": "apps/desktop/src/services/contracts/folderTransfer.ts",
+      "sha256": "90560ff918273e5338cd3981e07f765ea351e0c51e2a796cf972c6408213170e"
+    },
+    {
+      "file": "apps/desktop/src/services/contracts/knowledge.ts",
+      "sha256": "7105c2510b87f5cc63f46ce9b4b4bb2ca5ac2e274513b2bf5ce899ea5c52f5a6"
+    },
+    {
+      "file": "apps/desktop/src/services/contracts/localPersonal.ts",
+      "sha256": "a6ab092a07f08e52e6a5fa8ce15d03d2627dbb6cb5179a1edee36fe92d609e4c"
+    },
+    {
+      "file": "apps/desktop/src/services/contracts/tasks.ts",
+      "sha256": "0ebc7fa823e6e81e2f4a58bea3f82346366eb07aff0ace7ace3a36edbcbfea71"
+    },
+    {
+      "file": "apps/desktop/src/services/contracts/workspace.ts",
+      "sha256": "41fec3ce8bd75a6e393a49933f21cf200915fc36abc7e1e913251ef6e67711c9"
+    },
+    {
+      "file": "apps/desktop/src/services/dailyBrief.ts",
+      "sha256": "472afaee93bcec7c229c1495efc27dc11e2350711e5a5ebc9c6ed6a38422b09f"
+    },
+    {
+      "file": "apps/desktop/src/services/dataProtection.ts",
+      "sha256": "28c668f7880b438f874676bfbb87a69020ec684452b51094abccce10cb48f9b1"
+    },
+    {
+      "file": "apps/desktop/src/services/docxAttachmentText.ts",
+      "sha256": "bf994a4844ec75a33f7dc5fb9efdb153e796c78c33a2d8a8d18f82bda9146c21"
+    },
+    {
+      "file": "apps/desktop/src/services/exportArchive.ts",
+      "sha256": "2eb8a5031467d598986e2b6661206853eb245849b8281991e4d7a6f3bbe88f85"
+    },
+    {
+      "file": "apps/desktop/src/services/failedSyncOperations.ts",
+      "sha256": "860a1d4e579b95b886a3a4a19c420b2ebe8603f42251e5263e396dc55fdc6ed8"
+    },
+    {
+      "file": "apps/desktop/src/services/fileExportBoundary.ts",
+      "sha256": "231173883116035ce037ef8e3f410c8f184eff2b3ab8efc31adf4d9e03c0bec7"
+    },
+    {
+      "file": "apps/desktop/src/services/filePreview.ts",
+      "sha256": "3293cdc8ed2e89e4d770ef36347e7741796cd8d71466d436e0ff1b9f4524cc76"
+    },
+    {
+      "file": "apps/desktop/src/services/focusClock.ts",
+      "sha256": "f4b9887fdb34850b26bafcb0dfc6ee594a1825cb3be580bb3c5c5153c6698a59"
+    },
+    {
+      "file": "apps/desktop/src/services/focusRecordSource.ts",
+      "sha256": "625771de61c67ae4c383514323c93a76e261d59808e2e71a1ee095b300a33263"
+    },
+    {
+      "file": "apps/desktop/src/services/focusRecords.ts",
+      "sha256": "2e5f19641191489ea0bc309f0b3919a5b1634850b887a65c57d29b651fa1e4fe"
+    },
+    {
+      "file": "apps/desktop/src/services/focusTimer.ts",
+      "sha256": "65a8f9c0faf06d42537183c5e66c74541326cc77847a9d029814052277a20232"
+    },
+    {
+      "file": "apps/desktop/src/services/folderConsolidation.ts",
+      "sha256": "53b0791e5096652257822d970ad835279ebe7d15ad732e9cb90dfcc3b4cf4e48"
+    },
+    {
+      "file": "apps/desktop/src/services/folderDestinations.ts",
+      "sha256": "b010c82bf868ce6553fc788a8a5aeb5a3392907e27b35d824b73706bbc8254d0"
+    },
+    {
+      "file": "apps/desktop/src/services/folderImportPaths.ts",
+      "sha256": "c244bc4bee39ff68649696298adaee2f4cd31a936ca847a86f779821895339f1"
+    },
+    {
+      "file": "apps/desktop/src/services/folderOrganization.ts",
+      "sha256": "15845a57c4ab15e7c0b06152f73ed0f6005ea6197ffde5cbd61cdbf4c5a7a2c3"
+    },
+    {
+      "file": "apps/desktop/src/services/folderOrganizationScope.ts",
+      "sha256": "69a3063ed562f33366d3858ffcaa888b6574911663f15d1728cf74bc09b4bf9f"
+    },
+    {
+      "file": "apps/desktop/src/services/folderSync.ts",
+      "sha256": "60930a89912a189b818f976304be378508c67e026cf19e8fcece2d438c229569"
+    },
+    {
+      "file": "apps/desktop/src/services/folderTreeTransfer.ts",
+      "sha256": "a8e927f31669f63a4656020ac10bb1a3030babfd56722d7d6691a2e1da7150da"
+    },
+    {
+      "file": "apps/desktop/src/services/folders.ts",
+      "sha256": "fc35451f54c0452eb1839732130ba5d24a25059df5fa8cd9b6fe402983836c5e"
+    },
+    {
+      "file": "apps/desktop/src/services/globalAreaScope.ts",
+      "sha256": "64a937d84a324028963d8fc63347ea22433d6c8aa68bd98838eb906a636f2e12"
+    },
+    {
+      "file": "apps/desktop/src/services/globalCreate.ts",
+      "sha256": "47b9eca5f2cbea73873f39df3c769e320e8b0346cd4749e6c1e7b1082ff3b209"
+    },
+    {
+      "file": "apps/desktop/src/services/governance.ts",
+      "sha256": "6fa78d5a2f646f366a4246d047587b95813da6a3a843bb2d3f1f129c64a0ab95"
+    },
+    {
+      "file": "apps/desktop/src/services/governanceBrowser.ts",
+      "sha256": "2733f9c66640cf75043691d846e2140f1193fe53954346fbd06ab4c9ed2cb807"
+    },
+    {
+      "file": "apps/desktop/src/services/imports/obsidianParser.ts",
+      "sha256": "3b0294859d172ae68d6fb516eaa2bda9b1d2f78e7a5e7f9ec371ab8eff6ea4e8"
+    },
+    {
+      "file": "apps/desktop/src/services/inertLease.ts",
+      "sha256": "966e692d411c3837028e3be917e8cb9e9a53a113b03932fcf6bab27758219687"
+    },
+    {
+      "file": "apps/desktop/src/services/knowledge.ts",
+      "sha256": "e6acf9ad5d514bc269ee8fcb165ad09db5be91396c1773e7b05fd1151dab3931"
+    },
+    {
+      "file": "apps/desktop/src/services/knowledgeArchiveFields.ts",
+      "sha256": "23c105305fe9f28cc879426147aa69fb7ff70c40e01fe4ecabe798e93a01d2ee"
+    },
+    {
+      "file": "apps/desktop/src/services/knowledgeArchiveLimits.ts",
+      "sha256": "7fa78edbeaed4a3c6bb2b61ca61c2e5bab77c69fbb0aeb6140225eee2d851133"
+    },
+    {
+      "file": "apps/desktop/src/services/knowledgeCanvasAdapters.ts",
+      "sha256": "8f7fd928d383f62e472367046a58d2f645131099a89ddc8a64d5e9b75f900f82"
+    },
+    {
+      "file": "apps/desktop/src/services/knowledgeCards.ts",
+      "sha256": "ce6b1d3fe984fa82c243df95d1351428176a7e371c55ef0e673cb45126265d49"
+    },
+    {
+      "file": "apps/desktop/src/services/knowledgeDownload.ts",
+      "sha256": "9e960a545e36fc680e1c8dcf8093ffde80c95b2b6b153d877a1a4b131a63da89"
+    },
+    {
+      "file": "apps/desktop/src/services/knowledgeRoutes.ts",
+      "sha256": "9b3d0e72bbbe24952ecd7e9ab258b6cdbb074f6e1ea840446d3e366e3284858b"
+    },
+    {
+      "file": "apps/desktop/src/services/knowledgeStartup.ts",
+      "sha256": "d31422fb49bdaa322be33789348491f840daddd9538d8e83ab57eb6f65fcbdaa"
+    },
+    {
+      "file": "apps/desktop/src/services/learningActionArchive.ts",
+      "sha256": "b3bf230916f2f6ca26e058580764b5c4632a9d0fe5082a2f4e44512a20519ce2"
+    },
+    {
+      "file": "apps/desktop/src/services/learningActions.ts",
+      "sha256": "c64a472a0b41b1ddc2eeaa23f74a9e5125ff477ec3de31005adcbafd05595c3d"
+    },
+    {
+      "file": "apps/desktop/src/services/learningClipboard.ts",
+      "sha256": "f580964adbf49694287e8c0e0239fbc47bcb93b6c2658878cc67992c3dd3a920"
+    },
+    {
+      "file": "apps/desktop/src/services/learningDirectoryContext.ts",
+      "sha256": "401d96e009f6cc8e1bbce031172444ed733e14d1836cac1427bcae71603cd50b"
+    },
+    {
+      "file": "apps/desktop/src/services/learningQuery.ts",
+      "sha256": "6c7c45be9a565c7d66ddc8bc34f23bf618ad40359640a0970ec809180b498b48"
+    },
+    {
+      "file": "apps/desktop/src/services/learningReferences.ts",
+      "sha256": "20faf97b58d1f7b273fe0b46bb1b68cff67c81797969d2765a09ccc561ab9fa8"
+    },
+    {
+      "file": "apps/desktop/src/services/learningSkillReceipts.ts",
+      "sha256": "35a177d33e87d37adee7c67a978572c46476bfacdebfe2de3a8ea255f19155b3"
+    },
+    {
+      "file": "apps/desktop/src/services/learningSkills.ts",
+      "sha256": "a7ca3c0e9692836d296b4247ff748fcfbff4d7af0c399366f2933a3d3778ddae"
+    },
+    {
+      "file": "apps/desktop/src/services/learningWorkspace.ts",
+      "sha256": "f723bb7edb65f8ab1248ac73a0624fd423e152b6b03a7f3b778971667387a4a5"
+    },
+    {
+      "file": "apps/desktop/src/services/learningWorkspaceAgent.ts",
+      "sha256": "92729fddc84c436939b3955369acd375b9527c9f57854b14debc1530049f4781"
+    },
+    {
+      "file": "apps/desktop/src/services/learningWorkspaceStore.ts",
+      "sha256": "d4f016c69abd9b4c3e9425b89481da75c0e862a9e919f770ebdd8846cf9f1e97"
+    },
+    {
+      "file": "apps/desktop/src/services/legacyReviewNavigation.ts",
+      "sha256": "f700dbc368ca33ff8115edc4336454fd3c5e3f07681af9ffee3272e32e9f2ca9"
+    },
+    {
+      "file": "apps/desktop/src/services/linkedMindmapCanvas.ts",
+      "sha256": "d9503bae4afd978dd24cc13a65842081e7fe59d2de15f9644180a47797ea0ea0"
+    },
+    {
+      "file": "apps/desktop/src/services/linkedNoteCanvas.ts",
+      "sha256": "58591fe6c4f6760c953b33875af78aef8402426301614d7c6ad777945df9c566"
+    },
+    {
+      "file": "apps/desktop/src/services/localAiLearning.ts",
+      "sha256": "c590bbcb614d581f6a78b20132defd36773306c056ca37fc9c04a1c1f921fded"
+    },
+    {
+      "file": "apps/desktop/src/services/localBackup.ts",
+      "sha256": "47420d91c6712ff7b27d9af91e487076e40ab0c90a3e6eabb834945ba71f96d6"
+    },
+    {
+      "file": "apps/desktop/src/services/localBackupMedia.ts",
+      "sha256": "5f8199cb4fa22b0c1ff24183bf11c7eead22b34772e5966aae19b565f055af74"
+    },
+    {
+      "file": "apps/desktop/src/services/localDraftLifecycle.ts",
+      "sha256": "d9f973a730804ba3f928cdd1505b3276e7b7ab2b996328e0a8942ab5930122d1"
+    },
+    {
+      "file": "apps/desktop/src/services/localFileExport.ts",
+      "sha256": "d27706a1fb12232a2bd986cc07101a762793d4fbee694e826bb1fe09ad182614"
+    },
+    {
+      "file": "apps/desktop/src/services/localLearningEpoch.ts",
+      "sha256": "5623cfea083d724bd9626befc18d5e8a4c2158cc2b8a10312d7edc96e5d36d02"
+    },
+    {
+      "file": "apps/desktop/src/services/localPersonal.ts",
+      "sha256": "850bdd980da8381f0144206e155e4b2b5229c6dc50916f8121f30ba253a1187a"
+    },
+    {
+      "file": "apps/desktop/src/services/localRestoreJournal.ts",
+      "sha256": "66e28d6d274442a2e9ec4665dcd0e30dfe84ce32581edc5d0b3917d2c8d1b4fc"
+    },
+    {
+      "file": "apps/desktop/src/services/localTickTick.ts",
+      "sha256": "8aac1eb8412fe888cd23b9b557cc14735f0b28e485f2a68f4121e934b74cf8e1"
+    },
+    {
+      "file": "apps/desktop/src/services/localVaultArchive.ts",
+      "sha256": "890b2d4f726c246d11ceb5e24b128580019ee02b89a90d0e005374f9366ef049"
+    },
+    {
+      "file": "apps/desktop/src/services/localZip.ts",
+      "sha256": "413abc680da79292b7f1c9699501f85d61cf25e8d82842074703561467dbea17"
+    },
+    {
+      "file": "apps/desktop/src/services/logCaptureJournal.ts",
+      "sha256": "3ee6ba1e9de2c86d3c03c53142c33c010f26e1058c8f68b47e2f60d27b1d913b"
+    },
+    {
+      "file": "apps/desktop/src/services/logCaptureOperation.ts",
+      "sha256": "a5731a499e88a3ee6f4ee42a3c0e2a5fb2c566a92470ea3b48f1e52dcd960163"
+    },
+    {
+      "file": "apps/desktop/src/services/logsViewCache.ts",
+      "sha256": "b8df8302777396cbadcd5b6d216c9187e9025323c9c1aa8700def76ca67fbff4"
+    },
+    {
+      "file": "apps/desktop/src/services/markdownPreview.ts",
+      "sha256": "ae4caff94549bfb5056b0512efbf7419e2074d1d4a064f6be9fb8872ed7593b7"
+    },
+    {
+      "file": "apps/desktop/src/services/mermaidText.ts",
+      "sha256": "56c0bbfc3d8f2ad8c030ef98eff2f6eb6edab9096d9efe88e2e2b9a56c2697f8"
+    },
+    {
+      "file": "apps/desktop/src/services/mindmap.ts",
+      "sha256": "5d5d41585e051186a1a8cd5b900d46f384d563b6d4417d51cb4c3f510ce9cb04"
+    },
+    {
+      "file": "apps/desktop/src/services/nativeCore/events.ts",
+      "sha256": "1c723e33dc586cf89cbae1e6119a804590af6122a18ab12d9c34db4a83c5a7e1"
+    },
+    {
+      "file": "apps/desktop/src/services/nativeFileExportLease.ts",
+      "sha256": "62b76ef654dc42dfa06339003d49291657021fffd3112acc85331065ab9a1b29"
+    },
+    {
+      "file": "apps/desktop/src/services/nativeFileHost.ts",
+      "sha256": "08b253435dd2b404249eb4fd78f68d53338cd24e5b4cb66feb88096e7e86d2b7"
+    },
+    {
+      "file": "apps/desktop/src/services/nativeFileInputs.ts",
+      "sha256": "f6343be882b2b8686121c2d41f9db5ee93e74a593d9923aade4ec966a1f2b3bf"
+    },
+    {
+      "file": "apps/desktop/src/services/navigationPreload.ts",
+      "sha256": "481eea262129a59c305883d3ac6872a1fef867fd46ac701aa8a3a61d66d1f588"
+    },
+    {
+      "file": "apps/desktop/src/services/noteAttachmentReady.ts",
+      "sha256": "d6012813f15b2bc9fc2ae390930ef49be8977402a00b8b89cf72a5c9f0e19044"
+    },
+    {
+      "file": "apps/desktop/src/services/noteAttachmentReferences.ts",
+      "sha256": "4d31371d2293385ad2594cc184b731346ae174457805a6a1a75fb5d65ced42ec"
+    },
+    {
+      "file": "apps/desktop/src/services/noteCanvas.ts",
+      "sha256": "ed15b53f51cfa1da5d48698824c88318b4a7ef915dbc6d71e450036f9b6e279c"
+    },
+    {
+      "file": "apps/desktop/src/services/noteConsolidation.ts",
+      "sha256": "41ec63dd0f80e9048c0a2b64bbbe24ff284300d719867668561d917cefa70740"
+    },
+    {
+      "file": "apps/desktop/src/services/noteConsolidationAi.ts",
+      "sha256": "e12105ece0a6fe9f42f9ef9ae1de95472aa238d3b1c91e4874cd55e856398c89"
+    },
+    {
+      "file": "apps/desktop/src/services/noteContentKind.ts",
+      "sha256": "da53b107f96161b58699cd6e0eff4d26fa756bc6912052e62a5064c042df2bb8"
+    },
+    {
+      "file": "apps/desktop/src/services/noteDraft.ts",
+      "sha256": "2d72536ff68abc94668d79c03c9d1a12a6f308a4cc80f5ac9fb82c835d38bb4c"
+    },
+    {
+      "file": "apps/desktop/src/services/noteFolderTree.ts",
+      "sha256": "6c744cdf08db42af07f83ee87fa8fb7e2cd53fbbb1412cb33ddd6a1845c7bfdb"
+    },
+    {
+      "file": "apps/desktop/src/services/noteHistory.ts",
+      "sha256": "78240dcda2530e9baaa675f2a6c247e752684bab26f4599d621f8323b8ef4433"
+    },
+    {
+      "file": "apps/desktop/src/services/noteLinks.ts",
+      "sha256": "4419d70bd745d2dc0b045fee338014bc9d4dda5f97a447341e7ab3fc1c91a831"
+    },
+    {
+      "file": "apps/desktop/src/services/noteListPresentation.ts",
+      "sha256": "4422aa4af3f550606e043300f2580cb7a35db7082568c427ffc5fbad51c2761b"
+    },
+    {
+      "file": "apps/desktop/src/services/noteListSearch.ts",
+      "sha256": "800602cfe667e8152685da61af25e2efe9b452d23025d676cd8a43ba792ac2f2"
+    },
+    {
+      "file": "apps/desktop/src/services/noteListSort.ts",
+      "sha256": "75fb34086bc2b3b5531671514b8d79bbe5eedcd9a1dd9b94117502259cdb923e"
+    },
+    {
+      "file": "apps/desktop/src/services/noteOrganization.ts",
+      "sha256": "d9bfe71d54c8e94a35dcdd3240a784338a51c2b5e82e5eab680cfbbe441755ed"
+    },
+    {
+      "file": "apps/desktop/src/services/noteOutlineLayout.ts",
+      "sha256": "da3549abb8988d1e5ab14e088d88ba45bd59776b9cc74be6df0420d145517331"
+    },
+    {
+      "file": "apps/desktop/src/services/noteOutlineTree.ts",
+      "sha256": "de548bdb2d0c4b66647840359594bfc3653623e00b4ca7f42f83d9aa13f7bb0e"
+    },
+    {
+      "file": "apps/desktop/src/services/noteTags.ts",
+      "sha256": "ad99c1a9db821041441401e24c6b2f03bcdaf759231b301eeb8c599289677ec2"
+    },
+    {
+      "file": "apps/desktop/src/services/noteUndoChanges.ts",
+      "sha256": "38cffd2ea46b0df0e537455fec0d5a481e28d9ea381799fcc620de4fdb8e5f18"
+    },
+    {
+      "file": "apps/desktop/src/services/notes.ts",
+      "sha256": "e091d909721fcf374500352cac14c644e9be6e5b88db8d5af7733e97543801fd"
+    },
+    {
+      "file": "apps/desktop/src/services/notificationPersistence.ts",
+      "sha256": "6a1406368fc05f8ad51b2621efa5b8e68b8ca901f15cfb861c9046a3ec6863a3"
+    },
+    {
+      "file": "apps/desktop/src/services/obsidianImport.ts",
+      "sha256": "71434a7563b6783f938aca01c0913abd0690d69b5a1a0642c447a8fd6da6d1c9"
+    },
+    {
+      "file": "apps/desktop/src/services/pdfAttachmentText.ts",
+      "sha256": "be0a4e250522f2009df2d8084b5636bf0f3da4db3886540a805571b0b3d271c9"
+    },
+    {
+      "file": "apps/desktop/src/services/pdfBufferCompatibility.ts",
+      "sha256": "0a2f44a417d5444c5b296674c2e9aae8269c2b5162b9af608caf08fb5595ef4e"
+    },
+    {
+      "file": "apps/desktop/src/services/pdfContinuousLayout.ts",
+      "sha256": "fa20bf437b82a0bbeaf4e510bed7992cb07be1653bbaae2e4f5094c8b921747c"
+    },
+    {
+      "file": "apps/desktop/src/services/pdfPreview.ts",
+      "sha256": "3b9a3c9ff0b57909789e61eefa668eae91cc914b695d407b6691f5d45bdd23d4"
+    },
+    {
+      "file": "apps/desktop/src/services/pdfPreview.worker.ts",
+      "sha256": "603e2726114ebebb031868722cd290feb0f1811e6cc55854c69581fb73d55172"
+    },
+    {
+      "file": "apps/desktop/src/services/pdfPromiseCompatibility.ts",
+      "sha256": "63e6da3737a03a473db59eae0e9f8f6811127eb1896f0bd762e14b135d5e44a6"
+    },
+    {
+      "file": "apps/desktop/src/services/pendingNoteAttachmentSync.ts",
+      "sha256": "84853e1fed06b1c94c0052394b2827258d2fefb2db2edd4e9d54e3a07b1eeef5"
+    },
+    {
+      "file": "apps/desktop/src/services/performanceCapture.ts",
+      "sha256": "2f62ebd22b2e174c31451d0dac085e06f529e6e617994e5bfcbdecac8bdcb613"
+    },
+    {
+      "file": "apps/desktop/src/services/platformFetch.ts",
+      "sha256": "c8c07f04513603ede674f479cb62341d750bf90085284ef98c9ebccae0a8d89d"
+    },
+    {
+      "file": "apps/desktop/src/services/productDialog.ts",
+      "sha256": "c8d7e60329a8f113c9199b316ed39396606c1d271af5cc722c76924c27d93a20"
+    },
+    {
+      "file": "apps/desktop/src/services/profiles.ts",
+      "sha256": "4a05b4e9f26e2747a75ca7f8b3dbf9ee4beccccb99b5bcc44e1ca3310d82e4db"
+    },
+    {
+      "file": "apps/desktop/src/services/projectShortcuts.ts",
+      "sha256": "70161e55bb5b0b116c7ffbc232b20c46ed8d381f11d25da4e7ae08061e596ef8"
+    },
+    {
+      "file": "apps/desktop/src/services/randomUUID.ts",
+      "sha256": "36e773a5892541f29a57d23c491e4445a5b2d01f1735c2aea8ea482810345ed4"
+    },
+    {
+      "file": "apps/desktop/src/services/readingProgress.ts",
+      "sha256": "f20178b0779b3898777c202d669fdd4f323d9099ed25675f931d231a5ebc7f23"
+    },
+    {
+      "file": "apps/desktop/src/services/recordings.ts",
+      "sha256": "1c1fff5146d7a79b5b71a952f67b2965f6c2d1b594741bdfe5beb3800995226b"
+    },
+    {
+      "file": "apps/desktop/src/services/remoteImageGovernance.ts",
+      "sha256": "a00e53215a2211bb74f8c5b1020ae96bee90b897447eb3db58da814b5c2d4c5e"
+    },
+    {
+      "file": "apps/desktop/src/services/remoteNoteHistory.ts",
+      "sha256": "b050b76686c10f50153a6b9f5a90f9eecdc5896bc73537e5eb82f783f3b5e37c"
+    },
+    {
+      "file": "apps/desktop/src/services/remoteNoteSnapshot.ts",
+      "sha256": "a4ba89653e2e7eb7d3c81851649e32e39e92c40b529d3036e50bba6d328a6fbc"
+    },
+    {
+      "file": "apps/desktop/src/services/reviewData.ts",
+      "sha256": "8f17d2aae73af248f095d033d5d701443bc5fda94e9197d8d6f4c6e14c713d79"
+    },
+    {
+      "file": "apps/desktop/src/services/reviewDataSource.ts",
+      "sha256": "5922e765777d379b2a7a89db807f92f785fab4e2faa3019de2207aa8969ea71a"
+    },
+    {
+      "file": "apps/desktop/src/services/savedGraphView.ts",
+      "sha256": "e668ac6edb34b916a4b459ad218f2e756151f39d8577632e3e5a71040ffb3890"
+    },
+    {
+      "file": "apps/desktop/src/services/scopedChanges.ts",
+      "sha256": "9d554a51268d750be54a822b679b6f359c67e2189a36f3cbe4dc03ddf997da57"
+    },
+    {
+      "file": "apps/desktop/src/services/search.ts",
+      "sha256": "e60faf452d208d70567ce726e8164ba17cc49623455bf4f08cdfd8840e59bc3d"
+    },
+    {
+      "file": "apps/desktop/src/services/serverConfig.ts",
+      "sha256": "9f2aea3d03adf56efa2f5bbf4b9844547853f3fa40d03d885e6d89707d8edb00"
+    },
+    {
+      "file": "apps/desktop/src/services/serverMigration.ts",
+      "sha256": "87babe1ebe2922cadd1e56ae3a41a2c81d76e0618de095a3c5e5e1b973621a72"
+    },
+    {
+      "file": "apps/desktop/src/services/sessionRecovery.ts",
+      "sha256": "b795ac1d4f155a95f6bf35a9125394bf115ffae132646883447d752e1e7cc6f9"
+    },
+    {
+      "file": "apps/desktop/src/services/syncActivity.ts",
+      "sha256": "b6053ea9dc0e8471235cc41ab9de705ddda95648ea7be0a7a3ad67ef992c79dc"
+    },
+    {
+      "file": "apps/desktop/src/services/syncCompatibility.ts",
+      "sha256": "32fcb19b79cc1e1689eeed7d8ff16ae8bf2e14faab123e05780dee5d3910b96d"
+    },
+    {
+      "file": "apps/desktop/src/services/syncDiagnostic.ts",
+      "sha256": "6166fc9237db8ca71c92c35d0e8216633640783c7e586f0d283be1b90ed56997"
+    },
+    {
+      "file": "apps/desktop/src/services/syncEpoch.ts",
+      "sha256": "71b65c492adb2f749609690c709db1b4cf343440f96e3288714e2feedc557a1b"
+    },
+    {
+      "file": "apps/desktop/src/services/syncEvents.ts",
+      "sha256": "f02f08d6c38fb471b725413e781903cde7cbebba740add166f8f91147776fe1c"
+    },
+    {
+      "file": "apps/desktop/src/services/syncQueueInspection.ts",
+      "sha256": "2809b75bccc9d01eebd602da868a075402b098264fba39d9d4361b44428ba402"
+    },
+    {
+      "file": "apps/desktop/src/services/syncReadiness.ts",
+      "sha256": "f02f08d6c38fb471b725413e781903cde7cbebba740add166f8f91147776fe1c"
+    },
+    {
+      "file": "apps/desktop/src/services/syncResetGuard.ts",
+      "sha256": "f65529912f6a43a409afe864f1fc150d5e0683a413300477486cb9f2c5b9df95"
+    },
+    {
+      "file": "apps/desktop/src/services/syncRuntimeIssues.ts",
+      "sha256": "4377ee8f749b3807e7377590c4eba0ab1294abed3217b7ddf38ba41f4bea0881"
+    },
+    {
+      "file": "apps/desktop/src/services/syncSignals.ts",
+      "sha256": "ffd836c2fe387888a4b1cb7d15386fbc687917367d406f2e666c434c67ccf8b5"
+    },
+    {
+      "file": "apps/desktop/src/services/syncTransportHealth.ts",
+      "sha256": "ebe4b55daae708f99c0da13b8820397b369d8eaf368e2035864b6a8d7785b7c0"
+    },
+    {
+      "file": "apps/desktop/src/services/syntaxHighlight.ts",
+      "sha256": "b5282be2e07026d7256a501eaaa8f8877bc4d17736b1dc95ab2d1633895811c1"
+    },
+    {
+      "file": "apps/desktop/src/services/tags.ts",
+      "sha256": "9a17a08a282ff62c30310c02caff894ff1b815848f1d1de1149701fbf8d8b914"
+    },
+    {
+      "file": "apps/desktop/src/services/taskAttachmentItems.ts",
+      "sha256": "1b959d28e826012e10281b436633a4794555de7a5967165827f0e6a8d86b1198"
+    },
+    {
+      "file": "apps/desktop/src/services/taskFailureDiagnostic.ts",
+      "sha256": "864efa3160d90e770448761422b8ea65d4f2d6bd6d117adc75508857dfa47106"
+    },
+    {
+      "file": "apps/desktop/src/services/taskReminderActivation.ts",
+      "sha256": "9eab30dd6710dd85f43087d27c643665e24155e58a706ad1165691cbb080a28f"
+    },
+    {
+      "file": "apps/desktop/src/services/taskReminders.ts",
+      "sha256": "ecf933cd8b9f794c24a7e4e07b67120c6675ca3ebaadd01f39d52ad99497086e"
+    },
+    {
+      "file": "apps/desktop/src/services/tasks.ts",
+      "sha256": "6a5e9ab891763f0240694ead9a9c7b7f0636940134100013426449ad6d919f81"
+    },
+    {
+      "file": "apps/desktop/src/services/tickTickScopeRepair.ts",
+      "sha256": "a3bc360fcbee7b98955fc7b4ef862908ddbfbf650c7e1b7bac627db4bbfcdff3"
+    },
+    {
+      "file": "apps/desktop/src/services/totp.ts",
+      "sha256": "73713ecb5a673940b4e92f5a8eebd60df4bc9c6cab720d2534d8e1907f6f25f8"
+    },
+    {
+      "file": "apps/desktop/src/services/trashBatch.ts",
+      "sha256": "797b42388c6980afe446c8129d7b7a9c251793c9583f11f4eca433b719dcd505"
+    },
+    {
+      "file": "apps/desktop/src/services/userAdmin.ts",
+      "sha256": "7e59a0389a1408a3dfa9294016278c1df55d2e6fd8bbcbfd20815cdbc8ee68d1"
+    },
+    {
+      "file": "apps/desktop/src/services/vault.ts",
+      "sha256": "c7095cbac0ae5690d1d94313a28a9983fa33bac5a524883c6a541359f95d37ab"
+    },
+    {
+      "file": "apps/desktop/src/services/vaultAttribution.ts",
+      "sha256": "c18d3ff3916eb628bd37801926beb6044da30aa92c39c9ee33e00ec3959e7f9a"
+    },
+    {
+      "file": "apps/desktop/src/services/vaultBulkEditing.ts",
+      "sha256": "6402d06267defeac4723b764f813a04e96bc7a381ab2c9bb7f28dc0cc96bc3dd"
+    },
+    {
+      "file": "apps/desktop/src/services/vaultImport.ts",
+      "sha256": "a9e09a8e634a1b62894528bd6ef64f2f0eae51c456d58a1a56dd9846bc48cc54"
+    },
+    {
+      "file": "apps/desktop/src/services/vaultMarkdownImport.ts",
+      "sha256": "2cc783bbc25b455c28962fdab58686b2ed879f2fc9dd080aa3bb5bbbc64b9c89"
+    },
+    {
+      "file": "apps/desktop/src/services/vaultOrganizer.ts",
+      "sha256": "428e81b06dcf98646d5529c307eb907d88f765631d51f9f39b1529739d8666ac"
+    },
+    {
+      "file": "apps/desktop/src/services/vaultPassword.ts",
+      "sha256": "78db010c8cc2044048ffa131c1d1328601aba5c10b492209869833f5cc9e3d55"
+    },
+    {
+      "file": "apps/desktop/src/services/vaultSession.ts",
+      "sha256": "738d2cbe5248154135e4fd698f1232c089a32e583d15e965ca634aba5bcc8234"
+    },
+    {
+      "file": "apps/desktop/src/services/vaultSync.ts",
+      "sha256": "7dbcd6982e0f37735095735ef930247ee7960a6ba19eae8659cdfb49c2ab4812"
+    },
+    {
+      "file": "apps/desktop/src/services/workspace.ts",
+      "sha256": "2faa2d0d1e15ca8fbf5a3c7677282cbd2e7096862663f7e0a8be81696c30efb7"
+    },
+    {
+      "file": "apps/desktop/src/services/workspaceDerivedReset.ts",
+      "sha256": "9a9fb6eb86415c91b431f3b113480475b5544eb893941a5dc561cdea596a71ed"
+    },
+    {
+      "file": "apps/desktop/src/services/workspaceDownload.ts",
+      "sha256": "e39195a9f3d80feec13ec615769ae407a6d26a5661121e56e51ee3bd4c4f2b19"
+    },
+    {
+      "file": "apps/desktop/src/services/workspaceKeyChanges.ts",
+      "sha256": "4a83b5bbf66ec1f62eeae4430c62caf8fcbc1e852147135ce66aae4ba13ab8f8"
+    },
+    {
+      "file": "apps/desktop/src/services/workspaceTextDiff.ts",
+      "sha256": "2fd871570f48a5978b9cb46663bf4f59fd90e56b3eb5d82212c41589fd381498"
+    },
+    {
+      "file": "apps/desktop/src/services/workspaceUnlockSession.ts",
+      "sha256": "4d7045896468ad7bb5682f36b00a4fbe961b2d4b35ecad96bc6866cb94a46fe5"
+    },
+    {
+      "file": "apps/desktop/src/stores/auth.ts",
+      "sha256": "0c0a8afd3f7e7276b6ce175c7c1f0acad37988f0fc694cbad8d7eb8463e938be"
+    },
+    {
+      "file": "apps/desktop/src/stores/notes.ts",
+      "sha256": "a251e398482891d58d4875057413951cfa544bbdbf18dc7b4ee7029298b7faf9"
+    },
+    {
+      "file": "apps/desktop/src/stores/notifications.ts",
+      "sha256": "b2297bf9bebde3dac0e3c5fae44741db2e5350ea69203969ed111505ea83ba19"
+    },
+    {
+      "file": "apps/desktop/src/stores/tasks.ts",
+      "sha256": "1bf3de141baebc730d6e016fec86d03b60642ad83a9ed456861926eff5ec19b2"
+    },
+    {
+      "file": "apps/desktop/src/styles/base.css",
+      "sha256": "1eed4a011e43f09d32e748aae25d1be91a3eea783cdeb9c29721f3e146027ee7"
+    },
+    {
+      "file": "apps/desktop/src/styles/controls.css",
+      "sha256": "eddc7390cde3dfb159a6ba03a279fcd2684685ccf9278c1fd5bfbf246bf620dc"
+    },
+    {
+      "file": "apps/desktop/src/styles/noteListTable.css",
+      "sha256": "3236d1c8b7edfd8223c9549c674124be8847b1779b74ad350a940b838457cc1c"
+    },
+    {
+      "file": "apps/desktop/src/styles/tokens.css",
+      "sha256": "66e212ca60ef0bf460e3579a01c71f3dbc98e2f025acac86567c59f39f821c3b"
+    },
+    {
+      "file": "apps/desktop/src/styles/toolHeaders.css",
+      "sha256": "a3ce667d6bc160cacf446bd9cf1dc5813cbdfd2918e258c550b487523cac9930"
+    },
+    {
+      "file": "apps/desktop/src/styles/vaultPrototype.css",
+      "sha256": "0d573dbe2c624d841aec71e462674f069c3e9ed378ea3d989cb539f0cb0a9993"
+    },
+    {
+      "file": "apps/desktop/src/tasks/taskExperience.ts",
+      "sha256": "a2c1e7a468f5f18ca5d0315bd75c00c161554541f75a16fe2d5bb8efb568ac71"
+    },
+    {
+      "file": "apps/desktop/src/tasks/taskListScope.ts",
+      "sha256": "f2f24730e7d96452df783589e2341be0f6aed0d3feb2220e2c6e2aed3dc1fd43"
+    },
+    {
+      "file": "apps/desktop/src/tasks/taskLocation.ts",
+      "sha256": "5559f8c3c6c5894015b8ee27ffe827eacff09549886392d052ba387195cba2e6"
+    },
+    {
+      "file": "apps/desktop/src/types/pdfjs-legacy.d.ts",
+      "sha256": "9a2ba84d0511f8d7ffd98d82c796402bd4c9b4d7f34fcdd68f8e70e07639cad3"
+    },
+    {
+      "file": "apps/desktop/src/utils/textEncoding.ts",
+      "sha256": "81207de9ddac1a76e87683183c060583de27c6e7fb3cd8c181f9b51b155f6e09"
+    },
+    {
+      "file": "apps/desktop/src/views/AiLearningView.vue",
+      "sha256": "be3e1790f7fecd8c522f71945c0d4da59ea1748f0f535ab48e541d7ce325d31a"
+    },
+    {
+      "file": "apps/desktop/src/views/AttachmentsView.vue",
+      "sha256": "18def5b3cd84ce73ce525bfac5f416d9c6c82d3ce27a973c23258c671169ee61"
+    },
+    {
+      "file": "apps/desktop/src/views/CanvasView.vue",
+      "sha256": "ff4f41bc52ece2efbc0b7c759c61c81cce7641d3e29812cf7c7ac290366a3965"
+    },
+    {
+      "file": "apps/desktop/src/views/DataProtectionView.vue",
+      "sha256": "95fb5da4944f341804a86b9dfa38a1d1880b90a077fee3906d2affc7a502aa67"
+    },
+    {
+      "file": "apps/desktop/src/views/FocusRecordsView.vue",
+      "sha256": "2d705775ff933104e0e6ffdc95f24feb6126ecd0e616fddec8ee5d536288e32b"
+    },
+    {
+      "file": "apps/desktop/src/views/FocusView.vue",
+      "sha256": "a11ebcf34437142a8a9efc1cf314a397ae51d08464c5c156bfe51977a9713adc"
+    },
+    {
+      "file": "apps/desktop/src/views/GovernanceView.vue",
+      "sha256": "9973f5a29a79266fdc820d2ee1ee8cd3b6d4792a6f92130af888efad7e9bac1f"
+    },
+    {
+      "file": "apps/desktop/src/views/HomeView.vue",
+      "sha256": "0a3e0444f68b0cf375608ef1d334b6a18a27d407d93992a006928aa0d29115ac"
+    },
+    {
+      "file": "apps/desktop/src/views/LoginView.vue",
+      "sha256": "696d3d69af6e6a5fe5c1fad0bb783c15ebe663c9c6ac13e7ac0d6c9d60144460"
+    },
+    {
+      "file": "apps/desktop/src/views/LogsView.vue",
+      "sha256": "a4f9181f52f7bab247b6d4b5e75219f561ef63afc2b2a0ab10c22e5870d8e29a"
+    },
+    {
+      "file": "apps/desktop/src/views/NotesWorkspaceView.vue",
+      "sha256": "e9f065f26d1218bdfd4538ff5a3d6f88587146dcb4517f3b345fe5f8fbc5cc0a"
+    },
+    {
+      "file": "apps/desktop/src/views/ProjectLayout.vue",
+      "sha256": "460a167be29e26220bfc5a15a488450240ac1bf96f048493f102a139b21598c8"
+    },
+    {
+      "file": "apps/desktop/src/views/ProjectsView.vue",
+      "sha256": "3a9b7ec57e37cd3e368a59674487b36239d41c735c045b54dd2e289498880d6c"
+    },
+    {
+      "file": "apps/desktop/src/views/RecordingsView.vue",
+      "sha256": "dcca4872f63fdd7fd0579550b2d72b9079005329d8a3379eaa956e0946f18b0c"
+    },
+    {
+      "file": "apps/desktop/src/views/ReviewView.vue",
+      "sha256": "3c83009b28664ec20675bbe3d3e083373833dddc7f37da1825732509b615bc04"
+    },
+    {
+      "file": "apps/desktop/src/views/SearchView.vue",
+      "sha256": "18a9ce1ede91ef9b3d9185a88977aa29827c34d0639fcba48e3c9af9705d0805"
+    },
+    {
+      "file": "apps/desktop/src/views/SettingsView.vue",
+      "sha256": "f40be9c25e9ed85d20c810ed065fd115d7731d5a7ec9f64b273d1bca5c67c552"
+    },
+    {
+      "file": "apps/desktop/src/views/TasksView.vue",
+      "sha256": "890453564ac3cf6d7b5b46ce54ed8ea155926a662d48610e66f9a2d39c697715"
+    },
+    {
+      "file": "apps/desktop/src/views/UserManagementView.vue",
+      "sha256": "216dbbc6dbdc1cd906b71133c51dc7668299cd6071c043d46d1a7d91aee3662d"
+    },
+    {
+      "file": "apps/desktop/src/views/VaultView.vue",
+      "sha256": "0015eb3b0a9ce97b326c610784a04a23b76fd26a8113f59ebc5dd8555e984a6a"
+    },
+    {
+      "file": "apps/desktop/tsconfig.app.json",
+      "sha256": "13433ce8cb88cdf677a010237a609f2107f46c8092974fa443c6e05a02245a44"
+    },
+    {
+      "file": "apps/desktop/tsconfig.community.json",
+      "sha256": "d62a1b472dd473e4c0f0d1d33b086f25f0741db7d2295c1fe4b66332aa8a12c8"
+    },
+    {
+      "file": "apps/desktop/vite.community.config.ts",
+      "sha256": "9eb6e76f703bfef9bc509a43e320e6066155318df381a37a6a2b08e6c50d74e1"
+    },
+    {
+      "file": "packages/core/src/account.ts",
+      "sha256": "9ebcdb3c04a6ed95df36633112999c6503aad5485c6be5a03455ab9ce2b4061a"
+    },
+    {
+      "file": "packages/core/src/aiLearning.ts",
+      "sha256": "969ccffa03295a781074ac2b908da9f4db6681de623c36303d4dfabe88878403"
+    },
+    {
+      "file": "packages/core/src/appInfo.ts",
+      "sha256": "4db4b02f42995ad87dd007ff04ea8c5dbc77415af22dd0aa5e59827f097c9e9d"
+    },
+    {
+      "file": "packages/core/src/attachmentText.ts",
+      "sha256": "8db9d4d8d79eba83f20f3a29e3cacb201199b38c4b85ab001b37ee2997124738"
+    },
+    {
+      "file": "packages/core/src/attachmentTextIndex.ts",
+      "sha256": "c8eaedf17de8cd83d91e4674220f19535c2008cadc2bd407c27a16802391bef8"
+    },
+    {
+      "file": "packages/core/src/community/basicRecurrence.ts",
+      "sha256": "b5d21bd6e80099980c7a1b7f176fb1f1ed78155758a3d833e11dc19695020327"
+    },
+    {
+      "file": "packages/core/src/community/compatibility.ts",
+      "sha256": "98279aa7dd485cb35dd37e98f2a6e986c6063bdfc4c9776b2adc32447681c899"
+    },
+    {
+      "file": "packages/core/src/community/editionTransfer.ts",
+      "sha256": "0293634d6cdb3d210803d252901afb91421a949ae870e4d344ccda427593e22a"
+    },
+    {
+      "file": "packages/core/src/community/entityRepository.ts",
+      "sha256": "81b703b3181404a01070b8226e54bdbd78dc4ea948e44fae6f728479430d6035"
+    },
+    {
+      "file": "packages/core/src/community/hostScope.ts",
+      "sha256": "7d48bb10f9a5b5b453674104f43525f3cf9747625e8563eb750dce2e95be9c2c"
+    },
+    {
+      "file": "packages/core/src/community/index.ts",
+      "sha256": "465e386825e20f63160ebe5990a9a12d7f14a4cd8373fa69d38b09edaf5d727c"
+    },
+    {
+      "file": "packages/core/src/community/indexedDbHost.ts",
+      "sha256": "baf2ca086e6e31d81832711b0781f63b3547d6afb05fe96cfc2a4da65f413368"
+    },
+    {
+      "file": "packages/core/src/community/localOnlyProvider.ts",
+      "sha256": "c9d8228a94c9cd8c180341df94bd2e1265cd5e92f956637cdd2076c708ca242d"
+    },
+    {
+      "file": "packages/core/src/community/localTasks.ts",
+      "sha256": "44c2b51e920f1c4fa8a1905e41408620813a9a969609e1de75b64faa9a03f587"
+    },
+    {
+      "file": "packages/core/src/community/nativeLocalHost.ts",
+      "sha256": "efd35b7a2b45bb0ebd8593285db6e07cb92d45ee8ad782af24e88b00d634deb5"
+    },
+    {
+      "file": "packages/core/src/community/portableValue.ts",
+      "sha256": "d338e0b193709a21e79f3f610bee003dd9589177fa9733a7f2c7fcee219f6441"
+    },
+    {
+      "file": "packages/core/src/community/recoveryArchive.ts",
+      "sha256": "21d385acc95925e6b23f230dd68224f30031d50e07b7f5fc0fce36f8645d3981"
+    },
+    {
+      "file": "packages/core/src/community/recoveryImport.ts",
+      "sha256": "dd7e287f90e216a62876cdc69628eb5f207bfcc3939be1b7842f996772a214e4"
+    },
+    {
+      "file": "packages/core/src/community/stagedTransaction.ts",
+      "sha256": "00d69b0f6160eb69409cd636a7a4be3862a19631f0d9918206f4b1d6b7e76a96"
+    },
+    {
+      "file": "packages/core/src/community/taskRecurrencePreview.ts",
+      "sha256": "b26db00e9baf315d1b7b4c78b5b84e3a40bac433ec1c1aca2e3e1a874a74c491"
+    },
+    {
+      "file": "packages/core/src/conflictBatch.ts",
+      "sha256": "c6d9b99104736389631cd049fb29b3f050ed02db010664c228060ebc01cfeaf6"
+    },
+    {
+      "file": "packages/core/src/contracts/application.ts",
+      "sha256": "4cc600bbb0e47775d2be4b3fe651c86281d884685873bd7d045f037997462b0e"
+    },
+    {
+      "file": "packages/core/src/contracts/attachments.ts",
+      "sha256": "9c6cfe0ba3faf451d5c21d611f4a3ad7723c3699ca0be2bfc58713467ca24add"
+    },
+    {
+      "file": "packages/core/src/contracts/folders.ts",
+      "sha256": "0ea9e85977def84f6941547ccca3d09d64b1e43ffe1320ef9614307c616676b3"
+    },
+    {
+      "file": "packages/core/src/contracts/host.ts",
+      "sha256": "e575f834977e271d7276658f64958af21e2a3b2ba9ee9938b3c174a72a89d2c4"
+    },
+    {
+      "file": "packages/core/src/contracts/index.ts",
+      "sha256": "7965fdd563f823db3b29703a4f987a2feb4cee02f152b27306883cdc58e5cf3d"
+    },
+    {
+      "file": "packages/core/src/contracts/knowledgeCards.ts",
+      "sha256": "332a96fa5cef15de939a8aadd3caa3bc909ba829096f5d231744be394259bfcc"
+    },
+    {
+      "file": "packages/core/src/contracts/notes.ts",
+      "sha256": "464905d18099b5d734c1bf4aef5ee447939d248720870982133e3ec64bb03046"
+    },
+    {
+      "file": "packages/core/src/contracts/provider.ts",
+      "sha256": "b3407b5950795b2254cc80b5b71038ffdd143942ff08fd57bbe514d0157904fd"
+    },
+    {
+      "file": "packages/core/src/contracts/recovery.ts",
+      "sha256": "41a7afbcab082ddfbda1f5b5faf453429cce2ab73b8fa4b53ab35832ecbc27e0"
+    },
+    {
+      "file": "packages/core/src/contracts/recurrence.ts",
+      "sha256": "cb7c6b12bfdb9eec10511c21f9f20fcc8d5a6dce3943a443df03157d26f1f87f"
+    },
+    {
+      "file": "packages/core/src/contracts/remoteNoteHistory.ts",
+      "sha256": "6de00b419afa6e399220a346a6fe1a79fd1bbdf2326c6b95220be23e22e7d13c"
+    },
+    {
+      "file": "packages/core/src/contracts/sync.ts",
+      "sha256": "0cc295388bca8858adc4867a965960aa5c0f8a358b0c4f203b4b90e331b4f019"
+    },
+    {
+      "file": "packages/core/src/contracts/syncEntityFields.json",
+      "sha256": "ea80aab378b9d970c1492e33ad6b7c16291965ec73206da528be911dc54903db"
+    },
+    {
+      "file": "packages/core/src/contracts/syncExecutionLimits.json",
+      "sha256": "12857fb6741bd4a3d63e2bc799906a04cca49f479ea7e5588a571a1e7834b3c8"
+    },
+    {
+      "file": "packages/core/src/contracts/tags.ts",
+      "sha256": "491962f4b7ac2cf9e644dae9efacea9af729474e633e9ab1bd6be15defb873b3"
+    },
+    {
+      "file": "packages/core/src/contracts/tasks.ts",
+      "sha256": "3e55eff8230816abfbdabc79cab59c033bcf5e23a701d2e899b69a738984b38a"
+    },
+    {
+      "file": "packages/core/src/dailyCulture.ts",
+      "sha256": "c071697e5af044bc64c5ae9d233e8c2503bee5df053579f9e4f51412df5cf645"
+    },
+    {
+      "file": "packages/core/src/entityWriteContract.ts",
+      "sha256": "6331920ff99b000e9e6fc43c112132e02041ca8801f808472c5010c0eb9216aa"
+    },
+    {
+      "file": "packages/core/src/focusRecords.ts",
+      "sha256": "06861e8edc36c4fadb738bbf3fc0e3043665d91e9c9219119deb4f30cb7b57e8"
+    },
+    {
+      "file": "packages/core/src/importedNoteLinks.ts",
+      "sha256": "c6cd05cd702c41d40e822d65d593637f56de3a61f440359af37db9a555d1c76b"
+    },
+    {
+      "file": "packages/core/src/nativeCore.ts",
+      "sha256": "de7327fe524119ffc4249624190556dc4846f56cf2627ce9267cb0f73aef1e6c"
+    },
+    {
+      "file": "packages/core/src/naturalNameSort.ts",
+      "sha256": "486d792d0f47bf4c9cad15cea34c73bc57e8653d886113720b27e3d87ad6bcb6"
+    },
+    {
+      "file": "packages/core/src/noteBody.ts",
+      "sha256": "4dbb45812a3e2fa77c59f4f0e1db394c674dda661ab28e11a1aa16c4f9f10541"
+    },
+    {
+      "file": "packages/core/src/noteClassification.ts",
+      "sha256": "570fb0b1f1c6521221115e1db4ad92e6e1dde3ab736028d95aa5189efb52de4c"
+    },
+    {
+      "file": "packages/core/src/notifications/client.d.ts",
+      "sha256": "ea5060961b188baf87318ca23fe2d9446076b915bf6dedd4df1e3085f55d46de"
+    },
+    {
+      "file": "packages/core/src/notifications/client.js",
+      "sha256": "1136c5d9290f779a8df546ea3d7666893fdd538d54feb56e8320c1bb43732d81"
+    },
+    {
+      "file": "packages/core/src/pdfOutline.ts",
+      "sha256": "607388d1494539042b9158902c32ba67c69b109334d937b2eef3fa4881679fb0"
+    },
+    {
+      "file": "packages/core/src/quickLogDate.ts",
+      "sha256": "7551a77d0ac73b13efb492dc3597100551fe0d81d73e226c4ddf6d6e66ab0747"
+    },
+    {
+      "file": "packages/core/src/readerFind.ts",
+      "sha256": "c58d4b57ce2fe18ff7fd07d3a3eb8cd0cdfd86b0fac724bc153cb9306267da7e"
+    },
+    {
+      "file": "packages/core/src/readingProgress.ts",
+      "sha256": "267542b82c2630bf867fea90445dd282c5b6e97c5c4fdfe6708aaa6a47b2e553"
+    },
+    {
+      "file": "packages/core/src/reminders.ts",
+      "sha256": "023662446c820652e6bb25a8f64205fab943af41e7b0c366dfdb47fc5feaa30b"
+    },
+    {
+      "file": "packages/core/src/review.ts",
+      "sha256": "c97bdd4c0c43ed566810340f77f83a0458f2f1ac3b4fd18ad72d95078dfb56a6"
+    },
+    {
+      "file": "packages/core/src/search.ts",
+      "sha256": "11b194d54646b966e30af2a359dbd0c06306601ee8b17631e92b963b19f43e69"
+    },
+    {
+      "file": "packages/core/src/syncCompatibility.ts",
+      "sha256": "2bd307774649e21e283610e09e77b2b200b3f7fd5d7aa4d74c7177e3331549d0"
+    },
+    {
+      "file": "packages/core/src/syncExecutionPolicy.ts",
+      "sha256": "a460c02eb1225dd9c2f54201c990920a4827cc6875811342dbeaf44914530d22"
+    },
+    {
+      "file": "packages/core/src/syncPresentation.ts",
+      "sha256": "be21cae335167f13e43468799d5c32e646624ce7ea0163e852cfa18ee8397a10"
+    },
+    {
+      "file": "packages/core/src/taskRecurrenceShared.ts",
+      "sha256": "2a4d0ebd037df717e92545b097b4d095307e095312aec1939093083f2ad97ee8"
+    },
+    {
+      "file": "packages/core/src/taskSchedule.ts",
+      "sha256": "297be18e6969b3349d6a8f3d6e4b0498faeba4982b5d0b0e831d4cb774c350a7"
+    },
+    {
+      "file": "packages/core/src/taskWriteContract.ts",
+      "sha256": "190a7ac3dd4afd37702f7ef2f4e3e81a8332c55af856bf974fed98753928df1e"
+    },
+    {
+      "file": "packages/core/src/totp.ts",
+      "sha256": "32614d4a039c54e77a74f63d1ca36e6eabea384c5713a4f3667610026f4c1a7f"
+    },
+    {
+      "file": "packages/core/src/vault.ts",
+      "sha256": "ce25f8c917dfe3785925b6685924be01630e296c24216044807a30cf386eba48"
+    },
+    {
+      "file": "packages/core/src/workspace.ts",
+      "sha256": "ffb1f7ace3e1a07954d56a17a6bb1ab11e0a018826530148334b4e65125e4693"
+    },
+    {
+      "file": "packages/core/src/workspaceEncryption.ts",
+      "sha256": "c01e70926f2faba5e0ffc5930a9ea5860f60da4fd8c3a5946eeeac2967c2f51a"
+    },
+    {
+      "file": "packages/core/src/workspaceKeyStore.ts",
+      "sha256": "c3b69e41148e840589b20deaa2bffc976da6011034da1f01807d63e53023c418"
+    },
+    {
+      "file": "packages/core/src/workspaceUnlockSession.ts",
+      "sha256": "8fbf8a729887889e433195cd4541d2b5c08caa04bd188ef4fb4c48b6f9e2f59b"
+    }
+  ],
+  "settingsBoundaryFollowUp": {
+    "scope": "社区设置隐藏服务器账号/同步/用户管理，旧链接回退；AI入口与本地备份保持",
+    "validation": "独立npm ci、48项核心测试、社区类型/生产构建及官方类型检查通过；设置浏览器验证另见维护者OSS-12审计",
+    "dependencyCoverage": "本轮仅修改两份现有UI/路由源码，未新增import或依赖。既有184组受测Web模块清单保留为许可覆盖集合，不声称本轮重新采集了实际模块数。"
+  }
+}

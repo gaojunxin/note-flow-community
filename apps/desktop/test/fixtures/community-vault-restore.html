@@ -1,0 +1,38 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><div id="app"></div><script type="module">
+import '/src/styles/tokens.css';import '/src/styles/base.css';
+import {createApp,h} from 'vue';import {createPinia} from 'pinia';import {createRouter,createWebHistory} from 'vue-router';
+import Vault from '/src/views/VaultView.vue';
+import ProductDialog from '/src/components/ProductDialog.vue';
+import {COMMUNITY_PROFILE_KEY} from '/src/community/workspace.ts';
+import {createVault,saveVaultItem,saveVaultAttachment} from '/src/community/adapters/vault.ts';
+import {createLocalBackup,restoreLocalBackup} from '/src/community/adapters/localBackup.ts';
+import {clearVaultSession} from '/src/services/vaultSession.ts';
+import {saveProfile} from '/src/community/adapters/profiles.ts';
+window.syntheticVaultLock=clearVaultSession;
+let previousProfile;
+const selectProfile=profileId=>saveProfile({profileId,storageKey:'',displayName:'Synthetic fixture',createdAt:new Date().toISOString(),connectionState:'local'});
+window.syntheticVaultSwitch=()=>{previousProfile=localStorage.getItem(COMMUNITY_PROFILE_KEY);selectProfile(crypto.randomUUID())};
+window.syntheticVaultReturn=()=>selectProfile(previousProfile);
+const marker='synthetic-community-vault-restore-fixture';
+if(!localStorage.getItem(marker)){
+ const original=crypto.randomUUID();localStorage.setItem(COMMUNITY_PROFILE_KEY,original);
+ const key=await createVault(original,'Synthetic browser vault password');
+ const item=await saveVaultItem(original,key,{title:'Synthetic restored credential',password:'Synthetic credential secret'});
+ await saveVaultAttachment(original,item.uid,key,new File([new Uint8Array([0,128,255])],'synthetic-restored.bin'));
+ await restoreLocalBackup(await createLocalBackup());localStorage.setItem(marker,'ready');
+}
+const router=createRouter({history:createWebHistory(),routes:[{path:'/:pathMatch(.*)*',component:{render:()=>h('p')}}]});
+let vaultView,pendingDelete;
+let previewRelease,pendingPreview;
+window.syntheticPreviewStart=()=>{const file=new File(['名称,密码\nSynthetic imported,synthetic-only-password'],'synthetic.csv');const read=file.text.bind(file);file.text=async()=>{await new Promise(resolve=>{previewRelease=resolve});return read()};vaultView.$.setupState.historyImportOpen=true;pendingPreview=vaultView.$.setupState.previewHistoryImport({target:{files:[file],value:'synthetic'}})};
+window.syntheticPreviewRelease=()=>previewRelease();window.syntheticPreviewDone=()=>pendingPreview;
+window.syntheticImportCount=()=>vaultView.$.setupState.historyImportItems.length;window.syntheticImportExecute=()=>vaultView.$.setupState.executeHistoryImport();
+window.syntheticSave=async()=>{const state=vaultView.$.setupState;state.newItem();state.form.title='Synthetic saved credential';state.form.password='Synthetic saved secret';await state.saveItem();return state.items.some(item=>item.title==='Synthetic saved credential')&&!state.editing&&state.error===''};
+window.syntheticRotate=async()=>{const state=vaultView.$.setupState;state.currentMaster='Synthetic browser vault password';state.nextMaster='Synthetic rotated browser vault password';state.nextMasterConfirmation=state.nextMaster;await state.changeMaster();return Boolean(state.key)&&state.error===''};
+window.syntheticVaultDraft=()=>{const state=vaultView.$.setupState;state.form.password='Synthetic pending secret';state.form.extraSyntheticSecret='Synthetic dynamic secret';state.currentMaster='Synthetic previous password';state.nextMaster='Synthetic next password';state.base64Input='Synthetic encoded draft';state.historyImportItems=[{title:'Synthetic pending import',password:'Synthetic import secret'}]};
+window.syntheticDraftCleared=()=>{const state=vaultView.$.setupState;return state.form.password===''&&!('extraSyntheticSecret' in state.form)&&state.currentMaster===''&&state.nextMaster===''&&state.base64Input===''&&state.historyImportItems.length===0&&!state.historyImportOpen&&!state.historyImportBusy&&!state.busy};
+window.syntheticStartDelete=()=>{pendingDelete=vaultView.$.setupState.deleteSelectedVaultItems()};
+window.syntheticAwaitDelete=()=>pendingDelete;
+window.syntheticCloneProfile=async()=>{previousProfile=localStorage.getItem(COMMUNITY_PROFILE_KEY);await restoreLocalBackup(await createLocalBackup())};
+const app=createApp({render:()=>h('div',[h(Vault,{ref:value=>{vaultView=value}}),h(ProductDialog)])}).use(createPinia()).use(router);await router.isReady();app.mount('#app');
+</script></html>

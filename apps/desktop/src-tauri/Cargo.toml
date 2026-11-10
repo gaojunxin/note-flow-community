@@ -1,0 +1,43 @@
+[package]
+name = "note-flow-community-desktop"
+version = "0.12.18"
+edition = "2021"
+description = "Note Flow community local desktop shell"
+publish = false
+license = "Apache-2.0"
+
+[build-dependencies]
+cc = "1"
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+unicode-normalization = "0.1"
+tauri = { version = "2", features = ["tray-icon", "unstable"] }
+serde = { version = "1", features = ["derive"] }
+note-flow-local-core = { path = "../../../packages/native-local-core" }
+serde_json = "1"
+rfd = { version = "0.15", default-features = false, features = ["gtk3"] }
+base64 = "0.22"
+tempfile = "3"
+tauri-plugin-notification = "=2.3.3"
+
+tauri-plugin-http = { version = "2", features = ["unsafe-headers"] }
+tauri-plugin-sql = { version = "2", features = ["sqlite"] }
+tauri-plugin-autostart = "2"
+tauri-plugin-single-instance = "2"
+rusqlite = { version = "0.32", features = ["bundled"] }
+tokio = { version = "1", features = ["time", "sync", "macros"] }
+chrono = { version = "0.4", default-features = false, features = ["clock", "serde"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+sha2 = "0.10"
+flate2 = "1"
+quick-xml = "0.41"
+
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+keyring = { version = "3.6.3", features = ["apple-native", "windows-native", "sync-secret-service", "crypto-rust"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+gtk = "0.18"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+windows-sys = { version = "0.59", features = ["Win32_Foundation", "Win32_Graphics_Gdi", "Win32_UI_Controls", "Win32_UI_Shell", "Win32_UI_WindowsAndMessaging", "Win32_System_SystemServices"] }

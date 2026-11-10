@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "types": [
+      "vite/client"
+    ],
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "vue": [
+        "./node_modules/vue"
+      ],
+      "pinia": [
+        "./node_modules/pinia"
+      ],
+      "idb": [
+        "./node_modules/idb"
+      ],
+      "@tauri-apps/api/*": [
+        "./node_modules/@tauri-apps/api/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue"
+  ]
+}

@@ -1,0 +1,3019 @@
+{
+  "component": "diagrams.net-webapp",
+  "version": "31.4.6",
+  "commit": "861262a764223cf70d4c9310f25798a0956c9017",
+  "license": "mixed; see THIRD_PARTY_NOTICES.md",
+  "files": [
+    {
+      "path": "favicon.ico",
+      "sha256": "bb0acd944840fecd4cad0d627c2ebeea39685394047375dace4a979df1231a72",
+      "bytes": 8254
+    },
+    {
+      "path": "images\\1x1.png",
+      "sha256": "ebf4f635a17d10d6eb46ba680b70142419aa3220f228001a036d311a22ee9d2a",
+      "bytes": 67
+    },
+    {
+      "path": "images\\2x2.png",
+      "sha256": "ebf4f635a17d10d6eb46ba680b70142419aa3220f228001a036d311a22ee9d2a",
+      "bytes": 67
+    },
+    {
+      "path": "images\\3x3.png",
+      "sha256": "ebf4f635a17d10d6eb46ba680b70142419aa3220f228001a036d311a22ee9d2a",
+      "bytes": 67
+    },
+    {
+      "path": "images\\ajax-loader.gif",
+      "sha256": "6bb94f3a69669fba548dbba9a87dee259698b2bf339f3ed430e35a8a8ab49811",
+      "bytes": 10819
+    },
+    {
+      "path": "images\\android-chrome-512x512.png",
+      "sha256": "7203ccbb1f18ee176d683018701db254e099a23058cc3c5776b09430987d4b86",
+      "bytes": 8435
+    },
+    {
+      "path": "images\\apple-touch-icon.png",
+      "sha256": "76bab6880cca0e10865f4a64f16b73d9b0408b644906519d55d0eed087d80949",
+      "bytes": 4498
+    },
+    {
+      "path": "images\\aui-wait.gif",
+      "sha256": "915b0a69618643f067fc78a5ce219bbba1e519de0a9f8e384778b1da65b94294",
+      "bytes": 1459
+    },
+    {
+      "path": "images\\broken.png",
+      "sha256": "931100cda32fa44ce2fc26d57429e7f9c01d5cfc4cfd25b2e5c43d7d3ec04648",
+      "bytes": 264
+    },
+    {
+      "path": "images\\browserconfig.xml",
+      "sha256": "1842fc01e482ea130bb3c70180281a81c1e22b8e7e202643cdfa7e3e661302b7",
+      "bytes": 253
+    },
+    {
+      "path": "images\\close.png",
+      "sha256": "c154cd23c1b7b22d08e54e52d36982330a78ddb569db9dcc32390e48477c36b0",
+      "bytes": 116
+    },
+    {
+      "path": "images\\cloud-connector-atlas.png",
+      "sha256": "d1bdd134682f2c37b00219c8db9ce5c331fe5d63745f364c5bc84b1b9943a5b9",
+      "bytes": 5834
+    },
+    {
+      "path": "images\\collapsed.gif",
+      "sha256": "2924bb6177978ba3f464120852ad2b19be765c00d019211facf4b1626bb50352",
+      "bytes": 1113
+    },
+    {
+      "path": "images\\delete.png",
+      "sha256": "5d0d7ffca9ba602163b9461957df35abc42d7b0aad1d03910a01ac2dc9bdccb1",
+      "bytes": 512
+    },
+    {
+      "path": "images\\document-google-drive-icon-80.png",
+      "sha256": "bdcd18abd968a14cd181506ff296da3f34eb8d5ea3f5d604002eb940fb72108c",
+      "bytes": 1412
+    },
+    {
+      "path": "images\\draw-search.png",
+      "sha256": "b0365f63397fd5f6f7188a291ce9a9aa8f33963455d18a298bebb7fa0d121095",
+      "bytes": 5686
+    },
+    {
+      "path": "images\\drawio.svg",
+      "sha256": "15407feb3b70be7216c54202a631b0a14b839ba764aae624b436531f4bf560a7",
+      "bytes": 1280
+    },
+    {
+      "path": "images\\drawlogo-color.svg",
+      "sha256": "f26a85e508c159d630aba7c91c8ff12441423402dddbe98fafc9db04d021aded",
+      "bytes": 1619
+    },
+    {
+      "path": "images\\drawlogo-gray.svg",
+      "sha256": "b9c34bd3d417e7033023b108c6704577457bbc83a1d7f0d5193aa5429d63f686",
+      "bytes": 1313
+    },
+    {
+      "path": "images\\drawlogo-text-bottom.svg",
+      "sha256": "212f174b6b80510293059a7a6a0267b829fd1304d00301ece3a3b36b7fad51a6",
+      "bytes": 7037
+    },
+    {
+      "path": "images\\drawlogo.svg",
+      "sha256": "61728f9060e9e971f75555d89cdca1baed5d5ff7dba9ca8ee314a08c67dd57ec",
+      "bytes": 1313
+    },
+    {
+      "path": "images\\drawlogo128.png",
+      "sha256": "22b4c6719cb3b309b3ee493bf9dde0e9e7be54c043116882aeda6be173553ee3",
+      "bytes": 1683
+    },
+    {
+      "path": "images\\drawlogo144.png",
+      "sha256": "8591c5dc8a9687a6cdf374a36ffeb6b43d048d5478de3b8e0f12313b500f1a75",
+      "bytes": 2724
+    },
+    {
+      "path": "images\\drawlogo256.png",
+      "sha256": "9df31bdd5a06d9e253e899d458cf3f30e5d28659aa04dbfe6f24ae0b4a9a43c4",
+      "bytes": 3023
+    },
+    {
+      "path": "images\\drawlogo48-gray.png",
+      "sha256": "072b5b5b5baf424925455d9214c147f7dfc809e8ca7405ac3b0596d2edf04172",
+      "bytes": 707
+    },
+    {
+      "path": "images\\drawlogo48.png",
+      "sha256": "85cdc11268f9ef35fa6babb1e239963c1b984caec88fcadb973a54dee1a11900",
+      "bytes": 939
+    },
+    {
+      "path": "images\\drawlogo80.png",
+      "sha256": "b582ac39b114dd47a2f4af7ddfefb6431472053959363a5d51397eca7173da5d",
+      "bytes": 3163
+    },
+    {
+      "path": "images\\dropbox-logo-white.svg",
+      "sha256": "b7bfa76f43ea68cfaac218d7cc9140405b3cd2c9a5b0998f82feeee53965e4f8",
+      "bytes": 707
+    },
+    {
+      "path": "images\\dropbox-logo.svg",
+      "sha256": "fd5906576debab72d9c66366488eaed8d63622c83e635921552f384af511813e",
+      "bytes": 680
+    },
+    {
+      "path": "images\\droptarget.png",
+      "sha256": "004fff831fc2b5aedca3f6cd1b3d4c106ef9656d4b51c1d5efa0f77541d15115",
+      "bytes": 484
+    },
+    {
+      "path": "images\\edit.gif",
+      "sha256": "b103868217178097a959f6340e9b76cb0a0a4049dfc01d3c4078425d8832a93c",
+      "bytes": 66
+    },
+    {
+      "path": "images\\edit16.png",
+      "sha256": "d006615b1e18a28b18524223454c5ba6a385e87102aa601b6c0ba9fd469771d9",
+      "bytes": 516
+    },
+    {
+      "path": "images\\edit32.png",
+      "sha256": "9daff393003a3901c0b8bf3e0564ef34b332d4767997bcb90f35c0720916d25c",
+      "bytes": 759
+    },
+    {
+      "path": "images\\edit80.png",
+      "sha256": "8b73af222b5242413af086ea62b58c158c230f46242994868e80ccd53cf8dea9",
+      "bytes": 1225
+    },
+    {
+      "path": "images\\embed-icon.png",
+      "sha256": "c21d77ddc4cf5185d2edd03956b1ead528bdc8941c621e823d3411137086d345",
+      "bytes": 8275
+    },
+    {
+      "path": "images\\expanded.gif",
+      "sha256": "ac50cda9ad4fd2dfe7624a5c9298c08fa20936cc6fcbf91b502fa14d84799596",
+      "bytes": 1110
+    },
+    {
+      "path": "images\\facebook.png",
+      "sha256": "1d067be181e6331b31d8d84301324dec8053a803345c1d848605445d22695d6d",
+      "bytes": 845
+    },
+    {
+      "path": "images\\favicon-16x16.png",
+      "sha256": "a502d493195e0485096b3f820c6060f503c2d879ec11e89b48f26befd4fa27f7",
+      "bytes": 302
+    },
+    {
+      "path": "images\\favicon-32x32.png",
+      "sha256": "63ae84223462892823032a8672f0a2cd943a8d324604da19a857d0d9afbb645b",
+      "bytes": 440
+    },
+    {
+      "path": "images\\file.png",
+      "sha256": "610f0b63e5ce912fc8f16f50f3331955d4ff4fef2eccc55e7d7b7ea38b7093a0",
+      "bytes": 12881
+    },
+    {
+      "path": "images\\folder.png",
+      "sha256": "668bba88f29f218db7f4fe7a763b5e5d27a4e9c16d534f6177f24e061a871485",
+      "bytes": 17856
+    },
+    {
+      "path": "images\\gadget-screenshot.png",
+      "sha256": "c780293babdf66acce404a299df99255ef518a6769e7fcaea9a8588d3c9582c1",
+      "bytes": 3879
+    },
+    {
+      "path": "images\\gadget-thumb.png",
+      "sha256": "b4bf6f4bd8987621c97198ece5b2e5f93891e5d3ebd902a669e382a2ec4ee20f",
+      "bytes": 3656
+    },
+    {
+      "path": "images\\github-logo-white.svg",
+      "sha256": "cc81522b317185e8fc3bfbbd36e36b1630be0c79bb54e86274dbcc12797c6a92",
+      "bytes": 3906
+    },
+    {
+      "path": "images\\github-logo.svg",
+      "sha256": "b88f1122c7f5d3ccba71a64754493e764caecde79481b81449999847548d3d84",
+      "bytes": 5268
+    },
+    {
+      "path": "images\\gitlab-logo-white.svg",
+      "sha256": "17432ecabe69deb65fca8d5d657beeba736995c57df90dd02973edba53980786",
+      "bytes": 875
+    },
+    {
+      "path": "images\\gitlab-logo.svg",
+      "sha256": "28a15b0e683b20e78ae7c1df283343c93d6000d07933ff05912e2d91b2fdd77d",
+      "bytes": 1315
+    },
+    {
+      "path": "images\\glyphicons_blogger.png",
+      "sha256": "cdcb67bcd861d790e218b4559f50869cc0d97c092a043faac4b3120affade09f",
+      "bytes": 245
+    },
+    {
+      "path": "images\\glyphicons_facebook.png",
+      "sha256": "5caa6014ebeb82af4d8d9056a48863085ebde77f3f2a8b2abd19238cf484fc2b",
+      "bytes": 162
+    },
+    {
+      "path": "images\\glyphicons_github.png",
+      "sha256": "f0485b0cf7f33220dc98b393baa92bf191e468afcef037f8bd31043f76992dae",
+      "bytes": 339
+    },
+    {
+      "path": "images\\glyphicons_google.png",
+      "sha256": "0bdce9d8bebaec89d1218265e80b3f660c8673a7125160dfd37f15dae81820bb",
+      "bytes": 287
+    },
+    {
+      "path": "images\\glyphicons_star.png",
+      "sha256": "81541a57f3d4d7ca323d3e95e12a9ff663e56a07738b27a18dcbd55e415b90df",
+      "bytes": 581
+    },
+    {
+      "path": "images\\glyphicons_twitter.png",
+      "sha256": "d67bf183d949d48a44dc5df9dbd71540fa70f42013817614b07614ab750d7029",
+      "bytes": 258
+    },
+    {
+      "path": "images\\glyphicons_youtube.png",
+      "sha256": "30967146caf7f2c7212eb5c7c9fea830725c50d92edbfa0fdeed2841bf4061b0",
+      "bytes": 328
+    },
+    {
+      "path": "images\\google-drive-connector-atlas.png",
+      "sha256": "ed3d1efec631bec02e187ac4020deca386b61c5e36e0bbcc083804308bf4b3f8",
+      "bytes": 5755
+    },
+    {
+      "path": "images\\google-drive-connector-atlas.svg",
+      "sha256": "c32cdac829ccaf3da920302d8c0b4274cc8b5f96758fa31332e925d122d18e0b",
+      "bytes": 9439
+    },
+    {
+      "path": "images\\google-drive-logo-white.svg",
+      "sha256": "b84a9c86c5ee2b06081137860502f400649c0ec7cc8cef44f6a99cc62243a93d",
+      "bytes": 542
+    },
+    {
+      "path": "images\\google-drive-logo.svg",
+      "sha256": "ba5c52ac109138c1deca404c7c6a9df061bcfa06ff9c3d17a53a9998bf2c3037",
+      "bytes": 583
+    },
+    {
+      "path": "images\\google-share.png",
+      "sha256": "fcc0df7c3f3a7f1cec8ee9484e3b07974b6a86dbe90433a935e75085eb42dbc8",
+      "bytes": 2053
+    },
+    {
+      "path": "images\\icon-192-maskable.png",
+      "sha256": "27b2fd95fc4bbbba434cd4ad4112aa5f19d5c15cae952b10fbf019124d107505",
+      "bytes": 4730
+    },
+    {
+      "path": "images\\icon-192.png",
+      "sha256": "6e2677c5a54383303484609f6c44201778323b85097dcc5bc6e0580c6a985690",
+      "bytes": 5889
+    },
+    {
+      "path": "images\\icon-512-maskable.png",
+      "sha256": "f270313e51ff3993a8cb9426055dc3dcfa8a8fdc98e2d8e634134b63fa354172",
+      "bytes": 17243
+    },
+    {
+      "path": "images\\icon-512.png",
+      "sha256": "a49c867dbed969852f2364c671cd444ef7d5fa74817b4093abb65831c9cb68f3",
+      "bytes": 21467
+    },
+    {
+      "path": "images\\icon-search.svg",
+      "sha256": "b6ad04791de5d5f232f420ec0b396d0136f5fe5aaa5274c1e4c547f7636b1b65",
+      "bytes": 1311
+    },
+    {
+      "path": "images\\img-hi-res.png",
+      "sha256": "cff0ba10b09024ff41b703363783ea56e0ab576077cb6850dc4af192d4969b3b",
+      "bytes": 797
+    },
+    {
+      "path": "images\\img-lo-res.png",
+      "sha256": "b9f655aa8b88c04cfea4443abf84c1372065602e4bb198d6a4ca6bfeaf9d58c6",
+      "bytes": 322
+    },
+    {
+      "path": "images\\list.svg",
+      "sha256": "fc5e7d8c984184755fdf636371354bfcc70a02e5b7105caabb5090367610a11c",
+      "bytes": 1067
+    },
+    {
+      "path": "images\\locked.png",
+      "sha256": "931536dfb96307c624d6bbf16d20ef4c5e0524258c10f64a76219ee2c78fe4ed",
+      "bytes": 155
+    },
+    {
+      "path": "images\\log.png",
+      "sha256": "ebf4f635a17d10d6eb46ba680b70142419aa3220f228001a036d311a22ee9d2a",
+      "bytes": 67
+    },
+    {
+      "path": "images\\logo-confluence.png",
+      "sha256": "c334cbe0334b3b136e0fa502fdfd672c636ff9cec006a36632275c7edc2bc725",
+      "bytes": 1733
+    },
+    {
+      "path": "images\\logo-flat-small.png",
+      "sha256": "7c52ac676a911326b5877a0b71761c16fe5ce3eabb7c6356be85fd51fcd64ba1",
+      "bytes": 546
+    },
+    {
+      "path": "images\\logo-flat.png",
+      "sha256": "1f5244567c23f740a63345020facccb101974fd370047126778f039bed2a52fe",
+      "bytes": 3020
+    },
+    {
+      "path": "images\\logo-jira.png",
+      "sha256": "8b8678267b1ca0768486067d0e7a0fed3d7e980bb78dff0708c350fbb2887da0",
+      "bytes": 519
+    },
+    {
+      "path": "images\\logo-small.gif",
+      "sha256": "c75984b94e306ebbeda01734abf0ad1129d18a10f2b8c2e4c806d18cf8aee43d",
+      "bytes": 1363
+    },
+    {
+      "path": "images\\logo-white.png",
+      "sha256": "3ae1578468420b0c588123e5ad5354f448d0017034f4b6feb8de1d0391ba0923",
+      "bytes": 320
+    },
+    {
+      "path": "images\\logo.png",
+      "sha256": "737863c22eca2edcabff2943e4dd40dd6b19c6e9ad886f942e79496e1a1769ec",
+      "bytes": 1442
+    },
+    {
+      "path": "images\\manifest.json",
+      "sha256": "4f78c8701e9e3b026df79d7baf14dbc1e98bb915ebe03358d76dcc4ce247198c",
+      "bytes": 947
+    },
+    {
+      "path": "images\\move.png",
+      "sha256": "52ebf83cdeb48cca7276e75b66a9c8db69b14a42f3abffe46d5646d21bf3cf60",
+      "bytes": 300
+    },
+    {
+      "path": "images\\notion-logo-white.svg",
+      "sha256": "331fccd4ecd76901a640fcc6c12c3f65134be2d3c5d6696cc6e55724c16e0197",
+      "bytes": 1292
+    },
+    {
+      "path": "images\\notion-logo.svg",
+      "sha256": "a144f215aabaabde0762194c39ef922e481736784742a9eb735237041e1c477f",
+      "bytes": 1277
+    },
+    {
+      "path": "images\\onedrive-connector-atlas.png",
+      "sha256": "d1bdd134682f2c37b00219c8db9ce5c331fe5d63745f364c5bc84b1b9943a5b9",
+      "bytes": 5834
+    },
+    {
+      "path": "images\\onedrive-connector-atlas.svg",
+      "sha256": "3d6d1e42642c24e9e847f331f5778c9e600f692ca995fdb6eed2f20741fb6b2e",
+      "bytes": 11929
+    },
+    {
+      "path": "images\\onedrive-logo-white.svg",
+      "sha256": "88a6b85c8290a9e9ab209b0c36c7c9ec4aaa49d2eb5ea0ecc0bbc04ed20d19f9",
+      "bytes": 2677
+    },
+    {
+      "path": "images\\onedrive-logo.svg",
+      "sha256": "9609345dac2ee2df3ca00d9b8f372b0b6e857ca1d391fde081eaf1e46795d704",
+      "bytes": 2684
+    },
+    {
+      "path": "images\\osa_database.png",
+      "sha256": "e4272b22390bbd76f489e3c292d64a65509a0c08bde8b13cd8d720702bb9d291",
+      "bytes": 3189
+    },
+    {
+      "path": "images\\osa_drive-harddisk.png",
+      "sha256": "d2847c0d975279256b28c8d7b2d8f513f980bf0f0cfb13e615e647bdab2959c0",
+      "bytes": 3253
+    },
+    {
+      "path": "images\\plant-uml-atlas.png",
+      "sha256": "e7ce26596fd84c09cf970fd05b3d9b5c06591a6107287fcab944edb1b6f2333b",
+      "bytes": 1606
+    },
+    {
+      "path": "images\\samepage-icon-color.svg",
+      "sha256": "c012fc60a53087da23842e31e95a1748154410ff461c0adc2957a3ab4c537da4",
+      "bytes": 2444
+    },
+    {
+      "path": "images\\save.png",
+      "sha256": "542cd1b000043cd2a7e054b10d4ef2c79f2ada8bb959ca596513850c6ce7ff6c",
+      "bytes": 691
+    },
+    {
+      "path": "images\\sidebar-active_directory.png",
+      "sha256": "0d9d9275842b97675246be74ca98fca0f446afcfdc56dcdb770b2de0cec9dbf6",
+      "bytes": 169706
+    },
+    {
+      "path": "images\\sidebar-alibaba_cloud.png",
+      "sha256": "5f4fca821c4f4bb248dc419f9c573159258d1f858946495a1a56293b8b4ba2bf",
+      "bytes": 200638
+    },
+    {
+      "path": "images\\sidebar-allied_telesis.png",
+      "sha256": "f991206c235fd3e02be36906eb9786707ab416a2177e175a47eeb0c1a72ac7b9",
+      "bytes": 49799
+    },
+    {
+      "path": "images\\sidebar-android.png",
+      "sha256": "5441904f43ef10f6a10d91c222a883a43dfbb57a26910cd0533dbffcbf15434f",
+      "bytes": 15942
+    },
+    {
+      "path": "images\\sidebar-archimate.png",
+      "sha256": "c1511ed97789dbe6d9eedc9f2c8e4831decd5fde76a026c131aaee43346ff0d0",
+      "bytes": 6849
+    },
+    {
+      "path": "images\\sidebar-archimate3.png",
+      "sha256": "f6368430e8193e82774fa06c719e191b745963ac8ca2370d41336f002a4ba15c",
+      "bytes": 44907
+    },
+    {
+      "path": "images\\sidebar-archimate4.png",
+      "sha256": "4fe62b2caf9db6132298a764dfd6ecfb19436c86128640c558db8f4a9cf74c98",
+      "bytes": 34443
+    },
+    {
+      "path": "images\\sidebar-arrows.png",
+      "sha256": "fef32d3875a4be94e08ec5e6c356ef14b3f51393b6db174eef6168d49bb2611b",
+      "bytes": 8507
+    },
+    {
+      "path": "images\\sidebar-arrows2.png",
+      "sha256": "6ec50df8fd06751c9b6dcb4688c1cefce8411c5eb6912df04ecb73d5fda91e51",
+      "bytes": 26568
+    },
+    {
+      "path": "images\\sidebar-atlassian.png",
+      "sha256": "c60c66a13bf86e30238849bb3bc2e55fc657c996866f26a3cbdaa57a30901561",
+      "bytes": 49373
+    },
+    {
+      "path": "images\\sidebar-atlassian2.png",
+      "sha256": "b9589b75c19264c3d41ec47c21e7ac4a69760de4accd9920fe4a884d61dd0bc8",
+      "bytes": 40815
+    },
+    {
+      "path": "images\\sidebar-aws.png",
+      "sha256": "eeafd7b03d1212d7fb58f8c4ac334477bcdc0aba8098e774ad5c04254cb46d16",
+      "bytes": 109954
+    },
+    {
+      "path": "images\\sidebar-aws3.png",
+      "sha256": "47c0c3ff8bbe17ee87f21f0a6f43c1fa0f48f7ade84a3dcf79fb5abe8b0bda73",
+      "bytes": 150802
+    },
+    {
+      "path": "images\\sidebar-aws3d.png",
+      "sha256": "97256ea59edd96c2bed47bfd36ef18d95c2473f8128c744327486a3020ee40b1",
+      "bytes": 33429
+    },
+    {
+      "path": "images\\sidebar-aws4.png",
+      "sha256": "b3f6d85f001cc878ec9ee540b1411eab41915e01b34536da8b279383c26e4a05",
+      "bytes": 382902
+    },
+    {
+      "path": "images\\sidebar-aws4b.png",
+      "sha256": "445265bfe84dfaebcf6863c5a35492151ed33f984633d3ce8131a75da8eda720",
+      "bytes": 186186
+    },
+    {
+      "path": "images\\sidebar-aws4r.png",
+      "sha256": "d151104ab0f394a27c9d97c1fdf2d05851b06f7d1599c5b4fe25b5e8fc84aa7d",
+      "bytes": 34115
+    },
+    {
+      "path": "images\\sidebar-azure.png",
+      "sha256": "e3f85910c8057f40b82a81829a227012ab1f84e11b30122c1572ae034760366d",
+      "bytes": 715352
+    },
+    {
+      "path": "images\\sidebar-basic.png",
+      "sha256": "dd4c7d020200c0b68f1edce453cbcaa609cbb02c038881184bcb08cf0c092634",
+      "bytes": 19468
+    },
+    {
+      "path": "images\\sidebar-bootstrap.png",
+      "sha256": "f1e132ef29fe1941174f626afc6f3d9da29dda874b58a583dc9f93f3ff902a88",
+      "bytes": 65853
+    },
+    {
+      "path": "images\\sidebar-bpmn.png",
+      "sha256": "ad2086764e86431dc1a84483b26b0ad8d68b8bf1de153af32dbfc29c73ee8cfe",
+      "bytes": 59237
+    },
+    {
+      "path": "images\\sidebar-c4.png",
+      "sha256": "663a90add10e399e7b9248d674787f307cc70dccd86aa2b004201e91e3d4ed2f",
+      "bytes": 8488
+    },
+    {
+      "path": "images\\sidebar-cabinets.png",
+      "sha256": "6a4ef55809a999f6e27cfa58610ed79443f93817385b19415b8d2ed0a1990bf9",
+      "bytes": 8247
+    },
+    {
+      "path": "images\\sidebar-cisco_safe.png",
+      "sha256": "ebe54ea1f204534eb34d6f8a8302f1d93ccd898b2103bf5f535bf3a26a82d613",
+      "bytes": 223698
+    },
+    {
+      "path": "images\\sidebar-cisco.png",
+      "sha256": "6a36e368daebe1d84cc0480d641e312c49822e92e533739dc859dcf5debd64fb",
+      "bytes": 126445
+    },
+    {
+      "path": "images\\sidebar-cisco19.png",
+      "sha256": "c0f473541d2f857b56e4dd545767b688e679c93d5ac4394bff768b247f2db7f5",
+      "bytes": 91575
+    },
+    {
+      "path": "images\\sidebar-citrix.png",
+      "sha256": "cac35ec72932835f8955eea575fc1f9b45117bb292198a5a1a80968d61973414",
+      "bytes": 67026
+    },
+    {
+      "path": "images\\sidebar-citrix2.png",
+      "sha256": "2246d7f33ace1e3b80d9af6c43014b541afb35d76a866528781264792a6fea3b",
+      "bytes": 74136
+    },
+    {
+      "path": "images\\sidebar-clipart.png",
+      "sha256": "e8680c9e547fe3ee1922caf0346d9364f93e4c4291e46163634647cca5510e64",
+      "bytes": 138980
+    },
+    {
+      "path": "images\\sidebar-cumulus.png",
+      "sha256": "8d4449e7e1fe3628903296cb5560a9e508c57ef34e4d1ec27ce64827225e3e87",
+      "bytes": 10765
+    },
+    {
+      "path": "images\\sidebar-dfd.png",
+      "sha256": "c687e58de9b3b9870ff43ce03ccad4642ef26d64bd0104cbb445de1ce50aa6c8",
+      "bytes": 8162
+    },
+    {
+      "path": "images\\sidebar-dynamics365.png",
+      "sha256": "e8c62851c41e808f8e9a6391c6698742739cd2078406b3139a6ad801f2c6fa23",
+      "bytes": 28854
+    },
+    {
+      "path": "images\\sidebar-eip.png",
+      "sha256": "8eb19f0f9b7c05ebe18ed3a8fa89b31e4dcc82ae9ff4e3f8aadbbb31127419e0",
+      "bytes": 16242
+    },
+    {
+      "path": "images\\sidebar-electrical.png",
+      "sha256": "f97d87261ede2e7c50a08156cacb4fdfc010a5c46d4b3b2b322bb588b70aabcf",
+      "bytes": 106895
+    },
+    {
+      "path": "images\\sidebar-er.png",
+      "sha256": "f3c420e84d0f985be25c533e981204b6617317de43db9698e81205d32d96ce3b",
+      "bytes": 8886
+    },
+    {
+      "path": "images\\sidebar-floorplans.png",
+      "sha256": "cd6504e33810c2998705c702c460dd65ab191197dc82852cf84a38b6d46259e9",
+      "bytes": 22797
+    },
+    {
+      "path": "images\\sidebar-flowchart.png",
+      "sha256": "216cec7a36bfb09a8574a9ae32e4a8a9323e045ffa0a155c2599eadf18f5fcbd",
+      "bytes": 10059
+    },
+    {
+      "path": "images\\sidebar-fluid_power.png",
+      "sha256": "964d94f0bc850909718ee0544c07f3590237d59a32bb7cc4c60e385d605103c7",
+      "bytes": 78800
+    },
+    {
+      "path": "images\\sidebar-gcp.png",
+      "sha256": "ff0f18569a9a6a536e0ea8ddee44e7d842dc4e31faf199ae16e5bb4cf3083b4e",
+      "bytes": 33153
+    },
+    {
+      "path": "images\\sidebar-gcp19.png",
+      "sha256": "e038e27d65c504af04f53a0e1656e34ee04460ab74c49ca47d1ea695341e14fb",
+      "bytes": 184064
+    },
+    {
+      "path": "images\\sidebar-gcp2.png",
+      "sha256": "c47166aa692f9a91ecd34e2909b71026713b051476d7da000c35edeb8641c6b0",
+      "bytes": 269476
+    },
+    {
+      "path": "images\\sidebar-gcp3.png",
+      "sha256": "065d1ba7c56afc9bdd0253c951084be3e5f2dd7873bd82e1c1ce87e0cd7e436e",
+      "bytes": 31650
+    },
+    {
+      "path": "images\\sidebar-gcpicons.png",
+      "sha256": "14a3b0208c6c803d8a85a9cbf947dcdb1dd4b0680618ad0d7f49914b47593a41",
+      "bytes": 66778
+    },
+    {
+      "path": "images\\sidebar-general.png",
+      "sha256": "7e0b748333d42b701dc247f6d8ed2b38c24b732da93465c51e61eb48d4c3d3e5",
+      "bytes": 31873
+    },
+    {
+      "path": "images\\sidebar-gmdl.png",
+      "sha256": "b6ae1e657afe31ab91ec29fdeeb735b80e6b08ecc82fd9975381a68eff3d7871",
+      "bytes": 96465
+    },
+    {
+      "path": "images\\sidebar-ibm.png",
+      "sha256": "0bddd4e969342b15752eac1f9dedbf45c4a0a126262542fca2e4016f0dec34e7",
+      "bytes": 103510
+    },
+    {
+      "path": "images\\sidebar-ibmcloud.png",
+      "sha256": "4b81c19cf5e1c9ed6b962590bedae999d19162d30ddb5dc8b0214af2a6039de3",
+      "bytes": 38883
+    },
+    {
+      "path": "images\\sidebar-infographic.png",
+      "sha256": "3252530592ad7bbc1616fa9a3e01d2fe21908bf78a712dcf6058834da74eaaa9",
+      "bytes": 40321
+    },
+    {
+      "path": "images\\sidebar-ios.png",
+      "sha256": "212109fb040a18deccd9a0089388c792190f7f3e1dc3e7eb0498caad8f0aa8ec",
+      "bytes": 55794
+    },
+    {
+      "path": "images\\sidebar-kubernetes.png",
+      "sha256": "f4036e5006bc9b1b80b0c7531342c6ba5a982433cbe5b78e8d723166d9b7ad50",
+      "bytes": 23196
+    },
+    {
+      "path": "images\\sidebar-leanmapping.png",
+      "sha256": "ef35dc09d569a14d5bf1043da3318304cba61d2337a4e701cc83a14aa62497ef",
+      "bytes": 12682
+    },
+    {
+      "path": "images\\sidebar-mockups.png",
+      "sha256": "678f23a63fa2213a77117df558db143b3ced19c66d2f6fc871650ea77aecb844",
+      "bytes": 32488
+    },
+    {
+      "path": "images\\sidebar-mscae.png",
+      "sha256": "36943230fc59160edb54eb037d5de6cf0d7ddbfaf01a67c2b3e2a62ad9b3bfd0",
+      "bytes": 216673
+    },
+    {
+      "path": "images\\sidebar-network.png",
+      "sha256": "d248cc69b7ac04e336c2d75e436c6bc958914940ca294a1b135898bf9a1002ca",
+      "bytes": 24774
+    },
+    {
+      "path": "images\\sidebar-network2.png",
+      "sha256": "fc65f9d765ef4500d4d54d0c9304d0add83e14054a30fcae076b2c868c4d3890",
+      "bytes": 28191
+    },
+    {
+      "path": "images\\sidebar-office.png",
+      "sha256": "c51a41ca224a405e6148d79b7b5e0911a380c92ffe473c2cf857f4e97c16e7eb",
+      "bytes": 207330
+    },
+    {
+      "path": "images\\sidebar-openstack.png",
+      "sha256": "677f65aefae7b85fba4c9ef70025895934f83fa5fcb2171c87d30be1652098b1",
+      "bytes": 32297
+    },
+    {
+      "path": "images\\sidebar-pid.png",
+      "sha256": "a6a5d0926a2b01c8d66575da96bc17f4f48d911a4155ff65dbb91928be281598",
+      "bytes": 113537
+    },
+    {
+      "path": "images\\sidebar-rack.png",
+      "sha256": "ba9aed4fd560980549e8a79f8444e0621af666e6af9d6ef81fd6e58ea92d7979",
+      "bytes": 88431
+    },
+    {
+      "path": "images\\sidebar-salesforce.png",
+      "sha256": "113bd89a4fece0a9dde91efb58d96c3103661c0bf5f8d25ce6468fdd65fcf785",
+      "bytes": 59020
+    },
+    {
+      "path": "images\\sidebar-sap.png",
+      "sha256": "639bdb23d28c55a76f3bb16f58e3d649e27a9073da976335a9d70a812e99f1b6",
+      "bytes": 208795
+    },
+    {
+      "path": "images\\sidebar-signs.png",
+      "sha256": "746ac72db2db7776626292dff6116ab6f4abbda2b3f829d15fb335d36b520ca2",
+      "bytes": 163875
+    },
+    {
+      "path": "images\\sidebar-sitemap.png",
+      "sha256": "96543eb89585bd22ced566974c8de72612204e3824a182818d231094e7273099",
+      "bytes": 14670
+    },
+    {
+      "path": "images\\sidebar-sysml.png",
+      "sha256": "06f8d12da1d6c964f9063d165b7b2270b4920e690223651c5148f6ddc95eeb2b",
+      "bytes": 64278
+    },
+    {
+      "path": "images\\sidebar-threatmodeling.png",
+      "sha256": "b4d750aa41a5cc8b0d3242bbd2e0edbea933dd45620bb604a07f18eb4adf392c",
+      "bytes": 6701
+    },
+    {
+      "path": "images\\sidebar-uml.png",
+      "sha256": "57ea72fd6b8823f1c74809230c36c036e512ab404b26c7d846bae7f061a93b1b",
+      "bytes": 16050
+    },
+    {
+      "path": "images\\sidebar-uml25.png",
+      "sha256": "d56de84885c847732858eb060cb0a875d096d9c8e1ef8308669c334f01d3cb69",
+      "bytes": 36095
+    },
+    {
+      "path": "images\\sidebar-veeam.png",
+      "sha256": "3e2904172d1c8e77050800fe15fe1ec943e57819726ccab704e7c74ab0c2c3b5",
+      "bytes": 120282
+    },
+    {
+      "path": "images\\sidebar-vvd.png",
+      "sha256": "0346986774d3fb4ab6da8f4e1555f9ad82de9e7bb75e34e877c1e9038c9d8ffd",
+      "bytes": 37972
+    },
+    {
+      "path": "images\\sidebar-webIcons.png",
+      "sha256": "3b96eeb10ad4a6740dae5ec353884ad0415564571c693df9722b966c1e1e924d",
+      "bytes": 197137
+    },
+    {
+      "path": "images\\sketch-logo128.png",
+      "sha256": "540637944ff556128a2e8b6876d0fca0e0a92f2790548ae4eeed43b3eca7bc08",
+      "bytes": 12703
+    },
+    {
+      "path": "images\\spin.gif",
+      "sha256": "b0b95550a1165553d821f6d82a4e8d07b90858f297c3df53aa52819ef659a685",
+      "bytes": 2290
+    },
+    {
+      "path": "images\\sprites.png",
+      "sha256": "41006f225c400df67bf28f97e6c8782f890d0e756fca95252577ffa5f632510d",
+      "bytes": 3116
+    },
+    {
+      "path": "images\\stop-flat-icon-80.png",
+      "sha256": "c3eebd7c0a6c365bb4f7ab60265c120290b18e01665e823aa5c178fad2877717",
+      "bytes": 3825
+    },
+    {
+      "path": "images\\submenu.gif",
+      "sha256": "27fd8c0977c2a820f76cdb93258b1cc5a5f6e7c375df83092ec29eae7a89d23f",
+      "bytes": 56
+    },
+    {
+      "path": "images\\touch-submenu.png",
+      "sha256": "ef2d693a2095705a1d7ac76e36e0ba76d4800dbd8064d7736b7599b6f02a6f1b",
+      "bytes": 123
+    },
+    {
+      "path": "images\\transparent.gif",
+      "sha256": "3317f2023f9198ebaa1247c09643f0fa5b16db15461e70066e6a27abdae24931",
+      "bytes": 90
+    },
+    {
+      "path": "images\\trello-logo-white-orange.svg",
+      "sha256": "198de15a5d29905addb6e5df1ba6c7218d9cf1e7c4b0fd160a972dac1f984d1e",
+      "bytes": 417
+    },
+    {
+      "path": "images\\trello-logo-white.svg",
+      "sha256": "660279ff0c38ffae6c2550c1993785685ccad43f17380da2a47742357a8d11af",
+      "bytes": 399
+    },
+    {
+      "path": "images\\trello-logo.svg",
+      "sha256": "b75d4764a0a2b6fd85e666421e254c38f4f9b25997a9687b7c39fd54adecb44c",
+      "bytes": 501
+    },
+    {
+      "path": "images\\tweet.png",
+      "sha256": "08cdc441e0dd38dc6fa5f9c1cb2ab5a78aacae32f9648e2d050164e471f2c1f4",
+      "bytes": 457
+    },
+    {
+      "path": "images\\update16.png",
+      "sha256": "c90d23d4a837166d2391c175af60c25e23f2107ebe193e7007e01328da68a6b0",
+      "bytes": 546
+    },
+    {
+      "path": "images\\update32.png",
+      "sha256": "f51945a36efb55ce0667b60c31ffa342a2a99b4693b950b3559e4717a7632f2d",
+      "bytes": 828
+    },
+    {
+      "path": "images\\update80.png",
+      "sha256": "6354ee9ab83b0f0284c969a7e87e993192abfeefbb276274d566de28c9589a33",
+      "bytes": 1596
+    },
+    {
+      "path": "images\\youtube.png",
+      "sha256": "ad7a550639af2109daa7293e57cbf7e9772b051bb678ce166e8f6baceb51acfa",
+      "bytes": 1939
+    },
+    {
+      "path": "index.html",
+      "sha256": "6a922945a4c3a60cda31af53fda8bc4bca2324ddc84e306fc435fa658e6c7563",
+      "bytes": 2869
+    },
+    {
+      "path": "js\\app.min.js",
+      "sha256": "4c926b6baa1bf43fb764a7f43008b554f144a47eeed7ce822cfa102cae9eadca",
+      "bytes": 9683028
+    },
+    {
+      "path": "js\\bootstrap.js",
+      "sha256": "e0ebe88fe83bdce09d5836306285891f2d6f259bf76677056a071bbba7cc0c9d",
+      "bytes": 11997
+    },
+    {
+      "path": "js\\clear.js",
+      "sha256": "3adee78be6e1fc262377af3b406e9d6af0b18e2d44417358695c3f1df028d70f",
+      "bytes": 1856
+    },
+    {
+      "path": "js\\cryptojs\\aes.min.js",
+      "sha256": "b617e063cfc9c9a31c5b5ae1808285dc616ee47bb0cc1e85b6d63683a155ed19",
+      "bytes": 15937
+    },
+    {
+      "path": "js\\cryptojs\\README.md",
+      "sha256": "364e417e4ee190c519377d7ba2dafd49c57293e4044603b493e903315b7846bf",
+      "bytes": 3620
+    },
+    {
+      "path": "js\\deflate\\base64.js",
+      "sha256": "6e1c49e00933e42b54062ccccd46a61d5f66ee0d729eb5fa6260dfc32e0bcf1d",
+      "bytes": 3991
+    },
+    {
+      "path": "js\\deflate\\pako.min.js",
+      "sha256": "7420457ec218cafec3515b75adf7dcbc8c3e46b020fa81c3c7c9f0a89973e370",
+      "bytes": 47425
+    },
+    {
+      "path": "js\\deflate\\README.md",
+      "sha256": "cf55dad08dfa533ba7dfaa4015cb6b92c540d3468ce5cd5cad8898a1a13c9f17",
+      "bytes": 169
+    },
+    {
+      "path": "js\\diagramly\\App.js",
+      "sha256": "c9dd6a89ae68bfc9ef34ecda9ebea602a87d842a78a16857fb24b4c6a8deb67d",
+      "bytes": 227506
+    },
+    {
+      "path": "js\\diagramly\\CLAUDE.md",
+      "sha256": "0cf4cbebb6bb475ea03500cb56c029d5cdaa4529592e801ab006885d61f45b56",
+      "bytes": 3026
+    },
+    {
+      "path": "js\\diagramly\\ConfigEditor.js",
+      "sha256": "d01914d2e9f4bb7763096c2222341e3390f0b933fe2edc56c9a7d3f3f3283970",
+      "bytes": 100022
+    },
+    {
+      "path": "js\\diagramly\\DesktopLibrary.js",
+      "sha256": "917e8797dcae80f98bd8e81e6d8575d962857ba2897c315e9b4e6edfd75e0ab0",
+      "bytes": 662
+    },
+    {
+      "path": "js\\diagramly\\Devel.js",
+      "sha256": "d45377115c8c4e17c796ba7b0371d6ddce39f633ac7009979e9721d00ac580ff",
+      "bytes": 11198
+    },
+    {
+      "path": "js\\diagramly\\DevTools.js",
+      "sha256": "cec497e4dfd28e208d1afc63af126b893e3c8cbd1b84cdf1d50e5f4159d16118",
+      "bytes": 2359
+    },
+    {
+      "path": "js\\diagramly\\Dialogs.js",
+      "sha256": "ce3d518c8eae7f44595513d21b26798b086f54b5118c4119f1d45e59f6912439",
+      "bytes": 594471
+    },
+    {
+      "path": "js\\diagramly\\DiffSync.js",
+      "sha256": "06e396cd7d49d078454577a00a40d421959f1d61ab03132e85a4d551ce1ef7b1",
+      "bytes": 40286
+    },
+    {
+      "path": "js\\diagramly\\DrawioClient.js",
+      "sha256": "58edf85361bc32b81e5f2b2684fdd509fdca8ed446e84867ee8f16e935a5ff3c",
+      "bytes": 3260
+    },
+    {
+      "path": "js\\diagramly\\DrawioComment.js",
+      "sha256": "126cdc0e0f2b868a6193f412a09e83ac9c6dc7677194e9500508f61b9eb4ef1f",
+      "bytes": 2552
+    },
+    {
+      "path": "js\\diagramly\\DrawioFile.js",
+      "sha256": "a9cc239669c8ef012fedccdb0429954ad42a8d5530e68a62b7f49b870421ab6d",
+      "bytes": 75480
+    },
+    {
+      "path": "js\\diagramly\\DrawioFilePolling.js",
+      "sha256": "2ef6a357c5fae1ca7758fc22fa6643b62c902ea5216c5ac06da4e86bdaab17d9",
+      "bytes": 4008
+    },
+    {
+      "path": "js\\diagramly\\DrawioFileSync.js",
+      "sha256": "0b5011035f482131290e1acac00299919b4d5e29debce7e8a4a2a006c191f62e",
+      "bytes": 61255
+    },
+    {
+      "path": "js\\diagramly\\DrawioUser.js",
+      "sha256": "e28d08332260394169bff16e2d3f1d1aa99ded84391bb19da17c8ad899367684",
+      "bytes": 481
+    },
+    {
+      "path": "js\\diagramly\\DriveClient.js",
+      "sha256": "63948501ff9ece71b989c910e4611d7496e10843b6c2f41f6e64983e5c558159",
+      "bytes": 78080
+    },
+    {
+      "path": "js\\diagramly\\DriveComment.js",
+      "sha256": "6003484fcf36cc6b7d1a06d63a8e1d11339f8854c218fcc9156a9b7eef1fc0a2",
+      "bytes": 1559
+    },
+    {
+      "path": "js\\diagramly\\DriveFile.js",
+      "sha256": "9b7a5a0a3cbfe10a9a14c27f421c74f356bf2ceb704337140140a665633c16d9",
+      "bytes": 24881
+    },
+    {
+      "path": "js\\diagramly\\DriveLibrary.js",
+      "sha256": "5fe70eb84da2dd828fe7a96b8e3c4e1bb0524d88999f6b8748d57e961f6a443c",
+      "bytes": 1040
+    },
+    {
+      "path": "js\\diagramly\\DropboxClient.js",
+      "sha256": "a0b8babb082825cd10758e591ea502840fe27f4ed4bbbecfbda1c67c23f07e21",
+      "bytes": 24882
+    },
+    {
+      "path": "js\\diagramly\\DropboxFile.js",
+      "sha256": "9cfaea33ee027641b690201be89a58e9e6d455f99832204f3e519952ae1099a7",
+      "bytes": 8453
+    },
+    {
+      "path": "js\\diagramly\\DropboxLibrary.js",
+      "sha256": "127163ea9214c07febc39cc300b807944f86c477140b6dd36ba1460c048b952c",
+      "bytes": 833
+    },
+    {
+      "path": "js\\diagramly\\Editor.js",
+      "sha256": "4485cca36f2aee0b2a0505b979a9662799a1d2bae8d12d362cf03b4613c5ecaf",
+      "bytes": 448454
+    },
+    {
+      "path": "js\\diagramly\\EditorUi.js",
+      "sha256": "273d67886cc8e8974c6827ab0bcc0d310a73f6ec7a4246c0562473b7e1e4036a",
+      "bytes": 860996
+    },
+    {
+      "path": "js\\diagramly\\ElectronApp.js",
+      "sha256": "4a538401e6c1fe04e4c82e84769755cede8e18fd780edb9a34711d61185ab05a",
+      "bytes": 72048
+    },
+    {
+      "path": "js\\diagramly\\ElkLayout.js",
+      "sha256": "2b83eb8e18905a352fe83db0d6959981baf7a1ec4d18e8fa8f2c2657050ab600",
+      "bytes": 33171
+    },
+    {
+      "path": "js\\diagramly\\Embed.js",
+      "sha256": "525614e90040cd7d98bb1f9e1cb0303c2059546c7c8af2c03f4f06004d80dc15",
+      "bytes": 24694
+    },
+    {
+      "path": "js\\diagramly\\EmbedFile.js",
+      "sha256": "50379080a9086aad8b8a6b94913fbb82aff4d57b493b18505bc5c3caeb65b5ba",
+      "bytes": 691
+    },
+    {
+      "path": "js\\diagramly\\emf\\emf-svg.js",
+      "sha256": "645339b0bf2e4997ab2c15a92ee0de6b37f3bf441bc3fcb565aff5a8042780bc",
+      "bytes": 112046
+    },
+    {
+      "path": "js\\diagramly\\Extensions.js",
+      "sha256": "9d22f35cfe06f394af6ac3cfc1e692421d6184de978d278ea62a9eb5bdceff8f",
+      "bytes": 650919
+    },
+    {
+      "path": "js\\diagramly\\gif\\AnimatedExport.js",
+      "sha256": "d38d1f792691b3a9209be52405151633e538db3b1b1fa20db76f5cf96be3d178",
+      "bytes": 8748
+    },
+    {
+      "path": "js\\diagramly\\gif\\GifEncoder.js",
+      "sha256": "dfa6df910c12164a63515d4c51b3b60bb616ff9befbf780ecd905d2aeee8a167",
+      "bytes": 13941
+    },
+    {
+      "path": "js\\diagramly\\GitHubClient.js",
+      "sha256": "c6a2c5d49a97c8c6653509f85e0c56ada2214c7740cd36941df84e33596314dc",
+      "bytes": 35329
+    },
+    {
+      "path": "js\\diagramly\\GitHubFile.js",
+      "sha256": "63a36414ae6010abf217e84fe9640d6e5b756b70fee8ea904ccb3e137f98de82",
+      "bytes": 8607
+    },
+    {
+      "path": "js\\diagramly\\GitHubLibrary.js",
+      "sha256": "846ea5b0e5abd2ac58bff381d60a18422157df53759ab885c79897d29b4cea30",
+      "bytes": 590
+    },
+    {
+      "path": "js\\diagramly\\GitLabClient.js",
+      "sha256": "9dc71caadbfb03ea4018114685281c0bf77eb36e62d5f66eeeeff071753bbeb4",
+      "bytes": 35847
+    },
+    {
+      "path": "js\\diagramly\\GitLabFile.js",
+      "sha256": "4606152c65f3e81c0f2995153681092c80cc45314c6b6cb1555546408562db76",
+      "bytes": 2426
+    },
+    {
+      "path": "js\\diagramly\\GitLabLibrary.js",
+      "sha256": "65743e6f07c45ae263897be9c8a555794acf3a92acbe2510302c05a36c14c86c",
+      "bytes": 590
+    },
+    {
+      "path": "js\\diagramly\\graphml\\mxGraphMlCodec.js",
+      "sha256": "a63b887b3af40dff005b9720bd798e5ef2ca943462092dbd030a29844117abde",
+      "bytes": 96970
+    },
+    {
+      "path": "js\\diagramly\\GraphViewer.js",
+      "sha256": "2659c10fb526c51c6220ad55276081d776bb580b750173070600edbb19e6fc37",
+      "bytes": 83816
+    },
+    {
+      "path": "js\\diagramly\\Init.js",
+      "sha256": "887f97862b758a01546c04104a71972497b5e36454e7903376f362e16ecb3c2e",
+      "bytes": 15442
+    },
+    {
+      "path": "js\\diagramly\\LocalFile.js",
+      "sha256": "6e77f476e173474088bdbc31b60356dda3a517b36078b2718e3b259667d4cc3c",
+      "bytes": 9504
+    },
+    {
+      "path": "js\\diagramly\\LocalLibrary.js",
+      "sha256": "26683bc48ef2e9f7a04dea735ce7836008e28ccfad43275040e99a55fe8606f8",
+      "bytes": 1779
+    },
+    {
+      "path": "js\\diagramly\\Menus.js",
+      "sha256": "0a2f0d802979484e5b564113607db41751ed0d8b8176516b707ee7a85930771b",
+      "bytes": 187105
+    },
+    {
+      "path": "js\\diagramly\\Minimal.js",
+      "sha256": "bf3530ee5f87090c38c8b743dfef10673e4d4ee1c0e6b70ca43df6094029c9ff",
+      "bytes": 21495
+    },
+    {
+      "path": "js\\diagramly\\miro\\MiroImporter.js",
+      "sha256": "bd0ae3749256d50ef29fafe83091bf4ae37c5342a4f80d338a129b9df82e0f2b",
+      "bytes": 18862
+    },
+    {
+      "path": "js\\diagramly\\mxFreehand.js",
+      "sha256": "74c48e105fc25f76d7f1d2a6a59806e1bcaf3f9d14e29b05c64f5e925a4ec3ee",
+      "bytes": 13786
+    },
+    {
+      "path": "js\\diagramly\\mxRuler.js",
+      "sha256": "e0cba57f4ff461fe630efafe2af85587ede706ff8888ceaa77148c46b32ff4eb",
+      "bytes": 19997
+    },
+    {
+      "path": "js\\diagramly\\OneDriveClient.js",
+      "sha256": "2e34c185bedf707f8cafdcb14950277ff79bb618a28ee387771cf7363c8d5561",
+      "bytes": 49494
+    },
+    {
+      "path": "js\\diagramly\\OneDriveFile.js",
+      "sha256": "fe4558ab8e33f5327dfca9c026f058fc4951e57933c6e1c77549e2ca5b677924",
+      "bytes": 14270
+    },
+    {
+      "path": "js\\diagramly\\OneDriveLibrary.js",
+      "sha256": "7b5cfc5239bcb88c6e6a0d73a9532803eef6610ca3327590e933486da2a228ad",
+      "bytes": 1094
+    },
+    {
+      "path": "js\\diagramly\\P2PCollab.js",
+      "sha256": "7f6b9c7c3e6b5a1d606e7bf247ec2269bfb1a34d4e7d3f048eb28f919e454109",
+      "bytes": 29539
+    },
+    {
+      "path": "js\\diagramly\\Pages.js",
+      "sha256": "5ab7addbf35e8da29f36b5ec2626cd473d946605f4f4f812e0c3b605f406a0df",
+      "bytes": 57936
+    },
+    {
+      "path": "js\\diagramly\\RemoteFile.js",
+      "sha256": "923a19fa8c3dccaa6e764c48bb943d3168d4dbe100c1f0358437f92b4478a73b",
+      "bytes": 831
+    },
+    {
+      "path": "js\\diagramly\\RemoteLibrary.js",
+      "sha256": "d97b8602d63159dd11db95c202cc810847ec8bc1fa8b94fe076c4e0fe867708d",
+      "bytes": 1099
+    },
+    {
+      "path": "js\\diagramly\\Settings.js",
+      "sha256": "c92a19150d03bbdfafec1f513ab0149f243e3d6d9faac22edf680f9fedda31a7",
+      "bytes": 10672
+    },
+    {
+      "path": "js\\diagramly\\sidebar\\CLAUDE.md",
+      "sha256": "72639b88440c68febe678555aa5de608a50b2ca81b47a51b86fcd332cee9d453",
+      "bytes": 1268
+    },
+    {
+      "path": "js\\diagramly\\sidebar\\Sidebar.js",
+      "sha256": "d8a5bed3301e806ddd612ee7e57ec0040ca2f6892cc40241f0f366750d2300e8",
+      "bytes": 118440
+    },
+    {
+      "path": "js\\diagramly\\Simple.js",
+      "sha256": "a8f9810adc3a7998e601fdfb6c4152ba02c39cf7f1abdae079fde104bf052c7c",
+      "bytes": 24403
+    },
+    {
+      "path": "js\\diagramly\\StorageFile.js",
+      "sha256": "b911d9c1c4e19d89f915f8f9e47bd3c1e74136459922efcaf23d1ed8a011f639",
+      "bytes": 14574
+    },
+    {
+      "path": "js\\diagramly\\StorageLibrary.js",
+      "sha256": "32ef9e5dda1fb646acba05ae57ca31b8597bcbe91f3ef3302efefe2cc4b59915",
+      "bytes": 2324
+    },
+    {
+      "path": "js\\diagramly\\Trees.js",
+      "sha256": "1fa2f8ea07ce0075b12e82ff615b646b302210265a83242ba2fe4c1444a62c1c",
+      "bytes": 50972
+    },
+    {
+      "path": "js\\diagramly\\TrelloClient.js",
+      "sha256": "b79854071e5a186ca8c6e01364c0345ccde77872f4724b16a2e37eec68e7bb0c",
+      "bytes": 16802
+    },
+    {
+      "path": "js\\diagramly\\TrelloFile.js",
+      "sha256": "a212e886137fb226200db6a2bc2cf86861b000d81444f1db020816a04dc4b3f0",
+      "bytes": 3196
+    },
+    {
+      "path": "js\\diagramly\\TrelloLibrary.js",
+      "sha256": "222275cbedb107c19d8b98e7cb8549101e6e08ea9dd7af21bd65a438d57731c9",
+      "bytes": 590
+    },
+    {
+      "path": "js\\diagramly\\UrlLibrary.js",
+      "sha256": "5843ddd5f7b958a424216b7b7cbfee6224c47b6e150ff0938bc7fd1690b5a7ec",
+      "bytes": 1929
+    },
+    {
+      "path": "js\\diagramly\\util\\mxAsyncCanvas.js",
+      "sha256": "99a9fe09e93f50677ec8d1dbb9e3bd88db2fe745b95232957c24027be636d0d7",
+      "bytes": 4520
+    },
+    {
+      "path": "js\\diagramly\\util\\mxJsCanvas.js",
+      "sha256": "061584c774999c25015b2fb0a7c2dad0bca2e7c5228ce1034c576705e70c3ca5",
+      "bytes": 17290
+    },
+    {
+      "path": "js\\diagramly\\vsdx\\bmpDecoder.js",
+      "sha256": "a64eb6c2ccce0d517c04ba1f5dbf0c56e83cc924dd795d476d5964052f49c85c",
+      "bytes": 8711
+    },
+    {
+      "path": "js\\diagramly\\vsdx\\CLAUDE.md",
+      "sha256": "03e4a029c2dba8855dbf1d013584052d8ef65c6d86377de425fcaa95cbe0198b",
+      "bytes": 30788
+    },
+    {
+      "path": "js\\diagramly\\vsdx\\importer.js",
+      "sha256": "a24b54ddfdabe694bfab98cdf32f52fa41ca16169966e077195ecb4551cb3ce8",
+      "bytes": 824096
+    },
+    {
+      "path": "js\\elk\\drawio-elk.min.js",
+      "sha256": "120966103a75f9091642246661f812fc5f9fde0e3ead21cd69ca440f153076f0",
+      "bytes": 918581
+    },
+    {
+      "path": "js\\embed.dev.js",
+      "sha256": "8d4d59603ed33410769679e1ccd0e1ca6e1f898e41bc5f9adafb92c927b19b51",
+      "bytes": 24689
+    },
+    {
+      "path": "js\\export-init.js",
+      "sha256": "cf9b6518b7f34c62ff0cc3f1f049fae340d2e7f8b486b3261ee5bff211a73d58",
+      "bytes": 493
+    },
+    {
+      "path": "js\\export.js",
+      "sha256": "1e6f6ed5213626234622b6a67fd0fb85bf91e0194fc8f7de0c7bc88b987a23a9",
+      "bytes": 56971
+    },
+    {
+      "path": "js\\extensions.min.js",
+      "sha256": "f3900252f82a718d158e627f49f1fd7cd2c85fae51b17336bf67238da6d9c6fc",
+      "bytes": 3282163
+    },
+    {
+      "path": "js\\freehand\\perfect-freehand.js",
+      "sha256": "987dac64dceeba68467916022418d35b903b9718890eadbe23422fcfcfce6732",
+      "bytes": 4859
+    },
+    {
+      "path": "js\\freehand\\README.md",
+      "sha256": "0b54f3f1dfd5cb500063c1f342222a6b33f742605ac4e52c51bf98dda255d7c8",
+      "bytes": 85
+    },
+    {
+      "path": "js\\gliffy\\drawio-gliffy.min.js",
+      "sha256": "52da8c53b83045f17afd6206dba06f64dd72f14d911e997a069f042869403a8f",
+      "bytes": 624654
+    },
+    {
+      "path": "js\\grapheditor\\Actions.js",
+      "sha256": "71cc5371e50c16c16bfd6a06eabc5b85db2b71e788eda0b89f0fb58a708e3f34",
+      "bytes": 59969
+    },
+    {
+      "path": "js\\grapheditor\\CLAUDE.md",
+      "sha256": "ea3dcf4d467e7a9fafc9f2951eb453ef51827f574a48ecf4c3fa86116c683fe4",
+      "bytes": 1311
+    },
+    {
+      "path": "js\\grapheditor\\Dialogs.js",
+      "sha256": "f3d8f0e5c2e6b8838ec4652933bcc48411ee86feefe66f984fe42d1b6fd7a1b9",
+      "bytes": 133913
+    },
+    {
+      "path": "js\\grapheditor\\Editor.js",
+      "sha256": "2ffd4df12d224663a0ebdc8e14ffc94241f4390cc9c1afddd36e2f9ca2c3729b",
+      "bytes": 173345
+    },
+    {
+      "path": "js\\grapheditor\\EditorUi.js",
+      "sha256": "b7bcb845821eb02cb893000e22421be2da53485085391f6f6ebd95187dffef80",
+      "bytes": 218311
+    },
+    {
+      "path": "js\\grapheditor\\Format.js",
+      "sha256": "da46559081aede0b5ef4d01d113f0673364e854743e4e4c74c5ba1c4853fe08d",
+      "bytes": 269861
+    },
+    {
+      "path": "js\\grapheditor\\Graph.js",
+      "sha256": "aaf438b145c1ff29f5c94344a8c4383c2b6a50d63fa8ce6c41d61b08fd9a7ade",
+      "bytes": 808971
+    },
+    {
+      "path": "js\\grapheditor\\Init.js",
+      "sha256": "18330179bb5316d4361ae3e0cb152fd86f02145f16022d6f175c04af00b496d1",
+      "bytes": 3412
+    },
+    {
+      "path": "js\\grapheditor\\InlineToolbar.js",
+      "sha256": "c3ebe73541a0307617dd8a2fae1bab60df6b591ba12b5f8245478f1fa9f61fba",
+      "bytes": 64455
+    },
+    {
+      "path": "js\\grapheditor\\Menus.js",
+      "sha256": "ea9c273fc83e08a60aaba45a163eac6a0afef9d40fda21e3ee4117db5c3ffd5e",
+      "bytes": 56233
+    },
+    {
+      "path": "js\\grapheditor\\Shapes.js",
+      "sha256": "6034d7b132772e6ab98821739a43eb48c8493d1237d168d394b204a7a07e2e80",
+      "bytes": 305033
+    },
+    {
+      "path": "js\\grapheditor\\Sidebar.js",
+      "sha256": "d391d21ce7f4f02cd69749a6230f4313247cc456671e3facb7d8c04dc2cb2726",
+      "bytes": 211613
+    },
+    {
+      "path": "js\\grapheditor\\Toolbar.js",
+      "sha256": "df4946602b5c4eb1c15cc8f9f9eb6bf47baf5ab951b48684e9bf9e69102585ca",
+      "bytes": 20440
+    },
+    {
+      "path": "js\\jquery\\jquery-3.6.0.min.js",
+      "sha256": "ff1523fb7389539c84c65aba19260648793bb4f5e29329d2ee8804bc37a3fe6e",
+      "bytes": 89501
+    },
+    {
+      "path": "js\\jszip\\jszip.min.js",
+      "sha256": "449129fe5458a0ff04ecc969c1ad061b8882ac34e60926bc8f13ba36b614ace4",
+      "bytes": 97587
+    },
+    {
+      "path": "js\\main.js",
+      "sha256": "f2967ad73f4d8d20d8a910208a9ae8998d8c0dbaba90f5be049105b8496aa01d",
+      "bytes": 447
+    },
+    {
+      "path": "js\\math-print.js",
+      "sha256": "a21ff426724ed38e72de19a9bfdd8499b78f4fb02924676326a7221792d2828c",
+      "bytes": 2306
+    },
+    {
+      "path": "js\\mermaid\\drawio-mermaid.min.js",
+      "sha256": "fc5e3067ea0469e5cd55f50465d7fdaa0d30f0ff4416e3d5edf8fbe5bef9f784",
+      "bytes": 751929
+    },
+    {
+      "path": "js\\open.js",
+      "sha256": "b31790e3a1e3b6ca4f24886f0584d98db1945017fa89b711b8d255be939f0e8f",
+      "bytes": 6756
+    },
+    {
+      "path": "js\\orgchart.min.js",
+      "sha256": "a731393b645a51c70776032565494c391fb8aabf607c24c2d05b95213ac46e2f",
+      "bytes": 552332
+    },
+    {
+      "path": "js\\orgchart\\bridge.collections.min.js",
+      "sha256": "5988d0038ae7f39ecc7d7cc939b6d42b5b28b3f17c045faaab112e6662093e23",
+      "bytes": 45593
+    },
+    {
+      "path": "js\\orgchart\\bridge.min.js",
+      "sha256": "479694cdb31c5c0f3c19926439a677361fe401a9cc366b4a04aa542daacd301c",
+      "bytes": 394319
+    },
+    {
+      "path": "js\\orgchart\\mxOrgChartLayout.js",
+      "sha256": "2ea396e6f24a1f0393791013b56b14319fe0119105da1e0e8acc10e557927e2a",
+      "bytes": 29394
+    },
+    {
+      "path": "js\\orgchart\\OrgChart.Layout.min.js",
+      "sha256": "74aca070a8332631675011b55949195896d9badb7ce2f2f318207c5a89ac2a54",
+      "bytes": 100646
+    },
+    {
+      "path": "js\\plantuml\\drawio-plantuml.min.js",
+      "sha256": "27597711cfc3cf9659fb248c074e78ab35c1083e7487875aa1c465e1c37d58bf",
+      "bytes": 928281
+    },
+    {
+      "path": "js\\PostConfig.js",
+      "sha256": "f742368e43865e92106f373e829b089b88a076dd04f47307080519f2c38e9a0a",
+      "bytes": 3851
+    },
+    {
+      "path": "js\\PreConfig.js",
+      "sha256": "b8655ef28c207ec5e8d3ac207a26d5311499e0be8b97ee08aae9154d69199a07",
+      "bytes": 928
+    },
+    {
+      "path": "js\\rough\\README.md",
+      "sha256": "a25fe69c9ade636d53298dd25d2ea317178ca59fed850afcb723b8e2381d366c",
+      "bytes": 72
+    },
+    {
+      "path": "js\\rough\\rough.min.js",
+      "sha256": "2ea1ec2378ed9a64a0cd053edef6d9f3d1545b6e568938bc1bde2f990608310a",
+      "bytes": 27761
+    },
+    {
+      "path": "js\\sanitizer\\purify.min.js",
+      "sha256": "f263b05369e050fa175d4ecb9c9358eb4253602d510297adfb31df48b2f1c4d5",
+      "bytes": 29369
+    },
+    {
+      "path": "js\\shapes-14-6-5.min.js",
+      "sha256": "15c84012f00aa83ab808390f3d0edec040224b60fc8518edcab9475e1a881edc",
+      "bytes": 85
+    },
+    {
+      "path": "js\\spin\\spin.min.js",
+      "sha256": "1c43ca73e4517a4cf15a24adeeb063722409714b8baa1eb213640ea6838cee45",
+      "bytes": 4145
+    },
+    {
+      "path": "js\\stencils.min.js",
+      "sha256": "09b35e0ddb10b5fa1a59c6c5e8633193186ebea416dd3341365ebfe1c9dfa2df",
+      "bytes": 52
+    },
+    {
+      "path": "js\\viewer-static.min.js",
+      "sha256": "e49a0d5d1eac05351c3d21a22d5278fcab5d20066bdbdf074edc0b9989c611cd",
+      "bytes": 4176048
+    },
+    {
+      "path": "js\\viewer.min.js",
+      "sha256": "2d0fef32815c79f1bb51f225effddfc57e111461bccf8386eed29c7cce3ab088",
+      "bytes": 2690195
+    },
+    {
+      "path": "js\\vsdxImporter.js",
+      "sha256": "c2bc294ad51554ec413ac7641587ad2bf4045a163f1483a11ba1d90fb9c8d4d3",
+      "bytes": 2245
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+      "bytes": 11356
+    },
+    {
+      "path": "math4\\es5\\core.js",
+      "sha256": "1a3cb32a18199355c67b8f78f57598dec8c253f7455ae42ac3f974b548d43a1b",
+      "bytes": 141170
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-bbm-font-extension\\chtml.js",
+      "sha256": "d5e9073fb52f7b5d4f8c990e3e6f4d29761902213052ceb8490b0d0393298b74",
+      "bytes": 9417
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-bbm-font-extension\\chtml\\woff2\\mjx-mb-bb.woff2",
+      "sha256": "e89ff9a0bc201208bdf207dee21c8b6e2d73225b64e4ed2aef873103723c01da",
+      "bytes": 10812
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-bbm-font-extension\\chtml\\woff2\\mjx-mb-bm.woff2",
+      "sha256": "deda86f48d408321def7300943be96bca362b978f4fb6124a29675c6349776f2",
+      "bytes": 10164
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-bbm-font-extension\\chtml\\woff2\\mjx-mb-bn.woff2",
+      "sha256": "03e0dfb065d3b053a9088e0236d4de6926ecb6d69c8844d6e2baf1c44c084d76",
+      "bytes": 11612
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-bbm-font-extension\\chtml\\woff2\\mjx-mb-bss.woff2",
+      "sha256": "b404332e0dbd76ef31b18a9fd561ee9a763036296445ebd99413f6ad38a9de5b",
+      "bytes": 8304
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-bbm-font-extension\\chtml\\woff2\\mjx-mb-bssb.woff2",
+      "sha256": "76dd9408e6dc239c4b9043ab0c16fe0682c7e9cf6290aa7ae28da975e5f0f456",
+      "bytes": 10360
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-bbm-font-extension\\svg.js",
+      "sha256": "dcd83c7439be878000fbe01e0e1177546b8c2e42f2959409113f11622b7db5ee",
+      "bytes": 210644
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-bboldx-font-extension\\chtml.js",
+      "sha256": "7d40dbaaac593d43e27db3aebe660605d6dcfd67e8cca77cf936e0141f6f09ba",
+      "bytes": 11010
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-bboldx-font-extension\\chtml\\woff2\\mjx-mb-bb.woff2",
+      "sha256": "f86d290e2e25979f818fe15692ac7d835919cab3ced810b71affb8822b12a604",
+      "bytes": 11452
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-bboldx-font-extension\\chtml\\woff2\\mjx-mb-bbb.woff2",
+      "sha256": "60ec658d62f7eea1fde6928cb231e39353317fadf21e202872041eb817c40e65",
+      "bytes": 12124
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-bboldx-font-extension\\chtml\\woff2\\mjx-mb-blb.woff2",
+      "sha256": "44d8ac4b74307178297cbc0bec4fd69e5dba7456ad025360a54113b212c5b574",
+      "bytes": 9988
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-bboldx-font-extension\\svg.js",
+      "sha256": "90664e46bd253083e4deb2cf4501d6d61c5d72d3c56639435c8996ce0c43a6e9",
+      "bytes": 143956
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-dsfont-font-extension\\chtml.js",
+      "sha256": "7deaf170e8d1af1aa4482552da2946c1ee244fa9d9066ab847114c11965471a6",
+      "bytes": 3451
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-dsfont-font-extension\\chtml\\woff2\\mjx-md-dr.woff2",
+      "sha256": "8cb9cbb1372de14c6f54d6c1a007b89ff5ad823aeee1589a072229e3d86d5df1",
+      "bytes": 7140
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-dsfont-font-extension\\chtml\\woff2\\mjx-md-ds.woff2",
+      "sha256": "e79fe826b4613196f88e61401036981b0dc28d564a404406b55c3b23344ceeb4",
+      "bytes": 4912
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-dsfont-font-extension\\svg.js",
+      "sha256": "72bfb298b4167d7048dd564a1c625775e87efb4d415140500de362639756ad32",
+      "bytes": 44447
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-mhchem-font-extension\\chtml.js",
+      "sha256": "09dec3f1b8299aa81b5d4e45fa8ef4675f6a1907056f030a357fb9916bad8703",
+      "bytes": 3587
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-mhchem-font-extension\\chtml\\woff2\\mjx-mhc-m.woff2",
+      "sha256": "2ea308c69f139e9ee7bc452e12a449c13e3b9ce4c08aebc4e86e15df232a26e0",
+      "bytes": 2400
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-mhchem-font-extension\\svg.js",
+      "sha256": "59cbf08305ddd6bac14dbf2e2a6b3c2f3f6870107ad16d381870fdb0486eea73",
+      "bytes": 14006
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml.js",
+      "sha256": "1ff6fa2f22384fa16c0575f09b98ee4d900a61d185f6fcee4e960c0d2190d0c9",
+      "bytes": 80986
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-b.woff2",
+      "sha256": "69e45ca329dd2fcc3671dc20884f2baf29348a43833104266be098eba544fda2",
+      "bytes": 19340
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-bi.woff2",
+      "sha256": "d0c95edf7b3223c8e66fcb4b6faaf74fc3376eea59c20f23677f4d54905a356e",
+      "bytes": 1484
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-brk.woff2",
+      "sha256": "4f03a0d86ff005f12cbb0ffd162bae0766415e48e07ed3fa5970e685594de15d",
+      "bytes": 980
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-c.woff2",
+      "sha256": "1faef92bbe440c459bcea0b7530044827749507e39bf49248c2203f9eb422bce",
+      "bytes": 6644
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-cb.woff2",
+      "sha256": "03de6a3467f88e79425df3505a936e6b336efbc5c0421f40905d1d52fddbe4ed",
+      "bytes": 7064
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-f.woff2",
+      "sha256": "6cb008e934883d1f4652562276469dfc1ade06ee4ceebd6979e79b1c98472b47",
+      "bytes": 5932
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-fb.woff2",
+      "sha256": "303b28cdca9c064d93dc1672b843933ab20e28f777adb08b9eafa6f442f074d7",
+      "bytes": 6180
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-i.woff2",
+      "sha256": "82c82a2e0c8bc89421ce9cbb4ecea806c8ceec4b4fd0269726b9439ca853b365",
+      "bytes": 7472
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-lo.woff2",
+      "sha256": "98b20475232f47749126ae098177b5c71d3b6512e068efedb3a912c2c8f6ed0f",
+      "bytes": 5160
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-m.woff2",
+      "sha256": "82e8abfaecf005f639e18b1e7dece8700c56df76eac8ea94e4b5915bedee7567",
+      "bytes": 8552
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-mi.woff2",
+      "sha256": "4bd1e8cefc7cf1b9aa2f2c6beb01ecef7ebf5d1f81d82f954a9688360a399fc3",
+      "bytes": 9676
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-n.woff2",
+      "sha256": "fad3b88ec7aac4959e3de19044931682bd4d1500c72a85d2d113b73b694c4133",
+      "bytes": 164864
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-ob.woff2",
+      "sha256": "62f1a8f7ced532d6ab1f6af3a5b3363eb6c774fe40d29092bbea27ac95a9f89e",
+      "bytes": 8412
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-os.woff2",
+      "sha256": "01bc6e82013dca9c1cbb132c353a0f63add97325bb979bba5e619591525c2a6e",
+      "bytes": 8164
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-s3.woff2",
+      "sha256": "07165a0e10ae4b6b24db34b28d0a8c46bd4ac53b4d1682098ee7a3e88d2f1c83",
+      "bytes": 2560
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-s4.woff2",
+      "sha256": "b20a0e1b03043ae1a540857bdf1b220297ff0e78b110b1e15554addf91ad0937",
+      "bytes": 4352
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-so.woff2",
+      "sha256": "0e9f0e5baa090d44c728e2ddaa39b4c465ff15d349e3547488503eb318628a45",
+      "bytes": 6472
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-ss.woff2",
+      "sha256": "e0d564a939fce2e4d0c09a86f0dc936c2a9cdb42e44eb264dbc5ef01d71e179c",
+      "bytes": 6168
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-ssb.woff2",
+      "sha256": "4a2e4827bad85a9ae5fe906f179ccfce154bfc29e19115ceb8d7f1f6e8ce31cd",
+      "bytes": 4896
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-ssi.woff2",
+      "sha256": "b6dfb310dd7b5c059e9b748b4766fcdd6fa0005c17d9229f3bb1bd095acfae1a",
+      "bytes": 8472
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-v.woff2",
+      "sha256": "bd9d7db0883dc1adca7ed1c20042609e4e3d1f07f106b6bc8eeeab49d560393b",
+      "bytes": 6716
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\chtml\\woff2\\mjx-tex-zero.woff2",
+      "sha256": "2c146f72c9a345aa282398a752d03af71d83a011f3d067297b533a31f0c5f5cb",
+      "bytes": 960
+    },
+    {
+      "path": "math4\\es5\\fonts\\mathjax-tex-font\\svg.js",
+      "sha256": "ed5c78819c63883579fb8a4bcec97a2a2fe32e8a0a7f504273aeece0ca396a33",
+      "bytes": 1417106
+    },
+    {
+      "path": "math4\\es5\\input\\asciimath.js",
+      "sha256": "ba4f20f2f1b2e7ebfb45afc3b9e195d84a749e5492555812be805f6a11ad7066",
+      "bytes": 103833
+    },
+    {
+      "path": "math4\\es5\\input\\tex.js",
+      "sha256": "0375844c0c9698b3c26bde0c78b5bc62dbfbe15e3794433dcf7e0b4b3ea2b69a",
+      "bytes": 149555
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\action.js",
+      "sha256": "7c46fc1ef8118723bf2f386d704ab289e5dd683471e0ad4e1e717244959b565b",
+      "bytes": 1843
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\amscd.js",
+      "sha256": "81d6115aa4358a98da5e6d477ac4198cbc11c2c2752745b3529a8b6e2761202f",
+      "bytes": 4310
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\bbm.js",
+      "sha256": "fb780f6e8ca565439b3c6dc78f3e42b525905fd43c5e15471994a2a1da914ca8",
+      "bytes": 2143
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\bboldx.js",
+      "sha256": "772503b34ac5b7c56e56c7698403bad6ff3ea3fd1882c22b4e1ef518e6ef86c5",
+      "bytes": 7397
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\bbox.js",
+      "sha256": "9d9ff6d1c592d2a4fe728412d2d5ec29379f4721bfa3b8356ad2045eb939b848",
+      "bytes": 2323
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\begingroup.js",
+      "sha256": "0f606d5a71301992e92d8697ccbf8318736110691d8a94303f3f254cd589421a",
+      "bytes": 4266
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\boldsymbol.js",
+      "sha256": "baaabd9fb430fe4fdbfa9db74aa60b118dd650a68239280368abfd1bc30a0e10",
+      "bytes": 2460
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\braket.js",
+      "sha256": "d401832d91ca89fc8f76cf1ea67ce25b21c4a2b1d9da0db605204f262c8d69ee",
+      "bytes": 4653
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\bussproofs.js",
+      "sha256": "87451074cc17e2c8064d630b91cc56171182cc5a46c1313006014f56c498d8d4",
+      "bytes": 12204
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\cancel.js",
+      "sha256": "9ff91ff84d9776606cdb66da62ffe9bb39cfdfabcf070f214d35e553689ffece",
+      "bytes": 2255
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\cases.js",
+      "sha256": "6805d481aaee3f78d82bb9f0b6b9ac47b0804c30f10253394724459d95d41a8c",
+      "bytes": 4277
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\centernot.js",
+      "sha256": "e3c08e96d11f020027a9b325e7b8661f08940babba218b786ac29d50d822dfba",
+      "bytes": 2148
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\color.js",
+      "sha256": "f569ebbf53726afeb3f7a7803500ac2088aada400a2000394879d0b503311b17",
+      "bytes": 6818
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\colortbl.js",
+      "sha256": "dff289abcff30d0e109eb51a6f6be2d09e46b7e1db5bc881719f9f1bf483ab8f",
+      "bytes": 3185
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\dsfont.js",
+      "sha256": "74a9961b43c43644c28c582fc14031b7f42bac0b771140a5d80af383415ea978",
+      "bytes": 1898
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\empheq.js",
+      "sha256": "028e775eca9919375d3397a947d6086383ec99a501a5080b2833ffda5d578a14",
+      "bytes": 5946
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\enclose.js",
+      "sha256": "5301d91e2e7d6f86a29c13c1b9726b7476b9de9b1745011886c914372fab4cf3",
+      "bytes": 1731
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\extpfeil.js",
+      "sha256": "2d1f82bf22acefe6c358e3a3dca293cc2fda338f2db4fd147befc75122c41841",
+      "bytes": 2445
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\gensymb.js",
+      "sha256": "cd5cb8a68719acc0c215f4377e4d37eb35d4f49bab26c7e46efff5e4dbc7f6d3",
+      "bytes": 1588
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\html.js",
+      "sha256": "a647d13d009d5ecee4239cfe681ef831f2bd0f2a91033b922ae6bf3481d156e0",
+      "bytes": 2813
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\mathtools.js",
+      "sha256": "0a403d24ff0fbb698cb0efd1cfe8569bfb47e492165204170481e7e6619a1dcc",
+      "bytes": 22389
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\mhchem.js",
+      "sha256": "7447710d9804aea68b4491e8fde752d69a905e0d27a8a39705c535f64cfa7fdc",
+      "bytes": 38920
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\physics.js",
+      "sha256": "3a1d1b0ab203b446a2c04d9f5a0bf59e6225c83a27aea0b2403f28293aadb79a",
+      "bytes": 19564
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\textcomp.js",
+      "sha256": "d085215c2d77df0c8dbf460b991c59efa9e69cbd7e1f6e94bf5cbb363aa1c69c",
+      "bytes": 5135
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\unicode.js",
+      "sha256": "bf1ddc9fe506f782c0e9271c0c52c4b258f9e4eac3d2905274d0c5d239e2a2b3",
+      "bytes": 3586
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\units.js",
+      "sha256": "25278814cbc050fcd4e8849c014c238cf6801e00405e0acaf5d98924fd1e26a7",
+      "bytes": 2118
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\upgreek.js",
+      "sha256": "0f4c96104699aeada37446dfb3d50438efec4e11c58982abaa2ff781d42d3667",
+      "bytes": 2157
+    },
+    {
+      "path": "math4\\es5\\input\\tex\\extensions\\verb.js",
+      "sha256": "b2290ff1be4d33c57dd476d87d1753d4cde0a5991612b4a24db881a15c85a250",
+      "bytes": 1779
+    },
+    {
+      "path": "math4\\es5\\output\\chtml.js",
+      "sha256": "9037308c64af4028845b36cde08019e311618cba40605483a4f0606a22f4ac69",
+      "bytes": 173814
+    },
+    {
+      "path": "math4\\es5\\output\\svg.js",
+      "sha256": "6151d21b8205858c103642484f1ca272e3c9cbbde37d53235ac0572966ce613d",
+      "bytes": 159356
+    },
+    {
+      "path": "math4\\es5\\startup.js",
+      "sha256": "13a303eae8790c5c79eddb2afdd3d22338be6fe59e0b526ebc92d00b88d98a1d",
+      "bytes": 17116
+    },
+    {
+      "path": "math4\\es5\\ui\\safe.js",
+      "sha256": "ddd5b5eb3076bdf71c9b0508c58fae095b441a22b7bf2ff2e1ad5ace389f49b2",
+      "bytes": 6375
+    },
+    {
+      "path": "mxgraph\\css\\common.css",
+      "sha256": "080278000f2a3bdba6d29f426f24654b5041539d3c4868a9434028e141db92a7",
+      "bytes": 3549
+    },
+    {
+      "path": "mxgraph\\css\\explorer.css",
+      "sha256": "4699a378dc64e9d4b1d4b67bd1e300642dc8e58606057c544bc11af35b438c6d",
+      "bytes": 486
+    },
+    {
+      "path": "mxgraph\\images\\button.gif",
+      "sha256": "5ec83478ae7776cc7dc43e8f429252cc0ac856a00003df2b7fc001e1f06da79f",
+      "bytes": 137
+    },
+    {
+      "path": "mxgraph\\images\\close.gif",
+      "sha256": "e0efce89bcb1d2a9c596adab5abb82439a42da44dec60ad58c4b4b82e3539fcc",
+      "bytes": 70
+    },
+    {
+      "path": "mxgraph\\images\\collapsed.gif",
+      "sha256": "1eb6f69b7a2c661d65dd70dde163069d7fb832cfe33fd7e247b6439a9f48ca38",
+      "bytes": 877
+    },
+    {
+      "path": "mxgraph\\images\\error.gif",
+      "sha256": "b8a1baae52e64a19e9512a02c962a3b668a0564f9d6fe646d27a48945873a7a4",
+      "bytes": 907
+    },
+    {
+      "path": "mxgraph\\images\\expanded.gif",
+      "sha256": "632e813c7f2f83ac913ab3bc3ed637808e326111a857f1c446525a742cbd5a10",
+      "bytes": 878
+    },
+    {
+      "path": "mxgraph\\images\\maximize.gif",
+      "sha256": "0821326fc8f746438d67ec9bb39f5db0cd6cb21c303a80dd32087ed1812f8cc0",
+      "bytes": 843
+    },
+    {
+      "path": "mxgraph\\images\\minimize.gif",
+      "sha256": "facda5c66c8f5224852915d3996287485396cbf13b3d804344e76a6f4c83c27f",
+      "bytes": 64
+    },
+    {
+      "path": "mxgraph\\images\\normalize.gif",
+      "sha256": "cce3a408453eec8adcf2dd3f2cfdcab15648349d02ee40c1ccf384cb17b0a890",
+      "bytes": 845
+    },
+    {
+      "path": "mxgraph\\images\\point.gif",
+      "sha256": "faaff7abe7e720f1b32b2a50f58cbaaaf28f983f29c73b962410a546d69e03b4",
+      "bytes": 55
+    },
+    {
+      "path": "mxgraph\\images\\resize.gif",
+      "sha256": "01af732c18b45f2cc8d9994d4c840b60eddd1a1c30c870c9d5bfe966b044c46b",
+      "bytes": 74
+    },
+    {
+      "path": "mxgraph\\images\\separator.gif",
+      "sha256": "ebe40f798d9177a8b927173537b847e59c36d639f6a44021d40f25193aba61eb",
+      "bytes": 146
+    },
+    {
+      "path": "mxgraph\\images\\transparent.gif",
+      "sha256": "3317f2023f9198ebaa1247c09643f0fa5b16db15461e70066e6a27abdae24931",
+      "bytes": 90
+    },
+    {
+      "path": "mxgraph\\images\\warning.gif",
+      "sha256": "8d59783b049993e4290d219bdc5cb5b5c3e603805a55920ab1f66ac05b8e4ceb",
+      "bytes": 276
+    },
+    {
+      "path": "mxgraph\\images\\warning.png",
+      "sha256": "b46f3b67f66186f7f97928010cd136947697fadbf19ba7726b024d14ea95de50",
+      "bytes": 425
+    },
+    {
+      "path": "mxgraph\\images\\window-title.gif",
+      "sha256": "aa9f5716c61821f64adb03df4ab02a8263eecdeaf773664b68fdc9a3b16b23fb",
+      "bytes": 275
+    },
+    {
+      "path": "mxgraph\\images\\window.gif",
+      "sha256": "9e8c81494012d84ac2c34fb860d924943b3364034636e4892deb193e43232445",
+      "bytes": 75
+    },
+    {
+      "path": "mxgraph\\mxClient.js",
+      "sha256": "ff277f7a81fec510af87434141cf7bb2e124120683025dc5735ce6aef4197070",
+      "bytes": 838824
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxCellHighlight.js",
+      "sha256": "fb833998380db65c72102dd872c440099fc70a8b23ae83cdecdcc2e7e8ec5ef4",
+      "bytes": 6612
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxCellMarker.js",
+      "sha256": "b15259dd87c05caf7b3aab5dbef53e23eab1dfe14dcd01c1c738ecbbd2eafd58",
+      "bytes": 9228
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxCellTracker.js",
+      "sha256": "32ca4b08d6dee81b6900afea7c8ee60a73264ea95e2868b2ae340d1cfcdc0bac",
+      "bytes": 2834
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxConnectionHandler.js",
+      "sha256": "cc04d14f9e4cbf8b094bd3a7bd5e9c3d504065ace942779b38efdbf17fe95eb9",
+      "bytes": 63148
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxConstraintHandler.js",
+      "sha256": "1869e86e2519e6fc8c3189065a90a4c7faf333143e377068342ba4afe5f64dbe",
+      "bytes": 13497
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxEdgeHandler.js",
+      "sha256": "75e5a73786156f3d4e28d3f3cec120a6d2a683cd14f718377a3da774ae3be848",
+      "bytes": 68337
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxEdgeSegmentHandler.js",
+      "sha256": "a98b20dc8b9cf84c533b9d03881ce570d13c44d9863443fb0c40fc9e63a0670a",
+      "bytes": 10181
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxElbowEdgeHandler.js",
+      "sha256": "061df734afc7ec93c36849f30c085c73d088e36657d5ba4a31e4f9cde5e4010b",
+      "bytes": 6155
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxGraphHandler.js",
+      "sha256": "a82918fbdf170b9bd1aef4881a1edef8c599c6bb4f2a3a8f33d1e3f8eeeffa03",
+      "bytes": 50870
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxHandle.js",
+      "sha256": "36ad36076fd5faa7fd7b40af1e95d49c0004997c1345278e7db5a33f6e995eda",
+      "bytes": 7774
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxKeyHandler.js",
+      "sha256": "107d86a9872a2e56b13ac90197ab358e13dc52298d7fb515435aa510b37b1ab6",
+      "bytes": 9942
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxPanningHandler.js",
+      "sha256": "c8543bdb75ef7e73fa7674328c429b23df354a9e7157acb4d0258b5ea631d025",
+      "bytes": 11586
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxPopupMenuHandler.js",
+      "sha256": "d7de1db61686aece161523f1b6a92df5bab87b02bc56cf74c224b6377f7f6657",
+      "bytes": 5779
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxRubberband.js",
+      "sha256": "59b5e483416009ba41a0e12f932d4118028fb920af30796572cd3b6d655b25ce",
+      "bytes": 9806
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxSelectionCellsHandler.js",
+      "sha256": "993fab72a07d039fed09f2c4c2d350b8392f0a4e90f81518e691c270d87cc3e5",
+      "bytes": 8009
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxTooltipHandler.js",
+      "sha256": "c305d99ffbdf13ff5532a7c0c94564a4e7dab3d0bf83a86190e96dc0f4e61a69",
+      "bytes": 7567
+    },
+    {
+      "path": "mxgraph\\src\\handler\\mxVertexHandler.js",
+      "sha256": "256e52abeb18e6b4793ceac9f6cc4b3fea15e1d175b756ff7d339f98a225dee0",
+      "bytes": 61737
+    },
+    {
+      "path": "mxgraph\\src\\index.txt",
+      "sha256": "2d4da51489c87d8e56bbcb2398ef748a0f467f3246c3b38d7f62ae6ed8c546f2",
+      "bytes": 12044
+    },
+    {
+      "path": "mxgraph\\src\\io\\mxCellCodec.js",
+      "sha256": "2328049c7a7418cb776f7b4320a9458ca89a52352c722bda138fd7cd7129b4e7",
+      "bytes": 4679
+    },
+    {
+      "path": "mxgraph\\src\\io\\mxChildChangeCodec.js",
+      "sha256": "27912e085884d918341049dabc92f1cf0d7d090c77dc79603a9f16ee79c96a6c",
+      "bytes": 4212
+    },
+    {
+      "path": "mxgraph\\src\\io\\mxCodec.js",
+      "sha256": "7722d82f04588760285750fee1ddf11e964c5e89a9c868f5caffff2f6603dcb9",
+      "bytes": 15728
+    },
+    {
+      "path": "mxgraph\\src\\io\\mxCodecRegistry.js",
+      "sha256": "8efb0215d8c34c525039bfbc0e1b6afe82ed45b2aa52fa4663b67f7dcc732f33",
+      "bytes": 2730
+    },
+    {
+      "path": "mxgraph\\src\\io\\mxGenericChangeCodec.js",
+      "sha256": "8d9e3dc66cec92bbe29460532cbd8762cfe87e3000d0d40fcaa3998c82dda3f6",
+      "bytes": 1803
+    },
+    {
+      "path": "mxgraph\\src\\io\\mxGraphCodec.js",
+      "sha256": "dc41e292fe54bfeb2152ac42536086fcd7acab5a911f5c85bcd55987096835a6",
+      "bytes": 626
+    },
+    {
+      "path": "mxgraph\\src\\io\\mxGraphViewCodec.js",
+      "sha256": "5b1ef1247ed970e10d2baa7b5769875a30c16855a1e01ea36e30bdb66234e10e",
+      "bytes": 5027
+    },
+    {
+      "path": "mxgraph\\src\\io\\mxModelCodec.js",
+      "sha256": "b43ffa17ee2a723b6eff207b0d2c901712e4be3602794b16ac98cc80c89faf7c",
+      "bytes": 5759
+    },
+    {
+      "path": "mxgraph\\src\\io\\mxObjectCodec.js",
+      "sha256": "cd34bc0bd9dade2a409e6a49ff7a6537d5e4d2c6690146099d721dd1ae1f78dd",
+      "bytes": 31514
+    },
+    {
+      "path": "mxgraph\\src\\io\\mxRootChangeCodec.js",
+      "sha256": "b77e69002574881d428ae1fe5d2f952773fee9be486183e9c288ffe4e400daf4",
+      "bytes": 1603
+    },
+    {
+      "path": "mxgraph\\src\\io\\mxStylesheetCodec.js",
+      "sha256": "00e5837f3a817130bf6cf4e947c216cc9efd24d32672b92bb8eaa09f688055af",
+      "bytes": 4657
+    },
+    {
+      "path": "mxgraph\\src\\io\\mxTerminalChangeCodec.js",
+      "sha256": "c44b3b870ad0af15434007d1a62c83058bb9ba750e878cf37183752970c043bc",
+      "bytes": 823
+    },
+    {
+      "path": "mxgraph\\src\\layout\\hierarchical\\model\\mxGraphAbstractHierarchyCell.js",
+      "sha256": "91db4cf4349e4951231133ea78f4d3021906063d5769bb1fd420bb58af534de1",
+      "bytes": 4035
+    },
+    {
+      "path": "mxgraph\\src\\layout\\hierarchical\\model\\mxGraphHierarchyEdge.js",
+      "sha256": "f63693cadfd32631c18314eef7d6f16191a7e002ed73c6bdf0f67bdc1dcf1921",
+      "bytes": 3858
+    },
+    {
+      "path": "mxgraph\\src\\layout\\hierarchical\\model\\mxGraphHierarchyModel.js",
+      "sha256": "00090314730541a5e492a74138e5f34bf4949eda33c7927393653a9ad8ca1450",
+      "bytes": 20328
+    },
+    {
+      "path": "mxgraph\\src\\layout\\hierarchical\\model\\mxGraphHierarchyNode.js",
+      "sha256": "c3df807dd3f2ff24ea31b83e6c65fd23fa2ddbfb6977815d8c412737ed084e1d",
+      "bytes": 4921
+    },
+    {
+      "path": "mxgraph\\src\\layout\\hierarchical\\model\\mxSwimlaneModel.js",
+      "sha256": "75874a8991bf60e5b91d914598671b513448b06ba6921e35a3a206568961b133",
+      "bytes": 23611
+    },
+    {
+      "path": "mxgraph\\src\\layout\\hierarchical\\mxHierarchicalLayout.js",
+      "sha256": "a31aaab3ca29e7a09a9555234219cf5d8894e0e17d53c074171ba8948d8d1104",
+      "bytes": 20349
+    },
+    {
+      "path": "mxgraph\\src\\layout\\hierarchical\\mxSwimlaneLayout.js",
+      "sha256": "fbc7805c90b6bfcc81a818baccd4dfa3e33019931aa7e43a8d0aa6ab99565bb1",
+      "bytes": 22671
+    },
+    {
+      "path": "mxgraph\\src\\layout\\hierarchical\\stage\\mxCoordinateAssignment.js",
+      "sha256": "cd7f53f451d8b59384029d20c6e3197e69bb0e7014397a7dfd1bc0ca7d2016c3",
+      "bytes": 43354
+    },
+    {
+      "path": "mxgraph\\src\\layout\\hierarchical\\stage\\mxHierarchicalLayoutStage.js",
+      "sha256": "365fbedda99c6140939da0af455d8b96bf55c8b52369e2524a4ff05b03ea5531",
+      "bytes": 732
+    },
+    {
+      "path": "mxgraph\\src\\layout\\hierarchical\\stage\\mxMedianHybridCrossingReduction.js",
+      "sha256": "356fcce5bf54c094295da2a753832f7b21ae338c52dc171985ae70ad24e13d13",
+      "bytes": 16873
+    },
+    {
+      "path": "mxgraph\\src\\layout\\hierarchical\\stage\\mxMinimumCycleRemover.js",
+      "sha256": "27f2f8ccac2a6aff62077718ee59981b1f36cd51f964b34f856e254c5473f298",
+      "bytes": 3129
+    },
+    {
+      "path": "mxgraph\\src\\layout\\hierarchical\\stage\\mxSwimlaneOrdering.js",
+      "sha256": "5011ea1a7e21da83671bd2114bc9beef336de9594f0e401fb95ff03829884f64",
+      "bytes": 2772
+    },
+    {
+      "path": "mxgraph\\src\\layout\\mxCircleLayout.js",
+      "sha256": "97773ffe51b6b9b72f343dd8cec2d2acf493df2831aec371f671c032591dfa7b",
+      "bytes": 4377
+    },
+    {
+      "path": "mxgraph\\src\\layout\\mxCompactTreeLayout.js",
+      "sha256": "79dad80322487035c4821de65c369ef689aa451dd865b08d860a4a528171f7ed",
+      "bytes": 22966
+    },
+    {
+      "path": "mxgraph\\src\\layout\\mxCompositeLayout.js",
+      "sha256": "d78fccc9ac0b2ed70c8415e6bd5cdfee322b0721e5fd6ead2df87b9bc400960c",
+      "bytes": 2501
+    },
+    {
+      "path": "mxgraph\\src\\layout\\mxEdgeLabelLayout.js",
+      "sha256": "8cf8cd91b21f2b569b36d0be2da5e2b9c9994866deccae4b7438f0a6e0129388",
+      "bytes": 3164
+    },
+    {
+      "path": "mxgraph\\src\\layout\\mxFastOrganicLayout.js",
+      "sha256": "1475f7bd71e068ff30f16aa0ec12fddd2241dd8242e0a791c6eac9f200fb434b",
+      "bytes": 14346
+    },
+    {
+      "path": "mxgraph\\src\\layout\\mxGraphLayout.js",
+      "sha256": "431089fcb895554a025baae6fe031d54b44bb623f1a17cbf270df4915932fbd4",
+      "bytes": 14271
+    },
+    {
+      "path": "mxgraph\\src\\layout\\mxParallelEdgeLayout.js",
+      "sha256": "38ab0bee86fbddebf7a13f927f910c4497869651c81384efe4c29159299daaea",
+      "bytes": 6083
+    },
+    {
+      "path": "mxgraph\\src\\layout\\mxPartitionLayout.js",
+      "sha256": "0b4ef3143da671d81a95d186130be9295f894e06f652791496b2272a68a79f06",
+      "bytes": 5543
+    },
+    {
+      "path": "mxgraph\\src\\layout\\mxRadialTreeLayout.js",
+      "sha256": "c43d55fe6319f3cb51d8f3b901fe1e6cecb34b7a3ec54b2a8d4f8f6380ad69d6",
+      "bytes": 8043
+    },
+    {
+      "path": "mxgraph\\src\\layout\\mxStackLayout.js",
+      "sha256": "a8f563822939fac690ab36c02f8ad042308a2726cc76583e3f458f921196483f",
+      "bytes": 14106
+    },
+    {
+      "path": "mxgraph\\src\\model\\mxCell.js",
+      "sha256": "857f96c2cef264421032171630f8a7f30e6af16e92bc0ad92da676d0ab4d5f03",
+      "bytes": 15987
+    },
+    {
+      "path": "mxgraph\\src\\model\\mxCellPath.js",
+      "sha256": "ec86bd53653bff01e903c29be42d90e5938f7f563627ce09a026b7a570959818",
+      "bytes": 2939
+    },
+    {
+      "path": "mxgraph\\src\\model\\mxGeometry.js",
+      "sha256": "a0b99a4a7e1d5abf3317b365720441ff6eb20e4e296ad5b1acbfb8480e927598",
+      "bytes": 12965
+    },
+    {
+      "path": "mxgraph\\src\\model\\mxGraphModel.js",
+      "sha256": "634f6f334326e4f9f66635ff7ce5f2a98b3dd0129b90516efefc09791ecb6c34",
+      "bytes": 63994
+    },
+    {
+      "path": "mxgraph\\src\\mxClient.js",
+      "sha256": "04cd816916e71a175ef7e6cd9ab49b7ea27e642e846ec56331dc1979a801acdf",
+      "bytes": 24462
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxActor.js",
+      "sha256": "eef5cfedad096bcad491202de3f41847e1da7df41e278e7ed7c961d5a46825dc",
+      "bytes": 2123
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxArrow.js",
+      "sha256": "350e5ee3bcd5b5367ee84284d991d3295f5faf1e3577a1a73ee3beeb91c98bf0",
+      "bytes": 3322
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxArrowConnector.js",
+      "sha256": "04c1d0775a422e5cf7c07f5adc304236ac04333c9d952b68f8774ee9462b410b",
+      "bytes": 15443
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxCloud.js",
+      "sha256": "cd2f26f835b5bc56f78b9c361f2a14c6258d8bb7fd3137de69efc526d0ac0e3c",
+      "bytes": 1512
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxConnector.js",
+      "sha256": "5bd653f1983a75db976ac69ae86d42cad92243863f439a0d026d3f3c05380921",
+      "bytes": 4137
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxCylinder.js",
+      "sha256": "dab778d2f80d1bd144cd55756df37bd7b8fa96fe4a4b2da364d672cc17c3d0da",
+      "bytes": 2573
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxDoubleEllipse.js",
+      "sha256": "e4aa2084434ba51f6be1caa939cec2ff30cb75f151981eba6456da450fdc263a",
+      "bytes": 2683
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxEllipse.js",
+      "sha256": "0393e3371a46a4ae8ee39116241db00426cd8de40f31a57a6b241c84369e348e",
+      "bytes": 2741
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxHexagon.js",
+      "sha256": "5de14965b03d202907b3320ceedc00895adec09c808f76b541cb90af3dbc7449",
+      "bytes": 808
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxImageShape.js",
+      "sha256": "81fb33c9f10adfab7757410a006a5d727fd874ddd0f26c21b264a4a0e38514bb",
+      "bytes": 7260
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxLabel.js",
+      "sha256": "34c747f0689df9dd0629bf2f874b155c3ddcdbfc7fb3e667d323c4da8dfa3576",
+      "bytes": 6898
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxLine.js",
+      "sha256": "75c1f2a7542db1c55d5ed804d3426a0b445255af9c9fcf6c9c34e79c91a0a28e",
+      "bytes": 1435
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxMarker.js",
+      "sha256": "09757e7e14a1992cadb392610e705628f3adaab38fee32717c470402dbd3b235",
+      "bytes": 7728
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxPolyline.js",
+      "sha256": "322ebbd0461f571f7fb8def483fd882ac1561ea94f6c94ce651a48f90d04e1ef",
+      "bytes": 4112
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxRectangleShape.js",
+      "sha256": "01430b3fd9c1863d83a95c2f73cb07fb0a4790e47fc3da16888a31bf1e9a0349",
+      "bytes": 5106
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxRhombus.js",
+      "sha256": "e6ea0e73f692812e9d60afc28da31ad54ce45174cae54c4003d3c2e11fa6cea6",
+      "bytes": 1603
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxShape.js",
+      "sha256": "83dee26661a77e2031a9d657f10d6ff5c95943a38adacd319167076c196e7622",
+      "bytes": 43396
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxStencil.js",
+      "sha256": "3368ad870bf699c739e28b645b9dd960836934e66274cfd17f6363dac73a5eff",
+      "bytes": 28624
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxStencilRegistry.js",
+      "sha256": "6ee61ad0ae758ec95b0800621f6548e6b72036d4dce708c0eb572bbcb7782842",
+      "bytes": 1285
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxSwimlane.js",
+      "sha256": "cfe2dc9b2de79ccf7666ba89e17e1de8edbec398a2c135a08bfd49f48d3b38eb",
+      "bytes": 15613
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxText.js",
+      "sha256": "a6c0f2c748403a74b11405c864a8278bfcdad216f80ea5b290c1e917d13f9772",
+      "bytes": 32666
+    },
+    {
+      "path": "mxgraph\\src\\shape\\mxTriangle.js",
+      "sha256": "69d1b744c7956240fc860b89358a9412ec82322d298875b3af14275becf7998e",
+      "bytes": 834
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxAbstractCanvas2D.js",
+      "sha256": "a07870f37a6f16fc501e628a1580524460c2f2531ffc4289cc88cc04945dd5c0",
+      "bytes": 13007
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxAnimation.js",
+      "sha256": "a307cf0227aaf077e07339a6e2e3dc331c06aa0fb43d2018c6ac10cb6fc2213d",
+      "bytes": 1901
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxAutoSaveManager.js",
+      "sha256": "b5b251094ca900d51790ee8ca144c99ed3dee58e0323b87809796936f44c0952",
+      "bytes": 4436
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxClipboard.js",
+      "sha256": "86fc0a6498862d70a434a33c0fb9bb5621f7245c02d5bbf083a7a69cccdaf9a1",
+      "bytes": 5518
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxConstants.js",
+      "sha256": "4b160da28eb639cf24023301e73a6e99ad48a4febddca6a62d5f7d78280b1ab8",
+      "bytes": 72126
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxDictionary.js",
+      "sha256": "b3bcf5864f1b1c694f6b3eb143508ae29a70b06f44fdfe4365fbf54f226588b1",
+      "bytes": 2456
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxDivResizer.js",
+      "sha256": "69c498dc47e2b38bfd0cd861b43154bd9e71316d3fea7d75b13ef121542ae296",
+      "bytes": 3211
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxDragSource.js",
+      "sha256": "151141efc055437e11c4c59bb484b0a91c5ad627b4fa86245707f5e392201e8e",
+      "bytes": 17086
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxEffects.js",
+      "sha256": "abb19d77519cc231d44a31eb894d1d65ff6e16282fadf554206d282d77530d01",
+      "bytes": 4466
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxEvent.js",
+      "sha256": "1d548e8820246dbf4c065e9ea091052aac2c0d6981cc448a930127cfc7b74b7d",
+      "bytes": 30769
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxEventObject.js",
+      "sha256": "ffcdff4f93173be45213eaf8d22d43ab8eebc3db5ade3a1d5710ffa98d4aadba",
+      "bytes": 1947
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxEventSource.js",
+      "sha256": "7e9e8284be167e6c332ee4cb63618ec405e37b7ecffa51f5a7d916fca689c2db",
+      "bytes": 3876
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxForm.js",
+      "sha256": "956bcfbe0916337e6c46d6a34d4b95e90c5c8ab831ba781f045bc312bb9ce50f",
+      "bytes": 4047
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxGuide.js",
+      "sha256": "0bf4792a5dab05ae1dbe0cf0f40f79f3ff11c499ec955ef4b5c3c5d5d4703e3e",
+      "bytes": 23034
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxImage.js",
+      "sha256": "f7d50548d62a87be03370a8f5bf5038a19b4412061ad68b68b702e6822db565a",
+      "bytes": 1054
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxImageBundle.js",
+      "sha256": "453720098da3e1096ad80e3dacd162ef76b36d1b050831008b8a91ebc460d1c6",
+      "bytes": 3383
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxImageExport.js",
+      "sha256": "6657ed69749d49c00907d022445cd8e7603dccce30f98c446ab4ac9330b56924",
+      "bytes": 6444
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxLog.js",
+      "sha256": "36bcc7cf66338da4886f5d0525390d901f7f80e52c5ce3f9f884323beaa4b996",
+      "bytes": 8150
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxMorphing.js",
+      "sha256": "88cc7a790b1ddc14c077d2a104883bb803eb325c13670d98c2187e4664694d24",
+      "bytes": 5697
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxMouseEvent.js",
+      "sha256": "4e9ae4159eba4b434f9ba2437c30c52d1b320106995b588ac1e797e8353a6ba1",
+      "bytes": 4341
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxObjectIdentity.js",
+      "sha256": "7e2c38a7639ecb2f5e27ad50460ff0e228efeb9eba5d74cb728249fe0f6af1bd",
+      "bytes": 1491
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxPanningManager.js",
+      "sha256": "a147771466d25cc49e05c041839c8bda6cca807dbde04fc06428226f08ebb4aa",
+      "bytes": 5088
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxPoint.js",
+      "sha256": "68724f1d5442f81980aa90681de33d6fb2c9600f39ae957c8e9a01c8e103a56e",
+      "bytes": 1045
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxPopupMenu.js",
+      "sha256": "61369e31bcf12e52114a61bb61ca5acc1b4446176b75219d860870f870c63f8c",
+      "bytes": 15071
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxRectangle.js",
+      "sha256": "abe50cbe6485d31048bb8a06bd8992d1bb8bacfa1ae562b608af453501ed6f4a",
+      "bytes": 4157
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxResources.js",
+      "sha256": "5f696315f13faeeea4fab69454708540089e484dbc3e5db4ff614ddb1046be36",
+      "bytes": 11795
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxSvgCanvas2D.js",
+      "sha256": "0daef9812e3b8c530bc9556791ffaea53fe9a57091a86534bd909ca31e4485b3",
+      "bytes": 107182
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxToolbar.js",
+      "sha256": "75e99d18397e81586bfd62cc4901c36a95ae43daf04d07079cda44a287fa99b1",
+      "bytes": 12144
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxUndoableEdit.js",
+      "sha256": "fd22a7a8f3e9c11fcaa44d08c9ab2b0584da4d922d18f37fcba3a68f8ada6d87",
+      "bytes": 4541
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxUndoManager.js",
+      "sha256": "de24e8e5a1f2e3491e5fd32da92c9ecf98659365507a5a1201b2b4d1c90514d4",
+      "bytes": 5799
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxUrlConverter.js",
+      "sha256": "475460a17a00bf40e7294ca7d023bfeb743176d2a67df1cd3d9052a231b3eca4",
+      "bytes": 2695
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxUtils.js",
+      "sha256": "0cd56c92e8a7caa374792b18fa6d097bfb8f865b3b380fcb84e28de7428c7186",
+      "bytes": 163055
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxWindow.js",
+      "sha256": "9ee25b48e099cbd9141af6a04dde168682d1700627f4aa55ac3826cf0b1cbef7",
+      "bytes": 28413
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxXmlCanvas2D.js",
+      "sha256": "5b53f49ca178be64a716786e8fc81e07a8a86ef1d86cba4b16a3cca814099921",
+      "bytes": 28698
+    },
+    {
+      "path": "mxgraph\\src\\util\\mxXmlRequest.js",
+      "sha256": "087962a390088af7dbec020b149734ffafe8a0a6c24884497d194b09379196f5",
+      "bytes": 11066
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxCellEditor.js",
+      "sha256": "f3bec0aa996948bd1bf1a660350da90fc9424762aa0de516dc11d5980ff3eead",
+      "bytes": 31089
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxCellOverlay.js",
+      "sha256": "562261a5ea6eead9e2612680acdcbf33cef1e9d04a43526a2e6639d1bc9853f9",
+      "bytes": 6251
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxCellRenderer.js",
+      "sha256": "4bb0356d026c62510002b56b3da26c963a10e69ea664fc99402173549ae1db95",
+      "bytes": 46590
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxCellState.js",
+      "sha256": "6a382a910343b672b130a222e245af3f1d910aa1306c099cee74831e3fbc5fe0",
+      "bytes": 10588
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxCellStatePreview.js",
+      "sha256": "6a655dfffeaf4170444678fcc9a963bdd9bd8bb3aa7952948d22dd9920316b0d",
+      "bytes": 4292
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxConnectionConstraint.js",
+      "sha256": "8dd4822c66a7ac9db88bf4f5e2a0ae8df445e4b43bbe72218736353a3f64b14b",
+      "bytes": 1655
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxEdgeStyle.js",
+      "sha256": "8608f4d1771db2307ce5a665a4ce9301da3ea4f759d932d381f057654c1e326d",
+      "bytes": 43307
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxGraph.js",
+      "sha256": "e438a5afe6c227223da160aa024a1e491d107786f2fdaebcd192a92b8ab7ced3",
+      "bytes": 355597
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxGraphSelectionModel.js",
+      "sha256": "87908c9cabb3d65cd8ac3aa96b38303fcb87433f589cb52b1b064c4607f6fb35",
+      "bytes": 9133
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxGraphView.js",
+      "sha256": "b963180483ff9b01ffd1b5301225dbae6c36c8d02b00d6edfd67c7649d1b1ad2",
+      "bytes": 72130
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxLayoutManager.js",
+      "sha256": "a41cdd05578fd0d168f6ac317507901928aa066d16bb0a5696a5b95927e7ad29",
+      "bytes": 11117
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxMultiplicity.js",
+      "sha256": "cf8f8ed9961be73e53419a4c3d0c117ef7acf883179a018a3ce5e0b9076a55a5",
+      "bytes": 7446
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxOutline.js",
+      "sha256": "4bd60c44ff977ebadb331e972d0f0e6a5377c931b1e3567195e802e10f00cbc5",
+      "bytes": 12501
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxPerimeter.js",
+      "sha256": "1298716ca3e30f891aa73cccdff00b14fe33483dbfc26ae82a520f785d45bab1",
+      "bytes": 20536
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxPrintPreview.js",
+      "sha256": "52f06f6acb210222fcf45e87a7eaad7f2157ee6a2837bb3bf784f6b1d2fd07cb",
+      "bytes": 33626
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxStyleRegistry.js",
+      "sha256": "dbba92b127c76a2bbd82fbed3307606ee0e23e498d6172be586e1cf535d58212",
+      "bytes": 2316
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxStylesheet.js",
+      "sha256": "43d87978ca4b481ae12f373e065b95d753aaf94c6bfcccd32951fb2e65ca4eec",
+      "bytes": 7572
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxSwimlaneManager.js",
+      "sha256": "1b23d618b4a86364e4132a19324c20af895ae52e35eecbe208285ff800f65fed",
+      "bytes": 9342
+    },
+    {
+      "path": "mxgraph\\src\\view\\mxTemporaryCellStates.js",
+      "sha256": "c573cfa3555c478bccd5b6f3d228cad706a7acf01c664b0e2f26e56e92aed695",
+      "bytes": 3073
+    },
+    {
+      "path": "noteflow-bridge.html",
+      "sha256": "c3734249b79eb97d05fb28fc39e7ee9a73dba833f63fd6ab56727c590765769b",
+      "bytes": 883
+    },
+    {
+      "path": "noteflow-bridge.js",
+      "sha256": "9eeeae3145d72c199cebb08c235949ec06080ec5ccc467488bf4575a11b83009",
+      "bytes": 2094
+    },
+    {
+      "path": "resources\\CONTRIBUTING.md",
+      "sha256": "f1ec9a7517df30ed16ffef89b44ce4895d80ac3d0ac7b53beda3a843d0497d71",
+      "bytes": 1526
+    },
+    {
+      "path": "resources\\dia_am.txt",
+      "sha256": "6eec4a25a8f4900453c34bb2954ef0b38ebaf04cf706d64becb1200d49cbb462",
+      "bytes": 128355
+    },
+    {
+      "path": "resources\\dia_ar.txt",
+      "sha256": "948126e5891b567cc8eefdc28d7c656534356efbea5ee7fc206dab3862ddffac",
+      "bytes": 130978
+    },
+    {
+      "path": "resources\\dia_bg.txt",
+      "sha256": "a4749e67ad2066fb643ca7974c58bd5c914381da45479caa23fad89129d363c0",
+      "bytes": 154060
+    },
+    {
+      "path": "resources\\dia_bn.txt",
+      "sha256": "ce7fdb86ef56c9caf8a87ea6191c35af4fcb7b1358a55a5477d480ad5549ebef",
+      "bytes": 186816
+    },
+    {
+      "path": "resources\\dia_bs.txt",
+      "sha256": "6ab92d3da8b9cd72d0f696b696cef3bc6ea73cba71d9a4bb17767c087c2ded05",
+      "bytes": 92508
+    },
+    {
+      "path": "resources\\dia_ca.txt",
+      "sha256": "23cc7eed17f21f7cb402462edf9142310fbe533eb8356dd223e42c8269d11ab3",
+      "bytes": 99412
+    },
+    {
+      "path": "resources\\dia_cs.txt",
+      "sha256": "ab7e52e51cbe47b39a31383750fa3c2643db2d66dee2374b16422242a81e2edf",
+      "bytes": 96575
+    },
+    {
+      "path": "resources\\dia_da.txt",
+      "sha256": "56e8e679f1c5c1d3a7255f9d8d485e461850080e7634cac3237e1e4f1fb8fab4",
+      "bytes": 90137
+    },
+    {
+      "path": "resources\\dia_de.txt",
+      "sha256": "19e2714f3d4259ae892186427ad4709a16078557208b67da495ae8ee30424522",
+      "bytes": 95464
+    },
+    {
+      "path": "resources\\dia_el.txt",
+      "sha256": "2b44dace74c15c348c4c300085cc7576d5bdbfdd27760a1cddb9f1f4b5e12015",
+      "bytes": 161980
+    },
+    {
+      "path": "resources\\dia_eo.txt",
+      "sha256": "764d02d862b485613278a8955c5e9da4e39027ba82a0b9be62877467cda156c8",
+      "bytes": 91760
+    },
+    {
+      "path": "resources\\dia_es.txt",
+      "sha256": "5ffd862d61a7cccc0af02d3ce4148f89a70a1043d52df20b857f13cdcefabb8d",
+      "bytes": 99548
+    },
+    {
+      "path": "resources\\dia_et.txt",
+      "sha256": "8e4b225517b3cab17e5bf63c773e8998e55b269c9d4b1c517ba34e8f6cbb57b2",
+      "bytes": 89641
+    },
+    {
+      "path": "resources\\dia_eu.txt",
+      "sha256": "e169aa8ca244f0cd430ddad78d0e60174ed0e449cd28d7aaff9215a6dec7de27",
+      "bytes": 94968
+    },
+    {
+      "path": "resources\\dia_fa.txt",
+      "sha256": "499ba932cc590996d43030f528efbad19ef979819abdeb3ba63a6d67ac27bc92",
+      "bytes": 140176
+    },
+    {
+      "path": "resources\\dia_fi.txt",
+      "sha256": "661f53e9ea960aef07b563e152fc0556d6233bce39743508adfc440131e504a6",
+      "bytes": 93093
+    },
+    {
+      "path": "resources\\dia_fil.txt",
+      "sha256": "7a7747c1e1d11a16138c00901278a8cada897ec5c85eebd4a442decd0f531454",
+      "bytes": 98519
+    },
+    {
+      "path": "resources\\dia_fr.txt",
+      "sha256": "8a7a8f9c4d2f6270a6f340e31485e9cf46f6b40e8ee1f778e4af1d74cbc3f114",
+      "bytes": 103441
+    },
+    {
+      "path": "resources\\dia_gl.txt",
+      "sha256": "a605b887a53d683d21f993637e02c2e64224ee21b91df7e5d4ff6d0b0ce53da8",
+      "bytes": 96153
+    },
+    {
+      "path": "resources\\dia_gu.txt",
+      "sha256": "9bacaf812b72b652a4cc027a85af13b9c514ea819a0282cbfa247523a54291b2",
+      "bytes": 172864
+    },
+    {
+      "path": "resources\\dia_he.txt",
+      "sha256": "485d9e34e6891694e14acdfcb4afa330268a5d71cbd8b56182461da0b5775fc5",
+      "bytes": 109944
+    },
+    {
+      "path": "resources\\dia_hi.txt",
+      "sha256": "1ae62eef6b81d4cc3a2784ec0962ca1ea4cdae4239304f5bf443f8786406a84c",
+      "bytes": 176008
+    },
+    {
+      "path": "resources\\dia_hr.txt",
+      "sha256": "e078d1fdb23737ec28779750c3ca6c817da96f0937c324c17e6b91e4696bf29c",
+      "bytes": 92953
+    },
+    {
+      "path": "resources\\dia_hu.txt",
+      "sha256": "63b4e744b9e5852002f21f7e7d3c4bfe0c79cad80f93825988689fc69d727688",
+      "bytes": 100547
+    },
+    {
+      "path": "resources\\dia_i18n.txt",
+      "sha256": "a6d09cea7cc8e00588824ceb5f661970adb3ffe619a7e13cb61e7a236df7fb42",
+      "bytes": 57380
+    },
+    {
+      "path": "resources\\dia_id.txt",
+      "sha256": "b8c043c4eb7b908e6295d241f52d3607cdb2c9e57459380181ed2b000d30b94b",
+      "bytes": 89875
+    },
+    {
+      "path": "resources\\dia_it.txt",
+      "sha256": "92cc760fdab9b2dbb5635754b7646e5d7785e310376f53319c34642641f6f189",
+      "bytes": 98475
+    },
+    {
+      "path": "resources\\dia_ja.txt",
+      "sha256": "c7c3e9e7ba4c684468cc4c65ef0ed3ae2bb118a47220ed084bd0411f46c6416f",
+      "bytes": 114346
+    },
+    {
+      "path": "resources\\dia_kl.txt",
+      "sha256": "e5e7a84c6c39ab05775ac8594f93272998805753d491c8fed49fa563f07cdcee",
+      "bytes": 105133
+    },
+    {
+      "path": "resources\\dia_kn.txt",
+      "sha256": "3497041ad11f86c72d1873ed634e69c5d369915aaef797f180bc19d2934c4537",
+      "bytes": 196114
+    },
+    {
+      "path": "resources\\dia_ko.txt",
+      "sha256": "180a9bae8c4e3c4884bdb224d62ccb5e8f04c17a064f2f5ed919d205ffce8a23",
+      "bytes": 105823
+    },
+    {
+      "path": "resources\\dia_lt.txt",
+      "sha256": "35f921849160699cbe9d4d846c9c30f7e2e656e9cae1ce355e511a68dc58cd22",
+      "bytes": 94458
+    },
+    {
+      "path": "resources\\dia_lv.txt",
+      "sha256": "d3e30925e95a2e2d80256c77772198b569a74a2b6435cf12221422a2efa3b5f9",
+      "bytes": 98257
+    },
+    {
+      "path": "resources\\dia_ml.txt",
+      "sha256": "2c7a4b8a321b1f41cc567378ca1f4fcff865822cae56ed6debca72bbd1da2df4",
+      "bytes": 209527
+    },
+    {
+      "path": "resources\\dia_mr.txt",
+      "sha256": "ce884afc3e52345c12229a788d142dbd4f51d7811614c6f1d0cb46ef78237c44",
+      "bytes": 173714
+    },
+    {
+      "path": "resources\\dia_ms.txt",
+      "sha256": "1e63c2df21a5480a56aace9c1e61974c449c19cbdc4ecb21053675ff953893a4",
+      "bytes": 90523
+    },
+    {
+      "path": "resources\\dia_my.txt",
+      "sha256": "8d421ed7e03a2b85d427ed7fb6dfacdaae53e1e316a0dc75b69a16bd7876fee2",
+      "bytes": 215842
+    },
+    {
+      "path": "resources\\dia_nl.txt",
+      "sha256": "c7d0161746fa015fc8ed09f37ede03309a3cc5de6f0fbba15478758a860c0021",
+      "bytes": 94619
+    },
+    {
+      "path": "resources\\dia_no.txt",
+      "sha256": "0a3f639c76b71c58b26296f0bfa0b69b489223eb70ba4dcef1ec9ebd57c98eab",
+      "bytes": 89486
+    },
+    {
+      "path": "resources\\dia_pl.txt",
+      "sha256": "41c84b3b0a04da3926aff8d6b618bc38feaa96f564bc006bf55bdf8ef5790460",
+      "bytes": 97035
+    },
+    {
+      "path": "resources\\dia_pt-br.txt",
+      "sha256": "f53588c40a53a2e4d4f31cbc5fc7f9c39f64a828fdd066a4714ca9d4eaf17e31",
+      "bytes": 97700
+    },
+    {
+      "path": "resources\\dia_pt.txt",
+      "sha256": "2d231d6b481067bf873ee238259e34d24d9f9a8e347d5901e368ec084ceb4466",
+      "bytes": 94253
+    },
+    {
+      "path": "resources\\dia_ro.txt",
+      "sha256": "d5daa089b4dc8d05b037f9e461cbf7b853412e77009c9b921d7fd0b5b9685845",
+      "bytes": 96938
+    },
+    {
+      "path": "resources\\dia_ru.txt",
+      "sha256": "abc10e54d7e666d8d0e31dd7935a5c1f9b91f3283937cdfff15a6602861903b4",
+      "bytes": 150185
+    },
+    {
+      "path": "resources\\dia_si.txt",
+      "sha256": "c5dd924b2e258b52d4949108e57ed18b072f4c057dd0fcd158230a227474a496",
+      "bytes": 176012
+    },
+    {
+      "path": "resources\\dia_sk.txt",
+      "sha256": "8891c1c5f07c1c7c4168047c5b82f73c95b929ae430fe7317778f1556d6447b9",
+      "bytes": 94344
+    },
+    {
+      "path": "resources\\dia_sl.txt",
+      "sha256": "91ca34c8cc0e8affd2acbe0b5e82749f402333e312d3737a83204c5398a55bfd",
+      "bytes": 91178
+    },
+    {
+      "path": "resources\\dia_sr.txt",
+      "sha256": "f7ef65a60a03fc7655a5de9bb4e2b20beb9be728021d30fe31c0735fb1252857",
+      "bytes": 104467
+    },
+    {
+      "path": "resources\\dia_sv.txt",
+      "sha256": "02b63be851ad8c87b7a78211f22c00870e3e253550897adbfe79ae897d2898a4",
+      "bytes": 90913
+    },
+    {
+      "path": "resources\\dia_sw.txt",
+      "sha256": "057850c80c2a18f78cb4ae7146d16411fabc501f89ce8539a83e40ca5b5412e1",
+      "bytes": 93852
+    },
+    {
+      "path": "resources\\dia_ta.txt",
+      "sha256": "e77a5673b883dc8121df43da2673fe6bef63cc2b8de6aa53657b2442a9d5a2d8",
+      "bytes": 210355
+    },
+    {
+      "path": "resources\\dia_te.txt",
+      "sha256": "54d8d39b424a745b7173bf6f85005e5dba27a30097147b9c3895d30a9cb87f05",
+      "bytes": 194589
+    },
+    {
+      "path": "resources\\dia_th.txt",
+      "sha256": "d20c2d4e9fad8bba802ccfb85ff9017a845a7161532016f3399b29e4b577f052",
+      "bytes": 174133
+    },
+    {
+      "path": "resources\\dia_tr.txt",
+      "sha256": "bb412f036ba318cb9c1f69bc58acf8544f67cf40f6f096eaed84291585859b74",
+      "bytes": 97602
+    },
+    {
+      "path": "resources\\dia_uk.txt",
+      "sha256": "5b3a90d1838f6baef16e190dd3c990cd98dfb0f785becd4e58902c1eb31b513a",
+      "bytes": 145994
+    },
+    {
+      "path": "resources\\dia_vi.txt",
+      "sha256": "4219469b966cb1d0659947b20efd3e9dc122c3dd865a17d31df3c937f1d9a3ea",
+      "bytes": 107198
+    },
+    {
+      "path": "resources\\dia_zh-tw.txt",
+      "sha256": "1e5eec2c0998bb3a24d0115e1a7f121a970b741597492c63c2dfb95272393474",
+      "bytes": 82087
+    },
+    {
+      "path": "resources\\dia_zh.txt",
+      "sha256": "183ea1fb925e9762da01451152389b1648ae40da9931553159265cae9e087269",
+      "bytes": 81137
+    },
+    {
+      "path": "resources\\dia.txt",
+      "sha256": "cbbc96967a687a78a18eedf723925de0f3b51a9a9a6b05d4147839df6076772f",
+      "bytes": 85042
+    },
+    {
+      "path": "resources\\README.md",
+      "sha256": "0032e7780346d6b54ab8d74b6033ad1216ea86d1a961378262fc336b10b4326c",
+      "bytes": 760
+    },
+    {
+      "path": "styles\\dark-default.xml",
+      "sha256": "05814cdea012a9c42ccd34bbf5ccde06eb6a90c14430f3ab0715a328423958c8",
+      "bytes": 3495
+    },
+    {
+      "path": "styles\\default-old.xml",
+      "sha256": "8c7ede2ab23bb4730b0f03c2d5c610c003675002af613c20026953ef89294e6b",
+      "bytes": 3522
+    },
+    {
+      "path": "styles\\default.xml",
+      "sha256": "e5767817bbbd86639f6db53d753fc9793f5993f892f738bedc35b896b2688ea6",
+      "bytes": 6511
+    },
+    {
+      "path": "styles\\fonts\\ArchitectsDaughter-Regular.ttf",
+      "sha256": "8116fb167643f707c4a99f544e9bcdb9cb7ba00c0a72c9bbc9e0b20966ed9810",
+      "bytes": 37632
+    },
+    {
+      "path": "styles\\grapheditor.css",
+      "sha256": "b832d55c5732f4b00f610204eba40373f338d482523503efc81b85cec9e211b2",
+      "bytes": 75762
+    },
+    {
+      "path": "styles\\high-contrast.css",
+      "sha256": "06173c9ab9d1715004f6040beb3d75b7fcec4a3029e3304b0c32c0baeb1732b5",
+      "bytes": 2852
+    },
+    {
+      "path": "styles\\thumb_horz.png",
+      "sha256": "375ec4a4de1fcb9bbca1d37fc6e984bb7cc07024686e677bd722e65e9e254e92",
+      "bytes": 113
+    },
+    {
+      "path": "styles\\thumb_vertical.png",
+      "sha256": "81c093bb9865e9116ee5507c908290906f141170bd6b79e734820ddbe01a01b3",
+      "bytes": 122
+    }
+  ],
+  "sourceCommit": "744cb5420fdf126efd7a09b1d7082ca3e12c0841",
+  "tagObject": "861262a764223cf70d4c9310f25798a0956c9017",
+  "communityChanges": {
+    "description": "移除libavoid求解器及受限行业图标/模板（含压缩库），仅保留基于编辑器内置图形的自研基础画板。",
+    "upstreamSha256": {
+      "js/PostConfig.js": "cd3bb1ed454e26e77a1997182324df84f63227d7b49e19f098396d68ea9d24cc",
+      "js/extensions.min.js": "06dd7eeae1e7b97f4106005f31fd38a8f81d92d0a532b3e12474555fa38d2846",
+      "js/diagramly/Devel.js": "9dfe50ba64a8b3959854f4882fdcc1d2a151d0fc37e2b285b1ccf8b6371d8414",
+      "noteflow-sbom.json": "4ff1068f37102156f9b9167356f257e113ef11a2198fc233504c51d1395d5c53",
+      "js/diagramly/GraphViewer.js": "2659c10fb526c51c6220ad55276081d776bb580b750173070600edbb19e6fc37",
+      "shapes/mxCabinets.js": "f45ece9bec8a8ddd720123c83f39daf2396a78a875435b8e7080ff321ad30e60"
+    },
+    "reconciledExistingFiles": [
+      "js/diagramly/GraphViewer.js"
+    ]
+  }
+}

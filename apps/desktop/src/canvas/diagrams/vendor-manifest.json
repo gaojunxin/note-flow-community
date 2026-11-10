@@ -1,0 +1,8 @@
+{
+  "available": true,
+  "version": "31.4.6",
+  "commit": "861262a764223cf70d4c9310f25798a0956c9017",
+  "sha256": "e1d2cc03e8f21296e14869e302c84781e8b4768615d6ef4260caa50e7fa26d59",
+  "entry": "/vendor/diagrams/noteflow-bridge.html",
+  "license": "Apache-2.0"
+}

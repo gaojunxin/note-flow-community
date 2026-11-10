@@ -1,0 +1,6 @@
+import {it,expect} from 'vitest'
+import {noteAttachmentReady} from '../src/services/noteAttachmentReady'
+it('accepts a V2 acknowledged UID/version without the old REST numeric id',()=>{expect(noteAttachmentReady({uid:'synthetic-note',version:1,syncStatus:'synced'})).toBe(true)})
+it('retains legacy numeric-id readiness and rejects pending/conflict/deleted notes',()=>{expect(noteAttachmentReady({id:1,uid:'synthetic-note'})).toBe(true);for(const syncStatus of ['pending','conflict'] as const)expect(noteAttachmentReady({id:1,uid:'synthetic-note',version:2,syncStatus})).toBe(false);expect(noteAttachmentReady({id:1,uid:'synthetic-note',version:2,syncStatus:'synced',deleted:true})).toBe(false)})
+it('does not infer server existence from UID or local zero-version synced cache alone',()=>{expect(noteAttachmentReady({uid:'synthetic-note',version:0,syncStatus:'synced'})).toBe(false);expect(noteAttachmentReady({uid:'synthetic-note',version:1})).toBe(false);expect(noteAttachmentReady(undefined)).toBe(false)})
+it('keeps community local readiness while excluding deleted content',()=>{expect(noteAttachmentReady({uid:'synthetic-note',syncStatus:'pending'},true)).toBe(true);expect(noteAttachmentReady({deleted:true},true)).toBe(false)})

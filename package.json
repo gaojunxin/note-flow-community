@@ -1,0 +1,17 @@
+{
+  "name": "note-flow-community",
+  "version": "0.12.18",
+  "license": "Apache-2.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/core",
+    "apps/desktop"
+  ],
+  "scripts": {
+    "test": "npm test --workspace @note-flow/core",
+    "build": "npm run build --workspace note-flow-community-web",
+    "dev": "npm run dev --workspace note-flow-community-web",
+    "test:native": "node scripts/tests/community-native.mjs"
+  }
+}

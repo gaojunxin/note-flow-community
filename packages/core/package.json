@@ -1,0 +1,56 @@
+{
+  "name": "@note-flow/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Note Flow community local core candidate; publication gate pending",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit --allowImportingTsExtensions --strict --skipLibCheck --target ES2022 --module ESNext --moduleResolution Bundler --resolveJsonModule --lib ES2022,DOM src/community/index.ts src/community/indexedDbHost.ts src/community/nativeLocalHost.ts"
+  },
+  "exports": {
+    ".": "./src/community/index.ts",
+    "./community": "./src/community/index.ts",
+    "./contracts": "./src/contracts/index.ts",
+    "./contracts/sync": "./src/contracts/sync.ts",
+    "./local-storage-web": "./src/community/indexedDbHost.ts",
+    "./reminders": "./src/reminders.ts",
+    "./local-storage-native": "./src/community/nativeLocalHost.ts",
+    "./vault": "./src/vault.ts",
+    "./task-recurrence": "./src/community/taskRecurrencePreview.ts",
+    "./task-schedule": "./src/taskSchedule.ts",
+    "./totp": "./src/totp.ts",
+    "./search": "./src/search.ts",
+    "./note-classification": "./src/noteClassification.ts",
+    "./workspace": "./src/workspace.ts",
+    "./note-body": "./src/noteBody.ts",
+    "./native-core": "./src/nativeCore.ts",
+    "./app-info": "./src/appInfo.ts",
+    "./ai-learning": "./src/aiLearning.ts",
+    "./imported-note-links": "./src/importedNoteLinks.ts",
+    "./attachment-text": "./src/attachmentText.ts",
+    "./attachment-text-index": "./src/attachmentTextIndex.ts",
+    "./workspace-key-store": "./src/workspaceKeyStore.ts",
+    "./workspace-encryption": "./src/workspaceEncryption.ts",
+    "./workspace-unlock-session": "./src/workspaceUnlockSession.ts",
+    "./focus-records": "./src/focusRecords.ts",
+    "./sync-compatibility": "./src/syncCompatibility.ts",
+    "./remote-note-history": "./src/contracts/remoteNoteHistory.ts",
+    "./sync-execution-policy": "./src/syncExecutionPolicy.ts",
+    "./contracts/knowledge-cards": "./src/contracts/knowledgeCards.ts",
+    "./daily-culture": "./src/dailyCulture.ts",
+    "./reader-find": "./src/readerFind.ts",
+    "./natural-name-sort": "./src/naturalNameSort.ts",
+    "./sync-presentation": "./src/syncPresentation.ts"
+  },
+  "dependencies": {
+    "idb": "8.0.3",
+    "yjs": "13.6.27"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "6.2.5",
+    "typescript": "5.9.3",
+    "vitest": "3.2.7"
+  },
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,20 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><div id="app"></div><script type="module">
+import '/src/styles/tokens.css';import '/src/styles/base.css';
+import {createApp,h} from 'vue';import {createPinia} from 'pinia';import {createRouter,createWebHistory} from 'vue-router';
+import Panel from '/src/components/AiLearningPanel.vue';
+import {COMMUNITY_PROFILE_KEY} from '/src/community/workspace.ts';
+import {localLearningService} from '/src/services/localAiLearning.ts';
+import {createLocalBackup,restoreLocalBackup} from '/src/community/adapters/localBackup.ts';
+const marker='synthetic-community-learning-restore-fixture';
+if(!localStorage.getItem(marker)){
+ const original=crypto.randomUUID();localStorage.setItem(COMMUNITY_PROFILE_KEY,original);
+ const saved=await localLearningService.create('Synthetic canonical discussion');
+ await localLearningService.edit(saved.uid,{revision:saved.revision,input:'Synthetic canonical input'});
+ const key=`note-flow-ai-local:v1:community-${original}`;
+ localStorage.setItem(key,JSON.stringify({sessions:[saved],selectedUid:saved.uid,input:'Synthetic restored question',draft:'Synthetic restored draft',sources:[],pendingSend:{uid:'synthetic-old-send',signature:'synthetic-old-send'}}));
+ await restoreLocalBackup(await createLocalBackup());
+ localStorage.setItem(marker,'ready');
+}
+const router=createRouter({history:createWebHistory(),routes:[{path:'/:pathMatch(.*)*',component:{render:()=>h('p')}}]});
+const app=createApp({render:()=>h(Panel,{open:true})}).use(createPinia()).use(router);await router.isReady();app.mount('#app');
+</script></html>

@@ -1,0 +1,148 @@
+{
+  "scope": "diagrams.net预编译资源中可识别的第三方库补充归属，原文件头/上游LICENSE保留；固定父版本和字节摘要，不将独立库推测版本当事实",
+  "components": [
+    {
+      "name": "spin.js",
+      "version": "2.0.0",
+      "license": null,
+      "files": [
+        "js/spin/spin.min.js",
+        "js/app.min.js"
+      ],
+      "texts": [
+        {
+          "source": "https://registry.npmjs.org/spin.js/-/spin.js-2.0.0.tgz#package/LICENSE.txt",
+          "sha256": "5793f85563bd2b74d7d8c1fb41bdfd0967c58e1b56f5d7b0d30fb23ca06cde3c"
+        }
+      ],
+      "vendorSha256": {
+        "js/spin/spin.min.js": "1c43ca73e4517a4cf15a24adeeb063722409714b8baa1eb213640ea6838cee45",
+        "js/app.min.js": "4c926b6baa1bf43fb764a7f43008b554f144a47eeed7ce822cfa102cae9eadca"
+      }
+    },
+    {
+      "name": "jszip",
+      "version": "3.10.0",
+      "license": "(MIT OR GPL-3.0-or-later)",
+      "files": [
+        "js/jszip/jszip.min.js"
+      ],
+      "texts": [
+        {
+          "source": "https://registry.npmjs.org/jszip/-/jszip-3.10.0.tgz#package/lib/license_header.js",
+          "sha256": "27873abeec2df3693480a8d1b8fe17dd61bee843d1b39c1c9cfab57ffe93099e"
+        },
+        {
+          "source": "https://registry.npmjs.org/jszip/-/jszip-3.10.0.tgz#package/LICENSE.markdown",
+          "sha256": "566c953c6090b1218ca6217dd7359d45dde46581968586dc607d59a78af6a9c4"
+        }
+      ],
+      "vendorSha256": {
+        "js/jszip/jszip.min.js": "449129fe5458a0ff04ecc969c1ad061b8882ac34e60926bc8f13ba36b614ace4"
+      }
+    },
+    {
+      "name": "pako",
+      "version": "2.2.0",
+      "license": "(MIT AND Zlib)",
+      "files": [
+        "js/deflate/pako.min.js"
+      ],
+      "texts": [
+        {
+          "source": "https://registry.npmjs.org/pako/-/pako-2.2.0.tgz#package/LICENSE",
+          "sha256": "a04665b3b2de56c66730c1f720f528175739e4104f79073614aa611da1e85539"
+        }
+      ],
+      "vendorSha256": {
+        "js/deflate/pako.min.js": "7420457ec218cafec3515b75adf7dcbc8c3e46b020fa81c3c7c9f0a89973e370"
+      }
+    },
+    {
+      "name": "crypto-js",
+      "version": "4.2.0",
+      "license": "MIT",
+      "files": [
+        "js/cryptojs/aes.min.js"
+      ],
+      "texts": [
+        {
+          "source": "https://registry.npmjs.org/crypto-js/-/crypto-js-4.2.0.tgz#package/LICENSE",
+          "sha256": "f729d14b7e1bf8adca0dcc38b93b929d14d53fcd5db56c3d1c9b2daa7aa69396"
+        }
+      ],
+      "vendorSha256": {
+        "js/cryptojs/aes.min.js": "b617e063cfc9c9a31c5b5ae1808285dc616ee47bb0cc1e85b6d63683a155ed19"
+      }
+    },
+    {
+      "name": "dompurify",
+      "version": "3.4.15",
+      "license": "(MPL-2.0 OR Apache-2.0)",
+      "files": [
+        "js/sanitizer/purify.min.js",
+        "js/app.min.js",
+        "js/viewer.min.js",
+        "js/viewer-static.min.js"
+      ],
+      "texts": [
+        {
+          "source": "https://registry.npmjs.org/dompurify/-/dompurify-3.4.15.tgz#package/LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "source": "https://registry.npmjs.org/dompurify/-/dompurify-3.4.15.tgz#package/src/license_header",
+          "sha256": "5803fa925ae1703b9c752921c95a321570e6cabf06fcf2de895ddaf1687cebef"
+        },
+        {
+          "source": "https://registry.npmjs.org/dompurify/-/dompurify-3.4.15.tgz#package/LICENSE-MPL",
+          "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+        }
+      ],
+      "vendorSha256": {
+        "js/sanitizer/purify.min.js": "f263b05369e050fa175d4ecb9c9358eb4253602d510297adfb31df48b2f1c4d5",
+        "js/app.min.js": "4c926b6baa1bf43fb764a7f43008b554f144a47eeed7ce822cfa102cae9eadca",
+        "js/viewer.min.js": "2d0fef32815c79f1bb51f225effddfc57e111461bccf8386eed29c7cce3ab088",
+        "js/viewer-static.min.js": "e49a0d5d1eac05351c3d21a22d5278fcab5d20066bdbdf074edc0b9989c611cd"
+      }
+    },
+    {
+      "name": "roughjs",
+      "license": "MIT",
+      "licenseReferenceVersion": "4.6.4",
+      "version": "drawio-v31.4.6-vendored",
+      "note": "drawio固定提交中的vendored文件未声明独立库版本；按其README指向的项目补充已固定发布版许可，不声称两份JS构建字节相同。",
+      "files": [
+        "js/rough/rough.min.js"
+      ],
+      "texts": [
+        {
+          "source": "node_modules/roughjs/LICENSE",
+          "sha256": "dca9a392272606ac748ac0976a2a1133f14eef841c27beaa51a844d53c56a09d"
+        }
+      ],
+      "vendorSha256": {
+        "js/rough/rough.min.js": "2ea1ec2378ed9a64a0cd053edef6d9f3d1545b6e568938bc1bde2f990608310a"
+      }
+    },
+    {
+      "name": "perfect-freehand",
+      "license": "MIT",
+      "licenseReferenceVersion": "1.2.0",
+      "version": "drawio-v31.4.6-vendored",
+      "note": "drawio固定提交中的vendored文件未声明独立库版本；按其README指向的项目补充已固定发布版许可，不声称两份JS构建字节相同。",
+      "files": [
+        "js/freehand/perfect-freehand.js"
+      ],
+      "texts": [
+        {
+          "source": "node_modules/perfect-freehand/LICENSE",
+          "sha256": "6a5ac82b42ce0af6a1e5fe39b46f0b52f1368e81e437175e8d9ae21569c8688e"
+        }
+      ],
+      "vendorSha256": {
+        "js/freehand/perfect-freehand.js": "987dac64dceeba68467916022418d35b903b9718890eadbe23422fcfcfce6732"
+      }
+    }
+  ]
+}
