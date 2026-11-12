@@ -8,12 +8,12 @@ import {fileURLToPath} from 'node:url'
  * 上传前核对本次社区PC交付的双格式、版本及逐文件SHA-256。
  * 只证明清单与文件完整性，不代替安装、启动或平台许可验收。
  */
-export async function verifyCommunityArtifacts(root, platform) {
+export async function verifyCommunityArtifacts(root, platform, deliveryDirectory) {
   if (!['linux', 'windows'].includes(platform)) throw Error('platform必须为linux或windows')
   root = await realpath(root)
   const {version} = JSON.parse(await readFile(path.join(root, 'version.json'), 'utf8'))
   if (!/^\d+\.\d+\.\d+(?:-[\w.-]+)?$/.test(version)) throw Error('无效交付版本')
-  const output = path.join(root, 'artifacts/pc', version, 'community')
+  const output = deliveryDirectory ? path.resolve(deliveryDirectory) : path.join(root, 'artifacts/pc', version, 'community')
   if (await realpath(output) !== output) throw Error('交付目录不能经过符号链接')
   const manifestFile = path.join(output, 'manifest.json')
   if ((await lstat(manifestFile)).isSymbolicLink()) throw Error('清单不能为符号链接')

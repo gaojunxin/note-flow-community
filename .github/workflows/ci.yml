@@ -1,6 +1,8 @@
 name: Community CI
 on:
   push:
+    branches: ['**']
+    tags: ['v*']
   pull_request:
   workflow_dispatch:
 permissions:
@@ -59,6 +61,7 @@ jobs:
         id: release
         run: |
           $version = (Get-Content version.json -Raw | ConvertFrom-Json).version
+          if ($env:GITHUB_REF_TYPE -eq 'tag' -and $env:GITHUB_REF_NAME -cne "v$version") { throw 'Tag must match version.json exactly' }
           "version=$version" >> $env:GITHUB_OUTPUT
       - name: Install public dependencies
         run: npm ci
@@ -80,3 +83,41 @@ jobs:
           if-no-files-found: error
           compression-level: 0
           retention-days: 14
+
+  release:
+    name: Publish GitHub Release
+    needs: desktop
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+      - name: Download packages from this workflow run
+        uses: actions/download-artifact@v8
+        with:
+          pattern: community-*-x64-*
+          path: artifacts/release-input
+          merge-multiple: false
+      - name: Recheck packages and prepare release assets
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: node scripts/prepare-community-release.mjs
+      - name: Upload complete draft and publish
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          gh release create "$RELEASE_TAG" artifacts/release-assets/* --verify-tag --draft --title "NoteFlow Community $RELEASE_TAG" --notes-file artifacts/release-notes.md
+          flags=()
+          if [[ "$RELEASE_TAG" == *-* ]]; then flags+=(--prerelease); fi
+          gh release edit "$RELEASE_TAG" --draft=false "${flags[@]}"

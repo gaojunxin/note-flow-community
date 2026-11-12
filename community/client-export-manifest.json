@@ -1146,6 +1146,7 @@
     "scripts/dev/test-fixture-guard.mjs",
     "scripts/linux/Dockerfile.ubuntu22.04",
     "scripts/maintenance/rebuild-community-liberation.py",
+    "scripts/prepare-community-release.mjs",
     "scripts/rebuild-community-liberation.py",
     "scripts/tests/community-learning-restore-browser.cjs",
     "scripts/tests/community-native.mjs",

@@ -205,7 +205,22 @@ Windows 绿色包制作另需 7-Zip、Visual Studio 可再分发 CRT；运行时
 
 上传前检查双格式齐备、版本、文件大小和 SHA-256。运行成功后，在该次 Actions 页面底部的 Artifacts 下载对应平台产物；默认保留14天。Linux AppImage 下载解压后需赋予可执行权限，例如 `chmod +x *.AppImage`。Windows 绿色包仍需系统 WebView2，完整解压后运行应用。
 
-流水线生成 CI 构建候选，不自动签名、创建 GitHub Release 或部署服务。首次 GitHub 执行结果及安装/启动验证仍需核对，不以本地配置检查代替实际 runner 构建成功。
+### 发布到 GitHub Releases
+
+普通分支 push、PR 和手动运行仅上传 Actions 附件。发布时先提交所有改动，确认 `version.json` 与项目版本一致，再推送对应标签，例如：
+
+```bash
+git tag v0.12.18
+git push origin v0.12.18
+```
+
+标签必须严格等于 `v` 加 `version.json` 中的版本。标签触发 Windows、Linux 完整构建，两端均通过后，发布任务下载本次运行附件、复核双格式及摘要，再上传到同标签的 GitHub Release。先创建草稿，附件全部上传成功才公开；带 `-` 的预发布版本标记为 prerelease。
+
+Release 附件包括两端安装包、免安装包、Web 资源 ZIP、各平台清单和 `SHA256SUMS.txt`。文件名统一加 `linux-x64-` 或 `windows-x64-` 前缀，对应清单中的文件名同步更新，避免同名文件覆盖。无需另配 PAT，只有发布任务申请 `contents: write` 权限。
+
+任一平台失败时不会创建 Release。修复后发布新版本标签；若上传中断留下同标签草稿，核对并删除该草稿后，可在原运行页面重新执行发布任务。已有 Release 不自动覆盖，也不要移动已发布的版本标签。
+
+流水线不自动签名或部署服务。构建与摘要通过不代替实际安装、启动及平台许可验收。
 
 ## 数据与隐私
 
