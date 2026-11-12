@@ -194,6 +194,19 @@ Windows 绿色包制作另需 7-Zip、Visual Studio 可再分发 CRT；运行时
 
 社区版不提供 Android 或 iOS 构建。
 
+### 使用 GitHub Actions 打包
+
+仓库内的 [Community CI](.github/workflows/ci.yml) 在 push、pull request 时执行，也可从 Actions 页面手动运行。使用 GitHub 托管的 Ubuntu 22.04 和 Windows 2022 x64 runner，安装公共依赖、执行社区测试并调用同一套标准构建脚本，无需私有仓库或产品账号。
+
+| Actions 产物 | 内容 |
+| --- | --- |
+| `community-linux-x64-<version>` | DEB 安装包、AppImage 免安装包、Web 资源 ZIP、`manifest.json` |
+| `community-windows-x64-<version>` | NSIS 安装器、绿色 ZIP、Web 资源 ZIP、`manifest.json` |
+
+上传前检查双格式齐备、版本、文件大小和 SHA-256。运行成功后，在该次 Actions 页面底部的 Artifacts 下载对应平台产物；默认保留14天。Linux AppImage 下载解压后需赋予可执行权限，例如 `chmod +x *.AppImage`。Windows 绿色包仍需系统 WebView2，完整解压后运行应用。
+
+流水线生成 CI 构建候选，不自动签名、创建 GitHub Release 或部署服务。首次 GitHub 执行结果及安装/启动验证仍需核对，不以本地配置检查代替实际 runner 构建成功。
+
 ## 数据与隐私
 
 - 社区版的笔记、任务和附件保存在本机空间，不连接官方同步服务。

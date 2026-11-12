@@ -1153,6 +1153,7 @@
     "scripts/tests/organization-pc-edge-browser.mjs",
     "scripts/tests/organization-pc-owner-browser.mjs",
     "scripts/tests/organization-pc-undo-browser.mjs",
+    "scripts/verify-community-artifacts.mjs",
     "version.json"
   ]
 }

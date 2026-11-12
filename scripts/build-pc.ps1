@@ -22,8 +22,9 @@ try {
     try {
       cargo test --locked --manifest-path Cargo.toml
       if ($LASTEXITCODE) { throw '社区桌面原生测试失败' }
-      $argsList = @('build')
-      if ($Bundles -ne 'all') { $argsList += @('--bundles',$Bundles) }
+      # all 是社区双格式交付约定，不能依赖仅声明DEB的Tauri默认配置。
+      $nativeBundles = if ($IsLinux) { 'deb,appimage' } else { 'nsis' }
+      $argsList = @('build','--bundles',$nativeBundles)
       $cli = Join-Path $repo 'node_modules/.bin/tauri'
       if ($IsWindows) { $cli += '.cmd' }
       & $cli @argsList

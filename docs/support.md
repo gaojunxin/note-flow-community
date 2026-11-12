@@ -4,7 +4,8 @@
 | --- | --- | --- |
 | Web/PWA | Chromium 实际本地保存、离线重载、完整备份与基础画布 | 部署整个 Web ZIP 到站点根目录；离线缓存需首次成功安装，浏览器存储可能被用户清理 |
 | Linux x86_64 | 历史DEB已有SQLite与本地图表验证；本轮完成原生编译检查和独立Web构建 | 当前源码安装包仍需实机复验；桌面提醒需应用运行，其他Linux桌面环境未穷举 |
-| Windows/macOS | 本轮不声明已验证支持 | 不以构建脚本存在代替安装包与设备验收 |
+| Windows x64 | 标准脚本及GitHub Windows 2022任务生成NSIS与绿色ZIP，实际runner结果待核对 | 需要Windows 10/11和WebView2；不以配置检查代替安装/启动验收 |
+| macOS | 当前标准社区原生打包流程不支持 | 不以共享代码存在代替原生双格式和设备验收 |
 
 ## 公共开发环境
 
@@ -12,6 +13,12 @@ Node.js 22、PowerShell 7、Rust 稳定工具链。Linux 桌面构建需要 libw
 
 
 依赖安装 npm ci；公开 CI 只读取公开工作区，既不拉取私有源码，也不需要产品账号或发布密钥。首次下载 npm/Cargo 公共依赖需要网络，运行应用的单机功能不需要同步服务。
+
+## GitHub Actions
+
+`.github/workflows/ci.yml`在push/PR或手动触发时，通过Ubuntu22.04与Windows2022的独立任务调用`scripts/build-pc.ps1`。两平台任务互不因另一平台失败而取消；每个平台必须完成测试、双格式打包和清单摘要验证后才上传。下载位置为该次Actions的Artifacts，保留14天，不自动发布Release。
+
+Windows任务检查7-Zip及Visual Studio x64可再分发CRT；这些工具按[GitHub Windows 2022托管镜像清单](https://github.com/actions/runner-images/blob/main/images/windows/Windows2022-Readme.md)准备。Linux安装WebKitGTK、GTK、OpenSSL、AppIndicator、librsvg、patchelf及libfuse2，用Xvfb提供原生测试显示环境；AppImage提取运行环境变量用于CI打包工具，参见[AppImage官方FUSE说明](https://github.com/AppImage/AppImageKit/wiki/FUSE)。这些是构建环境配置，不代表应用已经通过所有平台发行验收。
 
 ## 产物
 
