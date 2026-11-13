@@ -1,10 +1,12 @@
 import {reactive} from 'vue'
 export const syncActivity=reactive({running:0,phase:'尚未开始同步',detail:'',completed:0,total:0,startedAt:0,finishedAt:0,logs:[] as Array<{at:number;message:string;error:boolean}>})
+/** 各领域当前未恢复的同步异常，供全局入口展示；账号切换时必须清空。 */
+export const syncDomainErrors=reactive<Record<string,string>>({})
 let revision=0
 export const syncActivityRevision=()=>revision
 const jobs=new Set<number>();let sequence=0
 const checks=new Set<{phase:string;id?:number}>()
-export function resetSyncActivity(){revision++;jobs.clear();checks.clear();Object.assign(syncActivity,{running:0,phase:'尚未开始同步',detail:'',completed:0,total:0,startedAt:0,finishedAt:0,logs:[]})}
+export function resetSyncActivity(){revision++;for(const domain of Object.keys(syncDomainErrors))delete syncDomainErrors[domain];jobs.clear();checks.clear();Object.assign(syncActivity,{running:0,phase:'尚未开始同步',detail:'',completed:0,total:0,startedAt:0,finishedAt:0,logs:[]})}
 if(typeof window!=='undefined'&&typeof window.addEventListener==='function')window.addEventListener('note-flow:account-lifecycle-change',resetSyncActivity)
 /** Background checks stay invisible until a request transfers real changes. */
 export function promoteSyncChecks(){for(const check of checks)if(check.id===undefined)check.id=beginSyncActivity(check.phase)}

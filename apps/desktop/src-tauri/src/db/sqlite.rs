@@ -28,6 +28,9 @@ impl SqliteConnection {
         Ok(Self { connection })
     }
 
+    /// 仅在交给actor之前准备旧位置档案，运行期间仍由actor独占连接。
+    pub(crate) fn raw_mut(&mut self) -> &mut Connection { &mut self.connection }
+
     pub fn raw(&self) -> &Connection {
         &self.connection
     }

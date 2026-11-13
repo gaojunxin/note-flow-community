@@ -276,6 +276,8 @@ impl<'a> NoteRepository<'a> {
         self.get(&input.uid)
     }
 
+    /// 查询本机笔记并返回页码、候选总数和正文片段；参数无效或数据库读取失败时返回错误。
+    /// 索引缺项或待更新时读取规范化镜像文本，保持只读，不把未完成索引当作全库结果。
     pub fn search(
         &self,
         query: &str,
@@ -302,11 +304,22 @@ impl<'a> NoteRepository<'a> {
             .checked_mul(u64::from(size))
             .and_then(|value| i64::try_from(value).ok())
             .ok_or_else(|| NoteRepositoryError::invalid("search page is too large"))?;
-        // Keep the native read byte-for-byte compatible with sqliteNotes.search:
-        // short queries use the normalized mirror text, while trigram FTS needs
-        // a quoted literal.  Return the raw body so both paths build the same
-        // 240-character context rather than an FTS-marked snippet.
-        let short = query.chars().count() < 3;
+        // 派生索引可能尚未覆盖新同步的记录；存在缺项或待更新标记时读取权威搜索文本，
+        // 不能将不完整 FTS 的零命中当作全库无结果，也不能在只读入口修改业务或索引记录。
+        let incomplete: bool = self.connection.query_row(
+            "SELECT EXISTS(SELECT uid FROM notes WHERE deleted=0 AND coalesce(status,'inbox')<>'archived' EXCEPT SELECT uid FROM note_search)",
+            [], |row| row.get(0),
+        ).map_err(|_| NoteRepositoryError::database())?;
+        let dirty_table: bool = self.connection.query_row(
+            "SELECT EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='note_search_dirty')",
+            [], |row| row.get(0),
+        ).map_err(|_| NoteRepositoryError::database())?;
+        let dirty: bool = if dirty_table {
+            self.connection.query_row("SELECT EXISTS(SELECT 1 FROM note_search_dirty)", [], |row| row.get(0))
+                .map_err(|_| NoteRepositoryError::database())?
+        } else { false };
+        // 短词和未就绪索引使用规范化子串；完整索引继续使用原有 trigram 排序与分页。
+        let short = query.chars().count() < 3 || incomplete || dirty;
         let sql = if short {
             "SELECT uid, title, content, updated_at
              FROM notes
@@ -598,6 +611,28 @@ mod tests {
                 updated_at: format!("2026-09-16T00:00:{time:02}Z"),
             })
             .unwrap();
+    }
+
+    #[test]
+    fn search_reads_notes_missing_from_derived_index_without_writing_it() {
+        let mut connection = connection();
+        let mut repository = NoteRepository::new(&mut connection);
+        create(&mut repository, "missing", 1, "database notes");
+        repository.connection.execute("DELETE FROM note_search", []).unwrap();
+        let result = repository.search("database", Some(1), Some(20)).unwrap();
+        assert_eq!(result.items.len(), 1);
+        let indexed: i64 = repository.connection.query_row("SELECT count(*) FROM note_search", [], |r| r.get(0)).unwrap();
+        assert_eq!(indexed, 0);
+    }
+
+    #[test]
+    fn search_reads_current_text_while_index_update_is_pending() {
+        let mut connection = connection();
+        let mut repository = NoteRepository::new(&mut connection);
+        create(&mut repository, "pending", 1, "old indexed text");
+        repository.connection.execute_batch("CREATE TABLE note_search_dirty(note_uid TEXT PRIMARY KEY); INSERT INTO note_search_dirty VALUES('pending'); UPDATE notes SET content='fresh database text',search_text='title pending fresh database text' WHERE uid='pending';").unwrap();
+        assert_eq!(repository.search("database", Some(1), Some(20)).unwrap().items.len(), 1);
+        assert_eq!(repository.search("old", Some(1), Some(20)).unwrap().items.len(), 0);
     }
 
     #[test]

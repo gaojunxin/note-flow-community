@@ -1,4 +1,5 @@
 import {reactive,watch} from 'vue'
+import {focusCheckpointStorage} from './focusCheckpointStorage'
 import {FocusClock} from './focusClock'
 import {focusReadBinding} from './focusRecordSource'
 import {scopedPreferenceKey} from './clientContext'
@@ -22,10 +23,10 @@ async function save(session:FocusSession,binding:string){
  if(found){if(found.actualSeconds!==session.actualSeconds||found.sessionType!==session.sessionType)throw Error('已有记录与本次计时不一致，请在记录页检查。');return;}
  const response=(await api.post<{code:number}>('/focus/sessions',session)).data;if(response.code!==200)throw Error('保存失败，请重试。')
 }
-export const focusTimer=reactive(new FocusClock({now:()=>Date.now(),uid:()=>crypto.randomUUID(),context:()=>({key:scopedPreferenceKey('note-flow-focus-clock:v1',owner()),binding:focusReadBinding()}),storage:{getItem:key=>localStorage.getItem(key),setItem:(key,value)=>localStorage.setItem(key,value),removeItem:key=>localStorage.removeItem(key)},save}))
+export const focusTimer=reactive(new FocusClock({now:()=>Date.now(),uid:()=>crypto.randomUUID(),context:()=>({key:scopedPreferenceKey('note-flow-focus-clock:v1',owner()),binding:focusReadBinding()}),storage:focusCheckpointStorage,save}))
 let started=false
 export async function prepareFocusTimer(){
- focusTimer.enter();if(!started&&typeof window!=='undefined'){started=true;setInterval(()=>focusTimer.tick(),250);window.addEventListener('pagehide',()=>focusTimer.pause());window.addEventListener('note-flow:profile-change',()=>focusTimer.enter());window.addEventListener('note-flow:workspace-change',()=>focusTimer.enter());watch(appLock.locked,locked=>{if(locked)focusTimer.pause()});}
+ const checkpointBinding=focusReadBinding();await focusCheckpointStorage.prepare(scopedPreferenceKey('note-flow-focus-clock:v1',owner()));if(checkpointBinding!==focusReadBinding())return;focusTimer.enter();if(!started&&typeof window!=='undefined'){started=true;setInterval(()=>focusTimer.tick(),250);window.addEventListener('pagehide',()=>focusTimer.pause());const changed=()=>{const changedBinding=focusReadBinding();focusTimer.enter();void prepareFocusTimer().catch(()=>{if(changedBinding===focusReadBinding())focusTimer.error='专注检查点恢复失败，请重试'})};window.addEventListener('note-flow:profile-change',changed);window.addEventListener('note-flow:workspace-change',changed);watch(appLock.locked,locked=>{if(locked)focusTimer.pause()});}
  const binding=focusReadBinding();const value=local()?await localFocusService.settings():(await api.get<{data:Awaited<ReturnType<typeof localFocusService.settings>>}>('/focus/settings')).data.data;
  if(binding!==focusReadBinding())return;
  const durations=[value.focusMinutes,value.shortBreakMinutes,value.longBreakMinutes];if(!durations.every(n=>Number.isInteger(n)&&n>=1&&n<=1440)||!Number.isInteger(value.roundsBeforeLongBreak)||value.roundsBeforeLongBreak<1)throw Error('专注设置无效，请在设置中调整。');focusTimer.durations=durations;focusTimer.autoBreak=value.autoStartBreak;focusTimer.roundInterval=value.roundsBeforeLongBreak;

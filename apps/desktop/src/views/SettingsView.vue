@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {clientIntentRepository} from '../services/clientIntentRepository'
 import {clearReadingProgress} from '../services/readingProgress'
 import {syncConflictStamp} from '@note-flow/core/sync-presentation'
 import {syncTaskNoteQueue} from '../services/tasks'
@@ -497,7 +498,7 @@ async function clearLocalWorkspace(){
   try{
     await beginPcSyncReset()
     if(!preview.noteJournal)throw Error('同步证据尚未准备完成，请重新检查')
-    const result=await resetLocalWorkspace({discard:{...preview.noteJournal,kind:'user-confirmed-local-reset'}});notifications.clear();window.dispatchEvent(new CustomEvent('note-flow:account-data-reset',{detail:{localOnly:true}}));localImportSummary.value={notes:0,batches:0};importResult.value=null;obsidianScan.value=null
+    const result=await resetLocalWorkspace({discard:{...preview.noteJournal,kind:'user-confirmed-local-reset'},taskNoteIntents:preview.taskNoteIntents});await notifications.clear();window.dispatchEvent(new CustomEvent('note-flow:account-data-reset',{detail:{localOnly:true}}));localImportSummary.value={notes:0,batches:0};importResult.value=null;obsidianScan.value=null
     endPcSyncReset()
     if(connected.value&&navigator.onLine!==false){
       await runResetSyncStage('笔记',()=>notes.runSync())
@@ -522,9 +523,9 @@ async function finishCloudReset(result:Awaited<ReturnType<typeof accountDataRese
   try{
     if(isDesktopClient()){
       const observed=await previewLocalWorkspaceReset();if(!observed.noteJournal)throw Error('同步证据尚未准备完成，请重新检查')
-      await resetLocalWorkspace({discard:{...observed.noteJournal,kind:'authenticated-server-reset',serverOperationId:result.operationId,nextEpoch:result.effectiveSyncEpoch}})
+      await resetLocalWorkspace({discard:{...observed.noteJournal,kind:'authenticated-server-reset',serverOperationId:result.operationId,nextEpoch:result.effectiveSyncEpoch},taskNoteIntents:observed.taskNoteIntents})
     }else await notes.resetBrowserCache()
-    clearReadingProgress(String(auth.user?.userId||'anonymous'));acceptServerSyncEpoch(result.effectiveSyncEpoch);notifications.clear();window.dispatchEvent(new Event('note-flow:account-data-reset'))
+    await clearReadingProgress(String(auth.user?.userId||'anonymous'));if(!isDesktopClient())await(await clientIntentRepository('task-notes',String(auth.user?.userId||'anonymous'))).invoke('clear');acceptServerSyncEpoch(result.effectiveSyncEpoch);await notifications.clear();window.dispatchEvent(new Event('note-flow:account-data-reset'))
     if(Object.prototype.hasOwnProperty.call(result.removed,'nf_vault_snapshot')){const ownerId=activeProfileId(auth.user?.userId||'');await clearVault(ownerId);clearVaultSyncState(ownerId);clearVaultSession()}
     await notes.load();window.dispatchEvent(new Event('note-flow:workspace-change'));localStorage.removeItem(CLOUD_RESET_RECOVERY_KEY);cloudResetPassword.value='';cloudResetConfirmation.value='';cloudResetChallengeToken.value='';cloudResetMessage.value=`云端数据已清理，操作编号 ${result.operationId.slice(0,8)}；其他设备联网后会自动重建本机数据。`
   }finally{endPcSyncReset()}

@@ -39,6 +39,8 @@ export const tasksService={
 }
 let cachedLists:TaskListEntity[]=[],cachedScope=''
 export const taskListsService={
+ cacheError(){return ''},
+ async loadCached():Promise<TaskListEntity[]>{return this.list()},
  cached:()=>cachedScope===taskDataScope()?cachedLists:[],
  async list(){const scope=taskDataScope();const values=await listEntities<TaskListEntity>('task_list');if(scope===taskDataScope()){cachedLists=values;cachedScope=scope}return values},
  async create(name:string,sortOrder:number,scope:{areaUid?:string|null;projectUid?:string|null}={}){const value=await createEntity<TaskListEntity>('task_list',{name,sortOrder,...scope});await this.list();return value},

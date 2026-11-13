@@ -3,7 +3,7 @@ import {computed,defineAsyncComponent,onBeforeUnmount,onMounted,ref} from 'vue'
 import {ElButton} from 'element-plus'
 import type {LearningSession} from '@note-flow/core/ai-learning'
 import {aiDataScope} from '../services/aiDataScope'
-import {accountSessionRevision} from '../services/accountStorage'
+import {accountLifecycleRevision} from '../services/accountStorage'
 import {parseLearningSkill,learningSkillLabel} from '../services/learningSkills'
 import {learningSkillKey,readLearningSkillReceipt,completeLearningSkill} from '../services/learningSkillReceipts'
 const AiNoteSeriesDialog=defineAsyncComponent(()=>import('./AiNoteSeriesDialog.vue'))
@@ -12,12 +12,12 @@ const props=defineProps<{session:LearningSession;messageUid:string;ownerId:strin
 const emit=defineEmits<{saved:[uid:string]}>()
 const message=props.session.messages.find(m=>m.uid===props.messageUid)!
 const parsed=parseLearningSkill(message.content),call=parsed.call
-const scope=aiDataScope(),revision=accountSessionRevision(),key=learningSkillKey(scope,props.session.uid,props.messageUid)
+const scope=aiDataScope(),revision=accountLifecycleRevision(),key=learningSkillKey(scope,props.session.uid,props.messageUid)
 const snapshot=JSON.parse(JSON.stringify(props.session)) as LearningSession
 const open=ref(false),loading=ref(true),summary=ref(''),error=ref('')
 let alive=true,release:(()=>void)|undefined
 const label=computed(()=>call?learningSkillLabel(call.skill):'技能请求未启用')
-function check(){if(!alive||aiDataScope()!==scope||accountSessionRevision()!==revision)throw Error('账号或空间已切换，请重新打开讨论')}
+function check(){if(!alive||aiDataScope()!==scope||accountLifecycleRevision()!==revision)throw Error('账号或空间已切换，请重新打开讨论')}
 onMounted(async()=>{try{const saved=await readLearningSkillReceipt(key);check();summary.value=saved?.summary||''}catch(e){error.value=e instanceof Error?e.message:'无法读取执行记录'}finally{loading.value=false}})
 function close(){open.value=false;release?.();release=undefined}
 onBeforeUnmount(()=>{alive=false;close()})
@@ -30,7 +30,7 @@ async function start(){if(!call||props.disabled||loading.value||summary.value||o
   open.value=true
  }catch(e){close();error.value=e instanceof Error?e.message:'无法准备技能'}finally{loading.value=false}
 }
-async function record(summaryText:string){check();await completeLearningSkill(key,summaryText);check();summary.value=summaryText}
+async function record(summaryText:string){check();const receipt=await completeLearningSkill(key,summaryText);check();summary.value=receipt.summary}
 async function recordSeries(uids:string[]){await record(`已创建 ${uids.length} 篇笔记及所需目录`)}
 async function recordDirectory(count:number){await record(`已完成 ${count} 篇笔记的目录整理`)}
 function created(uids:string[]){if(uids[0])emit('saved',uids[0])}

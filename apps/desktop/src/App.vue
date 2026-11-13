@@ -18,6 +18,7 @@ import { useNotesStore } from './stores/notes'
 import AreaManager from './components/AreaManager.vue'
 import {activeAreas} from './services/areaManagement'
 import NotificationPanel from './components/NotificationPanel.vue'
+import GlobalCreateDialog from './components/GlobalCreateDialog.vue'
 import { useNotificationsStore, type PcNotification } from './stores/notifications'
 import { repairMojibake } from './utils/textEncoding'
 import { workspaceService, type AreaEntity, type ProjectEntity } from './services/workspace'
@@ -42,7 +43,7 @@ import { globalAreaUid } from './services/globalAreaScope'
 import { selectGlobalCreateFiles, stageGlobalCreateFiles } from './services/globalCreate'
 import {reconcileDeletedAttachments,hasPendingNoteAttachments} from './services/attachments'
 import {syncPendingNoteAttachments} from './services/pendingNoteAttachmentSync'
-import {syncActivity,trackSyncCheck} from './services/syncActivity'
+import {syncActivity,syncDomainErrors,trackSyncCheck} from './services/syncActivity'
 
 const sidebarCollapsed = ref(false)
 const mobileNavigationOpen = ref(false)
@@ -149,6 +150,8 @@ const syncState = computed(() => {
   if (!syncEnabled.value) return { label: '同步已关闭', tone: 'muted' }
   if(syncActivity.running)return {label:'同步中 · 点击查看详情',tone:'active'}
   if (syncRuntimeIssues({deliveryError:syncDelivery.error,notePhase:notes.syncPhase,noteError:notes.syncError}).length) return { label: notes.syncPhase === 'conflict' ? '存在同步冲突' : '同步异常', tone: 'error' }
+  const domainError=Object.values(syncDomainErrors).find(Boolean)
+  if(domainError)return {label:'同步未完成 · '+domainError+' · 点击查看详情',tone:'error'}
   return { label: '已同步 · 点击查看详情', tone: 'ok' }
 })
 
@@ -162,9 +165,10 @@ function focusGlobalSearch(){window.requestAnimationFrame(()=>{globalSearchInput
 function clearSearch(){searchQuery.value='';updateSearch();window.requestAnimationFrame(()=>globalSearchInput.value?.focus())}
 function interactionRequestId() { return globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}` }
 function createScopeQuery() { return { ...(createContextArea.value?.uid?{areaUid:createContextArea.value.uid}:{}), ...(createContextProject.value?.uid?{projectUid:createContextProject.value.uid}:{}) } }
-function createNote() { router.push({ path: '/notes', query: { create: '1', request: interactionRequestId(), ...createScopeQuery() } }) }
-function createTask() { router.push({ path: '/tasks', query: { create: '1', request: interactionRequestId(), ...createScopeQuery() } }) }
-function createProject() { router.push({ path: '/projects', query: { create: '1', request: interactionRequestId() } }) }
+const quickCreateKind=ref<'note'|'task'|'log'|'project'>()
+function createNote(){if(!quickCreateKind.value)quickCreateKind.value='note'}
+function createTask(){if(!quickCreateKind.value)quickCreateKind.value='task'}
+function createProject(){if(!quickCreateKind.value)quickCreateKind.value='project'}
 async function importFiles(){const files=await selectGlobalCreateFiles();if(!files.length)return;stageGlobalCreateFiles(files);await router.push({path:'/notes',query:{import:'file',request:interactionRequestId(),...createScopeQuery()}})}
 function chooseCreate(target: 'note' | 'task' | 'log' | 'file' | 'project') {
   createMenuOpen.value = false
@@ -172,11 +176,13 @@ function chooseCreate(target: 'note' | 'task' | 'log' | 'file' | 'project') {
   else if (target === 'task') createTask()
   else if (target === 'project') createProject()
   else if (target === 'file') void importFiles()
-  else router.push({path:'/logs',query:{focus:'progress',request:interactionRequestId(),...createScopeQuery()}})
+  else quickCreateKind.value='log'
 }
 function shortcuts(event: KeyboardEvent) {
   if(appLock.locked.value)return
   if(event.key==='Escape'&&mobileNavigationOpen.value){mobileNavigationOpen.value=false;event.preventDefault();return}
+  // 弹层优先处理 Escape，避免关闭搜索设置时清空查询。
+  if(event.key==='Escape'&&Array.from(document.querySelectorAll('.el-overlay-dialog,.el-drawer,.attachment-index-dialog')).some(element=>element.getClientRects().length>0))return
   if (event.key === 'Escape') {
     createMenuOpen.value = false; notificationOpen.value = false; accountOpen.value = false; areaOpen.value = false
     if(searchPage.value&&searchQuery.value){event.preventDefault();event.stopImmediatePropagation();clearSearch()}
@@ -210,7 +216,7 @@ watch(appLock.locked,locked=>{if(locked){createMenuOpen.value=false;notification
 function selectArea(uid: string) { currentAreaUid.value = uid; areaOpen.value = false }
 function areasManaged(){void loadWorkspaceNavigation();window.dispatchEvent(new Event('note-flow:workspace-change'))}
 async function toggleNotifications() { notificationOpen.value = !notificationOpen.value; if (notificationOpen.value) await notifications.refreshTaskAlerts() }
-function openNotification(item: PcNotification) { notifications.markRead(item.id); if(item.kind!=='notice'&&(!item.targetState||item.targetState==='active')){notificationOpen.value = false; router.push({ path: item.target, query: item.query })} }
+async function openNotification(item: PcNotification) { await notifications.markRead(item.id); if(item.kind!=='notice'&&(!item.targetState||item.targetState==='active')){notificationOpen.value = false; router.push({ path: item.target, query: item.query })} }
 async function loadWorkspaceNavigation(){
   const [areaResult,projectResult]=await Promise.allSettled([workspaceService.areas(),workspaceService.projects(undefined,true)])
   if(pcSyncResetPaused())return
@@ -232,9 +238,9 @@ const reminderActivation=createTaskReminderActivation({
 })
 watch(()=>[appLock.locked.value,publicPage.value,auth.user?.userId],()=>{if(isDesktopClient())void reminderActivation.drain().catch(()=>undefined)})
 function retryReminderActivation(){if(isDesktopClient())void reminderActivation.drain().catch(()=>undefined)}
-function resetNotificationCenter(){notifications.clear()}
-async function refreshNotificationCenter(){notifications.load();await notifications.refreshRemote()}
-onMounted(() => { if(knowledgeAvailable)stopKnowledgeImports=startKnowledgeImportBackground(()=>String(auth.user?.userId||'local'));window.addEventListener('note-flow:workspace-change',retryReminderActivation);if(isDesktopClient()){void listen('note-flow-reminder-activated',()=>{void reminderActivation.drain().catch(()=>undefined)}).then(handle=>{unlistenReminderActivation=handle;return reminderActivation.drain()}).catch(()=>undefined);void listen<string>('note-flow-reminder-delivery-error',event=>notifications.add({kind:'notice',title:'系统提醒发送失败',message:event.payload,target:'/tasks',dedupeKey:'task-reminder-delivery'})).then(handle=>unlistenReminderErrors=handle).catch(()=>undefined)} stopNotificationRefresh=startBackgroundRefresh(refreshNotificationCenter,{window,document});window.addEventListener('note-flow:account-data-reset',resetNotificationCenter);notifications.load();startupTimer=window.setTimeout(async()=>{await loadWorkspaceNavigation();await notifications.refreshTaskAlerts();if(auth.user&&syncEnabled.value&&syncAvailable())syncEvents.start()},300);void listen<string>('note-flow-tray-navigate',event=>{if(!appLock.locked.value)void router.push(event.payload)}).then(value=>unlistenTrayNavigation=value).catch(()=>undefined); window.addEventListener('keydown', shortcuts); window.addEventListener('pointerdown', closeFloatingMenus); window.addEventListener('online', updateOnline); window.addEventListener('offline', updateOnline); window.addEventListener('storage', updateSyncPreference); window.addEventListener('note-flow:sync-preference', updateSyncPreference);window.addEventListener('note-flow:workspace-change',workspaceChanged);window.addEventListener(pcSyncResetEvents.pause,pauseSyncForReset);window.addEventListener(pcSyncResetEvents.resume,resumeSyncAfterReset) })
+function resetNotificationCenter(){void notifications.clear().catch(()=>{})}
+async function refreshNotificationCenter(){await notifications.load();await notifications.refreshRemote()}
+onMounted(() => { if(knowledgeAvailable)stopKnowledgeImports=startKnowledgeImportBackground(()=>String(auth.user?.userId||'local'));window.addEventListener('note-flow:workspace-change',retryReminderActivation);if(isDesktopClient()){void listen('note-flow-reminder-activated',()=>{void reminderActivation.drain().catch(()=>undefined)}).then(handle=>{unlistenReminderActivation=handle;return reminderActivation.drain()}).catch(()=>undefined);void listen<string>('note-flow-reminder-delivery-error',event=>notifications.add({kind:'notice',title:'系统提醒发送失败',message:event.payload,target:'/tasks',dedupeKey:'task-reminder-delivery'})).then(handle=>unlistenReminderErrors=handle).catch(()=>undefined)} stopNotificationRefresh=startBackgroundRefresh(refreshNotificationCenter,{window,document});window.addEventListener('note-flow:account-data-reset',resetNotificationCenter);void notifications.load().catch(()=>{});startupTimer=window.setTimeout(async()=>{await loadWorkspaceNavigation();await notifications.refreshTaskAlerts();if(auth.user&&syncEnabled.value&&syncAvailable())syncEvents.start()},300);void listen<string>('note-flow-tray-navigate',event=>{if(!appLock.locked.value)void router.push(event.payload)}).then(value=>unlistenTrayNavigation=value).catch(()=>undefined); window.addEventListener('keydown', shortcuts); window.addEventListener('pointerdown', closeFloatingMenus); window.addEventListener('online', updateOnline); window.addEventListener('offline', updateOnline); window.addEventListener('storage', updateSyncPreference); window.addEventListener('note-flow:sync-preference', updateSyncPreference);window.addEventListener('note-flow:workspace-change',workspaceChanged);window.addEventListener(pcSyncResetEvents.pause,pauseSyncForReset);window.addEventListener(pcSyncResetEvents.resume,resumeSyncAfterReset) })
 onBeforeUnmount(() => { stopKnowledgeImports?.();window.removeEventListener('note-flow:workspace-change',retryReminderActivation);reminderActivation.stop();unlistenReminderActivation?.();unlistenReminderErrors?.();stopNotificationRefresh?.();window.removeEventListener('note-flow:account-data-reset',resetNotificationCenter);syncEvents.stop();if(startupTimer!==undefined)window.clearTimeout(startupTimer);unlistenTrayNavigation?.();window.removeEventListener('keydown', shortcuts); window.removeEventListener('pointerdown', closeFloatingMenus); window.removeEventListener('online', updateOnline); window.removeEventListener('offline', updateOnline); window.removeEventListener('storage', updateSyncPreference); window.removeEventListener('note-flow:sync-preference', updateSyncPreference);window.removeEventListener('note-flow:workspace-change',workspaceChanged);window.removeEventListener(pcSyncResetEvents.pause,pauseSyncForReset);window.removeEventListener(pcSyncResetEvents.resume,resumeSyncAfterReset) })
 watch(() => route.fullPath, path => {
   if (!publicPage.value && !settingsPage.value) sessionStorage.setItem('note-flow-pc-last-workspace', path)
@@ -243,7 +249,7 @@ watch(()=>route.query.q,value=>{if(searchPage.value)searchQuery.value=typeof val
 watch(()=>route.path,(path,previous)=>{if(previous==='/search'&&path!=='/search')searchQuery.value=''})
 watch([() => notes.syncPhase, () => notes.syncError], ([phase,error]) => { if(phase==='conflict')notifications.add({kind:'sync',title:'发现同步冲突',message:'有内容需要选择保留版本',target:'/settings',dedupeKey:`conflict:${notes.conflicts.length}`});else if(phase==='error')notifications.add({kind:'sync',title:'同步暂未完成',message:error||'请检查网络与同步设置',target:'/settings',dedupeKey:`sync-error:${error||'connection'}:${new Date().toISOString().slice(0,13)}`}) })
 watch([() => auth.user?.userId, () => syncEnabled.value, () => sessionRecovery.required], ([user, enabled, expired]) => { if (user && enabled && !expired && syncAvailable()) syncEvents.start(); else syncEvents.stop() })
-watch(() => auth.user?.userId, user => { notifications.load();void notifications.refreshRemote();if (!user) return; currentAreaUid.value=localStorage.getItem(areaPreferenceKey())||'';void loadWorkspaceNavigation() })
+watch(() => auth.user?.userId, user => { void notifications.load().catch(()=>{});void notifications.refreshRemote();if (!user) return; currentAreaUid.value=localStorage.getItem(areaPreferenceKey())||'';void loadWorkspaceNavigation() })
 watch(currentAreaUid,value=>{
   localStorage.setItem(areaPreferenceKey(),value)
   notes.invalidate()
@@ -302,7 +308,7 @@ onBeforeUnmount(installNativeFileInputs())
         <div v-if="projectPage" id="project-switcher-anchor"/>
         <label class="global-search">
           <span>⌕</span>
-          <input ref="globalSearchInput" v-model="searchQuery" :placeholder="knowledgeAvailable?'搜索知识、笔记和任务…':'搜索笔记和任务…'" @input="updateSearch" @keyup.enter="openSearch" />
+          <input ref="globalSearchInput" v-model="searchQuery" placeholder="搜索全部内容…" @input="updateSearch" @keyup.enter="openSearch" />
           <button v-if="searchQuery" class="global-search-clear" type="button" title="清空搜索" aria-label="清空搜索" @click="clearSearch">×</button>
           <kbd>Ctrl/⌘ K</kbd>
         </label>
@@ -322,7 +328,7 @@ onBeforeUnmount(installNativeFileInputs())
         </div>
         <div ref="notificationMenu" class="notification-center">
           <button class="topbar-icon notification-trigger" type="button" aria-label="通知中心" :aria-expanded="notificationOpen" @click="toggleNotifications"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><i v-if="notifications.unread">{{notifications.unread>99?'99+':notifications.unread}}</i></button>
-          <NotificationPanel v-if="notificationOpen" :notifications="notifications" @open="openNotification"/>
+          <NotificationPanel v-if="notificationOpen" :notifications="notifications" @settings="notificationOpen=false;router.push({path:'/settings',query:{tab:'sync'}})" @open="openNotification"/>
         </div>
         <div ref="areaMenu" class="sidebar-area-wrap topbar-area-wrap">
           <button class="sidebar-area-trigger topbar-area-trigger" type="button" :aria-expanded="areaOpen" aria-haspopup="dialog" aria-label="切换当前领域" @click.stop="toggleArea"><i :style="{background:currentArea?.color||'#6f8378'}"/><span>{{currentArea?.name||'全部领域'}}</span><b>⌄</b></button>
@@ -354,6 +360,7 @@ onBeforeUnmount(installNativeFileInputs())
     </main>
   </div>
   <AreaManager v-if="areaManagerOpen" :initial-area-uid="currentAreaUid" :start-create="areaManagerCreate" @close="areaManagerOpen=false" @changed="areasManaged" />
+  <GlobalCreateDialog v-if="quickCreateKind" :kind="quickCreateKind" :areas="activeAreas(areas)" :projects="sidebarProjects" :area-uid="createContextArea?.uid" :project-uid="createContextProject?.uid" @close="quickCreateKind=undefined" @created="loadWorkspaceNavigation"/>
   <ProductDialog />
   <ContextMenuHost />
   </div>

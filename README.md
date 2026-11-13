@@ -181,12 +181,17 @@ Web 产物位于 `apps/desktop/dist-community/`，部署整个目录，入口为
 # 只构建 Web 交付文件
 pwsh -NoProfile -File scripts/build-pc.ps1 -WebOnly
 
-# Linux：同时生成 DEB 安装包与 AppImage 免安装包
+# Linux开发：只生成DEB安装包和manifest
+pwsh -NoProfile -File scripts/build-pc.ps1 -Bundles deb -InstallerOnly
+
+# Linux生产发布：DEB安装包与AppImage免安装包
 pwsh -NoProfile -File scripts/build-pc.ps1 -Bundles all
 
 # Windows：NSIS 安装器与含应用载荷、可再分发 CRT 的绿色包
 pwsh -NoProfile -File scripts/build-pc.ps1 -Bundles nsis
 ```
+
+Linux也可使用Ubuntu22.04容器入口：开发执行`bash scripts/build-pc.sh --bundles deb`（默认deb），生产执行`bash scripts/build-pc.sh --bundles all`。独立社区工程只校验自身版本，不需要官方私有目录；必要测试保持，开发仅DEB时不生成Web ZIP。
 
 Windows 绿色包制作另需 7-Zip、Visual Studio 可再分发 CRT；运行时需 Windows 10/11 x64 和 WebView2。绿色包免安装应用本身，但数据仍在正常的用户目录，不能用它隔离已有空间。macOS 原生双格式交付尚未验证，暂不宣称已支持。
 

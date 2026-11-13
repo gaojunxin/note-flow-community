@@ -46,5 +46,6 @@
   "services/knowledgeRoutes.ts": "community/adapters/knowledgeRoutes.ts",
   "services/knowledgeCanvasAdapters.ts": "community/adapters/knowledgeCanvasAdapters.ts",
   "services/knowledgeStartup.ts": "community/adapters/knowledgeStartup.ts",
-  "services/knowledgeDownload.ts": "community/adapters/knowledgeDownload.ts"
+  "services/knowledgeDownload.ts": "community/adapters/knowledgeDownload.ts",
+  "services/readingProgress.ts": "community/adapters/readingProgress.ts"
 }

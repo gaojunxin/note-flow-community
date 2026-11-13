@@ -73,7 +73,7 @@ async function goTo(target:number,offset=0,point?:{left:number|null;top:number|n
   // 程序滚动事件在本帧处理完后才恢复进度写入，避免把恢复位置误认为用户的新阅读操作。
   await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()))
   if(request!==generation||token!==navigation)return false
-  restoring=false;if(persist)savePosition();return true
+  restoring=false;if(persist)await savePosition();return true
  }finally{if(request===generation&&token===navigation)restoring=false}
 }
 async function loadOutline(pdf:PDFDocumentProxy,request:number){
@@ -94,11 +94,13 @@ async function selectOutline(entry:PdfOutlineEntry){
  finally{if(request===generation&&token===outlineNavigation)outlineBusy.value=false}
 }
 function dispose(){navigation++;layoutRevision++;visiblePages.value=new Set();pdfDocument.value=undefined;void task?.destroy().catch(()=>undefined);task=undefined}
-function savePosition(){
+async function savePosition(){
  if(restoring||!pages.value||!sha||!progress)return
- try{progress.save(sha,position());positionRevision++;progressSaveFailed.value=false;progressNeedsSync.value=true;progressMessage.value='阅读进度已保存在本机';scheduleSync()}catch{progressSaveFailed.value=true;progressMessage.value='阅读进度保存失败，请检查本机存储空间'}
+ const active=progress,key=sha,request=generation,revision=++positionRevision,value=position()
+ progressMessage.value='正在保存阅读进度…'
+ try{await active.save(key,value);if(request!==generation||revision!==positionRevision)return;progressSaveFailed.value=false;progressNeedsSync.value=true;progressMessage.value='阅读进度已保存在本机';scheduleSync()}catch{if(request!==generation||revision!==positionRevision)return;progressSaveFailed.value=true;progressMessage.value='阅读进度尚未保存，请检查本机存储后重试'}
 }
-function scheduleSync(){clearTimeout(syncTimer);const active=progress,key=sha,request=generation;syncTimer=setTimeout(()=>{void active?.sync(key).then(()=>{if(request!==generation)return;progressConflict.value=Boolean(active.conflict());if(active.read(key)?.dirty===false){progressNeedsSync.value=false;progressMessage.value='阅读进度已同步'}else if(active.read(key)?.dirty&&active.cloudEnabled&&!active.conflict())scheduleSync()}).catch(()=>{if(request===generation)progressMessage.value='阅读进度已保存在本机，联网后重试同步'})},800)}
+function scheduleSync(){clearTimeout(syncTimer);const active=progress,key=sha,request=generation;syncTimer=setTimeout(()=>{void active?.sync(key).then(async()=>{if(request!==generation)return;const row=await active.read(key);if(request!==generation)return;progressConflict.value=Boolean(active.conflict());if(row?.dirty===false){progressNeedsSync.value=false;progressMessage.value=row.version>0?'阅读进度已同步':'阅读进度已保存在本机'}else if(row?.dirty&&active.cloudEnabled&&!active.conflict())scheduleSync()}).catch(()=>{if(request===generation)progressMessage.value=progressSaveFailed.value?'阅读进度尚未保存，请保留文档并重试':'阅读进度已保存在本机，联网后重试同步'})},800)}
 function userInteracted(){positionRevision++;if(restoring){navigation++;restoring=false}}
 function scrolled(){
  if(restoring){updateVisible(false);return}
@@ -106,7 +108,7 @@ function scrolled(){
  positionRevision++;updateVisible();clearTimeout(scrollTimer);scrollTimer=setTimeout(savePosition,300)
 }
 async function restorePosition(value:ReadingPosition|null){if(value)await goTo(Math.min(pages.value,value.page),value.offset,undefined,false)}
-async function resolveProgress(useCloud:boolean){const value=progress?.resolve(sha,useCloud);progressConflict.value=false;if(useCloud&&value)await restorePosition(value);else scheduleSync()}
+async function resolveProgress(useCloud:boolean){const request=generation;try{const value=await progress?.resolve(sha,useCloud);if(request!==generation)return;progressConflict.value=false;progressSaveFailed.value=false;progressNeedsSync.value=Boolean(value?.dirty);progressMessage.value=value&&!value.dirty&&value.version>0?'阅读进度已同步':'阅读进度已保存在本机';if(useCloud&&value)await restorePosition(value);if(request===generation&&(!useCloud||value?.dirty))scheduleSync()}catch(source){if(request===generation)progressMessage.value=source instanceof Error?source.message:'阅读进度冲突尚未解决'}}
 async function load(){
  savePosition();if(sha)void progress?.sync(sha).catch(()=>{});clearTimeout(syncTimer);clearTimeout(scrollTimer)
  const request=++generation;outlineNavigation++;outline.value=[];outlineOpen.value=false;outlineBusy.value=false;outlineError.value='';dispose()
@@ -120,10 +122,13 @@ async function load(){
   pdfDocument.value=pdf;pages.value=pdf.numPages;loading.value=false;void loadOutline(pdf,request)
   await nextTick();if(request!==generation)return
   if(stage.value){viewportWidth.value=stage.value.clientWidth||800;viewportHeight.value=stage.value.clientHeight}
-  const local=progress.read(sha);await goTo(local?.page||1,local?.offset||0,undefined,false)
+  const activeProgress=progress;let local:Awaited<ReturnType<typeof activeProgress.read>>=null
+  try{local=await activeProgress.read(sha)}catch{if(request===generation){progressSaveFailed.value=true;progressMessage.value='本机阅读进度暂不可用，当前位置尚未保存'}}
+  if(request!==generation)return
+  await goTo(local?.page||1,local?.offset||0,undefined,false)
   if(request!==generation)return
   const active=progress,key=sha,revision=positionRevision
-  void active.open(key).then(async value=>{if(request!==generation)return;progressConflict.value=Boolean(active.conflict());if(positionRevision===revision&&value&&!value.dirty)await restorePosition(value);if(request!==generation)return;if(!active.conflict())scheduleSync()}).catch(()=>{if(request===generation)progressMessage.value='使用本机阅读进度，云端暂不可用'})
+  void active.open(key).then(async value=>{if(request!==generation)return;progressConflict.value=Boolean(active.conflict());if(positionRevision===revision&&value&&!value.dirty)await restorePosition(value);if(request!==generation)return;if(!active.conflict())scheduleSync()}).catch(()=>{if(request===generation)progressMessage.value=progressSaveFailed.value?'本机阅读进度暂不可用，当前位置尚未保存':'使用本机阅读进度，云端暂不可用'})
  }catch(source){if(request===generation){error.value=pdfPreviewError(source);emit('error',error.value)}}
  finally{if(request===generation)loading.value=false}
 }

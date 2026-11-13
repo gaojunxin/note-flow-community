@@ -10,7 +10,7 @@ import {reviewConsolidationSources} from '../services/consolidationReview'
 import {consolidationInput,noteStamp} from '../services/noteConsolidation'
 import {generateConsolidation} from '../services/noteConsolidationAi'
 import {aiDataScope} from '../services/aiDataScope'
-import {createConsolidationDrafts,consolidationSourceHash,clearConsolidationDrafts,type ConsolidationDraft} from '../services/consolidationDraft'
+import {createConsolidationDrafts,consolidationSourceHash,type ConsolidationDraft} from '../services/consolidationDraft'
 import {registerLocalDraftGuard} from '../services/localDraftLifecycle'
 import {useNotesStore} from '../stores/notes'
 const RecoveryPanel=defineAsyncComponent(()=>import('./ConsolidationRecoveryPanel.vue'))
@@ -42,7 +42,7 @@ watch([title,content,folderUid,mode,instruction,draftReady,operationUid],schedul
 async function closeDialog(){try{clearTimeout(draftTimer);await persistDraft();emit('close')}catch{error.value='本机保存失败，尚未关闭；请先复制整合稿'}}
 async function restoreDraft(){const value=savedDraft.value;if(!value)return;if(!value.operationUid&&value.sourceHash!==await sourceHash){error.value='来源已变化，无法恢复此次替换；请重新生成整合稿';return}mode.value=value.mode;instruction.value=value.instruction;await nextTick();title.value=value.title;content.value=value.content;folderUid.value=value.folderUid;draftReady.value=value.ready;operationUid.value=value.operationUid;pendingRequest=value.request;savedDraft.value=undefined;consent.value=false;replacementConsent.value=false;message.value=value.operationUid?'存在结果待确认的提交，请重试确认替换或查看最近整合记录':'已恢复本机整合稿，请重新审阅后操作'}
 async function discardDraft(){if(savedDraft.value?.operationUid){error.value='此次提交结果尚未确认，请先恢复并重试，避免重复替换';return}try{await drafts.clear();savedDraft.value=undefined}catch{error.value='清除本机整合稿失败'}}
-function resetDraft(){suppressDraft=true;controller?.abort();content.value='';savedDraft.value=undefined;void draftWrites.catch(()=>undefined).then(()=>clearConsolidationDrafts(draftScope)).catch(()=>undefined)}
+function resetDraft(){suppressDraft=true;controller?.abort();content.value='';savedDraft.value=undefined;void draftWrites.catch(()=>undefined)}
 const unregisterDraft=registerLocalDraftGuard({}, {flush:persistDraft,dirty:()=>Boolean(content.value&&!suppressDraft)})
 let controller:AbortController|undefined
 watch([mode,instruction],()=>{consent.value=false;draftReady.value=false})

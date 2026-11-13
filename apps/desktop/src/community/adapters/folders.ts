@@ -27,6 +27,7 @@ export function validateFolderPromotion(children: FolderEntity[], parent: Folder
 }
 export const foldersService = {
   // 社区本地目录移动沿用move；服务端迁移和AI批量写入不能冒充本机已执行。
+  async loadPendingTreeTransfer(_uid:string):Promise<{sent:boolean;request:{operationUid:string;target:FolderTransferTarget};impact:FolderTransferImpact}|undefined>{return undefined},
   pendingTreeTransfer(_uid:string):{sent:boolean;request:{operationUid:string;target:FolderTransferTarget};impact:FolderTransferImpact}|undefined{return undefined},
   async treeTransferPreview(_root:FolderEntity,_target:FolderTransferTarget):Promise<FolderTransferImpact>{throw Error('社区版不提供跨空间整棵迁移')},
   async transferTree(..._args:unknown[]):Promise<FolderTransferImpact>{throw Error('社区版不提供跨空间整棵迁移')},

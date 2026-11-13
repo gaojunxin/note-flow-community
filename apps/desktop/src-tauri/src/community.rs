@@ -120,6 +120,14 @@ pub fn run(context: tauri::Context<tauri::Wry>) {
             let store = LocalStore::open(directory.join("community-workspace-v1.sqlite"))
                 .map_err(|_| std::io::Error::other("Community local storage cannot be opened"))?;
             app.manage(Storage(Arc::new(Mutex::new(store))));
+            // 主实体仍由LocalStore持有；历史/草稿/恢复资料使用公共AppCore仓储，不导入官方同步装配。
+            // 两类表不互相写入：旧IDB辅助资料只按各自迁移标记进入当前community profile。
+            app.manage(crate::app_core::AppCore::with_database_root(
+                directory.clone(), app.path().app_config_dir()?, 32,
+            ));
+            app.manage(crate::startup::StartupTimeline::new(
+                directory.join("startup-latest.json"), std::time::Instant::now(),
+            ));
             let config = &app.config().app.windows[0];
             tauri::WebviewWindowBuilder::from_config(app, config)?
                 .on_web_resource_request(|request, response| {
@@ -153,6 +161,19 @@ pub fn run(context: tauri::Context<tauri::Wry>) {
             crate::choose_native_import_files,
             crate::choose_knowledge_import_folder,
             community_local_request,
+            crate::commands::core::core_profile_open,
+            crate::commands::core::core_profile_close,
+            crate::commands::core::core_metrics_snapshot,
+            crate::commands::native::native_business_state_read,
+            crate::commands::native::native_business_state_list,
+            crate::commands::native::native_business_state_write,
+            crate::commands::review::native_review_repository,
+            crate::commands::learning::native_learning_repository,
+            crate::commands::learning_actions::native_learning_actions,
+            crate::commands::learning_execution::native_learning_execution,
+            crate::commands::client_intents::native_client_intents,
+            crate::commands::captures::native_capture_store,
+            crate::commands::captures::native_capture_bytes,
             community_close_confirmed,
             community_save_file,
             community_reminder_permission,

@@ -16,3 +16,5 @@ pub use migrations::{run_migrations, LATEST_SCHEMA_VERSION};
 pub use sqlite::{open_profile_database, profile_database_path, SqliteConnection};
 
 pub mod local_transaction;
+
+pub(crate) mod legacy_profile;

@@ -1,6 +1,6 @@
 [package]
 name = "note-flow-community-desktop"
-version = "0.12.18"
+version = "0.13.2"
 edition = "2021"
 description = "Note Flow community local desktop shell"
 publish = false

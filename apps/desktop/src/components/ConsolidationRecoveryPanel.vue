@@ -16,7 +16,7 @@ let active=true
 const current=()=>active&&scope===aiDataScope()&&revision===accountSessionRevision()
 function assertScope(){if(!current())throw Error('账号或空间已切换，请重新打开整合记录')}
 async function refresh(){try{assertScope();const values=await listConsolidationDrafts(scope);assertScope();rows.value=values}catch{if(current())message.value='无法读取本机整合稿，请检查存储权限'}}
-const drafts=(row:ConsolidationDraft)=>createConsolidationDrafts(scope,consolidationDraftSources(row))
+const drafts=(row:ConsolidationDraft)=>createConsolidationDrafts(scope,consolidationDraftSources(row),row)
 async function continueEditing(row:ConsolidationDraft){busy.value=true;message.value='';try{assertScope();const service=store.service(),notes=await Promise.all(consolidationDraftSources(row).map(uid=>service.get(uid)));assertScope();if(notes.some(note=>!note||note.deleted))throw Error('部分来源已不存在；可以先查看整合稿，再另存为新笔记');editing.value=notes as NoteEntity[]}catch(source){if(current())message.value=source instanceof Error?source.message:'无法恢复整合稿'}finally{busy.value=false}}
 async function saveCopy(row:ConsolidationDraft){if(row.operationUid)return;busy.value=true;message.value='';try{assertScope();const service=store.service();const note=await service.create({title:row.title.trim()||'整合笔记',content:row.content,type:'note',contentFormat:'markdown',captureSource:'ai_consolidation'});assertScope();await drafts(row).clear();await store.reloadLocal();assertScope();emit('changed',note.uid);message.value='整合稿已另存为新笔记，来源未修改';await refresh()}catch(source){if(current())message.value=source instanceof Error?source.message:'保存失败'}finally{busy.value=false}}
 async function retry(row:ConsolidationDraft){

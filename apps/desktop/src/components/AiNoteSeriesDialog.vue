@@ -15,7 +15,7 @@ import {folderPath,sameFolderScope} from '../services/folderDestinations'
 import {createPcNotesService} from '../services/notes'
 import {aiClientConfig,directAiCompletion} from '../services/aiClientConfig'
 import {aiDataScope} from '../services/aiDataScope'
-import {accountSessionRevision} from '../services/accountStorage'
+import {accountLifecycleRevision} from '../services/accountStorage'
 import {seriesDraftStore} from '../services/aiNoteSeriesDraft'
 import {applyNoteSeries,newSeriesProgress,seriesFolderPath,validateNoteSeries,type NoteSeries,type SeriesScope,type SeriesFolder} from '../services/aiNoteSeries'
 import {useNotesStore} from '../stores/notes'
@@ -25,7 +25,7 @@ import FolderTreeSelect from './FolderTreeSelect.vue'
 import MarkdownEditor from './MarkdownEditor.vue'
 import MarkdownPreview from './MarkdownPreview.vue'
 const props=defineProps<{ownerId:string;session:LearningSession;throughUid?:string;draftKey?:string;recordResult?:(uids:string[])=>Promise<void>;initialInstruction?:string;initialAreaUid?:string|null;initialProjectUid?:string|null;initialFolderUid?:string}>(),emit=defineEmits<{close:[];created:[uids:string[]]}>()
-const boundScope=aiDataScope(),boundSession=accountSessionRevision(),approvedModel=JSON.stringify(aiClientConfig()),store=seriesDraftStore(boundScope,props.draftKey?props.session.uid+':'+props.draftKey:props.session.uid),service=createPcNotesService(props.ownerId)
+const boundScope=aiDataScope(),boundSession=accountLifecycleRevision(),approvedModel=JSON.stringify(aiClientConfig()),store=seriesDraftStore(boundScope,props.draftKey?props.session.uid+':'+props.draftKey:props.session.uid),service=createPcNotesService(props.ownerId)
 const plan=ref<NoteSeries>(),instruction=ref(props.initialInstruction||''),consent=ref(false),busy=ref(false),loading=ref(true),blocked=ref(false),error=ref(''),status=ref(''),folderRows=ref<FolderEntity[]>([]),areas=ref<AreaEntity[]>([]),projects=ref<ProjectEntity[]>([]),areaUid=ref(props.initialAreaUid||''),projectUid=ref(props.initialProjectUid||''),baseUid=ref(props.initialFolderUid||''),allowSameTitle=ref(false),activeKey=ref(''),mode=ref<'source'|'preview'>('preview'),progress=ref(newSeriesProgress())
 let alive=true,controller:AbortController|undefined,releaseLock:(()=>void)|undefined,frozenBase:FolderEntity|undefined,saveQueue=Promise.resolve()
 const target=computed<SeriesScope>(()=>({areaUid:areaUid.value||null,projectUid:projectUid.value||null})),availableProjects=computed(()=>projects.value.filter(p=>(p.areaUid||'')===areaUid.value&&p.status!=='archived')),availableFolders=computed(()=>folderRows.value.filter(f=>sameFolderScope(f,target.value))),base=computed(()=>availableFolders.value.find(f=>f.uid===baseUid.value)),active=computed(()=>plan.value?.notes.find(n=>n.key===activeKey.value)),selected=computed(()=>plan.value?.notes.filter(n=>n.selected)||[])
@@ -37,14 +37,14 @@ const tree=computed(()=>{const rows:{key:string;kind:'folder'|'note';name:string
  function walk(parent:string|null,depth:number){for(const folder of plan.value!.folders.filter(f=>f.parentKey===parent)){rows.push({key:'folder:'+folder.key,kind:'folder',name:folder.name,depth});walk(folder.key,depth+1)}for(const note of plan.value!.notes.filter(n=>n.folderKey===parent))rows.push({key:note.key,kind:'note',name:note.title,depth,noteKey:note.key})}walk(null,0);return rows})
 const basePath=computed(()=>base.value?folderPath(base.value,availableFolders.value):'根目录')
 const notePath=(key:string|null)=>[base.value?folderPath(base.value,availableFolders.value):'',plan.value?seriesFolderPath(plan.value,key):''].filter(Boolean).join(' / ')||'根目录'
-function check(){if(!alive||aiDataScope()!==boundScope||accountSessionRevision()!==boundSession)throw Error('账号或空间已变化，请重新打开系列笔记')}
+function check(){if(!alive||aiDataScope()!==boundScope||accountLifecycleRevision()!==boundSession)throw Error('账号或空间已变化，请重新打开系列笔记')}
 function persist(){if(!plan.value)return saveQueue;check();const snapshot=JSON.parse(JSON.stringify({plan:plan.value,target:target.value,base:progress.value.started?frozenBase:base.value,progress:progress.value,allowSameTitle:allowSameTitle.value,instruction:instruction.value}));const next=saveQueue.catch(()=>{}).then(()=>store.save(snapshot));saveQueue=next;return next}
 watch([plan,areaUid,projectUid,baseUid,allowSameTitle,instruction],()=>{if(!loading.value&&!busy.value&&!blocked.value&&plan.value)void persist().catch(e=>{error.value=e instanceof Error?e.message:'本机草稿保存失败'})},{deep:true})
 async function close(){if(busy.value)return;try{if(!blocked.value)await persist();emit('close')}catch(e){error.value=e instanceof Error?e.message:'草稿保存失败，未关闭'}}
 function changeArea(){projectUid.value='';baseUid.value=''}
 function changeProject(){baseUid.value=''}
 onMounted(async()=>{try{
- // Hold a cross-window lock for this discussion's editable draft, including retries.
+ // 讨论草稿在编辑和重试期间持有跨窗口锁；无锁环境仍由仓储比较基线防覆盖。
  if(navigator.locks){let acquired!:(ok:boolean)=>void;const ready=new Promise<boolean>(resolve=>acquired=resolve);void navigator.locks.request('note-flow-series:'+JSON.stringify([boundScope,props.session.uid]),{ifAvailable:true},async lock=>{acquired(Boolean(lock));if(lock)await new Promise<void>(resolve=>{releaseLock=resolve;if(!alive)resolve()})}).catch(()=>acquired(false));if(!await ready){blocked.value=true;throw Error('此讨论的系列草稿正在另一个窗口编辑，请先关闭该窗口')}}
  await useNotesStore().flushPendingSaves();check()
  const [folders,a,p,saved]=await Promise.all([foldersService.list(),workspaceService.areas(),workspaceService.projects(undefined,true),store.read()]);check();folderRows.value=folders;areas.value=a.filter(v=>!v.archived);projects.value=p
@@ -63,7 +63,7 @@ async function generate(){if(busy.value||!consent.value||progress.value.started|
  }catch(e){error.value=e instanceof Error?e.message:'生成失败'}finally{busy.value=false;controller=undefined}}
 async function apply(){if(busy.value||!plan.value||blocked.value)return;busy.value=true;error.value='';status.value='正在创建，已完成的笔记会保留…'
  try{check();if((areaUid.value&&!areas.value.some(a=>a.uid===areaUid.value))||(projectUid.value&&!availableProjects.value.some(p=>p.uid===projectUid.value)))throw Error('保存领域或项目不可用，请检查保存位置')
- // Revalidate edits before any write; retain the original stable UIDs and selection.
+ // 写入前重新校验编辑内容，但必须保留原固定UID和选择，不能把重试变成新建。
  const validated=validateNoteSeries(JSON.stringify(plan.value));validated.notes=validated.notes.map(n=>({...n,uid:plan.value!.notes.find(old=>old.key===n.key)!.uid,selected:plan.value!.notes.find(old=>old.key===n.key)!.selected}));plan.value=validated
  if(!progress.value.started)frozenBase=base.value
  await applyNoteSeries(plan.value,target.value,frozenBase,progress.value,allowSameTitle.value,{check,save:persist,folders:()=>foldersService.list(),notes:async()=>[...await service.list('active'),...await service.list('archived')],get:uid=>service.get(uid),createFolder:(name,parentId,scope)=>foldersService.create(name,parentId,scope),createNote:(note,options)=>service.create(note,options)})

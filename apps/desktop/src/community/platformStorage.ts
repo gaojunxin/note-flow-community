@@ -5,7 +5,7 @@ import {CoreProviderError} from '@note-flow/core/community'
 import type {CoreErrorCode} from '@note-flow/core/contracts'
 
 type LocalInvoke = (command: string, args: Record<string, unknown>) => Promise<unknown>
-type DesktopWindow = Window & {__TAURI_INTERNALS__?: unknown; __TAURI__?: {core?: {invoke?: LocalInvoke}}}
+type DesktopWindow = Window & {isTauri?: boolean; __TAURI_INTERNALS__?: unknown; __TAURI__?: {core?: {invoke?: LocalInvoke}}}
 export function createCommunityStorage(databaseName: string) {
   if (Capacitor.isNativePlatform()) {
     const plugin = registerPlugin<{request(input: {input: string}): Promise<{result: unknown}>}>('CommunityLocal')
@@ -19,7 +19,9 @@ export function createCommunityStorage(databaseName: string) {
     }})
   }
   const platform = window as DesktopWindow
-  if (!platform.__TAURI_INTERNALS__) return createIndexedDbLocalHost(databaseName)
+  // 原生壳即使桥接尚不可用也必须失败，不能在同一空间悄悄建立浏览器写库。
+  const desktop = Boolean(platform.isTauri || platform.__TAURI_INTERNALS__ || platform.__TAURI__ || platform.location?.hostname === 'tauri.localhost')
+  if (!desktop) return createIndexedDbLocalHost(databaseName)
   const invoke = platform.__TAURI__?.core?.invoke
   return createNativeLocalHost({async request(input) {
     if (!invoke) throw new CoreProviderError('STORAGE_ERROR', '社区桌面本地仓储接口不可用')

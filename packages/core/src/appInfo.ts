@@ -1,4 +1,4 @@
-const release = {"version":"0.12.18","versionCode":12018,"channel":"development"} as const
+const release = {"version":"0.13.2","versionCode":13002,"channel":"development"} as const
 
 /** Bundled at build time so an installed client reports its own release. */
 export const appInfo = Object.freeze({

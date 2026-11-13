@@ -1,8 +1,10 @@
 [CmdletBinding()]
-param([switch]$SkipInstall,[switch]$WebOnly,[ValidateSet('all','nsis','msi','deb')][string]$Bundles='all')
+param([switch]$SkipInstall,[switch]$WebOnly,[switch]$InstallerOnly,[ValidateSet('all','nsis','msi','deb')][string]$Bundles='all')
 $ErrorActionPreference = 'Stop'
-# 原生交付必须同时包含安装与免安装格式，不能把Web资源ZIP当作免安装应用。
-if (-not $WebOnly -and $IsLinux -and $Bundles -ne 'all') { throw 'Linux社区原生交付需要DEB和AppImage，请使用 -Bundles all。' }
+# Ubuntu开发默认仅DEB；显式all用于生产双格式，Windows继续使用安装器与绿色包。
+if ($IsLinux -and -not $PSBoundParameters.ContainsKey('Bundles')) { $Bundles='deb'; $InstallerOnly=$true }
+if ($InstallerOnly -and ($WebOnly -or -not $IsLinux -or $Bundles -ne 'deb')) { throw 'InstallerOnly仅用于Linux DEB开发包。' }
+if (-not $WebOnly -and $IsLinux -and $Bundles -ne 'all' -and -not $InstallerOnly) { throw 'Linux开发请使用 -Bundles deb -InstallerOnly；生产请使用 -Bundles all。' }
 if (-not $WebOnly -and $IsWindows -and $Bundles -notin @('all','nsis')) { throw 'Windows社区原生交付需要NSIS与绿色包，请使用 -Bundles nsis 或 all。' }
 if (-not $WebOnly -and -not $IsLinux -and -not $IsWindows) { throw '当前社区原生交付脚本只验证Windows/Linux流程，其他平台请使用 -WebOnly。' }
 $repo = Split-Path -Parent $PSScriptRoot
@@ -22,9 +24,14 @@ try {
     try {
       cargo test --locked --manifest-path Cargo.toml
       if ($LASTEXITCODE) { throw '社区桌面原生测试失败' }
-      # all 是社区双格式交付约定，不能依赖仅声明DEB的Tauri默认配置。
-      $nativeBundles = if ($IsLinux) { 'deb,appimage' } else { 'nsis' }
+      # 显式选择本轮格式；不能从旧缓存补齐本轮未生成的安装包。
+      $nativeBundles = if ($IsLinux) { if($InstallerOnly){'deb'}else{'deb,appimage'} } else { 'nsis' }
       $argsList = @('build','--bundles',$nativeBundles)
+      $currentBundleRoot = Join-Path $target ('release/bundle/' + $(if($InstallerOnly){'deb'}else{''}))
+      if(Test-Path -LiteralPath $currentBundleRoot){
+        if(!([IO.Path]::GetFullPath($currentBundleRoot).StartsWith([IO.Path]::GetFullPath($target)+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase))){throw 'bundle清理路径越界'}
+        Remove-Item -LiteralPath $currentBundleRoot -Recurse -Force
+      }
       $cli = Join-Path $repo 'node_modules/.bin/tauri'
       if ($IsWindows) { $cli += '.cmd' }
       & $cli @argsList
@@ -53,15 +60,15 @@ try {
     $portableFiles = @(Get-ChildItem -LiteralPath $portableStage -File -Filter '*-portable.zip')
     if ($portableFiles.Count -ne 1) { throw '未生成当前社区绿色包。' }
   }
-  if (-not $WebOnly -and $IsLinux) {
+  if (-not $WebOnly -and $IsLinux -and -not $InstallerOnly) {
     if (-not @($installers | Where-Object Extension -eq '.deb').Count -or -not @($installers | Where-Object Extension -eq '.AppImage').Count) { throw '缺少DEB或AppImage，社区原生交付不完整。' }
   }
   $output = Join-Path $repo "artifacts/pc/$($version.version)/community"
   New-Item -ItemType Directory -Force -Path $output | Out-Null
   Get-ChildItem $output -File | Remove-Item -Force
   $archive = Join-Path $output "NoteFlow-$($version.version)-community-web.zip"
-  Compress-Archive -Path (Join-Path $repo 'apps/desktop/dist-community/*') -DestinationPath $archive -Force
+  if(-not $InstallerOnly){Compress-Archive -Path (Join-Path $repo 'apps/desktop/dist-community/*') -DestinationPath $archive -Force}
   foreach ($installer in @($installers) + @($portableFiles)) { Copy-Item $installer.FullName $output -Force }
   $files = @(Get-ChildItem $output -File | ForEach-Object { @{name=$_.Name;kind=$(if($_.Name -match '-portable.zip$' -or $_.Extension -eq '.AppImage'){'portable'}elseif($_.Extension -in '.exe','.msi','.deb','.rpm','.dmg'){'installer'}else{'web-resources'});size=$_.Length;sha256=(Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant()} })
-  [ordered]@{edition='community';product='pc';version=$version.version;channel=$version.channel;contractVersion=1;storageSchemaVersion=1;builtAt=(Get-Date).ToUniversalTime().ToString('o');files=$files} | ConvertTo-Json -Depth 8 | Set-Content (Join-Path $output 'manifest.json') -Encoding utf8
+  [ordered]@{edition='community';product='pc';version=$version.version;channel=$version.channel;contractVersion=1;storageSchemaVersion=1;builtAt=(Get-Date).ToUniversalTime().ToString('o');installerOnly=[bool]$InstallerOnly;packageFormats=$(if($WebOnly){@('web-resources')}elseif($InstallerOnly){@('installer')}else{@('installer','portable')});files=$files} | ConvertTo-Json -Depth 8 | Set-Content (Join-Path $output 'manifest.json') -Encoding utf8
 } finally { Pop-Location }

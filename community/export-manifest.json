@@ -65,6 +65,8 @@
     "src/readingProgress.ts",
     "src/pdfOutline.ts",
     "src/contracts/knowledgeCards.ts",
-    "src/readerFind.ts"
+    "src/readerFind.ts",
+    "src/asyncReadingProgress.ts",
+    "src/taskNoteStore.ts"
   ]
 }

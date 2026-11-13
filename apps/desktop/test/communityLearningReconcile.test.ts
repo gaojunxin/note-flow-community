@@ -2,6 +2,8 @@ import 'fake-indexeddb/auto'
 import {expect, it, vi} from 'vitest'
 const mock = vi.hoisted(()=>({scope:'', complete:vi.fn()}))
 vi.mock('../src/services/aiClientConfig', ()=>({aiLocalScope:()=>mock.scope, aiClientConfig:()=>({channel:'local',model:'synthetic'}), directAiCompletion:mock.complete}))
+vi.mock('../src/services/clientContext',()=>({clientOwnerScope:()=>mock.scope}))
+vi.mock('../src/services/accountStorage',()=>({readAccountSetting:()=>'{"userId":"synthetic"}',accountLifecycleRevision:()=>0}))
 import {stageCommunityLearning, captureCommunityLearning, type CommunityLearningBackup} from '../src/community/learningBackup'
 import {localLearningService} from '../src/services/localAiLearning'
 import type {LearningSession} from '@note-flow/core/ai-learning'

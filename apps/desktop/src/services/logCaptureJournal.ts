@@ -1,10 +1,10 @@
-import {openDB} from 'idb'
+import {logCaptureStorage} from './logCaptureStorage'
 import {localDateKey} from '../reviews/reviewWorkbench'
 import {blobDigest} from './blobDigest'
 import {quickLogPeriodKey,quickLogPeriodDay,type NoteEntity} from '@note-flow/core'
 export type LogCaptureInput=Partial<NoteEntity>&{uid:string;title:string;content:string}
 export interface LogCaptureJournal {schema:1;scope:string;operationUid:string;input:LogCaptureInput;text:string;files:{uid:string;name:string;type:string;lastModified:number;blob:Blob}[];createdAt:string;committed?:boolean}
-const database=()=>openDB('note-flow-log-capture-recovery',1,{upgrade(db){db.createObjectStore('captures',{keyPath:'scope'})}})
+const storage=(scope:string,staged=false,noMigration=false)=>logCaptureStorage(scope,assertLogCaptureJournal,staged,noMigration)
 export class LogCaptureValidationError extends Error{}
 const validUid=(value:unknown)=>typeof value==='string'&&/^[a-zA-Z0-9_-]{1,128}$/.test(value)
 function assertLogCaptureHeader(value:unknown,scope:string):asserts value is LogCaptureJournal{
@@ -23,13 +23,14 @@ export function prepareLogCapture(scope:string,input:LogCaptureInput,text:string
  const now=new Date(),day=localDateKey(now)
  return {schema:1,scope,operationUid:crypto.randomUUID(),input:JSON.parse(JSON.stringify({periodKey:quickLogPeriodKey(day,input.uid),...input})),text,files:files.map(file=>({uid:crypto.randomUUID(),name:file.name,type:file.type,lastModified:file.lastModified,blob:file.slice()})),createdAt:now.toISOString()}
 }
-export async function readLogCapture(scope:string):Promise<LogCaptureJournal|undefined>{const db=await database();try{const row=await db.get('captures',scope);if(row!==undefined)assertLogCaptureJournal(row,scope);return row}finally{db.close()}}
-/** Persist all selected bytes before creating any note. Never replace an older unfinished operation. */
-export async function saveLogCapture(row:LogCaptureJournal){assertLogCaptureJournal(row,row.scope);const db=await database();try{const tx=db.transaction('captures','readwrite');if(await tx.store.get(row.scope)){await tx.done;throw Error('已有未完成日志，请先恢复或放弃')}await tx.store.add(row);await tx.done}finally{db.close()}}
-export async function clearLogCapture(scope:string,operationUid:string){const db=await database();try{const tx=db.transaction('captures','readwrite'),row=await tx.store.get(scope) as LogCaptureJournal|undefined;if(row?.operationUid===operationUid)await tx.store.delete(scope);await tx.done}finally{db.close()}}
-export async function clearLogCaptureOwner(scope:string){const db=await database();try{const tx=db.transaction('captures','readwrite');let cursor=await tx.store.openCursor();while(cursor){if(cursor.value.scope===scope||cursor.value.scope.startsWith(scope+':reset:'))await cursor.delete();cursor=await cursor.continue()}await tx.done}finally{db.close()}}
+export async function readLogCapture(scope:string):Promise<LogCaptureJournal|undefined>{const row=await(await storage(scope)).read();if(row!==undefined)assertLogCaptureJournal(row,scope);return row}
+/** 笔记副作用前先提交全部附件及元数据，不能覆盖另一条未完成操作。 */
+export async function saveLogCapture(row:LogCaptureJournal){assertLogCaptureJournal(row,row.scope);return(await storage(row.scope)).save(row)}
+export async function clearLogCapture(scope:string,operationUid:string){return(await storage(scope)).clear(operationUid)}
+/** 显式抹除涵盖旧重置世代；先保留原生退役标记，旧IDB不能再次成为活跃来源。 */
+export async function clearLogCaptureOwner(scope:string){const port=await storage(scope,false,true);for(const item of [...new Set([scope,...await port.scopes()])]){port.check();await(await storage(item,false,true)).erase()}}
 export function recoveredLogFiles(row:LogCaptureJournal){assertLogCaptureJournal(row,row.scope);return row.files.map(file=>new File([file.blob],file.name,{type:file.type,lastModified:file.lastModified}))}
-/** A recovered commit is accepted only if it still represents the original capture. */
+/** 恢复只接受仍代表原采集内容的笔记；已确认提交后缺失不能自动重建。 */
 export async function recoverLogNote(row:LogCaptureJournal,service:{get(uid:string):Promise<NoteEntity|undefined>;create(input:LogCaptureInput,options?:{ifAbsent?:boolean}):Promise<NoteEntity>},assertCurrent:()=>void){
  assertLogCaptureJournal(row,row.scope)
  const verify=(note:NoteEntity)=>{if(note.uid!==row.input.uid||note.deleted||(['periodKey'] as const).some(key=>row.input[key]!=null&&quickLogPeriodDay(note[key])!==quickLogPeriodDay(row.input[key]))||(['title','content','captureSource','projectUid','areaUid','type'] as const).some(key=>(note[key]??null)!==(row.input[key]??null)))throw Error('已保存日志已被修改或删除，请检查原记录后处理附件');return note}
@@ -38,20 +39,21 @@ export async function recoverLogNote(row:LogCaptureJournal,service:{get(uid:stri
  try{const note=await service.create(row.input,{ifAbsent:true});assertCurrent();return verify(note)}catch(error){assertCurrent();const committed=await service.get(row.input.uid);assertCurrent();if(committed)return verify(committed);throw error}
 }
 
-export async function markLogCaptureCommitted(scope:string,operationUid:string){const db=await database();try{const tx=db.transaction('captures','readwrite'),row=await tx.store.get(scope) as LogCaptureJournal|undefined;if(!row||row.operationUid!==operationUid){await tx.done;throw Error('日志恢复记录已改变，已停止写入')}await tx.store.put({...row,committed:true});await tx.done}finally{db.close()}}
-export interface LogCaptureArchive {schema:'note-flow-log-capture/1';scope:string;captures:(Omit<LogCaptureJournal,'files'>&{files:{uid:string;name:string;type:string;lastModified:number;base64:string;sha256:string;sizeBytes:number}[]})[]}
+export async function markLogCaptureCommitted(scope:string,operationUid:string){return(await storage(scope)).mark(operationUid)}
+type ArchivedCapture=Omit<LogCaptureJournal,'files'>&{files:{uid:string;name:string;type:string;lastModified:number;base64:string;sha256:string;sizeBytes:number}[]}
+export interface LogCaptureArchive {schema:'note-flow-log-capture/1';scope:string;captures:ArchivedCapture[];archives?:ArchivedCapture[]}
 const encodeBytes=(bytes:Uint8Array)=>{let result='';for(let index=0;index<bytes.length;index+=0x8000)result+=String.fromCharCode(...bytes.subarray(index,index+0x8000));return btoa(result)}
+/** 导出同时保全活跃恢复点和旧惰性档案，附件摘要验证失败则整体失败。 */
 export async function exportLogCaptureArchive(scope:string):Promise<LogCaptureArchive>{
- const row=await readLogCapture(scope);if(!row)return {schema:'note-flow-log-capture/1',scope,captures:[]}
- const files=[]
- for(const file of row.files){const bytes=new Uint8Array(await file.blob.arrayBuffer());files.push({uid:file.uid,name:file.name,type:file.type,lastModified:file.lastModified,base64:encodeBytes(bytes),sha256:await blobDigest(file.blob),sizeBytes:bytes.length})}
- return {schema:'note-flow-log-capture/1',scope,captures:[{...row,files}]}
+ const port=await storage(scope),row=await port.read(),archived=await port.archives()
+ const encode=async(row:LogCaptureJournal):Promise<ArchivedCapture>=>{assertLogCaptureJournal(row,scope);const files=[];for(const file of row.files){port.check();const bytes=new Uint8Array(await file.blob.arrayBuffer());files.push({uid:file.uid,name:file.name,type:file.type,lastModified:file.lastModified,base64:encodeBytes(bytes),sha256:await blobDigest(file.blob),sizeBytes:bytes.length})}port.check();return{...row,files}}
+ const captures=row?[await encode(row)]:[],archives=await Promise.all(archived.map(encode));port.check();return {schema:'note-flow-log-capture/1',scope,captures,...(archives.length?{archives}:{})}
 }
 export async function validateLogCaptureArchive(source:unknown,scope:string):Promise<LogCaptureJournal[]>{
  const archive=source as LogCaptureArchive
- if(!archive||archive.schema!=='note-flow-log-capture/1'||archive.scope!==scope||!Array.isArray(archive.captures)||archive.captures.length>1)throw Error('日志恢复备份属于其他空间或格式无效')
+ if(!archive||archive.schema!=='note-flow-log-capture/1'||archive.scope!==scope||!Array.isArray(archive.captures)||archive.captures.length>1||archive.archives!==undefined&&(!Array.isArray(archive.archives)||archive.archives.length>20000))throw Error('日志恢复备份属于其他空间或格式无效')
  const rows:LogCaptureJournal[]=[]
- for(const row of archive.captures){
+ for(const row of [...archive.captures,...(archive.archives??[])]){
   assertLogCaptureHeader(row,scope)
   const files:LogCaptureJournal['files']=[],uids=new Set<string>()
   for(const file of row.files){
@@ -65,16 +67,10 @@ export async function validateLogCaptureArchive(source:unknown,scope:string):Pro
  }
  return rows
 }
-export async function restoreLogCaptureArchive(source:unknown,scope:string){const rows=await validateLogCaptureArchive(source,scope);if(!rows.length)return;const db=await database();try{const tx=db.transaction('captures','readwrite');if(!await tx.store.get(scope))await tx.store.add(rows[0]);await tx.done}finally{db.close()}}
+/** 恢复只保全原始操作与字节，不激活旧采集身份、不重新创建笔记或附件队列。 */
+export async function restoreLogCaptureArchive(source:unknown,scope:string,staged=false){const rows=await validateLogCaptureArchive(source,scope);if(!rows.length)return;return(await storage(scope,staged)).archive(rows)}
 
-export async function clearLogCaptureScope(scope:string){const db=await database();try{await db.delete('captures',scope)}finally{db.close()}}
+export async function clearLogCaptureScope(scope:string){return(await storage(scope,false,true)).erase()}
 
-/** Explicit repair only: never erase a valid record created by another tab. */
-export async function clearInvalidLogCapture(scope:string){
- const db=await database()
- try{const tx=db.transaction('captures','readwrite'),row=await tx.store.get(scope);if(row===undefined){await tx.done;return true}let invalid=false
-  try{assertLogCaptureJournal(row,scope)}catch(error){if(!(error instanceof LogCaptureValidationError))throw error;invalid=true}
-  if(!invalid){await tx.done;return false}
-  await tx.store.delete(scope);await tx.done;return true
- }finally{db.close()}
-}
+/** 仅显式修复格式坏行；事务中重新校验，不能删除另一窗口刚保存的有效记录。 */
+export async function clearInvalidLogCapture(scope:string){return(await storage(scope,false,true)).repairInvalid()}

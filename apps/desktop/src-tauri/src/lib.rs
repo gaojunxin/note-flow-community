@@ -4,6 +4,7 @@ pub mod community;
 mod file_export;
 mod file_export_commands;
 mod profile_media;
+pub mod capture_store;
 mod resource_policy;
 use base64::Engine;
 use serde::{Deserialize, Serialize};
@@ -24,6 +25,11 @@ mod canvas;
 mod commands;
 pub mod db;
 mod notes;
+mod local_state;
+mod learning_store;
+mod review_store;
+pub mod client_intents;
+mod learning_execution;
 mod search;
 pub(crate) use note_flow_local_core::search as search_normalization;
 mod native_startup;
@@ -724,6 +730,16 @@ pub fn run_official(
             commands::native::native_notes_list,
             commands::native::native_notes_get,
             commands::native::native_notes_search,
+            commands::learning::native_learning_repository,
+            commands::review::native_review_repository,
+            commands::client_intents::native_client_intents,
+            commands::captures::native_capture_store,
+            commands::captures::native_capture_bytes,
+            commands::learning_actions::native_learning_actions,
+            commands::learning_execution::native_learning_execution,
+            commands::native::native_business_state_read,
+            commands::native::native_business_state_list,
+            commands::native::native_business_state_write,
             commands::native::native_tasks_list,
             commands::native::native_workspace_list_areas,
             commands::native::native_workspace_list_projects,
@@ -768,6 +784,10 @@ pub fn run_official(
                     | "native_sync_complete_observed_page"
                     | "native_sync_host_area_page"
                     | "native_sync_page_recovery"
+                    | "native_note_fallback"
+                    | "native_knowledge_import_store"
+                    | "native_knowledge_import_bytes"
+                    | "native_client_task_notes"
                     | "native_sync_run_flow"
                     | "native_sync_auth_request_flow"
                     | "native_sync_snapshot_flow"
@@ -795,7 +815,7 @@ pub fn run_official(
             timeline.mark("setup-start");
             native_startup::begin(app.handle())?;
             timeline.mark("native-startup-shown");
-            app.manage(app_core::AppCore::new(directory.clone(), 32));
+            app.manage(app_core::AppCore::with_database_root(directory.clone(),app.path().app_config_dir()?,32));
             timeline.mark("app-core-ready");
             let path = directory.join("task-reminders-v1.json");
             let values: Vec<ReminderEntry> = fs::read(&path)

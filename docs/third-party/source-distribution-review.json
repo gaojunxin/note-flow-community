@@ -1154,6 +1154,10 @@
       "sha256": "b31790e3a1e3b6ca4f24886f0584d98db1945017fa89b711b8d255be939f0e8f"
     },
     {
+      "file": "apps/desktop/public/vendor/diagrams/js/orgchart.min.js",
+      "sha256": "a731393b645a51c70776032565494c391fb8aabf607c24c2d05b95213ac46e2f"
+    },
+    {
       "file": "apps/desktop/public/vendor/diagrams/js/orgchart/OrgChart.Layout.min.js",
       "sha256": "74aca070a8332631675011b55949195896d9badb7ce2f2f318207c5a89ac2a54"
     },
@@ -1168,10 +1172,6 @@
     {
       "file": "apps/desktop/public/vendor/diagrams/js/orgchart/mxOrgChartLayout.js",
       "sha256": "2ea396e6f24a1f0393791013b56b14319fe0119105da1e0e8acc10e557927e2a"
-    },
-    {
-      "file": "apps/desktop/public/vendor/diagrams/js/orgchart.min.js",
-      "sha256": "a731393b645a51c70776032565494c391fb8aabf607c24c2d05b95213ac46e2f"
     },
     {
       "file": "apps/desktop/public/vendor/diagrams/js/plantuml/drawio-plantuml.min.js",
@@ -1218,6 +1218,10 @@
       "sha256": "1a3cb32a18199355c67b8f78f57598dec8c253f7455ae42ac3f974b548d43a1b"
     },
     {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bbm-font-extension/chtml.js",
+      "sha256": "d5e9073fb52f7b5d4f8c990e3e6f4d29761902213052ceb8490b0d0393298b74"
+    },
+    {
       "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bbm-font-extension/chtml/woff2/mjx-mb-bb.woff2",
       "sha256": "e89ff9a0bc201208bdf207dee21c8b6e2d73225b64e4ed2aef873103723c01da"
     },
@@ -1238,12 +1242,12 @@
       "sha256": "76dd9408e6dc239c4b9043ab0c16fe0682c7e9cf6290aa7ae28da975e5f0f456"
     },
     {
-      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bbm-font-extension/chtml.js",
-      "sha256": "d5e9073fb52f7b5d4f8c990e3e6f4d29761902213052ceb8490b0d0393298b74"
-    },
-    {
       "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bbm-font-extension/svg.js",
       "sha256": "dcd83c7439be878000fbe01e0e1177546b8c2e42f2959409113f11622b7db5ee"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bboldx-font-extension/chtml.js",
+      "sha256": "7d40dbaaac593d43e27db3aebe660605d6dcfd67e8cca77cf936e0141f6f09ba"
     },
     {
       "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bboldx-font-extension/chtml/woff2/mjx-mb-bb.woff2",
@@ -1258,12 +1262,12 @@
       "sha256": "44d8ac4b74307178297cbc0bec4fd69e5dba7456ad025360a54113b212c5b574"
     },
     {
-      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bboldx-font-extension/chtml.js",
-      "sha256": "7d40dbaaac593d43e27db3aebe660605d6dcfd67e8cca77cf936e0141f6f09ba"
-    },
-    {
       "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-bboldx-font-extension/svg.js",
       "sha256": "90664e46bd253083e4deb2cf4501d6d61c5d72d3c56639435c8996ce0c43a6e9"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-dsfont-font-extension/chtml.js",
+      "sha256": "7deaf170e8d1af1aa4482552da2946c1ee244fa9d9066ab847114c11965471a6"
     },
     {
       "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-dsfont-font-extension/chtml/woff2/mjx-md-dr.woff2",
@@ -1274,24 +1278,24 @@
       "sha256": "e79fe826b4613196f88e61401036981b0dc28d564a404406b55c3b23344ceeb4"
     },
     {
-      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-dsfont-font-extension/chtml.js",
-      "sha256": "7deaf170e8d1af1aa4482552da2946c1ee244fa9d9066ab847114c11965471a6"
-    },
-    {
       "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-dsfont-font-extension/svg.js",
       "sha256": "72bfb298b4167d7048dd564a1c625775e87efb4d415140500de362639756ad32"
-    },
-    {
-      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-mhchem-font-extension/chtml/woff2/mjx-mhc-m.woff2",
-      "sha256": "2ea308c69f139e9ee7bc452e12a449c13e3b9ce4c08aebc4e86e15df232a26e0"
     },
     {
       "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-mhchem-font-extension/chtml.js",
       "sha256": "09dec3f1b8299aa81b5d4e45fa8ef4675f6a1907056f030a357fb9916bad8703"
     },
     {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-mhchem-font-extension/chtml/woff2/mjx-mhc-m.woff2",
+      "sha256": "2ea308c69f139e9ee7bc452e12a449c13e3b9ce4c08aebc4e86e15df232a26e0"
+    },
+    {
       "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-mhchem-font-extension/svg.js",
       "sha256": "59cbf08305ddd6bac14dbf2e2a6b3c2f3f6870107ad16d381870fdb0486eea73"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml.js",
+      "sha256": "1ff6fa2f22384fa16c0575f09b98ee4d900a61d185f6fcee4e960c0d2190d0c9"
     },
     {
       "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml/woff2/mjx-tex-b.woff2",
@@ -1382,16 +1386,16 @@
       "sha256": "2c146f72c9a345aa282398a752d03af71d83a011f3d067297b533a31f0c5f5cb"
     },
     {
-      "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/chtml.js",
-      "sha256": "1ff6fa2f22384fa16c0575f09b98ee4d900a61d185f6fcee4e960c0d2190d0c9"
-    },
-    {
       "file": "apps/desktop/public/vendor/diagrams/math4/es5/fonts/mathjax-tex-font/svg.js",
       "sha256": "ed5c78819c63883579fb8a4bcec97a2a2fe32e8a0a7f504273aeece0ca396a33"
     },
     {
       "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/asciimath.js",
       "sha256": "ba4f20f2f1b2e7ebfb45afc3b9e195d84a749e5492555812be805f6a11ad7066"
+    },
+    {
+      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex.js",
+      "sha256": "0375844c0c9698b3c26bde0c78b5bc62dbfbe15e3794433dcf7e0b4b3ea2b69a"
     },
     {
       "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/action.js",
@@ -1504,10 +1508,6 @@
     {
       "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex/extensions/verb.js",
       "sha256": "b2290ff1be4d33c57dd476d87d1753d4cde0a5991612b4a24db881a15c85a250"
-    },
-    {
-      "file": "apps/desktop/public/vendor/diagrams/math4/es5/input/tex.js",
-      "sha256": "0375844c0c9698b3c26bde0c78b5bc62dbfbe15e3794433dcf7e0b4b3ea2b69a"
     },
     {
       "file": "apps/desktop/public/vendor/diagrams/math4/es5/output/chtml.js",
@@ -2422,8 +2422,184 @@
       "sha256": "81c093bb9865e9116ee5507c908290906f141170bd6b79e734820ddbe01a01b3"
     },
     {
+      "file": "apps/desktop/src-tauri/src/ai_client.rs",
+      "sha256": "228350c5153c9971b1fff8fd4c2fe4bb1265cad187b183a4991152aaff4f19ca"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/app_core/error.rs",
+      "sha256": "9f963027c8600bd6103fcf1f2ce9fee0c8686a5d74916251da82b9b3c5544462"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/app_core/jobs.rs",
+      "sha256": "628eab486f2c28827d5d9d53bc4eea402083a5396df67c8b23f4bc466cf3e664"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/app_core/mod.rs",
+      "sha256": "c006a87f87c7565d3f9f0ef2d6192df7ce69b5ce89a98e388e2bf88206e213be"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/attachment_diagnostics.rs",
+      "sha256": "577c9e1e58be65d661fb56add4b2e3c5f8f791ba33e5f984cd3278abef8552e3"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/canvas.rs",
+      "sha256": "e70842895d6a4e8d5e2f77508193a1b84f5e1a60ae0af4a3036a4256cae46a3a"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/canvas/format.rs",
+      "sha256": "a13b2da48dc3c2543806ea3d4bee878949a439f01a075ee7887e19ba7989fb3f"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/capture_store.rs",
+      "sha256": "9d7a85b3e171ef1ecee4bf780b695bc75e60cdc5a1cec24cf81a73fbff434c06"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/client_intents.rs",
+      "sha256": "de709e0f957192a421ab6273acfda8da82e75ebf49aaa7fd15fca4642adf7ef3"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/commands/captures.rs",
+      "sha256": "77e7cd294a1a3a27c9a091eff2398aaf587f6a1a906ba1b9b5567de3d115608f"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/commands/client_intents.rs",
+      "sha256": "894af97dc76624f78e09a1235bf285c91380ea33998d649c68bd215e83eeeb5b"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/commands/core.rs",
+      "sha256": "57a743bbd2ed0b9d6b7e6f5625d31b6d92a747d00f12ec22ca486119d3ea98c7"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/commands/learning.rs",
+      "sha256": "8823ca62a3dfe705cc50d57b6ea6584f08912a15f4b2e080c2caff8c3d118a58"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/commands/learning_actions.rs",
+      "sha256": "91ef5815dfa91ea7d87c50a6b0b1b0ee698f165b770be7f7568b77659e1b5cf0"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/commands/learning_execution.rs",
+      "sha256": "538fadc478425b54976b6fdf4b188cb5bfd17edabb5c4efd25c646a2915744f2"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/commands/mod.rs",
+      "sha256": "df21a023bd0ef3b1759d6394bf265f306fb29630676a3aed8a1abd5ff33c6b7a"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/commands/native.rs",
+      "sha256": "db41180d92dfda8d0948f50317785dd9772f5b17a9cebee7a787e617993a6796"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/commands/review.rs",
+      "sha256": "44c44636d1d7057ab74144a5c7921b648113b6b88efee8421ae329bc0f3e0852"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/community.rs",
+      "sha256": "309c456fcc09c889b3a7673838152bf15646f3870d52c314c73df0b8eaff06e6"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/db/actor.rs",
+      "sha256": "629837ee6150bc6106445342dbf97c503c196044ce9c9ca5df97153d1b602385"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/db/legacy_profile.rs",
+      "sha256": "5249ee2736a0a8c60b4b08cb9232080d894d97c674057174834884df3ea1ee67"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/db/local_transaction.rs",
+      "sha256": "b043d5051ea1543ba062d79e9af3c6bfa8f3efa7ec38460192b3102e80fdfd96"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/db/migrations.rs",
+      "sha256": "7b4cb4b5a79c241f1b15dd0d810f0b541521faf2ec4f2899a190307bc626f072"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/db/mod.rs",
+      "sha256": "3368b37b0cebf40d33ecfd3bdf99e7add74d3aa46eadb9adc4eb98862f50ac7b"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/db/sqlite.rs",
+      "sha256": "8c0fb3ba9435c18ecdde3f55178fe09b40052582b09081d2a6cb3bf8cdfc4ad7"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/file_export.rs",
+      "sha256": "1f86ad8e7ac711fcbfb7dfee6bd92237b067a9abf33172836e52806cecdb1083"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/file_export_commands.rs",
+      "sha256": "99a71fd9a0489c7bf02a5b8f7ff310887b45b322b1fea1468b11bde8e2f88f68"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/learning_execution.rs",
+      "sha256": "e81291c1056e6c3ef8e0820166e52aa4c1b401010e52a2f7a8b247883cf90386"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/learning_store.rs",
+      "sha256": "a3e6e6c32a7259fe128895748de477f000352bd24b291c8d1af640ad4fe8cc63"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/lib.rs",
+      "sha256": "c70e1b7eea9397e114a4a91b6a512189f3e7e8bb954b975c486b3e85a8e9f5fe"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/local_state.rs",
+      "sha256": "28dac9cc37d4e9dad04deb78000c9e54c148e0da46f3573c9a7638cd0dad8ffb"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/main.rs",
+      "sha256": "a6ead9097e6ce37d1e119ba8adb432d53cd8fe1fb56a99521d7cb36c251f0946"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/native_startup.rs",
+      "sha256": "9af50c0681ebfb850f6d7cb7c054acdf22347e58bcee7e639006224eab7df7f0"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/notes/mod.rs",
+      "sha256": "84efd4126933d8f172deaafe5206141ebaeef3f8d17db401880e2fcdd584c353"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/notes/repository.rs",
+      "sha256": "5d7fad31d730a0740884791774d7c6a2f50d16e2c9bc590101e01c8198c6a39b"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/profile_media.rs",
+      "sha256": "9bbe272985e24aff4b42cc446c453fd6488666a36f1de78781503f51eab55bc0"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/resource_policy.rs",
+      "sha256": "76cb9726f3ee1e36993bfbffdb5ba6993180445e571c11290f2bd728cc811407"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/review_store.rs",
+      "sha256": "3c36e53c3485b16c2eee9147cf233322d51786f4d8167f52a1050c5632aa605f"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/search/mod.rs",
+      "sha256": "71d54b0fadbfbfc8d8f674f16b00669199beb356696ee7f9af48894dfca29130"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/startup.rs",
+      "sha256": "41a6c4b432595cd9370ad11784b14adb5ca8a81bc2f58bd4c6bcad74f02cf5b0"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/task_reminder_activation.rs",
+      "sha256": "ab1b49eb64cec457550e81ddabb97fd718276c50aa36084d8ea43e7b74761c8a"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/task_reminder_target.rs",
+      "sha256": "15b261ffb4044991805229b6e1f7f070d3de6843a01243827dc21a93aff11c68"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/tasks/mod.rs",
+      "sha256": "99bc29b3cade67e53ecac9495185dc33cfc76c10155d3364eab17b4ac6e4e300"
+    },
+    {
+      "file": "apps/desktop/src-tauri/src/workspace/mod.rs",
+      "sha256": "33288b0b040355a4288555d5ccf6ec24015dae0f29ec38570c1a3a2b3abcf79e"
+    },
+    {
       "file": "apps/desktop/src/App.vue",
-      "sha256": "f300cd1188f117eb52cb273398935b849a0d3cf828cb479819cf8622ce9b7971"
+      "sha256": "14bfd4d497e7cbec331b9e9aa905d1090f75345120d4d0715427173fb846bc24"
     },
     {
       "file": "apps/desktop/src/canvas/diagrams/protocol.ts",
@@ -2519,7 +2695,7 @@
     },
     {
       "file": "apps/desktop/src/community/adapters/folders.ts",
-      "sha256": "35056db11c93736b047d2dd0783508eeb3d934d46d402654a597ac8c69a0d801"
+      "sha256": "3349995f79c9ca3835649da3f9c8ca2315e4d0039a5ee389cedfb14aac506f48"
     },
     {
       "file": "apps/desktop/src/community/adapters/governance.ts",
@@ -2551,7 +2727,7 @@
     },
     {
       "file": "apps/desktop/src/community/adapters/localBackup.ts",
-      "sha256": "d1f5828736607d2dc44cc8db21fea93eef8b8c43427a17877ccda448a305bed8"
+      "sha256": "f5c38192d6ed3afa45fdcb7a8f774a62f2762977fec11141e6ffe7b36a4d7541"
     },
     {
       "file": "apps/desktop/src/community/adapters/localPersonal.ts",
@@ -2584,6 +2760,10 @@
     {
       "file": "apps/desktop/src/community/adapters/profiles.ts",
       "sha256": "451d34d282bc27d4075485638d7a20375acc3e838530a964d58884d9303b608f"
+    },
+    {
+      "file": "apps/desktop/src/community/adapters/readingProgress.ts",
+      "sha256": "4f94bb278c10a7af6af47a7746d222324a2fca1a3951d6172ed84377f99dda03"
     },
     {
       "file": "apps/desktop/src/community/adapters/recordings.ts",
@@ -2631,7 +2811,7 @@
     },
     {
       "file": "apps/desktop/src/community/adapters/tasks.ts",
-      "sha256": "3a91718c69df50eb5705e3acc4140b7915b919154301b95bf0682ec832dadbc7"
+      "sha256": "1890a9e41e642dbf6638fd8e663bf2dd7b426ae3a78d5a0d847d8a1046da04ed"
     },
     {
       "file": "apps/desktop/src/community/adapters/tickTickScopeRepair.ts",
@@ -2671,11 +2851,11 @@
     },
     {
       "file": "apps/desktop/src/community/host-map.json",
-      "sha256": "f07b6840e55b35f9a0ff75b27577b2de74de2c99ad662d0d9d034acd447f4a78"
+      "sha256": "77f8d644c53a4a3d0322a9bc5453ecdbccef85b0b4c868ec45c9eca91e1d4dae"
     },
     {
       "file": "apps/desktop/src/community/learningBackup.ts",
-      "sha256": "bab3ddfb8ae7f500e0d39d9594b49764442de5000d56a46d47558219326fb8a0"
+      "sha256": "b421b7586f515c9e7f0d36fbc3008e53c97d818260763e7612bf4ee7e85e414c"
     },
     {
       "file": "apps/desktop/src/community/legacyKnowledgeBackup.ts",
@@ -2691,7 +2871,7 @@
     },
     {
       "file": "apps/desktop/src/community/platformStorage.ts",
-      "sha256": "a1e64d63609bbc4fdce6a714cfa3eb808fae88d94d0454ebb8ba8562dbc92202"
+      "sha256": "9146df926ad060bf4b64ea8772b0831d576ac6a1ee054b81ae5b15db2de8c4f2"
     },
     {
       "file": "apps/desktop/src/community/reminderService.ts",
@@ -2699,7 +2879,7 @@
     },
     {
       "file": "apps/desktop/src/community/reviewBackup.ts",
-      "sha256": "f95c8a355479f0c4e60db615a9e22fc8391163f97bca0b4e646436673cc12777"
+      "sha256": "7af53f84d5ae2ad2ecff51d69eb50bb89eed296e219c072d3cc06aceae5c3c15"
     },
     {
       "file": "apps/desktop/src/community/runtime.ts",
@@ -2735,11 +2915,11 @@
     },
     {
       "file": "apps/desktop/src/components/AiLearningPanel.vue",
-      "sha256": "e6725e0fcc74869c6c9b57b66acb50ff5b7a83ece54e597a50fdd3ec356aeb2f"
+      "sha256": "53add03736c4e44a1bb711c9dbfb2c7cffcce4f90d7e81f2254157cb9c0a7c40"
     },
     {
       "file": "apps/desktop/src/components/AiNoteSeriesDialog.vue",
-      "sha256": "9df6b791263b6079f1bb6599d45d99ceb4191160986cec21d6f4d85eff65c03d"
+      "sha256": "3bc9825c3a3acdc18b211a8ae8f808b9a454368c4410443e2bcb59283558d496"
     },
     {
       "file": "apps/desktop/src/components/AppLockGuard.vue",
@@ -2763,7 +2943,7 @@
     },
     {
       "file": "apps/desktop/src/components/AttachmentIndexProtection.vue",
-      "sha256": "a892eb9fa6d10dde7e1d1296faedd18c394edab8147e3642e4482b2773209349"
+      "sha256": "1d1ef210eb16902a036c1af10bd6ffb989887063c942fdaa9ca0be5985582865"
     },
     {
       "file": "apps/desktop/src/components/AttachmentPreviewDialog.vue",
@@ -2787,7 +2967,7 @@
     },
     {
       "file": "apps/desktop/src/components/ConsolidationRecoveryPanel.vue",
-      "sha256": "4b116ccdee4f0ec9373c5edf6b0573db4f6ac6e0e798755a027f2f36145ad089"
+      "sha256": "5ff6b5d35480e1e57296e9d733b2b0403b3af55d34d63b47e3fae9515a4d37c0"
     },
     {
       "file": "apps/desktop/src/components/ContextMenuHost.vue",
@@ -2834,8 +3014,12 @@
       "sha256": "fe8bf537bf2954f837b25c8babf74b058b95660ab349eadb91cd46ae3a575fb3"
     },
     {
+      "file": "apps/desktop/src/components/GlobalCreateDialog.vue",
+      "sha256": "1cce6e46297348725eb876605f0fa3fb5ef91ce5b0cb68f1b72bd3ad7a28d30b"
+    },
+    {
       "file": "apps/desktop/src/components/LearningActionDialog.vue",
-      "sha256": "1fd446670fc748764ea4e0e89ef5c94ee3e292f8f05c398a9d036c3ba5433955"
+      "sha256": "f9d904988c3616bf31298dc114d9a28b5735fa79d0210c09305c16126295470f"
     },
     {
       "file": "apps/desktop/src/components/LearningMessageContent.vue",
@@ -2847,11 +3031,11 @@
     },
     {
       "file": "apps/desktop/src/components/LearningSkillCard.vue",
-      "sha256": "87fb4c722072c1e3aa8f926a4fedf27bd74dc308671fa7425c0cbab9fb9269e4"
+      "sha256": "e3d64a877000ee4f12185832d9ca554df9a9aaab1532618833bb06da7986ec5d"
     },
     {
       "file": "apps/desktop/src/components/LearningWorkspacePlan.vue",
-      "sha256": "e087351a8731d597b850c235a4cf63aa205be0a4ec766bc3de3a252649352fbf"
+      "sha256": "c5a6772c0ed588b14c1c7871881f1b7a5c909e38bd4718b2f27ec0339595c66b"
     },
     {
       "file": "apps/desktop/src/components/LocalRestoreNotice.vue",
@@ -2895,7 +3079,7 @@
     },
     {
       "file": "apps/desktop/src/components/NoteConsolidationDialog.vue",
-      "sha256": "c62b897627720c049ee08308b676b16f0df3ffbd1787adb4578cfb2dd6107c3a"
+      "sha256": "cdd938e9d264c4da6fc6f4ced4027486cbc2061bb1e831691481c246a90effc8"
     },
     {
       "file": "apps/desktop/src/components/NoteFolderTree.vue",
@@ -2915,7 +3099,7 @@
     },
     {
       "file": "apps/desktop/src/components/NotificationPanel.vue",
-      "sha256": "b630b74b7fbbde9889ce1b072b36d49d35d6bc58552af9d01314373f38ab003d"
+      "sha256": "ae07c3526750412138ea9d2576f7b1538454768062f931f0b6926f9ccbf811a2"
     },
     {
       "file": "apps/desktop/src/components/OrganizationDestinationDialog.vue",
@@ -2927,7 +3111,7 @@
     },
     {
       "file": "apps/desktop/src/components/PdfDocumentPreview.vue",
-      "sha256": "bc777f90012e78e5d3d3f3c8c200ac7218348f470104b82bf9d91ed23955e36b"
+      "sha256": "88f1acb5b7f2be1ba6bd37b1edee51ed0deb1f8beab09c234e4fa9e0fd331275"
     },
     {
       "file": "apps/desktop/src/components/PdfPageCanvas.vue",
@@ -3091,7 +3275,7 @@
     },
     {
       "file": "apps/desktop/src/services/aiDataScope.ts",
-      "sha256": "080beb0eb187b0bdde0e128b5c2bef14ededcf7e5fe00a93a9ecf04e21bcd129"
+      "sha256": "6f6b09a37240bc07d39deac83ae0364aebca53d8f5c25ac38fdf45f142ddbcfb"
     },
     {
       "file": "apps/desktop/src/services/aiDownloadArchive.ts",
@@ -3111,7 +3295,7 @@
     },
     {
       "file": "apps/desktop/src/services/aiNoteSeriesDraft.ts",
-      "sha256": "92aa86d2d586683b4d2aea231ec8393b656a4bf551b346734edace3e205ded00"
+      "sha256": "1ac78cd66dab362e0d69ad8900927036040a90279e9b317e3bc929fbc6555012"
     },
     {
       "file": "apps/desktop/src/services/aiPolicy.ts",
@@ -3190,6 +3374,10 @@
       "sha256": "67b3be85e7ee500bb00f9518be2d921e0762bfa3af2a0d29b3ceb1fb36310b59"
     },
     {
+      "file": "apps/desktop/src/services/backupSnapshotConsistency.ts",
+      "sha256": "36a4420f7b166b4dd3fd0c3e85cf2f3405c321ca6ba00581897b623f7748b6d0"
+    },
+    {
       "file": "apps/desktop/src/services/base64Assist.ts",
       "sha256": "b995b805c30880453e9ba7f4748f4fd7d587bb3de1977888b1e9bf5f8f474a56"
     },
@@ -3216,6 +3404,18 @@
     {
       "file": "apps/desktop/src/services/bulkOperations.ts",
       "sha256": "d86ef2b95fa4e1893819446be2cd73053424f0196abd26abf3b034a2dfb11f64"
+    },
+    {
+      "file": "apps/desktop/src/services/businessRecord.ts",
+      "sha256": "6e36d486a24b68c5b8ad7a8afd4b3e8f53ee3e0434f90486d8cd32ac5e1709f6"
+    },
+    {
+      "file": "apps/desktop/src/services/businessRecoveryArchive.ts",
+      "sha256": "7d2aac73cb1d04cdf79bee488553d2a39e67396cdda4cea3eff6e1789ed719a9"
+    },
+    {
+      "file": "apps/desktop/src/services/businessState.ts",
+      "sha256": "48445d86fda9eaebe9f75f86c3e7537b78263bc7eb8f4be1b3b7294e6cb69f0b"
     },
     {
       "file": "apps/desktop/src/services/calendarMonth.ts",
@@ -3246,6 +3446,14 @@
       "sha256": "9c2a0c8f535fb5edb4e71c12a9888d6e5f1fc314cfa43b99cc63d3e399039bb4"
     },
     {
+      "file": "apps/desktop/src/services/clientIntentBackup.ts",
+      "sha256": "6e096b28ccee66ddc40adcfb6d3f3f6b393cf9522647b6f0eee57163516af43e"
+    },
+    {
+      "file": "apps/desktop/src/services/clientIntentRepository.ts",
+      "sha256": "e8c059f3f85b588cad35ae48f209bb759bf9ce14f06e10c3164fed5e41cca513"
+    },
+    {
       "file": "apps/desktop/src/services/confirmRestoreRepair.ts",
       "sha256": "05cfd62826758292b60cd2c7269854a6673f05b7554487477ba6ef1fdebf6f22"
     },
@@ -3255,7 +3463,7 @@
     },
     {
       "file": "apps/desktop/src/services/consolidationDraft.ts",
-      "sha256": "40de1c6035b91b76e9ab87aee56ba61b78824422d235369dd69c1291bf77bbdc"
+      "sha256": "114deed6a75cc676451f6683b31cc783ccefa363f62b9eaf5853bc394a1753bc"
     },
     {
       "file": "apps/desktop/src/services/consolidationReview.ts",
@@ -3318,8 +3526,12 @@
       "sha256": "3293cdc8ed2e89e4d770ef36347e7741796cd8d71466d436e0ff1b9f4524cc76"
     },
     {
+      "file": "apps/desktop/src/services/focusCheckpointStorage.ts",
+      "sha256": "a12cdc4de117639c8a53f7a90a7695ccd8106e8a13c7cfe3c03100c08c31857e"
+    },
+    {
       "file": "apps/desktop/src/services/focusClock.ts",
-      "sha256": "f4b9887fdb34850b26bafcb0dfc6ee594a1825cb3be580bb3c5c5153c6698a59"
+      "sha256": "a19941143f9c1eb0185da3ad6bafa1b4ed677169dfeb0a1bf85afc8634ead266"
     },
     {
       "file": "apps/desktop/src/services/focusRecordSource.ts",
@@ -3331,7 +3543,7 @@
     },
     {
       "file": "apps/desktop/src/services/focusTimer.ts",
-      "sha256": "65a8f9c0faf06d42537183c5e66c74541326cc77847a9d029814052277a20232"
+      "sha256": "2e79c797f30ed2936ef8c9bb5b1eed34ed58d36052b7dba11d97286d07ab9fec"
     },
     {
       "file": "apps/desktop/src/services/folderConsolidation.ts",
@@ -3423,11 +3635,23 @@
     },
     {
       "file": "apps/desktop/src/services/learningActionArchive.ts",
-      "sha256": "b3bf230916f2f6ca26e058580764b5c4632a9d0fe5082a2f4e44512a20519ce2"
+      "sha256": "87146a8781885de43a3af1ab9de8d86d9fc5802e75657f569c80e72c03c19d3f"
+    },
+    {
+      "file": "apps/desktop/src/services/learningActionRepository.ts",
+      "sha256": "287914ff7d375708572e06241e96276abfec5c28c6137a7122f2e1d24c7b0ab5"
+    },
+    {
+      "file": "apps/desktop/src/services/learningActionValidation.ts",
+      "sha256": "c8ea4a778c83fe7aa131655648e6de6bd23baccf85222651b330248c177a1fe0"
     },
     {
       "file": "apps/desktop/src/services/learningActions.ts",
-      "sha256": "c64a472a0b41b1ddc2eeaa23f74a9e5125ff477ec3de31005adcbafd05595c3d"
+      "sha256": "316214feb59796c0da436cf90df7289c278d0e089d8aea9ec86778bc42aff825"
+    },
+    {
+      "file": "apps/desktop/src/services/learningCacheStorage.ts",
+      "sha256": "69376de5a7f93a929db7bcdaac0b004d695c8207a8d30f6cd713f688b9a59634"
     },
     {
       "file": "apps/desktop/src/services/learningClipboard.ts",
@@ -3438,6 +3662,14 @@
       "sha256": "401d96e009f6cc8e1bbce031172444ed733e14d1836cac1427bcae71603cd50b"
     },
     {
+      "file": "apps/desktop/src/services/learningExecutionRepository.ts",
+      "sha256": "2433875504090421bd569f1922f7bd1223451c363594816e946f8eec7d12ab10"
+    },
+    {
+      "file": "apps/desktop/src/services/learningExecutionValidation.ts",
+      "sha256": "c78e7d9c7f77a0bcd3aa869aded1ea2096a2fc336c1a93275a2814e6fb942ab8"
+    },
+    {
       "file": "apps/desktop/src/services/learningQuery.ts",
       "sha256": "6c7c45be9a565c7d66ddc8bc34f23bf618ad40359640a0970ec809180b498b48"
     },
@@ -3446,8 +3678,12 @@
       "sha256": "20faf97b58d1f7b273fe0b46bb1b68cff67c81797969d2765a09ccc561ab9fa8"
     },
     {
+      "file": "apps/desktop/src/services/learningRepository.ts",
+      "sha256": "9e4c2feb3407bb40c1f1feefb22164d053b40676faa99e8578cc456037eb6590"
+    },
+    {
       "file": "apps/desktop/src/services/learningSkillReceipts.ts",
-      "sha256": "35a177d33e87d37adee7c67a978572c46476bfacdebfe2de3a8ea255f19155b3"
+      "sha256": "35b523a9db1b124072baae0717b6c008eadb6662812acd5ae4767781c1ba316f"
     },
     {
       "file": "apps/desktop/src/services/learningSkills.ts",
@@ -3463,7 +3699,7 @@
     },
     {
       "file": "apps/desktop/src/services/learningWorkspaceStore.ts",
-      "sha256": "d4f016c69abd9b4c3e9425b89481da75c0e862a9e919f770ebdd8846cf9f1e97"
+      "sha256": "e9bf8b36905edf72c6f7f83b23c479ff0741c2bf81570e282c3fe7e4a142a0b0"
     },
     {
       "file": "apps/desktop/src/services/legacyReviewNavigation.ts",
@@ -3479,7 +3715,7 @@
     },
     {
       "file": "apps/desktop/src/services/localAiLearning.ts",
-      "sha256": "c590bbcb614d581f6a78b20132defd36773306c056ca37fc9c04a1c1f921fded"
+      "sha256": "3ff2f0a30226a7d7a64b3ab53e715f75590c1ba2673d3caff9c766d07b74ec73"
     },
     {
       "file": "apps/desktop/src/services/localBackup.ts",
@@ -3523,11 +3759,15 @@
     },
     {
       "file": "apps/desktop/src/services/logCaptureJournal.ts",
-      "sha256": "3ee6ba1e9de2c86d3c03c53142c33c010f26e1058c8f68b47e2f60d27b1d913b"
+      "sha256": "e1dc3679d474b9253a86b649b1f316da3ad17e672c5cb19f5f322239290e49af"
     },
     {
       "file": "apps/desktop/src/services/logCaptureOperation.ts",
       "sha256": "a5731a499e88a3ee6f4ee42a3c0e2a5fb2c566a92470ea3b48f1e52dcd960163"
+    },
+    {
+      "file": "apps/desktop/src/services/logCaptureStorage.ts",
+      "sha256": "afe6ec56511ba9439e699cabb4c20bb19038b3180a42901ffe59ed765646b6d9"
     },
     {
       "file": "apps/desktop/src/services/logsViewCache.ts",
@@ -3599,7 +3839,7 @@
     },
     {
       "file": "apps/desktop/src/services/noteHistory.ts",
-      "sha256": "78240dcda2530e9baaa675f2a6c247e752684bab26f4599d621f8323b8ef4433"
+      "sha256": "3253e8f5784420aeb5811760280e5da80dbfbc85eed8f3272675161cc91e8221"
     },
     {
       "file": "apps/desktop/src/services/noteLinks.ts",
@@ -3630,6 +3870,10 @@
       "sha256": "de548bdb2d0c4b66647840359594bfc3653623e00b4ca7f42f83d9aa13f7bb0e"
     },
     {
+      "file": "apps/desktop/src/services/noteSearchScope.ts",
+      "sha256": "9ff2cda9dfecfc9df08b42b4b9ccb9619d9fa05620e0b9510a867f0cf85275dc"
+    },
+    {
       "file": "apps/desktop/src/services/noteTags.ts",
       "sha256": "ad99c1a9db821041441401e24c6b2f03bcdaf759231b301eeb8c599289677ec2"
     },
@@ -3640,6 +3884,10 @@
     {
       "file": "apps/desktop/src/services/notes.ts",
       "sha256": "e091d909721fcf374500352cac14c644e9be6e5b88db8d5af7733e97543801fd"
+    },
+    {
+      "file": "apps/desktop/src/services/notificationCacheStorage.ts",
+      "sha256": "bf0c3d5fbd1507ad12339f5ab1ad6a9fa332098f1483f29d3c5305a4ed15903f"
     },
     {
       "file": "apps/desktop/src/services/notificationPersistence.ts",
@@ -3703,7 +3951,11 @@
     },
     {
       "file": "apps/desktop/src/services/readingProgress.ts",
-      "sha256": "f20178b0779b3898777c202d669fdd4f323d9099ed25675f931d231a5ebc7f23"
+      "sha256": "81371118e5907398b0e87b51ea9d2a8307f5b22fa16f4164326190384428e0a7"
+    },
+    {
+      "file": "apps/desktop/src/services/readingProgressStorage.ts",
+      "sha256": "7f3bd4f36a024722e3dadc987c19072808508b20d04088efab8f79d7b51dc0af"
     },
     {
       "file": "apps/desktop/src/services/recordings.ts",
@@ -3728,6 +3980,18 @@
     {
       "file": "apps/desktop/src/services/reviewDataSource.ts",
       "sha256": "5922e765777d379b2a7a89db807f92f785fab4e2faa3019de2207aa8969ea71a"
+    },
+    {
+      "file": "apps/desktop/src/services/reviewDraftStore.ts",
+      "sha256": "529a50d45cd72e482a5fd4ee37cee235c04a60268cbf5e7fb54f40c5fbc9d0c6"
+    },
+    {
+      "file": "apps/desktop/src/services/reviewRecoveryArchive.ts",
+      "sha256": "dd2c9abab5810a927676af26105447528cb69c83b98d51c7ad8b141a9a67362c"
+    },
+    {
+      "file": "apps/desktop/src/services/reviewRepository.ts",
+      "sha256": "e1ed5f7b36da0fc22cc4ef43277a9d41638c7127e7ac810d582f794531940d36"
     },
     {
       "file": "apps/desktop/src/services/savedGraphView.ts",
@@ -3755,7 +4019,7 @@
     },
     {
       "file": "apps/desktop/src/services/syncActivity.ts",
-      "sha256": "b6053ea9dc0e8471235cc41ab9de705ddda95648ea7be0a7a3ad67ef992c79dc"
+      "sha256": "36fea87ea29d1cc5f4586beeb120a300b6c71ac8e8472f1dd0a23fdf441cc3d2"
     },
     {
       "file": "apps/desktop/src/services/syncCompatibility.ts",
@@ -3911,7 +4175,7 @@
     },
     {
       "file": "apps/desktop/src/stores/notifications.ts",
-      "sha256": "b2297bf9bebde3dac0e3c5fae44741db2e5350ea69203969ed111505ea83ba19"
+      "sha256": "073a248abee9e22748ae11e76081cb3feeccc0ff62b79944567f7b998383bb37"
     },
     {
       "file": "apps/desktop/src/stores/tasks.ts",
@@ -4003,7 +4267,7 @@
     },
     {
       "file": "apps/desktop/src/views/NotesWorkspaceView.vue",
-      "sha256": "e9f065f26d1218bdfd4538ff5a3d6f88587146dcb4517f3b345fe5f8fbc5cc0a"
+      "sha256": "86cf7bfc07aee875b1cd870260f9b912701f43b89a9f65190a69166dfadee79d"
     },
     {
       "file": "apps/desktop/src/views/ProjectLayout.vue",
@@ -4023,15 +4287,15 @@
     },
     {
       "file": "apps/desktop/src/views/SearchView.vue",
-      "sha256": "18a9ce1ede91ef9b3d9185a88977aa29827c34d0639fcba48e3c9af9705d0805"
+      "sha256": "e2ee1cc34a7c81132247cf331d3b58c0dc73b0bf569eeb009c048f30d423e540"
     },
     {
       "file": "apps/desktop/src/views/SettingsView.vue",
-      "sha256": "f40be9c25e9ed85d20c810ed065fd115d7731d5a7ec9f64b273d1bca5c67c552"
+      "sha256": "f8726144a63806010eae0c7b043808d4a5063bd19fe5bfc8eacf7a336739c729"
     },
     {
       "file": "apps/desktop/src/views/TasksView.vue",
-      "sha256": "890453564ac3cf6d7b5b46ce54ed8ea155926a662d48610e66f9a2d39c697715"
+      "sha256": "55d35507189cd2c5c03ee3b54cd0a625accf52377642de61e1cc4dd004afebe0"
     },
     {
       "file": "apps/desktop/src/views/UserManagementView.vue",
@@ -4063,7 +4327,11 @@
     },
     {
       "file": "packages/core/src/appInfo.ts",
-      "sha256": "4db4b02f42995ad87dd007ff04ea8c5dbc77415af22dd0aa5e59827f097c9e9d"
+      "sha256": "74f90f32bfa2d03b8fadd700ceb36041dce4e2cd3fa2f5c64bf69c3914a46d8f"
+    },
+    {
+      "file": "packages/core/src/asyncReadingProgress.ts",
+      "sha256": "9fd6f875726d8ca93c22060f739925879985789abcbb194a8d2282f0815767fd"
     },
     {
       "file": "packages/core/src/attachmentText.ts",
@@ -4235,11 +4503,11 @@
     },
     {
       "file": "packages/core/src/notifications/client.d.ts",
-      "sha256": "ea5060961b188baf87318ca23fe2d9446076b915bf6dedd4df1e3085f55d46de"
+      "sha256": "0c45f1ca5f6fc217cba072c3a14f117e034f27688738c6a778ec61395739500c"
     },
     {
       "file": "packages/core/src/notifications/client.js",
-      "sha256": "1136c5d9290f779a8df546ea3d7666893fdd538d54feb56e8320c1bb43732d81"
+      "sha256": "65000cde567089edf04dee7a4322f53aa965edb52e0d21cd93546fbeb6934cb2"
     },
     {
       "file": "packages/core/src/pdfOutline.ts",
@@ -4282,6 +4550,10 @@
       "sha256": "be21cae335167f13e43468799d5c32e646624ce7ea0163e852cfa18ee8397a10"
     },
     {
+      "file": "packages/core/src/taskNoteStore.ts",
+      "sha256": "d5d09036ad7925176e507eafa856d98e0487d2e150700f53100507c5ca4317f3"
+    },
+    {
       "file": "packages/core/src/taskRecurrenceShared.ts",
       "sha256": "2a4d0ebd037df717e92545b097b4d095307e095312aec1939093083f2ad97ee8"
     },
@@ -4316,11 +4588,30 @@
     {
       "file": "packages/core/src/workspaceUnlockSession.ts",
       "sha256": "8fbf8a729887889e433195cd4541d2b5c08caa04bd188ef4fb4c48b6f9e2f59b"
+    },
+    {
+      "file": "packages/native-local-core/src/lib.rs",
+      "sha256": "949225cf85e3dc528b90b54851aec36871cbc5ca7b8a56ba975660d54ba16062"
+    },
+    {
+      "file": "packages/native-local-core/src/search.rs",
+      "sha256": "4eb448f7da602eef042069e73603b95678cd1540724dd24199292a63a82d1d9c"
     }
   ],
   "settingsBoundaryFollowUp": {
     "scope": "社区设置隐藏服务器账号/同步/用户管理，旧链接回退；AI入口与本地备份保持",
     "validation": "独立npm ci、48项核心测试、社区类型/生产构建及官方类型检查通过；设置浏览器验证另见维护者OSS-12审计",
     "dependencyCoverage": "本轮仅修改两份现有UI/路由源码，未新增import或依赖。既有184组受测Web模块清单保留为许可覆盖集合，不声称本轮重新采集了实际模块数。"
+  },
+  "verification": {
+    "version": "0.13.2",
+    "coreTestsPassed": 48,
+    "nativeHostTestsPassed": 115,
+    "nativeStorageTestsPassed": 10,
+    "nativeBridgeTestsPassed": 32,
+    "independentWebBuildPassed": true,
+    "dependencyGraphChanged": false,
+    "staticVendorChanged": false,
+    "scope": "独立社区源码及Web/本机仓储验证；原生二进制正式分发仍未验收"
   }
 }

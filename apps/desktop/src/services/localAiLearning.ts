@@ -1,37 +1,40 @@
+import {learningExecutionRepository} from './learningExecutionRepository'
+import {validateExecutionBackup} from './learningExecutionValidation'
 import {learningSkillKey,readLearningSkillReceipt} from './learningSkillReceipts'
 import {learningSkillPrompt,parseLearningSkill} from './learningSkills'
 import {isCommunityEdition} from './clientCapabilities'
 import {LOCAL_LEARNING_EPOCH} from './localLearningEpoch'
 import {exportLearningActions,restoreLearningActions,validateLearningActions} from './learningActionArchive'
 import {aiDataScope} from './aiDataScope'
-import {openDB} from 'idb'
+import {learningRepository as database,type LearningNoteOperation} from './learningRepository'
 import type {LearningSession,LearningMessage,LearningReference,LearningDirectorySnapshot} from '@note-flow/core/ai-learning'
 import {validateLearningCache} from '@note-flow/core/ai-learning'
 import {aiLocalScope,aiClientConfig,directAiCompletion} from './aiClientConfig'
 import {createPcNotesService} from './notes'
 import {readAccountSetting} from './accountStorage'
 import {ensureRandomUUID} from './randomUUID'
-const database=()=>openDB(`note-flow-local-learning:${aiDataScope()}`,1,{upgrade(db){db.createObjectStore('sessions',{keyPath:'uid'});db.createObjectStore('operations',{keyPath:'uid'})}})
+
 export const localLearningScope=()=>`note-flow-ai-local:v1:${aiDataScope()}`
 const clone=<T>(value:T):T=>JSON.parse(JSON.stringify(value))
 function check(session:LearningSession|undefined,revision:number){if(!session)throw Error('讨论不存在');if(session.revision!==revision)throw Error('讨论已在其他窗口修改，请重新加载');return session}
-async function mutate(uid:string,revision:number,work:(session:LearningSession)=>void){const db=await database(),tx=db.transaction('sessions','readwrite'),session=check(await tx.store.get(uid),revision);work(session);session.updatedAt=new Date().toISOString();session.revision++;await tx.store.put(session);await tx.done;return clone(session)}
+async function mutate(uid:string,revision:number,work:(session:LearningSession)=>void,store?:Awaited<ReturnType<typeof database>>){const db=store||await database(),before=check(await db.read('sessions',uid),revision),session=clone(before);work(session);session.updatedAt=new Date().toISOString();session.revision++;await db.compare('sessions',uid,before,session);return clone(session)}
 function requestValue(value:unknown){if(!value||typeof value!=='object')throw Error('请求无效');return value as Record<string,any>}
 function notes(){const user=JSON.parse(readAccountSetting('note-flow-pc-user')||'null');return createPcNotesService(String(user?.userId||'local'))}
 function selectedMessages(session:LearningSession,ids:string[]){if(!Array.isArray(ids)||!ids.length)throw Error('请先选择讨论来源');return ids.map(id=>{const message=session.messages.find(m=>m.uid===id&&m.status==='complete');if(!message)throw Error('来源消息不存在或未完成');return clone(message)})}
-export function validateLocalLearningArchive(value:unknown){const source=requestValue(value);if(source.kind!=='local-ai-learning'||source.scope!==localLearningScope())throw Error('本地学习备份空间不匹配');validateLearningCache({sessions:source.sessions,selectedUid:'',input:'',draft:'',sources:[]});if(source.actions)validateLearningActions(source.actions);return source}
+export function validateLocalLearningArchive(value:unknown){const source=requestValue(value);if(source.kind!=='local-ai-learning'||source.scope!==localLearningScope())throw Error('本地学习备份空间不匹配');validateLearningCache({sessions:source.sessions,selectedUid:'',input:'',draft:'',sources:[]});if(source.actions)validateLearningActions(source.actions);if(source.execution!==undefined)validateExecutionBackup(source.execution,aiDataScope());return source}
 export const localLearningService={
  epoch:async()=>({syncEpoch:LOCAL_LEARNING_EPOCH}),
  provider:async()=>{const config=aiClientConfig();if(config.channel==='server')return{available:true,provider:'账号服务',model:'发送时核对服务器配置',source:'account'};return{available:Boolean(config.model),provider:config.channel==='personal'?'个人云端直连':'本地模型',model:config.model,source:'client'}},
- list:async():Promise<LearningSession[]>=> (await(await database()).getAll('sessions')).reverse(),
- get:async(uid:string):Promise<LearningSession>=>{const value=await(await database()).get('sessions',uid);if(!value)throw Error('讨论不存在');return value},
- create:async(title:string):Promise<LearningSession>=>{ensureRandomUUID();const value:LearningSession={createdAt:new Date().toISOString(),updatedAt:new Date().toISOString(),uid:crypto.randomUUID(),revision:1,title:title.trim().slice(0,200)||'新讨论',input:'',messages:[],draft:'',draftSources:[]};await(await database()).add('sessions',value);return value},
+ list:async():Promise<LearningSession[]>=> (await(await database()).list()).reverse(),
+ get:async(uid:string):Promise<LearningSession>=>{const value=await(await database()).read('sessions',uid);if(!value)throw Error('讨论不存在');return value},
+ create:async(title:string):Promise<LearningSession>=>{ensureRandomUUID();const value:LearningSession={createdAt:new Date().toISOString(),updatedAt:new Date().toISOString(),uid:crypto.randomUUID(),revision:1,title:title.trim().slice(0,200)||'新讨论',input:'',messages:[],draft:'',draftSources:[]};await(await database()).compare('sessions',value.uid,undefined,value);return value},
  edit:async(uid:string,value:unknown)=>{const input=requestValue(value);return mutate(uid,input.revision,s=>{if(input.title!==undefined){const title=String(input.title).trim();if(!title||title.length>200)throw Error('讨论标题需为 1–200 字');s.title=title}s.input=String(input.input??s.input).slice(0,8000);s.draft=String(input.draft??s.draft).slice(0,50000);if(input.sources){selectedMessages(s,input.sources);s.draftSources=[...input.sources]}})},
  async send(uid:string,value:unknown,signal?:AbortSignal,onProgress?:(session:LearningSession)=>void):Promise<LearningSession>{
   const request=requestValue(value);if(!request.confirmed||!String(request.text||'').trim())throw Error('请确认发送内容');if(typeof request.text!=='string'||request.text.length>8000)throw Error('问题超过 8000 字限制');if(request.references!==undefined&&(!Array.isArray(request.references)||request.references.length>10))throw Error('最多引用 10 项资料')
   const workspaceRequested=request.workspace===true&&!isCommunityEdition
   if(workspaceRequested&&(!request.queryScope?.enabled||!Array.isArray(request.queryScope.kinds)||!request.queryScope.kinds.includes('note')||typeof request.queryScope.areaUid!=='string'||request.queryScope.areaUid.length>64))throw Error('请先开启本机资料中的笔记工作区并选择授权领域')
-  const db=await database(),scope=localLearningScope(),previous=await db.get('sessions',uid),session=check(previous,request.revision)
+  const db=await database(),scope=localLearningScope(),previous=await db.read('sessions',uid),session=check(previous,request.revision)
+  const mutateBound=(revision:number,work:(session:LearningSession)=>void)=>mutate(uid,revision,work,db)
   if(session.messages.some(m=>m.status==='pending'))throw Error('上次回答尚未完成，请先标记中断或重新加载')
   if(session.messages.length>=200)throw Error('讨论已达 200 条消息，请新建讨论')
   for(const m of session.messages as Array<LearningMessage&{referenceUid?:string}>){if(m.referenceUid&&(await notes().get(m.referenceUid))?.aiPolicy==='excluded')throw Error('历史讨论引用的笔记已排除 AI，请新建讨论')}
@@ -53,13 +56,13 @@ export const localLearningService={
   }
   history.push({role:'user',content:text+(references.length?'\n\n'+formatReferences(references):'')});if(history.reduce((sum,m)=>sum+m.content.length,0)>24000)throw Error('上下文超过 24000 字，请缩小引用范围或新建讨论')
   ensureRandomUUID();const answerUid=crypto.randomUUID(),message:LearningMessage&{referenceUid?:string}={uid:crypto.randomUUID(),version:1,role:'user',...(references.length?{references:clone(references)}:{}),content:request.referenceUid?text+'\n\n本次引用正文：\n'+String(request.referenceContent||''):text,status:'complete',...(directorySnapshot?{directorySnapshot:clone(directorySnapshot)}:{}),...(request.referenceUid?{referenceUid:request.referenceUid}:{})},answer:LearningMessage={uid:answerUid,attemptUid:crypto.randomUUID(),version:1,role:'assistant',...(references.length?{references:clone(references)}:{}),content:'',status:'pending',...(directorySnapshot?{directorySnapshot:clone(directorySnapshot)}:{})}
-  const pending=await mutate(uid,request.revision,s=>{if(!s.messages.length&&s.title==='新讨论')s.title=text.trim().replace(/\s+/g,' ').slice(0,40);s.input='';s.messages.push(message,answer)})
+  const pending=await mutateBound(request.revision,s=>{if(!s.messages.length&&s.title==='新讨论')s.title=text.trim().replace(/\s+/g,' ').slice(0,40);s.input='';s.messages.push(message,answer)})
   let workspaceSourceUids:string[]=[];let expectedRevision=pending.revision,partial='',lastSaved='',lastUi=0,timer:ReturnType<typeof setTimeout>|undefined,writeError:unknown
   let checkpoint=Promise.resolve()
   const notify=(value:LearningSession)=>{try{onProgress?.(clone(value))}catch{/* view teardown does not alter persisted generation */}}
   notify(pending)
   const flush=()=>{clearTimeout(timer);timer=undefined;const captured=partial;if(captured===lastSaved)return checkpoint;lastSaved=captured;
-   checkpoint=checkpoint.then(async()=>{if(writeError)return;if(scope!==localLearningScope())throw Error('本地空间已切换');const saved=await mutate(uid,expectedRevision,s=>{const m=s.messages.find(m=>m.uid===answerUid);if(!m||m.status!=='pending')throw Error('回答已中断');m.content=captured;if(workspaceSourceUids.length)m.workspaceSources=[...workspaceSourceUids]});expectedRevision=saved.revision}).catch(error=>{writeError=error});return checkpoint}
+   checkpoint=checkpoint.then(async()=>{if(writeError)return;if(scope!==localLearningScope())throw Error('本地空间已切换');const saved=await mutateBound(expectedRevision,s=>{const m=s.messages.find(m=>m.uid===answerUid);if(!m||m.status!=='pending')throw Error('回答已中断');m.content=captured;if(workspaceSourceUids.length)m.workspaceSources=[...workspaceSourceUids]});expectedRevision=saved.revision}).catch(error=>{writeError=error});return checkpoint}
   const progress=(text:string)=>{if(signal?.aborted||scope!==localLearningScope()||writeError)return;partial=text;const m=pending.messages.find(m=>m.uid===answerUid)!;m.content=text;if(Date.now()-lastUi>=50){lastUi=Date.now();notify({...pending,revision:expectedRevision})}if(text.length-lastSaved.length>=2000)void flush();else if(!timer)timer=setTimeout(()=>void flush(),500)}
   try{
    const started=performance.now();const timing:{connected?:number;firstEvent?:number;firstText?:number}={}
@@ -71,7 +74,7 @@ export const localLearningService={
      const [{workspacePlanStore,createLearningWorkspace,withWorkspaceLock},{newWorkspacePlan,workspaceSummary},{runWorkspaceAgent}]=await Promise.all([import('./learningWorkspaceStore'),import('./learningWorkspace'),import('./learningWorkspaceAgent')])
      const dataScope=aiDataScope(),binding=JSON.stringify(aiClientConfig()),checkWorkspace=()=>{if(signal?.aborted)throw new DOMException('已取消','AbortError');if(scope!==localLearningScope()||JSON.stringify(aiClientConfig())!==binding)throw Error('空间或模型已切换，已停止工作区操作')}
      checkWorkspace();content=await withWorkspaceLock(dataScope,uid,async()=>{checkWorkspace();const prior=await workspacePlanStore(dataScope,uid).read();checkWorkspace();const selectedScope={areaUid:request.queryScope.areaUid};if(prior&&prior.status!=='completed'&&prior.actions.length&&prior.scope.areaUid!==selectedScope.areaUid)throw Error('当前讨论已有另一个领域的待应用方案，请先完成或丢弃该方案')
-      const plan=prior&&prior.status!=='completed'&&prior.scope.areaUid===selectedScope.areaUid?prior:{...newWorkspacePlan(selectedScope),revision:prior?.revision||0},workspace=createLearningWorkspace(uid,plan,checkWorkspace)
+      const plan=prior&&prior.status!=='completed'&&prior.scope.areaUid===selectedScope.areaUid?prior:{...newWorkspacePlan(selectedScope),revision:prior?.revision||0},workspace=createLearningWorkspace(uid,plan,checkWorkspace,prior?.uid)
       const contextual=prior?.status==='completed'?[...history,{role:'system',content:'上一个批次已完成：'+JSON.stringify({status:'completed',count:prior.actions.length,completed:prior.actions.filter(a=>a.done).length})}]:history
       return runWorkspaceAgent(workspace,contextual,messages=>{checkWorkspace();return directAiCompletion(messages,signal,()=>{},stage)},{check:checkWorkspace,status:request.onQueryStatus,progress,sources:uids=>{workspaceSourceUids=uids}})
      })
@@ -81,22 +84,21 @@ export const localLearningService={
    if(signal?.aborted)throw new DOMException('已取消','AbortError')
    if(scope!==localLearningScope())throw Error('本地空间已切换，未写入回答')
    partial=content;await flush();if(writeError)throw writeError
-   return await mutate(uid,expectedRevision,s=>{const m=s.messages.find(m=>m.uid===answerUid);if(!m||m.status!=='pending')throw Error('该回答已中断');m.content=content;if(workspaceSourceUids.length)m.workspaceSources=[...workspaceSourceUids];m.status='complete';m.finishReason='completed';s.input=''})
+   return await mutateBound(expectedRevision,s=>{const m=s.messages.find(m=>m.uid===answerUid);if(!m||m.status!=='pending')throw Error('该回答已中断');m.content=content;if(workspaceSourceUids.length)m.workspaceSources=[...workspaceSourceUids];m.status='complete';m.finishReason='completed';s.input=''})
   }catch(error){
    await flush()
-   const tx=db.transaction('sessions','readwrite'),current=await tx.store.get(uid) as LearningSession|undefined
+   db.check();const original=await db.read('sessions',uid),current=original?clone(original):undefined
    const m=current?.messages.find(m=>m.uid===answerUid)
-   if(current&&m?.status==='pending'){current.input=text;m.content=partial||m.content;if(workspaceSourceUids.length)m.workspaceSources=[...workspaceSourceUids];m.status=signal?.aborted?'interrupted':'failed';m.finishReason=signal?.aborted?'cancelled':error instanceof Error&&error.message.includes('长度')?'length':error instanceof Error&&error.message.includes('超时')?'timeout':'network_error';current.revision++;await tx.store.put(current)}await tx.done;throw error
+   if(current&&m?.status==='pending'){current.input=text;m.content=partial||m.content;if(workspaceSourceUids.length)m.workspaceSources=[...workspaceSourceUids];m.status=signal?.aborted?'interrupted':'failed';m.finishReason=signal?.aborted?'cancelled':error instanceof Error&&error.message.includes('长度')?'length':error instanceof Error&&error.message.includes('超时')?'timeout':'network_error';current.revision++;await db.compare('sessions',uid,original,current)}throw error
   }finally{clearTimeout(timer)}
  },
- async organize(uid:string,value:unknown,signal?:AbortSignal){const request=requestValue(value),scope=localLearningScope(),session=check(await this.get(uid),request.revision);if(!request.confirmed)throw Error('请确认发送所选讨论');const selected=selectedMessages(session,request.sources);for(const message of selected){for(const uid of message.workspaceSources||[]){const repository=notes(),note=await (repository.getForMutation?.(uid)??repository.get(uid));if(scope!==localLearningScope())throw Error('本地空间已切换');if(!note||note.deleted||note.status==='archived'||note.aiPolicy==='excluded')throw Error('讨论来源已删除、归档或排除 AI')}if(message.references?.length){const {verifyLearningReferences}=await import('./learningReferences');await verifyLearningReferences(message.references)}}const content=selected.map(m=>`${m.role}: ${m.content}`+(m.references?.length?'\n\n'+m.references.map(r=>`[引用：${r.title}]\n${r.content}`).join('\n\n'):'')).join('\n\n');if(content.length>24000)throw Error('所选讨论超过 24000 字限制');const draft=await directAiCompletion([{role:'user',content:'将以下讨论整理为可编辑学习笔记，保留不确定性，不编造来源：\n'+content}],signal);if(scope!==localLearningScope()||signal?.aborted)throw Error('操作已取消或空间已切换');return mutate(uid,session.revision,s=>{s.draft=draft;s.draftSources=[...request.sources]})},
+ async organize(uid:string,value:unknown,signal?:AbortSignal){const request=requestValue(value),scope=localLearningScope(),db=await database(),session=check(await db.read('sessions',uid),request.revision);if(!request.confirmed)throw Error('请确认发送所选讨论');const selected=selectedMessages(session,request.sources);for(const message of selected){for(const uid of message.workspaceSources||[]){const repository=notes(),note=await (repository.getForMutation?.(uid)??repository.get(uid));if(scope!==localLearningScope())throw Error('本地空间已切换');if(!note||note.deleted||note.status==='archived'||note.aiPolicy==='excluded')throw Error('讨论来源已删除、归档或排除 AI')}if(message.references?.length){const {verifyLearningReferences}=await import('./learningReferences');await verifyLearningReferences(message.references)}}const content=selected.map(m=>`${m.role}: ${m.content}`+(m.references?.length?'\n\n'+m.references.map(r=>`[引用：${r.title}]\n${r.content}`).join('\n\n'):'')).join('\n\n');if(content.length>24000)throw Error('所选讨论超过 24000 字限制');const draft=await directAiCompletion([{role:'user',content:'将以下讨论整理为可编辑学习笔记，保留不确定性，不编造来源：\n'+content}],signal);if(scope!==localLearningScope()||signal?.aborted)throw Error('操作已取消或空间已切换');db.check();return mutate(uid,session.revision,s=>{s.draft=draft;s.draftSources=[...request.sources]},db)},
  recover:async(uid:string,revision:number)=>mutate(uid,revision,s=>{for(const message of s.messages)if(message.status==='pending'){message.status='interrupted';message.finishReason='process_exit'}}),
  async save(uid:string,value:unknown){
   const request=requestValue(value),db=await database(),scope=localLearningScope(),operationUid=String(request.operationUid||'');if(!operationUid)throw Error('缺少保存操作标识')
-  ensureRandomUUID();const signature=JSON.stringify([uid,request]),reservation=db.transaction('operations','readwrite');let prior=await reservation.store.get(operationUid)
-  if(!prior){prior={uid:operationUid,signature,noteUid:request.targetUid||crypto.randomUUID(),done:false};await reservation.store.add(prior)}await reservation.done
+  ensureRandomUUID();const signature=JSON.stringify([uid,request]);let prior:LearningNoteOperation=await db.reserve({uid:operationUid,signature,noteUid:request.targetUid||crypto.randomUUID(),done:false})
   if(prior){if(prior.signature!==signature)throw Error('重复操作内容不匹配');if(prior.done)return{noteUid:prior.noteUid as string,replayed:true}}
-  const session=check(await this.get(uid),request.revision),sources=selectedMessages(session,request.sources)
+  const session=check(await db.read('sessions',uid),request.revision),sources=selectedMessages(session,request.sources)
   if(!String(request.content||'').trim()||String(request.content).length>50000)throw Error('学习草稿为空或超过限制')
   let placement:Record<string,unknown>={}
   if(!request.targetUid){
@@ -105,23 +107,23 @@ export const localLearningService={
    if(request.folderUid){const {localAiFolders}=await import('./folders');const folder=(await localAiFolders()).find(value=>value.uid===request.folderUid&&!(value as {deleted?:boolean}).deleted);if(!folder)throw Error('所选目录已不存在，请重新选择');placement={...placement,folderUid:folder.uid,folderId:folder.id,areaUid:folder.areaUid||null,projectUid:folder.projectUid||null}}
    else if(request.areaUid){const {localAiWorkspace}=await import('./workspace');if(!(await localAiWorkspace()).areas.some(value=>value.uid===request.areaUid&&!value.archived))throw Error('所选领域已不存在，请重新选择')}
    if(tagUids.length){const {localAiTags}=await import('./tags');const tags=(await localAiTags()).filter(value=>!value.deleted);if(tagUids.some((uid:string)=>!tags.some(value=>value.uid===uid)))throw Error('所选标签已不存在，请重新选择');placement.tagUids=[...new Set(tagUids)];placement.tagIds=tags.filter(value=>tagUids.includes(value.uid)).map(value=>value.id)}
-   if(scope!==localLearningScope())throw Error('本地空间已切换')
+   db.check();if(scope!==localLearningScope())throw Error('本地空间已切换')
   }
   ensureRandomUUID();const noteUid=prior?.noteUid||request.targetUid||crypto.randomUUID(),service=notes()
   const marker=`<!-- note-flow-learning:${operationUid} -->`,sourceText=sources.map(m=>`> ${m.role==='user'?'问题':'AI 回答'} · ${m.uid} v${m.version}\n> ${(m.content+(m.references?.length?'\n\n'+m.references.map(r=>`引用：${r.title}\n${r.content}`).join('\n\n'):'')).replace(/\n/g,'\n> ')}`).join('\n\n'),content=`${request.content}\n\n${marker}\n<details><summary>讨论来源（未经核实）</summary>\n\n${sourceText}\n\n</details>`
-  // Journal the chosen note UID before writing it; retries recover a completed note write.
-  await db.put('operations',{uid:operationUid,signature,noteUid,done:false,sources})
+  // 先提交固定笔记UID及来源，再写笔记；丢失回执按同一身份和正文标记恢复，不能另建笔记。
+  const prepared:LearningNoteOperation={uid:operationUid,signature,noteUid,done:false,sources};await db.compare('operations',operationUid,prior,prepared);prior=prepared
   const current=await service.get(noteUid)
-  if(current?.content.includes(marker)){await db.put('operations',{uid:operationUid,signature,noteUid,done:true,sources});return{noteUid,replayed:true}}
-  if(scope!==localLearningScope())throw Error('本地空间已切换')
+  if(current?.content.includes(marker)){await db.compare('operations',operationUid,prior,{uid:operationUid,signature,noteUid,done:true,sources});return{noteUid,replayed:true}}
+  db.check();if(scope!==localLearningScope())throw Error('本地空间已切换')
   if(request.targetUid){if(!current||current.deleted||current.version!==request.targetVersion||current.content!==request.baseContent)throw Error('目标笔记已变化，请重新预览');await service.update({...current,content:current.content+'\n\n'+content})}
   else {if(current)throw Error('成果笔记已变化，请人工检查后重试');await service.create({uid:noteUid,title:String(request.title||'学习笔记'),content,...placement} as any)}
-  await db.put('operations',{uid:operationUid,signature,noteUid,done:true,sources});window.dispatchEvent(new Event('note-flow:workspace-change'));return{noteUid,replayed:false}
+  await db.compare('operations',operationUid,prior,{uid:operationUid,signature,noteUid,done:true,sources});window.dispatchEvent(new Event('note-flow:workspace-change'));return{noteUid,replayed:false}
  },
- remove:async(uid:string,revision:number)=>{const db=await database(),tx=db.transaction('sessions','readwrite');check(await tx.store.get(uid),revision);await tx.store.delete(uid);await tx.done},
+ remove:async(uid:string,revision:number)=>{const db=await database(),before=check(await db.read('sessions',uid),revision);await db.compare('sessions',uid,before,null)},
  archive:async()=>{
   const scope=aiDataScope(),db=await database(),assertCurrent=()=>{if(scope!==aiDataScope())throw Error('账号或空间已切换，已取消学习备份')}
-  try{assertCurrent();const tx=db.transaction(['sessions','operations'],'readonly'),[sessions,operations]=await Promise.all([tx.objectStore('sessions').getAll(),tx.objectStore('operations').getAll()]);await tx.done;assertCurrent();const actions=await exportLearningActions(scope);assertCurrent();return{schemaVersion:1,kind:'local-ai-learning',scope:`note-flow-ai-local:v1:${scope}`,sessions,operations,actions}}finally{db.close()}
+  assertCurrent();const {sessions,operations}=await db.snapshot();assertCurrent();const actions=await exportLearningActions(scope);assertCurrent();const execution=await(await learningExecutionRepository(scope)).backup();db.check();assertCurrent();return{schemaVersion:1,kind:'local-ai-learning',scope:`note-flow-ai-local:v1:${scope}`,sessions,operations,actions,execution}
  },
- async restore(value:unknown){const source=validateLocalLearningArchive(value);const db=await database(),tx=db.transaction('sessions','readwrite');let restored=0,skipped=0;for(const session of source.sessions as LearningSession[]){if(await tx.store.get(session.uid)){skipped++;continue}await tx.store.add(session);restored++}await tx.done;if(source.actions)await restoreLearningActions(source.actions);return{restored,skipped}}
+ async restore(value:unknown){const source=validateLocalLearningArchive(value),db=await database(),result=await db.restore(source.sessions);db.check();if(source.actions)await restoreLearningActions(source.actions);db.check();if(source.execution!==undefined)await(await learningExecutionRepository()).archive(source.execution);db.check();return result}
 }

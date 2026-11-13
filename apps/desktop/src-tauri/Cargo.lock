@@ -2681,7 +2681,7 @@ dependencies = [
 
 [[package]]
 name = "note-flow-community-desktop"
-version = "0.12.18"
+version = "0.13.2"
 dependencies = [
  "base64 0.22.1",
  "cc",

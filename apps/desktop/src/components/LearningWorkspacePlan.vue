@@ -2,7 +2,7 @@
 import {computed,onBeforeUnmount,onMounted,ref} from 'vue'
 import {ElButton} from 'element-plus'
 import {aiDataScope} from '../services/aiDataScope'
-import {accountSessionRevision} from '../services/accountStorage'
+import {accountLifecycleRevision} from '../services/accountStorage'
 import {workspacePlanStore,createLearningWorkspace,withWorkspaceLock} from '../services/learningWorkspaceStore'
 import type {WorkspacePlan,WorkspaceAction,WorkspaceScope} from '../services/learningWorkspace'
 import {workspaceTextDiff} from '../services/workspaceTextDiff'
@@ -14,10 +14,10 @@ import {requestLocalSync} from '../services/syncSignals'
 const props=defineProps<{sessionUid:string;disabled?:boolean}>()
 const emit=defineEmits<{'busy-change':[value:boolean];resume:[scope:WorkspaceScope]}>()
 const plan=ref<WorkspacePlan>(),expanded=ref(false),busy=ref(false),error=ref(''),folders=ref<FolderEntity[]>([]),areas=ref<AreaEntity[]>([]),projects=ref<ProjectEntity[]>([])
-const scope=aiDataScope(),revision=accountSessionRevision(),store=workspacePlanStore(scope,props.sessionUid)
+const scope=aiDataScope(),revision=accountLifecycleRevision(),store=workspacePlanStore(scope,props.sessionUid)
 let alive=true,loadRevision=0,metadataLoading=false,metadataReady=false
 async function metadata(){if(metadataReady||metadataLoading)return;metadataLoading=true;try{const [f,a,p]=await Promise.all([foldersService.list(),workspaceService.areas(),workspaceService.projects(undefined,true)]);check();folders.value=f;areas.value=a;projects.value=p;metadataReady=true}catch{/* Names remain available from before/after snapshots. */}finally{metadataLoading=false}}
-function check(){if(!alive||scope!==aiDataScope()||revision!==accountSessionRevision())throw Error('账号或空间已切换，请重新打开讨论')}
+function check(){if(!alive||scope!==aiDataScope()||revision!==accountLifecycleRevision())throw Error('账号或空间已切换，请重新打开讨论')}
 const completed=computed(()=>plan.value?.actions.filter(a=>a.done).length||0)
 const status=computed(()=>({draft:'待确认',applying:'执行中，可恢复',partial:'部分完成，可重试',completed:'已完成'}[plan.value?.status||'draft']))
 async function reload(){const id=++loadRevision;try{const value=await store.read();check();if(id===loadRevision){plan.value=value;if(value?.actions.length)void metadata()}}catch(e){if(alive)error.value=e instanceof Error?e.message:'方案读取失败'}}
@@ -30,7 +30,7 @@ function path(uid:string|null|undefined,after=true){if(!uid)return '顶级 / 未
 function scopeLabel(value:{areaUid?:string|null;projectUid?:string|null}){const a=areas.value.find(a=>a.uid===value.areaUid),p=projects.value.find(p=>p.uid===value.projectUid);const area=a?a.name+(areas.value.filter(v=>v.name===a.name).length>1?` · ${a.uid.slice(-8)}`:''):value.areaUid?'领域名称暂未载入':'未指定领域';const project=p?p.name+(projects.value.filter(v=>v.name===p.name&&(v.areaUid||null)===(p.areaUid||null)).length>1?` · ${p.uid.slice(-8)}`:''):value.projectUid?'项目名称暂未载入':'未关联项目';return `${area} / ${project}`}
 
 async function apply(){if(busy.value||props.disabled||!plan.value)return;busy.value=true;emit('busy-change',true);error.value='';try{check();await withWorkspaceLock(scope,props.sessionUid,async()=>{check();await useNotesStore().flushPendingSaves();check();const latest=await store.read();check();if(!latest||latest.uid!==plan.value!.uid||latest.revision!==plan.value!.revision)throw Error('方案已变化，请重新查看后确认');await createLearningWorkspace(props.sessionUid,latest).apply();check();requestLocalSync();await useNotesStore().reloadLocal();check();window.dispatchEvent(new Event('note-flow:workspace-change'))})}catch(e){if(alive)error.value=e instanceof Error?e.message:'执行失败，已保留进度'}finally{busy.value=false;emit('busy-change',false);if(alive)await reload()}}
-async function discard(){if(!plan.value||busy.value||props.disabled)return;try{check();await withWorkspaceLock(scope,props.sessionUid,async()=>{check();await store.clear(plan.value!.revision)});plan.value=undefined;error.value=''}catch(e){error.value=e instanceof Error?e.message:'丢弃失败'}}
+async function discard(){if(!plan.value||busy.value||props.disabled)return;try{check();await withWorkspaceLock(scope,props.sessionUid,async()=>{check();await store.clear(plan.value!.revision,plan.value!.uid)});plan.value=undefined;error.value=''}catch(e){error.value=e instanceof Error?e.message:'丢弃失败'}}
 </script>
 <template>
  <section v-if="plan&&(plan.actions.length||error)" class="learning-workspace-plan" aria-label="笔记工作区方案">
